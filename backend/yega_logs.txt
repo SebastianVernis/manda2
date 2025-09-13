@@ -1,0 +1,1469 @@
+[TAILING] Tailing last 500 lines for [yega] process (change the value with --lines option)
+/home/ec2-user/.pm2/logs/yega-out.log last 500 lines:
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68be4df5b881f1f461070c21
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68be4df5b881f1f461070c21"),
+0|yega     |   email: 'tienda@yega.local',
+0|yega     |   rol: 'tienda'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 
+0|yega     | [AUTH.PROTECT] Iniciando verificación de token...
+0|yega     | [AUTH.PROTECT] Token extraído: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmU0ZGY1Yjg4MWYxZjQ2MTA3MGMyMSIsInJvbCI6InRpZW5kYSIsImlhdCI6MTc1NzQ5OTI1MiwiZXhwIjoxNzU4MTA0MDUyfQ._h2-YO1A1ynPtsducxwP2Q32ZSRpeG2WqUkdNu6_VJs
+0|yega     | [AUTH.PROTECT] Decodificando token con JWT_SECRET...
+0|yega     | [AUTH.PROTECT] Token decodificado exitosamente: {
+0|yega     |   id: '68be4df5b881f1f461070c21',
+0|yega     |   rol: 'tienda',
+0|yega     |   iat: 1757499252,
+0|yega     |   exp: 1758104052
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68be4df5b881f1f461070c21
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68be4df5b881f1f461070c21"),
+0|yega     |   email: 'tienda@yega.local',
+0|yega     |   rol: 'tienda'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 
+0|yega     | [AUTH.PROTECT] Iniciando verificación de token...
+0|yega     | [AUTH.PROTECT] Token extraído: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmU0ZGY1Yjg4MWYxZjQ2MTA3MGMyMSIsInJvbCI6InRpZW5kYSIsImlhdCI6MTc1NzQ5OTI1MiwiZXhwIjoxNzU4MTA0MDUyfQ._h2-YO1A1ynPtsducxwP2Q32ZSRpeG2WqUkdNu6_VJs
+0|yega     | [AUTH.PROTECT] Decodificando token con JWT_SECRET...
+0|yega     | [AUTH.PROTECT] Token decodificado exitosamente: {
+0|yega     |   id: '68be4df5b881f1f461070c21',
+0|yega     |   rol: 'tienda',
+0|yega     |   iat: 1757499252,
+0|yega     |   exp: 1758104052
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68be4df5b881f1f461070c21
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68be4df5b881f1f461070c21"),
+0|yega     |   email: 'tienda@yega.local',
+0|yega     |   rol: 'tienda'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 
+0|yega     | [AUTH.PROTECT] Iniciando verificación de token...
+0|yega     | [AUTH.PROTECT] Token extraído: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmU0ZGY1Yjg4MWYxZjQ2MTA3MGMyMSIsInJvbCI6InRpZW5kYSIsImlhdCI6MTc1NzQ5OTI1MiwiZXhwIjoxNzU4MTA0MDUyfQ._h2-YO1A1ynPtsducxwP2Q32ZSRpeG2WqUkdNu6_VJs
+0|yega     | [AUTH.PROTECT] Decodificando token con JWT_SECRET...
+0|yega     | [AUTH.PROTECT] Token decodificado exitosamente: {
+0|yega     |   id: '68be4df5b881f1f461070c21',
+0|yega     |   rol: 'tienda',
+0|yega     |   iat: 1757499252,
+0|yega     |   exp: 1758104052
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68be4df5b881f1f461070c21
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68be4df5b881f1f461070c21"),
+0|yega     |   email: 'tienda@yega.local',
+0|yega     |   rol: 'tienda'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 
+0|yega     | [AUTH.PROTECT] Iniciando verificación de token...
+0|yega     | [AUTH.PROTECT] Token extraído: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmU0ZGY1Yjg4MWYxZjQ2MTA3MGMyMSIsInJvbCI6InRpZW5kYSIsImlhdCI6MTc1NzQ5OTI1MiwiZXhwIjoxNzU4MTA0MDUyfQ._h2-YO1A1ynPtsducxwP2Q32ZSRpeG2WqUkdNu6_VJs
+0|yega     | [AUTH.PROTECT] Decodificando token con JWT_SECRET...
+0|yega     | [AUTH.PROTECT] Token decodificado exitosamente: {
+0|yega     |   id: '68be4df5b881f1f461070c21',
+0|yega     |   rol: 'tienda',
+0|yega     |   iat: 1757499252,
+0|yega     |   exp: 1758104052
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68be4df5b881f1f461070c21
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68be4df5b881f1f461070c21"),
+0|yega     |   email: 'tienda@yega.local',
+0|yega     |   rol: 'tienda'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 🚀 Servidor corriendo en el puerto 5000
+0|yega     | ✅ MongoDB conectado exitosamente
+0|yega     | 
+0|yega     | [AUTH.PROTECT] Iniciando verificación de token...
+0|yega     | [AUTH.PROTECT] Token extraído: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE1ZDFlNGFhYzljMjUwM2FhN2Y0YSIsInJvbCI6ImNsaWVudGUiLCJpYXQiOjE3NTc1MDI3NTAsImV4cCI6MTc1ODEwNzU1MH0.l1o2iPbE9WZkyEehJvPjnAubYgjr4oVGox-CIZ20OR0
+0|yega     | [AUTH.PROTECT] Decodificando token con JWT_SECRET...
+0|yega     | [AUTH.PROTECT] Token decodificado exitosamente: {
+0|yega     |   id: '68c15d1e4aac9c2503aa7f4a',
+0|yega     |   rol: 'cliente',
+0|yega     |   iat: 1757502750,
+0|yega     |   exp: 1758107550
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68c15d1e4aac9c2503aa7f4a
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68c15d1e4aac9c2503aa7f4a"),
+0|yega     |   email: 'chispakimnueve@gmail.com',
+0|yega     |   rol: 'cliente'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 
+0|yega     | [AUTH.PROTECT] Iniciando verificación de token...
+0|yega     | [AUTH.PROTECT] Token extraído: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE1ZDFlNGFhYzljMjUwM2FhN2Y0YSIsInJvbCI6ImNsaWVudGUiLCJpYXQiOjE3NTc1MDI3NTAsImV4cCI6MTc1ODEwNzU1MH0.l1o2iPbE9WZkyEehJvPjnAubYgjr4oVGox-CIZ20OR0
+0|yega     | [AUTH.PROTECT] Decodificando token con JWT_SECRET...
+0|yega     | [AUTH.PROTECT] Token decodificado exitosamente: {
+0|yega     |   id: '68c15d1e4aac9c2503aa7f4a',
+0|yega     |   rol: 'cliente',
+0|yega     |   iat: 1757502750,
+0|yega     |   exp: 1758107550
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68c15d1e4aac9c2503aa7f4a
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68c15d1e4aac9c2503aa7f4a"),
+0|yega     |   email: 'chispakimnueve@gmail.com',
+0|yega     |   rol: 'cliente'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 🚀 Servidor corriendo en el puerto 5000
+0|yega     | ✅ MongoDB conectado exitosamente
+0|yega     | 
+0|yega     | [AUTH.PROTECT] Iniciando verificación de token...
+0|yega     | [AUTH.PROTECT] Token extraído: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE1ZGM3NThhODY1NjgxNWFlOTRjZSIsInJvbCI6ImNsaWVudGUiLCJpYXQiOjE3NTc1MDI5MjAsImV4cCI6MTc1ODEwNzcyMH0.M8rI92gQluo7uDJ-b4QGLyTtZCUxv7ujf_F5YSRF8is
+0|yega     | [AUTH.PROTECT] Decodificando token con JWT_SECRET...
+0|yega     | [AUTH.PROTECT] Token decodificado exitosamente: {
+0|yega     |   id: '68c15dc758a8656815ae94ce',
+0|yega     |   rol: 'cliente',
+0|yega     |   iat: 1757502920,
+0|yega     |   exp: 1758107720
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68c15dc758a8656815ae94ce
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68c15dc758a8656815ae94ce"),
+0|yega     |   email: 'vernissebastian851@gmail.com',
+0|yega     |   rol: 'cliente'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 
+0|yega     | [AUTH.PROTECT] Iniciando verificación de token...
+0|yega     | [AUTH.PROTECT] Token extraído: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE1ZGM3NThhODY1NjgxNWFlOTRjZSIsInJvbCI6ImNsaWVudGUiLCJpYXQiOjE3NTc1MDI5MjAsImV4cCI6MTc1ODEwNzcyMH0.M8rI92gQluo7uDJ-b4QGLyTtZCUxv7ujf_F5YSRF8is
+0|yega     | [AUTH.PROTECT] Decodificando token con JWT_SECRET...
+0|yega     | [AUTH.PROTECT] Token decodificado exitosamente: {
+0|yega     |   id: '68c15dc758a8656815ae94ce',
+0|yega     |   rol: 'cliente',
+0|yega     |   iat: 1757502920,
+0|yega     |   exp: 1758107720
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68c15dc758a8656815ae94ce
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68c15dc758a8656815ae94ce"),
+0|yega     |   email: 'vernissebastian851@gmail.com',
+0|yega     |   rol: 'cliente'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 🚀 Servidor corriendo en el puerto 5000
+0|yega     | ✅ MongoDB conectado exitosamente
+0|yega     | 
+0|yega     | [AUTH.PROTECT] Iniciando verificación de token...
+0|yega     | [AUTH.PROTECT] Token extraído: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE1ZGM3NThhODY1NjgxNWFlOTRjZSIsInJvbCI6ImNsaWVudGUiLCJpYXQiOjE3NTc1MDI5MjAsImV4cCI6MTc1ODEwNzcyMH0.M8rI92gQluo7uDJ-b4QGLyTtZCUxv7ujf_F5YSRF8is
+0|yega     | [AUTH.PROTECT] Decodificando token con JWT_SECRET...
+0|yega     | [AUTH.PROTECT] Token decodificado exitosamente: {
+0|yega     |   id: '68c15dc758a8656815ae94ce',
+0|yega     |   rol: 'cliente',
+0|yega     |   iat: 1757502920,
+0|yega     |   exp: 1758107720
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68c15dc758a8656815ae94ce
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68c15dc758a8656815ae94ce"),
+0|yega     |   email: 'vernissebastian851@gmail.com',
+0|yega     |   rol: 'cliente'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 
+0|yega     | [AUTH.PROTECT] Iniciando verificación de token...
+0|yega     | [AUTH.PROTECT] Token extraído: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE1ZTYwMTEzNTg3ODY5ZDUwNTMwZiIsInJvbCI6ImNsaWVudGUiLCJpYXQiOjE3NTc1MDMwNzIsImV4cCI6MTc1ODEwNzg3Mn0.n9vmnv0Dc_2RETYWRXcXpYX-wpQLK4brjYWx50Zdk04
+0|yega     | [AUTH.PROTECT] Decodificando token con JWT_SECRET...
+0|yega     | [AUTH.PROTECT] Token decodificado exitosamente: {
+0|yega     |   id: '68c15e60113587869d50530f',
+0|yega     |   rol: 'cliente',
+0|yega     |   iat: 1757503072,
+0|yega     |   exp: 1758107872
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68c15e60113587869d50530f
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68c15e60113587869d50530f"),
+0|yega     |   email: 'sebasvernis@gmail.com',
+0|yega     |   rol: 'cliente'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 🚀 Servidor corriendo en el puerto 5000
+0|yega     | ✅ MongoDB conectado exitosamente
+0|yega     | 🚀 Servidor corriendo en el puerto 5000
+0|yega     | ✅ MongoDB conectado exitosamente
+0|yega     | 
+0|yega     | [AUTH.PROTECT] Iniciando verificación de token...
+0|yega     | [AUTH.PROTECT] Token extraído: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE2MDQ1Y2YxMjAyMzIzMDhhNTMwNSIsInJvbCI6ImNsaWVudGUiLCJpYXQiOjE3NTc1MDM1NTgsImV4cCI6MTc1ODEwODM1OH0.wuAwN5gKplRZ980cgW0ucmBzc6VwUTGfeaOtuiMPELM
+0|yega     | [AUTH.PROTECT] Decodificando token con JWT_SECRET...
+0|yega     | [AUTH.PROTECT] Token decodificado exitosamente: {
+0|yega     |   id: '68c16045cf120232308a5305',
+0|yega     |   rol: 'cliente',
+0|yega     |   iat: 1757503558,
+0|yega     |   exp: 1758108358
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68c16045cf120232308a5305
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68c16045cf120232308a5305"),
+0|yega     |   email: 'sebasvernis@spambox.xyz',
+0|yega     |   rol: 'cliente'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 
+0|yega     | [AUTH.PROTECT] Iniciando verificación de token...
+0|yega     | [AUTH.PROTECT] Token extraído: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE2MDQ1Y2YxMjAyMzIzMDhhNTMwNSIsInJvbCI6ImNsaWVudGUiLCJpYXQiOjE3NTc1MDM1NTgsImV4cCI6MTc1ODEwODM1OH0.wuAwN5gKplRZ980cgW0ucmBzc6VwUTGfeaOtuiMPELM
+0|yega     | [AUTH.PROTECT] Decodificando token con JWT_SECRET...
+0|yega     | [AUTH.PROTECT] Token decodificado exitosamente: {
+0|yega     |   id: '68c16045cf120232308a5305',
+0|yega     |   rol: 'cliente',
+0|yega     |   iat: 1757503558,
+0|yega     |   exp: 1758108358
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Buscando usuario en BD con ID: 68c16045cf120232308a5305
+0|yega     | [AUTH.PROTECT] Usuario encontrado: {
+0|yega     |   id: new ObjectId("68c16045cf120232308a5305"),
+0|yega     |   email: 'sebasvernis@spambox.xyz',
+0|yega     |   rol: 'cliente'
+0|yega     | }
+0|yega     | [AUTH.PROTECT] Verificación completada. Pasando al siguiente middleware.
+0|yega     | 🚀 Servidor corriendo en el puerto 5000
+0|yega     | ✅ MongoDB conectado exitosamente
+0|yega     | 🚀 Servidor corriendo en el puerto 5000
+0|yega     | ✅ MongoDB conectado exitosamente
+0|yega     | Montando rutas de autenticación en /api/auth
+0|yega     | 🚀 Servidor corriendo en el puerto 5000
+0|yega     | ✅ MongoDB conectado exitosamente
+0|yega     | Inicio de registerUser. req.body: {
+0|yega     |   nombre: 'Usuario Prueba OTP 3',
+0|yega     |   telefono: '5512345680',
+0|yega     |   email: 'prueba.otp3@example.com',
+0|yega     |   password: 'password123'
+0|yega     | }
+0|yega     | Usuario a guardar: {
+0|yega     |   nombre: 'Usuario Prueba OTP 3',
+0|yega     |   telefono: '5512345680',
+0|yega     |   email: 'prueba.otp3@example.com',
+0|yega     |   password: 'password123',
+0|yega     |   rol: 'cliente',
+0|yega     |   estado_validacion: 'pendiente',
+0|yega     |   activo: true,
+0|yega     |   _id: new ObjectId("68c16236829f8af895e68795"),
+0|yega     |   categorias: [],
+0|yega     |   rolNombre: 'Cliente',
+0|yega     |   id: '68c16236829f8af895e68795'
+0|yega     | }
+0|yega     | Llamando a OTPService.generarYEnviar con email: prueba.otp3@example.com
+0|yega     | Montando rutas de autenticación en /api/auth
+0|yega     | 🚀 Servidor corriendo en el puerto 5000
+0|yega     | ✅ MongoDB conectado exitosamente
+0|yega     | Inicio de registerUser. req.body: {
+0|yega     |   nombre: 'Usuario Prueba OTP 4',
+0|yega     |   telefono: '5512345681',
+0|yega     |   email: 'prueba.otp4@example.com',
+0|yega     |   password: 'password123'
+0|yega     | }
+0|yega     | Usuario a guardar: {
+0|yega     |   nombre: 'Usuario Prueba OTP 4',
+0|yega     |   telefono: '5512345681',
+0|yega     |   email: 'prueba.otp4@example.com',
+0|yega     |   password: 'password123',
+0|yega     |   rol: 'cliente',
+0|yega     |   estado_validacion: 'pendiente',
+0|yega     |   activo: true,
+0|yega     |   _id: new ObjectId("68c16287f1c9faa436f2446a"),
+0|yega     |   categorias: [],
+0|yega     |   rolNombre: 'Cliente',
+0|yega     |   id: '68c16287f1c9faa436f2446a'
+0|yega     | }
+0|yega     | Llamando a OTPService.generarYEnviar con email: prueba.otp4@example.com
+0|yega     | Inicio de registerUser. req.body: {
+0|yega     |   nombre: 'Usuario Prueba OTP 5',
+0|yega     |   telefono: '+525512345682',
+0|yega     |   email: 'prueba.otp5@example.com',
+0|yega     |   password: 'password123'
+0|yega     | }
+0|yega     | Usuario a guardar: {
+0|yega     |   nombre: 'Usuario Prueba OTP 5',
+0|yega     |   telefono: '+525512345682',
+0|yega     |   email: 'prueba.otp5@example.com',
+0|yega     |   password: 'password123',
+0|yega     |   rol: 'cliente',
+0|yega     |   estado_validacion: 'pendiente',
+0|yega     |   activo: true,
+0|yega     |   _id: new ObjectId("68c162acf1c9faa436f24470"),
+0|yega     |   categorias: [],
+0|yega     |   rolNombre: 'Cliente',
+0|yega     |   id: '68c162acf1c9faa436f24470'
+0|yega     | }
+0|yega     | Llamando a OTPService.generarYEnviar con email: prueba.otp5@example.com
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Montando rutas de autenticación en /api/auth
+0|yega     | 🚀 Servidor corriendo en el puerto 5000
+0|yega     | ✅ MongoDB conectado exitosamente
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Montando rutas de autenticación en /api/auth
+0|yega     | 🚀 Servidor corriendo en el puerto 5000
+0|yega     | ✅ MongoDB conectado exitosamente
+0|yega     | Server.js - req.body después de express.json(): {
+0|yega     |   nombre: 'Usuario Prueba OTP 6',
+0|yega     |   telefono: '+525512345683',
+0|yega     |   email: 'prueba.otp6@example.com',
+0|yega     |   password: 'password123'
+0|yega     | }
+0|yega     | Inicio de registerUser. req.body: {
+0|yega     |   nombre: 'Usuario Prueba OTP 6',
+0|yega     |   telefono: '+525512345683',
+0|yega     |   email: 'prueba.otp6@example.com',
+0|yega     |   password: 'password123'
+0|yega     | }
+0|yega     | Usuario a guardar: {
+0|yega     |   nombre: 'Usuario Prueba OTP 6',
+0|yega     |   telefono: '+525512345683',
+0|yega     |   email: 'prueba.otp6@example.com',
+0|yega     |   password: 'password123',
+0|yega     |   rol: 'cliente',
+0|yega     |   estado_validacion: 'pendiente',
+0|yega     |   activo: true,
+0|yega     |   _id: new ObjectId("68c16343db41c87008ce9cd8"),
+0|yega     |   categorias: [],
+0|yega     |   rolNombre: 'Cliente',
+0|yega     |   id: '68c16343db41c87008ce9cd8'
+0|yega     | }
+0|yega     | Llamando a OTPService.generarYEnviar con email: prueba.otp6@example.com
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Montando rutas de autenticación en /api/auth
+0|yega     | 🚀 Servidor corriendo en el puerto 5000
+0|yega     | ✅ MongoDB conectado exitosamente
+0|yega     | Server.js - req.body después de express.json(): {
+0|yega     |   nombre: 'Usuario Prueba OTP 7',
+0|yega     |   telefono: '+525512345684',
+0|yega     |   email: 'prueba.otp7@example.com',
+0|yega     |   password: 'password123'
+0|yega     | }
+0|yega     | Inicio de registerUser. req.body: {
+0|yega     |   nombre: 'Usuario Prueba OTP 7',
+0|yega     |   telefono: '+525512345684',
+0|yega     |   email: 'prueba.otp7@example.com',
+0|yega     |   password: 'password123'
+0|yega     | }
+0|yega     | Usuario a guardar: {
+0|yega     |   nombre: 'Usuario Prueba OTP 7',
+0|yega     |   telefono: '+525512345684',
+0|yega     |   email: 'prueba.otp7@example.com',
+0|yega     |   password: 'password123',
+0|yega     |   rol: 'cliente',
+0|yega     |   estado_validacion: 'pendiente',
+0|yega     |   activo: true,
+0|yega     |   _id: new ObjectId("68c163dcf863ec4fb3802dbc"),
+0|yega     |   categorias: [],
+0|yega     |   rolNombre: 'Cliente',
+0|yega     |   id: '68c163dcf863ec4fb3802dbc'
+0|yega     | }
+0|yega     | Llamando a OTPService.generarYEnviar con email: prueba.otp7@example.com
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Executing server.js from: /var/www/yega/backend/server.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega     | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+
+/home/ec2-user/.pm2/logs/yega-error.log last 500 lines:
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+0|yega     | Error: Cannot find module 'axios'
+0|yega     | Require stack:
+0|yega     | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega     | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega     | - /var/www/yega/backend/server.js
+0|yega     |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega     |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega     |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega     |     at require (node:internal/modules/helpers:182:18)
+0|yega     |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega     |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega     |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega     |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega     |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega     |   code: 'MODULE_NOT_FOUND',
+0|yega     |   requireStack: [
+0|yega     |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega     |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega     |     '/var/www/yega/backend/server.js'
+0|yega     |   ]
+0|yega     | }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }
+0|yega  | Loading models/Usuario.js from: /var/www/yega/backend/models/Usuario.js
+0|yega  | Error: Cannot find module 'axios'
+0|yega  | Require stack:
+0|yega  | - /var/www/yega/backend/controllers/geocodingController.js
+0|yega  | - /var/www/yega/backend/routes/geocodingRoutes.js
+0|yega  | - /var/www/yega/backend/server.js
+0|yega  |     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:81:25)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/controllers/geocodingController.js:1:15)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|yega  |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|yega  |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|yega  |     at require (node:internal/modules/helpers:182:18)
+0|yega  |     at Object.<anonymous> (/var/www/yega/backend/routes/geocodingRoutes.js:2:45)
+0|yega  |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|yega  |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|yega  |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|yega  |     at Module._load (node:internal/modules/cjs/loader:1091:12) {
+0|yega  |   code: 'MODULE_NOT_FOUND',
+0|yega  |   requireStack: [
+0|yega  |     '/var/www/yega/backend/controllers/geocodingController.js',
+0|yega  |     '/var/www/yega/backend/routes/geocodingRoutes.js',
+0|yega  |     '/var/www/yega/backend/server.js'
+0|yega  |   ]
+0|yega  | }

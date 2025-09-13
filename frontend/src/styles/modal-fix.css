@@ -1,0 +1,56 @@
+/* Estilos específicos para arreglar los modales */
+
+.modal-dialog-custom {
+  max-width: 500px !important;
+  margin: 1.75rem auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.modal-backdrop-custom {
+  opacity: 0.7 !important;
+}
+
+.glass-modal-content {
+  background: rgba(22, 22, 26, 0.85) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5) !important;
+  color: white !important;
+}
+
+/* Override modal position */
+.modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 1050 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.modal-dialog {
+  position: relative !important;
+  margin: 0 auto !important;
+  max-width: 500px !important;
+  width: auto !important;
+}
+
+/* Modal header y footer redondeados */
+.modal-content .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+}
+
+.modal-content .modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+}

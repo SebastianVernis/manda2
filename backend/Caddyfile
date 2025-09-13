@@ -1,0 +1,31 @@
+yega.com.mx, www.yega.com.mx {
+    @www host www.yega.com.mx
+    redir @www https://yega.com.mx{uri} permanent
+
+    encode zstd gzip
+    root * /var/www/yega/frontend/dist
+    file_server
+    
+    # Add CORP header for static assets
+    header /assets/* Cross-Origin-Resource-Policy cross-origin
+    header /images/* Cross-Origin-Resource-Policy cross-origin
+    header /favicon.ico Cross-Origin-Resource-Policy cross-origin
+    header /apple-touch-icon.png Cross-Origin-Resource-Policy cross-origin
+    header /favicon-16x16.png Cross-Origin-Resource-Policy cross-origin
+    header /favicon-32x32.png Cross-Origin-Resource-Policy cross-origin
+
+    # Proxy API requests to the backend
+    handle /api/* {
+        reverse_proxy localhost:5000 {
+            header_down Access-Control-Allow-Origin "https://yega.com.mx"
+            header_down Access-Control-Allow-Credentials "true"
+            header_down Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+            header_down Access-Control-Allow-Headers "Content-Type, Authorization"
+        }
+    }
+
+    # Fallback for SPA routing
+    handle {
+        try_files {path} /index.html
+    }
+}

@@ -1,0 +1,597 @@
+/* Estilos globales para YEGA */
+@import './bottom-navbar.css';
+@import './glassmorphism.css';
+@import './modal-fix.css';
+@import './modern-modal-fix.css';
+
+:root {
+  /* Paleta de colores YEGA */
+  --color-primary: #0B0B0B;      /* Negro profundo */
+  --color-secondary: #FFFFFF;    /* Blanco */
+  --color-accent-silver: #C0C0C0; /* Plata (nuevo acento principal) */
+  --color-accent-gold: #C0C0C0;   /* Oro eliminado: alias a plata para compatibilidad */
+  --bg-gradient: linear-gradient(180deg, #2b2b2b 0%, #0f0f0f 45%, #0b0b0b 100%);
+  
+  /* Variaciones de grises */
+  --color-gray-100: #f8f9fa;
+  --color-gray-200: #e9ecef;
+  --color-gray-300: #dee2e6;
+  --color-gray-400: #ced4da;
+  --color-gray-500: #adb5bd;
+  --color-gray-600: #6c757d;
+  --color-gray-700: #495057;
+  --color-gray-800: #343a40;
+  --color-gray-900: #212529;
+  
+  /* Estados */
+  --color-success: #28a745;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+  --color-info: #17a2b8;
+  
+  /* Tipografía */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  
+  /* Espaciado */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Bordes */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.375rem;
+  --border-radius-lg: 0.5rem;
+  --border-radius-xl: 0.75rem;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset y estilos base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  background: var(--bg-gradient);
+  color: var(--color-secondary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para enlaces */
+a {
+  color: var(--color-accent-silver);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent-silver);
+  text-decoration: underline;
+}
+
+/* Botones personalizados */
+.btn-yega-primary {
+  background-color: var(--color-accent-silver);
+  border-color: var(--color-accent-silver);
+  color: #0b0b0b;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-yega-primary:hover {
+  background-color: #d7d7d7;
+  border-color: #d7d7d7;
+  color: #0b0b0b;
+  transform: translateY(-1px);
+}
+
+.btn-yega-secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-accent-silver);
+  color: var(--color-accent-silver);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-yega-secondary:hover {
+  background-color: var(--color-accent-silver);
+  color: var(--color-primary);
+}
+
+.btn-yega-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  transition: all 0.2s ease;
+}
+
+.btn-yega-outline:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+/* Cards personalizadas */
+.card-yega {
+  background-color: rgba(22, 22, 22, 0.9);
+  border: 1px solid var(--color-gray-700);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.22);
+  transition: all 0.2s ease;
+}
+
+.card-yega:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.28);
+  border-color: var(--color-accent-silver);
+}
+
+.card-yega .card-header {
+  background-color: rgba(28, 28, 28, 0.8);
+  border-bottom: 1px solid var(--color-gray-700);
+  color: var(--color-accent-silver);
+  font-weight: 600;
+}
+
+.card-yega .card-body {
+  color: var(--color-secondary);
+}
+
+/* Formularios */
+.form-control-yega {
+  background-color: var(--color-gray-800) !important;
+  border: 1px solid var(--color-gray-600) !important;
+  color: var(--color-secondary) !important;
+  border-radius: var(--border-radius-md);
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.form-control-yega:focus {
+  background-color: var(--color-gray-700) !important;
+  border-color: var(--color-accent-silver) !important;
+  box-shadow: 0 0 0 0.2rem rgba(192, 192, 192, 0.25) !important;
+  color: var(--color-secondary) !important;
+  outline: none !important;
+}
+
+.form-control-yega::placeholder {
+  color: var(--color-gray-400) !important;
+}
+
+.form-label-yega {
+  color: var(--color-accent-silver) !important;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+/* Navegación */
+.navbar-yega {
+  background: var(--bg-gradient) !important;
+  border-bottom: 2px solid var(--color-accent-silver);
+  box-shadow: var(--shadow-md);
+}
+
+.navbar-yega .navbar-brand {
+  color: var(--color-accent-silver) !important;
+  font-weight: 700;
+  font-size: var(--font-size-xl);
+}
+
+.navbar-yega .nav-link {
+  color: var(--color-secondary) !important;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-yega .nav-link:hover {
+  color: var(--color-accent-silver) !important;
+}
+
+.navbar-yega .nav-link.active {
+  color: var(--color-accent-silver) !important;
+}
+
+/* Footer */
+.footer-yega {
+  background: var(--bg-gradient);
+  border-top: 2px solid var(--color-accent-silver);
+  color: var(--color-gray-300);
+  padding: var(--spacing-xl) 0;
+}
+
+/* Ocultar visualmente el footer en la app manteniendo el elemento */
+.footer-yega {
+  display: none !important;
+}
+
+
+/* Utilidades */
+.text-yega-gold { color: var(--color-accent-silver) !important; }
+
+.text-yega-silver {
+  color: var(--color-accent-silver) !important;
+}
+
+/* Oculta barras de desplazamiento visibles manteniendo scroll táctil */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* Ocultar barras de scroll globalmente pero mantener desplazamiento táctil */
+html, body, #root {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.bg-yega-dark {
+  background-color: var(--color-gray-900) !important;
+}
+
+.bg-yega-darker {
+  background-color: var(--color-gray-800) !important;
+}
+
+/* Animaciones */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+  
+  .card-yega {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+/* Estados de carga */
+.loading-spinner {
+  border: 3px solid var(--color-gray-600);
+  border-top: 3px solid var(--color-accent-gold);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilos para mapas */
+.map-container {
+  height: 400px;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--color-gray-700);
+}
+
+.map-container .leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Badges personalizados */
+.badge-yega-gold {
+  background-color: var(--color-accent-gold);
+  color: var(--color-primary);
+}
+
+.badge-yega-silver {
+  background-color: var(--color-accent-silver);
+  color: var(--color-primary);
+}
+
+/* Alertas personalizadas */
+.alert-yega {
+  border-radius: var(--border-radius-md);
+  border: none;
+  font-weight: 500;
+}
+
+.alert-yega-success {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: var(--color-success);
+  border-left: 4px solid var(--color-success);
+}
+
+.alert-yega-warning {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: var(--color-warning);
+  border-left: 4px solid var(--color-warning);
+}
+
+.alert-yega-danger {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--color-danger);
+  border-left: 4px solid var(--color-danger);
+}
+
+.alert-yega-info {
+  background-color: rgba(23, 162, 184, 0.1);
+  color: var(--color-info);
+  border-left: 4px solid var(--color-info);
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-600);
+  border-radius: var(--border-radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-gold);
+}
+
+/* Estilos para barra de progreso de estado */
+.progress-estado {
+  height: 8px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+/* Estilos para estados de pedidos */
+.estado-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 16px;
+  padding: 4px 8px;
+  font-weight: 500;
+}
+
+/* Colores para botones de estado */
+.btn-estado-camino_tienda {
+  background-color: #17a2b8 !important;
+  border-color: #17a2b8 !important;
+}
+
+.btn-estado-recolectado {
+  background-color: #6f42c1 !important;
+  border-color: #6f42c1 !important;
+}
+
+.btn-estado-en_camino {
+  background-color: #ffc107 !important;
+  border-color: #ffc107 !important;
+  color: #212529 !important;
+}
+
+.btn-estado-entregado {
+  background-color: #28a745 !important;
+  border-color: #28a745 !important;
+}
+
+/* Animación para icono de repartidor en movimiento */
+.icon-repartidor-movimiento {
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Correcciones para evitar texto encimado */
+.form-group, .form-floating, .mb-3, .space-y-4 > *, .space-y-6 > * {
+  margin-bottom: 1rem !important;
+  position: relative;
+}
+
+/* Asegurar que los labels estén posicionados correctamente */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Evitar superposición de elementos absolutos */
+.position-absolute {
+  z-index: 10;
+}
+
+/* Corrección específica para inputs con iconos */
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon input {
+  padding-left: 2.5rem;
+}
+
+.input-with-icon .icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Bootstrap form fixes */
+.form-control {
+  margin-bottom: 0 !important;
+}
+
+.form-group {
+  margin-bottom: 1rem !important;
+}
+
+/* HeroUI input fixes */
+.space-y-4 > * + * {
+  margin-top: 1rem !important;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem !important;
+}
+
+/* Asegurar separación adecuada en Cards */
+.card-body > *:not(:last-child) {
+  margin-bottom: 1rem !important;
+}
+
+/* Input group fixes */
+.input-group .form-control {
+  z-index: 2;
+}
+
+.input-group .input-group-text {
+  z-index: 3;
+}
+
+/* Additional form fixes to prevent overlapping */
+.form-group .form-label,
+.form-label {
+  line-height: 1.2;
+  margin-bottom: 0.5rem !important;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.form-control,
+.form-select,
+input,
+textarea,
+select {
+  line-height: 1.5;
+  min-height: 38px;
+  padding: 0.375rem 0.75rem;
+}
+
+/* Prevent text overlapping in buttons */
+.btn {
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+/* Card content spacing */
+.card-content > *,
+.card-body > * {
+  margin-bottom: 1rem;
+}
+
+.card-content > *:last-child,
+.card-body > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure proper spacing in flex containers */
+.flex.gap-2 > * {
+  margin-right: 0.5rem;
+}
+
+.flex.gap-2 > *:last-child {
+  margin-right: 0;
+}
+
+/* Modern UI Input spacing fixes */
+.space-y-4 > div {
+  margin-bottom: 1rem !important;
+}
+
+.space-y-6 > div {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Modales centrados */
+.modal-dialog.modal-dialog-centered {
+  display: flex !important;
+  align-items: center !important;
+  min-height: calc(100% - 3rem) !important;
+  margin: 0 auto !important;
+}
+
+.modal-content {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Fijar modales al centro de la pantalla */
+.modal {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.modal-dialog {
+  margin: 1.75rem auto !important;
+  max-width: 90% !important;
+  width: auto !important;
+}
+
