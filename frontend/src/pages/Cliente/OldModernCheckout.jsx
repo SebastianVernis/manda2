@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Card, CardHeader, CardBody, Input, Button, Select, SelectItem, Textarea, Spinner } from "@heroui/react"
+import { Card, Form, Button, Spinner } from 'react-bootstrap'
 import { motion, AnimatePresence } from "framer-motion"
 import { FaShoppingCart, FaMapMarkerAlt, FaCreditCard, FaCheck, FaSearch, FaTimes } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
@@ -182,14 +182,14 @@ const ModernCheckout = () => {
             animate={{ opacity: 1, x: 0 }}
             className="lg:col-span-2"
           >
-            <Card className="yega-glass">
-              <CardHeader className="border-b border-gray-700">
-                <div className="flex items-center gap-3">
+            <Card bg="dark" border="secondary">
+              <Card.Header className="border-bottom border-secondary">
+                <div className="d-flex align-items-center gap-3">
                   <FaMapMarkerAlt className="text-gray-400" />
-                  <h2 className="text-2xl font-semibold text-white">Dirección de Envío</h2>
+                  <h2 className="h4 mb-0 text-white">Dirección de Envío</h2>
                 </div>
-              </CardHeader>
-              <CardBody className="p-6">
+              </Card.Header>
+              <Card.Body className="p-4">
                 {error && (
                   <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-4 mb-6">
                     <p className="text-red-300">{error}</p>
@@ -199,32 +199,30 @@ const ModernCheckout = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                     <div className="md:col-span-3 relative address-search-container">
-                      <Input
-                        label="Buscar dirección"
-                        placeholder="Ej: Av. Insurgentes Sur 123, Roma Norte"
-                        value={searchQuery}
-                        onValueChange={setSearchQuery}
-                        classNames={{
-                          input: "text-white",
-                          label: "text-gray-300",
-                          inputWrapper: "border-gray-600 data-[hover=true]:border-gray-400 group-data-[focus=true]:border-white"
-                        }}
-                        startContent={<FaSearch className="text-gray-400" />}
-                        endContent={
-                          searchQuery && (
+                      <Form.Group>
+                        <Form.Label className="text-light">Buscar dirección</Form.Label>
+                        <div className="input-group">
+                          <div className="input-group-text bg-dark border-secondary text-light">
+                            <FaSearch />
+                          </div>
+                          <Form.Control
+                            type="text"
+                            placeholder="Ej: Av. Insurgentes Sur 123, Roma Norte"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="bg-dark text-light border-secondary"
+                            required
+                          />
+                          {searchQuery && (
                             <Button
-                              isIconOnly
-                              variant="light"
-                              size="sm"
+                              variant="outline-secondary"
                               onClick={clearSearch}
-                              className="text-gray-400 hover:text-white"
                             >
                               <FaTimes />
                             </Button>
-                          )
-                        }
-                        required
-                      />
+                          )}
+                        </div>
+                      </Form.Group>
                       
                       {/* Dropdown de resultados */}
                       <AnimatePresence>
@@ -284,44 +282,41 @@ const ModernCheckout = () => {
 
                   {/* Campos adicionales */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Input
-                      label="Número interior / Depto"
-                      placeholder="Ej: Depto 4B, Piso 3"
-                      value={form.numero_interior}
-                      onValueChange={(value) => onChange('numero_interior', value)}
-                      classNames={{
-                        input: "text-white",
-                        label: "text-gray-300",
-                        inputWrapper: "border-gray-600 data-[hover=true]:border-gray-400 group-data-[focus=true]:border-white"
-                      }}
-                    />
+                    <Form.Group>
+                      <Form.Label className="text-light">Número interior / Depto</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Ej: Depto 4B, Piso 3"
+                        value={form.numero_interior}
+                        onChange={(e) => onChange('numero_interior', e.target.value)}
+                        className="bg-dark text-light border-secondary"
+                      />
+                    </Form.Group>
                   </div>
 
                   <div className="grid grid-cols-1 gap-4">
-                    <Textarea
-                      label="Referencias"
-                      placeholder="Ej: Casa azul, entre tienda y farmacia, portón negro"
-                      value={form.referencias}
-                      onValueChange={(value) => onChange('referencias', value)}
-                      classNames={{
-                        input: "text-white",
-                        label: "text-gray-300",
-                        inputWrapper: "border-gray-600 data-[hover=true]:border-gray-400 group-data-[focus=true]:border-white"
-                      }}
-                      minRows={2}
-                    />
+                    <Form.Group>
+                      <Form.Label className="text-light">Referencias</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        placeholder="Ej: Casa azul, entre tienda y farmacia, portón negro"
+                        value={form.referencias}
+                        onChange={(e) => onChange('referencias', e.target.value)}
+                        className="bg-dark text-light border-secondary"
+                        rows={2}
+                      />
+                    </Form.Group>
                     
-                    <Input
-                      label="Notas para el pedido"
-                      placeholder="Instrucciones especiales para la preparación"
-                      value={form.notas}
-                      onValueChange={(value) => onChange('notas', value)}
-                      classNames={{
-                        input: "text-white",
-                        label: "text-gray-300",
-                        inputWrapper: "border-gray-600 data-[hover=true]:border-gray-400 group-data-[focus=true]:border-white"
-                      }}
-                    />
+                    <Form.Group>
+                      <Form.Label className="text-light">Notas para el pedido</Form.Label>
+                      <Form.Control
+                        type="text" 
+                        placeholder="Instrucciones especiales para la preparación"
+                        value={form.notas}
+                        onChange={(e) => onChange('notas', e.target.value)}
+                        className="bg-dark text-light border-secondary"
+                      />
+                    </Form.Group>
                   </div>
 
                   <div className="flex justify-end pt-4">

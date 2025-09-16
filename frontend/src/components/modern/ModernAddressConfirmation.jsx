@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Card, CardBody, Button, Input, Chip, Spinner } from "@heroui/react"
+import { Card, Form, Button, Spinner } from 'react-bootstrap'
 import { motion, AnimatePresence } from "framer-motion"
 import { FaLocationArrow, FaMapMarkerAlt, FaCheck, FaSearch, FaTimes } from 'react-icons/fa'
 import { reverseGeocode } from '../../lib/geocoding'

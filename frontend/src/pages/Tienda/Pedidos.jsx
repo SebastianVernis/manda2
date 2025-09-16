@@ -2,10 +2,7 @@ import React from 'react'
 import { useQuery, useMutation } from '@tanstack/react-query'
 import api from '../../services/apiClient'
 import { getEstadoTexto, getEstadoColor, getEstadoIcono } from '../../utils/orderStates'
-import { Card, CardContent } from '@/components/ui/card'
-import { Button as FButton } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { Alert as FAlert, AlertTitle, AlertDescription } from '@/components/ui/alert'
+import { Card, Button, Badge, Alert } from 'react-bootstrap'
 
 const TiendaPedidos = () => {
   const { data, isLoading, isError, refetch } = useQuery({
@@ -38,19 +35,19 @@ const TiendaPedidos = () => {
   return (
     <div className="p-4">
       <div className="text-center mb-3">
-        <h2 className="text-yega-gold m-0 mb-2">Pedidos</h2>
-        <FButton className="btn-yega-primary" onClick={() => refetch()}>Refrescar</FButton>
+        <h2 className="text-warning mb-2">Pedidos</h2>
+        <Button variant="primary" onClick={() => refetch()}>Refrescar</Button>
       </div>
-      {isLoading && <div className="text-center py-5"><div className="mx-auto h-6 w-6 animate-spin rounded-full border-2 border-white/30 border-t-white" /></div>}
-      {isError && <FAlert variant="destructive"><AlertTitle>Error</AlertTitle><AlertDescription>No se pudieron cargar los pedidos.</AlertDescription></FAlert>}
+      {isLoading && <div className="text-center py-5"><div className="spinner-border text-primary" role="status" /></div>}
+      {isError && <Alert variant="danger">Error: No se pudieron cargar los pedidos.</Alert>}
       {!isLoading && !isError && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 no-scrollbar place-items-center">
           {pedidos.map(o => (
-            <Card key={o._id}>
-              <CardContent className="p-4 space-y-1">
+            <Card key={o._id} bg="dark" border="secondary" className="shadow-lg">
+              <Card.Body className="p-4">
                 <div className="flex items-start justify-between">
                   <div className="font-semibold">{o.numero_pedido}</div>
-                  <Badge className={`bg-${getEstadoColor(o.estado)}`}>
+                  <Badge bg={getEstadoColor(o.estado)}>
                     {getEstadoIcono(o.estado)} {getEstadoTexto(o.estado)}
                   </Badge>
                 </div>
@@ -59,12 +56,12 @@ const TiendaPedidos = () => {
                 <div className="font-medium">${o.total?.toFixed?.(2) ?? o.total}</div>
                 <div className="pt-2 text-right">
                   {nextEstado(o.estado) && (
-                    <FButton size="sm" className="btn-yega-primary" disabled={updateMutation.isPending} onClick={() => updateMutation.mutate({ id: o._id, estado: nextEstado(o.estado) })}>
+                    <Button size="sm" variant="primary" disabled={updateMutation.isPending} onClick={() => updateMutation.mutate({ id: o._id, estado: nextEstado(o.estado) })}>
                       Marcar {getEstadoTexto(nextEstado(o.estado))}
-                    </FButton>
+                    </Button>
                   )}
                 </div>
-              </CardContent>
+              </Card.Body>
             </Card>
           ))}
           {pedidos.length === 0 && (

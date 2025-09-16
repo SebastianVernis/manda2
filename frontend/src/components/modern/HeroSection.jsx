@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, CardBody } from "@heroui/react"
+import { Button, Card } from 'react-bootstrap'
 import { motion } from "framer-motion"
 import { FaShoppingCart, FaTruck, FaStore } from 'react-icons/fa'
 import { Link } from 'react-router-dom' // Importar Link

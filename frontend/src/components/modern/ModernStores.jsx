@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, CardBody, Button, Chip, Input, Modal, ModalContent, ModalHeader, ModalBody, Spinner } from "@heroui/react"
+import { Card, Button, Form, Modal, Spinner, Badge } from 'react-bootstrap'
 import { motion, AnimatePresence } from "framer-motion"
 import { FaSearch, FaMapMarkerAlt, FaClock, FaStar, FaFilter, FaShoppingCart } from 'react-icons/fa'
 import { useQuery } from '@tanstack/react-query'
@@ -191,7 +191,7 @@ const ModernStores = () => {
                 <Card 
                   className="h-full yega-glass hover:bg-white/10 transition-all duration-300 group"
                 >
-                  <CardBody className="p-6">
+                  <Card.Body className="p-4">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <h3 className="text-xl font-semibold text-white group-hover:text-gray-300 transition-colors">
@@ -200,9 +200,9 @@ const ModernStores = () => {
                         <p className="text-gray-400 text-sm">{store.telefono || 'Sin teléfono'}</p>
                       </div>
                       {typeof store.distancia === 'number' && (
-                        <Chip variant="flat" size="sm" className="bg-white/20 text-white">
+                        <Badge bg="light" text="dark">
                           {store.distancia.toFixed(1)} km
-                        </Chip>
+                        </Badge>
                       )}
                     </div>
                     
@@ -235,7 +235,7 @@ const ModernStores = () => {
                     >
                       Ver Productos
                     </Button>
-                  </CardBody>
+                  </Card.Body>
                 </Card>
               </motion.div>
             ))}
@@ -260,46 +260,25 @@ const ModernStores = () => {
 
       {/* Store Products Modal */}
       <Modal 
-        isOpen={isStoreModalOpen} 
-        onClose={closeStoreModal}
-        size="3xl"
-        backdrop="blur"
-        placement="center"
-        className="bg-black/95 hero-modal"
-        classNames={{
-          backdrop: "bg-black/80 backdrop-blur-md",
-          base: "bg-gray-900/95 backdrop-blur-md border border-gray-800 rounded-2xl shadow-2xl max-w-4xl mx-auto",
-          body: "p-6 max-h-[80vh] overflow-y-auto",
-          closeButton: "text-white hover:bg-white/20",
-        }}
+        show={isStoreModalOpen}
+        onHide={closeStoreModal}
+        size="lg"
+        centered
+        className="dark-modal"
       >
-        <ModalContent>
-          <ModalHeader className="border-b border-gray-700 rounded-t-2xl">
-            <div className="flex items-center justify-between w-full">
-              <h2 className="text-2xl font-bold text-white">Productos</h2>
-              <Button 
-                variant="light" 
-                onClick={closeStoreModal}
-                className="text-gray-400 hover:text-white"
-              >
-                ✕
-              </Button>
-            </div>
-          </ModalHeader>
+        <Modal.Header closeButton>
+          <Modal.Title>Productos</Modal.Title>
+        </Modal.Header>
           
-          <ModalBody className="p-6 rounded-b-2xl">
+        <Modal.Body>
             {/* Search and Filters */}
             <div className="flex flex-col md:flex-row gap-4 mb-6">
-              <Input
+              <Form.Control
+                type="text"
                 placeholder="Buscar productos..."
                 value={searchQuery}
-                onValueChange={setSearchQuery}
-                startContent={<FaSearch className="text-gray-400" />}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="flex-1"
-                classNames={{
-                  input: "text-white",
-                  inputWrapper: "border-gray-600 data-[hover=true]:border-gray-400 group-data-[focus=true]:border-white",
-                }}
               />
               
               <div className="flex gap-2">
@@ -361,8 +340,7 @@ const ModernStores = () => {
                 </div>
               </div>
             )}
-          </ModalBody>
-        </ModalContent>
+        </Modal.Body>
       </Modal>
     </div>
   )

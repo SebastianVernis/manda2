@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import autoprefixer from 'autoprefixer'
 import { fileURLToPath, URL } from 'node:url'
 import react from '@vitejs/plugin-react'
 
@@ -6,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./figma-master/src', import.meta.url)),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     }
   },
   preview: {
@@ -34,7 +35,7 @@ export default defineConfig({
             '@radix-ui/react-separator',
             '@radix-ui/react-switch'
           ],
-          'vendor-heroui': ['@heroui/react', '@heroui/theme', 'framer-motion'],
+          'vendor-framer': ['framer-motion'],
           'vendor-leaflet': ['leaflet', 'react-leaflet'],
           'vendor-bootstrap': ['bootstrap', 'react-bootstrap'],
           'vendor-utils': ['axios', 'date-fns', 'lodash']
@@ -42,6 +43,13 @@ export default defineConfig({
       }
     },
     chunkSizeWarningLimit: 1000,
+  },
+  css: {
+    postcss: {
+      plugins: [
+        autoprefixer
+      ]
+    }
   },
   server: {
     host: true,

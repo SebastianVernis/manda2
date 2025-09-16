@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
+import { Button, Card } from 'react-bootstrap'
 import { useNavigate, useLocation } from 'react-router-dom'
 
 const PaymentSuccess = () => {
@@ -44,8 +43,8 @@ const PaymentSuccess = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-yega-dark via-yega-dark to-black flex items-center justify-center px-6">
       <div className="w-full max-w-md">
-        <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-          <CardContent className="p-8 text-center">
+        <Card bg="dark" border="secondary" className="shadow-lg">
+          <Card.Body className="p-6 text-center">
             {/* Success Icon */}
             <div className="w-20 h-20 mx-auto mb-6 bg-green-500/20 rounded-full flex items-center justify-center">
               <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
@@ -93,15 +92,16 @@ const PaymentSuccess = () => {
             {/* Action Buttons */}
             <div className="space-y-3">
               <Button 
-                className="w-full btn-yega-primary"
+                variant="primary"
+                className="w-100"
                 onClick={() => navigate(orderId ? `/cliente/seguimiento?id=${orderId}` : '/cliente/seguimiento')}
               >
                 Seguir mi pedido
               </Button>
               
               <Button 
-                variant="outline" 
-                className="w-full btn-yega-secondary"
+                variant="outline-light" 
+                className="w-100"
                 onClick={() => navigate('/cliente/dashboard')}
               >
                 Ir al inicio
@@ -112,7 +112,7 @@ const PaymentSuccess = () => {
             <p className="text-white/50 text-sm mt-4">
               Redirigiendo automáticamente en {countdown} segundos...
             </p>
-          </CardContent>
+          </Card.Body>
         </Card>
       </div>
     </div>

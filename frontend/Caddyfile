@@ -1,0 +1,6 @@
+:3000 {
+    root * /home/ec2-user/yega-app/frontend/dist
+    encode gzip
+    file_server
+    try_files {path} /index.html
+}

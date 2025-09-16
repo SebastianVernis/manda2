@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, CardBody, Button, Image, Chip, Badge } from "@heroui/react"
+import { Card, Button, Image, Badge } from 'react-bootstrap'
 import { motion } from "framer-motion"
 import { FaPlus, FaMinus, FaShoppingCart, FaStar } from 'react-icons/fa'
 
@@ -46,11 +46,11 @@ const ProductCard = ({ product, onAddToCart, className = '' }) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <Card className="h-full bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-sm border border-gray-700/50 hover:border-yellow-400/50 transition-all duration-300 group rounded-xl overflow-hidden">
-        <CardBody className="p-0">
+      <Card className="h-full bg-dark text-light border-secondary hover:border-warning">
+        <Card.Body className="p-0">
           {/* Image Section */}
           <div className="relative overflow-hidden rounded-t-lg">
-            <Image
+            <Card.Img
               src={product.imagen || '/api/placeholder/300/200'}
               alt={product.nombre}
               className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -98,10 +98,9 @@ const ProductCard = ({ product, onAddToCart, className = '' }) => {
 
             {/* Rating Badge */}
             {product.rating && (
-              <div className="absolute top-2 right-2 flex items-center gap-1 bg-black/70 backdrop-blur-sm rounded-full px-2 py-1">
-                <FaStar className="text-white text-xs" />
-                <span className="text-white text-xs font-medium">{product.rating}</span>
-              </div>
+              <Badge bg="dark" className="position-absolute top-2 end-2">
+                <FaStar className="text-warning" /> {product.rating}
+              </Badge>
             )}
           </div>
 
@@ -183,7 +182,7 @@ const ProductCard = ({ product, onAddToCart, className = '' }) => {
               </Button>
             </div>
           </div>
-        </CardBody>
+        </Card.Body>
       </Card>
     </motion.div>
   )

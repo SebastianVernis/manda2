@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
+import { Button, Card } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
 const OnboardingScreen = () => {
@@ -52,7 +51,7 @@ const OnboardingScreen = () => {
     <div className="min-h-screen bg-gradient-to-br from-yega-dark via-yega-dark to-black flex flex-col">
       {/* Header */}
       <div className="flex justify-end p-4">
-        <Button variant="ghost" className="text-white/70" onClick={handleSkip}>
+        <Button variant="outline-light" onClick={handleSkip}>
           Omitir
         </Button>
       </div>
@@ -73,8 +72,8 @@ const OnboardingScreen = () => {
           </div>
 
           {/* Text Content */}
-          <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-            <CardContent className="p-6">
+          <Card bg="dark" border="secondary" className="shadow-lg">
+            <Card.Body className="p-4">
               <h1 className="text-2xl font-bold text-yega-gold mb-2">
                 {currentStepData.title}
               </h1>
@@ -84,7 +83,7 @@ const OnboardingScreen = () => {
               <p className="text-white/70 leading-relaxed">
                 {currentStepData.description}
               </p>
-            </CardContent>
+            </Card.Body>
           </Card>
         </div>
       </div>
@@ -107,15 +106,16 @@ const OnboardingScreen = () => {
         <div className="flex gap-3">
           {currentStep > 0 && (
             <Button 
-              variant="outline" 
-              className="flex-1 btn-yega-secondary"
+              variant="outline-light"
+              className="w-100"
               onClick={() => setCurrentStep(currentStep - 1)}
             >
               Anterior
             </Button>
           )}
           <Button 
-            className="flex-1 btn-yega-primary"
+            variant="primary"
+            className="w-100"
             onClick={handleNext}
           >
             {currentStep === onboardingSteps.length - 1 ? 'Comenzar' : 'Siguiente'}

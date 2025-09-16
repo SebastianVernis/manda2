@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardBody, Button, Chip } from "@heroui/react"
+import { Card, Button, Badge } from 'react-bootstrap'
 import { motion } from "framer-motion"
 import { FaShoppingCart, FaList, FaMapMarkerAlt, FaHistory, FaClock, FaStar } from 'react-icons/fa'
 import { useAuth } from '../../context/AuthContext'
@@ -129,7 +129,7 @@ const ModernDashboard = () => {
                 className="h-full yega-glass hover:bg-white/10 transition-all duration-300 cursor-pointer group"
                 onClick={() => !card.comingSoon && navigate(card.route)}
               >
-                <CardBody className="p-6 text-center relative">
+                <Card.Body className="p-4 text-center position-relative">
                   {card.comingSoon && (
                     <Chip 
                       color="warning" 
@@ -163,7 +163,7 @@ const ModernDashboard = () => {
                       Ir ahora
                     </Button>
                   )}
-                </CardBody>
+                </Card.Body>
               </Card>
             </motion.div>
           ))}
@@ -190,7 +190,7 @@ const ModernDashboard = () => {
                 transition={{ delay: 0.7 + index * 0.1 }}
               >
                 <Card className="yega-glass hover:bg-white/5 transition-all duration-300">
-                  <CardBody className="p-4">
+                  <Card.Body className="p-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white">
@@ -206,7 +206,7 @@ const ModernDashboard = () => {
                         <p className="text-gray-500 text-xs mt-1">{activity.time}</p>
                       </div>
                     </div>
-                  </CardBody>
+                  </Card.Body>
                 </Card>
               </motion.div>
             ))}
@@ -221,27 +221,27 @@ const ModernDashboard = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto"
         >
           <Card className="yega-glass">
-            <CardBody className="p-6 text-center">
+            <Card.Body className="p-6 text-center">
               <div className="text-3xl font-bold text-white mb-2">12</div>
               <div className="text-gray-300">Pedidos Totales</div>
-            </CardBody>
+            </Card.Body>
           </Card>
           
           <Card className="yega-glass">
-            <CardBody className="p-6 text-center">
+            <Card.Body className="p-6 text-center">
               <div className="text-3xl font-bold text-green-400 mb-2">$2,450</div>
               <div className="text-gray-300">Total Gastado</div>
-            </CardBody>
+            </Card.Body>
           </Card>
           
           <Card className="yega-glass">
-            <CardBody className="p-6 text-center">
+            <Card.Body className="p-6 text-center">
               <div className="flex items-center justify-center gap-1 mb-2">
                 <FaStar className="text-white" />
                 <span className="text-3xl font-bold text-white">4.8</span>
               </div>
               <div className="text-gray-300">Calificación Promedio</div>
-            </CardBody>
+            </Card.Body>
           </Card>
         </motion.div>
       </div>

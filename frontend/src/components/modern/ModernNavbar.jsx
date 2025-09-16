@@ -1,17 +1,13 @@
 import React from 'react'
-import { 
-  Navbar, 
-  NavbarBrand, 
-  NavbarContent, 
-  NavbarItem, 
-  Button, 
-  Avatar, 
-  Dropdown, 
-  DropdownTrigger, 
-  DropdownMenu, 
-  DropdownItem,
+import {
+  Navbar,
+  Container,
+  Nav,
+  Button,
+  Image,
+  Dropdown,
   Badge
-} from "@heroui/react"
+} from 'react-bootstrap'
 import { motion } from "framer-motion"
 import { FaShoppingCart, FaUser, FaSignOutAlt, FaCog } from 'react-icons/fa'
 import { useAuth } from '../../context/AuthContext'

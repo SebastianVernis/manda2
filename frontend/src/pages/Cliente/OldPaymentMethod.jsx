@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import { Button, Card, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import MobileHeader from '../../components/ui/MobileHeader'
 import AddressConfirmation from '../../components/AddressConfirmation'
@@ -45,7 +41,7 @@ const PaymentMethod = () => {
     }
   ]
 
-  const handleCardInputChange = (field, value) => {
+  const handleCardFormChange = (field, value) => {
     if (field === 'number') {
       value = value.replace(/\s/g, '').replace(/(.{4})/g, '$1 ').trim()
       if (value.length > 19) return
@@ -164,15 +160,15 @@ const PaymentMethod = () => {
         {/* Address Confirmation */}
         {!addressConfirmed && (
           <Card className="bg-white/5 border-white/10">
-            <CardContent className="p-6">
+            <Card.Body className="p-6">
               <AddressConfirmation onConfirm={handleAddressConfirm} />
-            </CardContent>
+            </Card.Body>
           </Card>
         )}
 
         {addressConfirmed && (
           <Card className="bg-green-500/10 border-green-500/30">
-            <CardContent className="p-4">
+            <Card.Body className="p-4">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-green-400">✓</span>
                 <span className="font-medium text-green-300">Dirección confirmada</span>
@@ -191,7 +187,7 @@ const PaymentMethod = () => {
               >
                 Cambiar dirección
               </Button>
-            </CardContent>
+            </Card.Body>
           </Card>
         )}
 
@@ -201,99 +197,99 @@ const PaymentMethod = () => {
             <h2 className="text-lg font-semibold text-yega-gold mb-4">
               Selecciona tu método de pago
             </h2>
-          <RadioGroup value={selectedMethod} onValueChange={setSelectedMethod} className="space-y-3">
+          <Form.Group onChange={(e) => setSelectedMethod(e.target.value)} className="space-y-3">
             {paymentMethods.map((method) => (
               <Card key={method.id} className={`cursor-pointer transition-colors ${
                 selectedMethod === method.id 
                   ? 'bg-yega-gold/10 border-yega-gold/50' 
                   : 'bg-white/5 border-white/10'
               }`}>
-                <CardContent className="p-4">
+                <Card.Body className="p-4">
                   <div className="flex items-center space-x-3">
-                    <RadioGroupItem value={method.id} id={method.id} />
+                    <Form.Check type="radio" id={method.id} value={method.id} checked={selectedMethod === method.id} />
                     <div className="flex items-center gap-3 flex-1">
                       <span className="text-2xl">{method.icon}</span>
                       <div>
-                        <Label htmlFor={method.id} className="font-medium text-white cursor-pointer">
+                        <Form.Label htmlFor={method.id} className="font-medium text-white cursor-pointer">
                           {method.name}
-                        </Label>
+                        </Form.Label>
                         <p className="text-sm text-white/70">{method.description}</p>
                       </div>
                     </div>
                   </div>
-                </CardContent>
+                </Card.Body>
               </Card>
             ))}
-          </RadioGroup>
+          </Form.Group>
 
           {/* Card Details */}
           {selectedMethod === 'card' && (
           <Card className="bg-white/5 border-white/10">
-            <CardContent className="p-6 space-y-4">
+            <Card.Body className="p-6 space-y-4">
               <h3 className="text-lg font-semibold text-yega-silver mb-4">
                 Detalles de la tarjeta
               </h3>
               
               <div>
-                <Label htmlFor="cardNumber" className="form-label-yega">
+                <Form.Label htmlFor="cardNumber" className="form-label-yega">
                   Número de tarjeta
-                </Label>
-                <Input
+                </Form.Label>
+                <Form.Control
                   id="cardNumber"
                   placeholder="1234 5678 9012 3456"
                   value={cardData.number}
-                  onChange={(e) => handleCardInputChange('number', e.target.value)}
+                  onChange={(e) => handleCardFormChange('number', e.target.value)}
                   className="form-control-yega"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="expiry" className="form-label-yega">
+                  <Form.Label htmlFor="expiry" className="form-label-yega">
                     Vencimiento
-                  </Label>
-                  <Input
+                  </Form.Label>
+                  <Form.Control
                     id="expiry"
                     placeholder="MM/AA"
                     value={cardData.expiry}
-                    onChange={(e) => handleCardInputChange('expiry', e.target.value)}
+                    onChange={(e) => handleCardFormChange('expiry', e.target.value)}
                     className="form-control-yega"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="cvv" className="form-label-yega">
+                  <Form.Label htmlFor="cvv" className="form-label-yega">
                     CVV
-                  </Label>
-                  <Input
+                  </Form.Label>
+                  <Form.Control
                     id="cvv"
                     placeholder="123"
                     value={cardData.cvv}
-                    onChange={(e) => handleCardInputChange('cvv', e.target.value)}
+                    onChange={(e) => handleCardFormChange('cvv', e.target.value)}
                     className="form-control-yega"
                   />
                 </div>
               </div>
 
               <div>
-                <Label htmlFor="cardName" className="form-label-yega">
+                <Form.Label htmlFor="cardName" className="form-label-yega">
                   Nombre del titular
-                </Label>
-                <Input
+                </Form.Label>
+                <Form.Control
                   id="cardName"
                   placeholder="Juan Pérez López"
                   value={cardData.name}
-                  onChange={(e) => handleCardInputChange('name', e.target.value)}
+                  onChange={(e) => handleCardFormChange('name', e.target.value)}
                   className="form-control-yega"
                 />
               </div>
-            </CardContent>
+            </Card.Body>
           </Card>
           )}
 
           {/* Cash Payment Info */}
           {selectedMethod === 'cash' && (
           <Card className="bg-white/5 border-white/10">
-            <CardContent className="p-6">
+            <Card.Body className="p-6">
               <div className="text-center">
                 <span className="text-4xl mb-4 block">💵</span>
                 <h3 className="text-lg font-semibold text-yega-silver mb-2">
@@ -303,14 +299,14 @@ const PaymentMethod = () => {
                   Prepara el dinero exacto. El repartidor podría no tener cambio disponible.
                 </p>
               </div>
-            </CardContent>
+            </Card.Body>
           </Card>
           )}
 
           {/* Transfer Payment Info */}
           {selectedMethod === 'transfer' && (
           <Card className="bg-white/5 border-white/10">
-            <CardContent className="p-6">
+            <Card.Body className="p-6">
               <div className="text-center">
                 <span className="text-4xl mb-4 block">🏦</span>
                 <h3 className="text-lg font-semibold text-yega-silver mb-2">
@@ -325,7 +321,7 @@ const PaymentMethod = () => {
                   <p className="text-white/90">RFC: YEG240101ABC</p>
                 </div>
               </div>
-            </CardContent>
+            </Card.Body>
             </Card>
           )}
 

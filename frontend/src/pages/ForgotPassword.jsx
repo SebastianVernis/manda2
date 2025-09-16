@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Button } from "react-bootstrap"
+import { Card, Form, Alert } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import MobileHeader from '../components/ui/MobileHeader'
 import api from '../services/apiClient'
@@ -40,7 +37,7 @@ const ForgotPassword = () => {
     <div className="min-h-screen bg-gradient-to-br from-yega-dark via-yega-dark to-black">
       <MobileHeader>
         <div className="flex items-center justify-between w-full">
-          <Button variant="ghost" onClick={() => navigate('/login')} className="text-white/70">
+          <Button variant="outline-light" onClick={() => navigate('/login')} className="text-white/70">
             ← Volver
           </Button>
           <h1 className="text-lg font-semibold text-white">Recuperar Contraseña</h1>
@@ -63,39 +60,38 @@ const ForgotPassword = () => {
             </p>
           </div>
 
-          <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-            <CardContent className="p-6">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Label htmlFor="email" className="form-label-yega">
+          <Card bg="dark" border="secondary" className="shadow-lg">
+            <Card.Body className="p-4">
+              <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3">
+                  <Form.Label className="text-light">
                     Email
-                  </Label>
-                  <Input
-                    id="email"
+                  </Form.Label>
+                  <Form.Control
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="ejemplo@correo.com"
-                    className="form-control-yega"
+                    className="bg-dark text-light border-secondary" 
                     disabled={isLoading}
                   />
-                </div>
+                </Form.Group>
 
                 {error && (
-                  <Alert variant="destructive">
-                    <AlertDescription>{error}</AlertDescription>
+                  <Alert variant="danger" className="my-3">
+                    {error}
                   </Alert>
                 )}
 
                 {message && (
-                  <Alert className="border-green-500/50 bg-green-500/10">
-                    <AlertDescription className="text-green-400">{message}</AlertDescription>
+                  <Alert variant="success" className="my-3">
+                    {message}
                   </Alert>
                 )}
 
                 <Button 
                   type="submit" 
-                  className="w-full btn-yega-primary"
+                  className="w-100 bg-primary text-white"
                   disabled={isLoading}
                 >
                   {isLoading ? (
@@ -107,17 +103,17 @@ const ForgotPassword = () => {
                     'Enviar enlace de recuperación'
                   )}
                 </Button>
-              </form>
+              </Form>
 
               <div className="mt-6 pt-4 border-t border-white/10 text-center">
                 <p className="text-white/70 text-sm">
                   ¿Recordaste tu contraseña?{' '}
-                  <Button variant="link" className="text-yega-gold p-0" onClick={() => navigate('/login')}>
+                  <Button variant="link" className="text-warning p-0" onClick={() => navigate('/login')}>
                     Iniciar sesión
                   </Button>
                 </p>
               </div>
-            </CardContent>
+            </Card.Body>
           </Card>
         </div>
       </div>

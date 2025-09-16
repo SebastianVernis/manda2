@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, CardBody, Button, Input, Link, Divider } from "@heroui/react"
+import { Card, Button, Form, Stack } from 'react-bootstrap'
 import { motion } from "framer-motion"
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash, FaGoogle, FaFacebook } from 'react-icons/fa'
 import { useAuth } from '../../context/AuthContext'

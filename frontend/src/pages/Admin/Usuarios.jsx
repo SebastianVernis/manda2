@@ -40,7 +40,8 @@ const AdminUsuarios = () => {
   })
 
   return (
-    <Container className="py-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-4">
+      <Container className="py-4">
       <Row className="align-items-end g-2 mb-3">
         <Col md={4}>
           <Form.Label className="form-label-yega">Buscar</Form.Label>
@@ -147,6 +148,7 @@ const AdminUsuarios = () => {
         </Table>
       )}
     </Container>
+  </div>
   )
 }
 

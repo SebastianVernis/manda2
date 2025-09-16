@@ -22,7 +22,7 @@ import {
   Divider,
   Avatar,
   Progress
-} from '@heroui/react'
+} from '@nextui-org/react'
 import { MapPin, Store, Flag, Truck, Clock, Package, CheckCircle2, ShoppingBag, ChefHat } from 'lucide-react'
 
 const FitToMarkers = ({ points }) => {
