@@ -1,0 +1,34 @@
+{
+    email admin@yega.com.mx
+}
+
+# Usar dominio nip.io para desarrollo
+3-85-74-100.nip.io {
+    encode zstd gzip
+    root * /home/ec2-user/yega-app/frontend/dist
+    file_server
+    
+    # Add CORP header for static assets
+    header /assets/* Cross-Origin-Resource-Policy cross-origin
+    header /images/* Cross-Origin-Resource-Policy cross-origin
+    header /favicon.ico Cross-Origin-Resource-Policy cross-origin
+    header /apple-touch-icon.png Cross-Origin-Resource-Policy cross-origin
+    header /favicon-16x16.png Cross-Origin-Resource-Policy cross-origin
+    header /favicon-32x32.png Cross-Origin-Resource-Policy cross-origin
+
+    # Proxy API requests to the backend con headers CORS correctos
+    handle /api/* {
+        reverse_proxy localhost:5000 {
+            header_down Access-Control-Allow-Origin "https://3-85-74-100.nip.io"
+            header_down Access-Control-Allow-Credentials "true"
+            header_down Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+            header_down Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+            header_down Access-Control-Expose-Headers "Content-Length, X-Total-Count"
+        }
+    }
+
+    # Fallback for SPA routing
+    handle {
+        try_files {path} /index.html
+    }
+}
