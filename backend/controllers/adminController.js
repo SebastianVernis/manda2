@@ -1,6 +1,8 @@
 // backend/controllers/adminController.js
 const Usuario = require('../models/Usuario');
 
+console.log('Usuario model loaded:', !!Usuario);
+
 // @desc    Listar usuarios con filtros y paginación (solo admin)
 // @route   GET /api/admin/users
 // @access  Private (admin)
@@ -102,6 +104,106 @@ exports.rejectUser = async (req, res) => {
 
 // --- Documentos: aprobar/rechazar por admin ---
 const VALID_DOC_TYPES = ['id_doc','comprobante_domicilio','licencia','tarjeta_circulacion','poliza_seguro']
+
+// @desc    Obtener documentos pendientes (solo admin)
+// @route   GET /api/admin/documents/pending
+// @access  Private (admin)
+exports.getPendingDocuments = async (req, res) => {
+  try {
+    console.log('Iniciando búsqueda de documentos pendientes...');
+    console.log('Usuario autenticado:', req.user);
+    
+    // Verificar el modelo de Usuario
+    console.log('Modelo Usuario:', Usuario);
+    console.log('Nombre del modelo:', Usuario.modelName);
+    
+    const usuarios = await Usuario.aggregate([
+      {
+        $match: {
+          verificaciones: { $exists: true, $ne: {} }
+        }
+      },
+      {
+        $addFields: {
+          documentosPendientes: {
+            $filter: {
+              input: {
+                $objectToArray: "$verificaciones"
+              },
+              as: "doc",
+              cond: {
+                $eq: ["$$doc.v.status", "pendiente"]
+              }
+            }
+          }
+        }
+      },
+      {
+        $match: {
+          "documentosPendientes.0": { $exists: true } // Solo usuarios con documentos pendientes
+        }
+      },
+      {
+        $project: {
+          password: 0 // Excluir contraseña
+        }
+      }
+    ]);
+
+    console.log('Usuarios encontrados en la agregación:', usuarios.length);
+    console.log('Usuarios completos:', JSON.stringify(usuarios, null, 2));
+    
+    if (usuarios.length > 0) {
+      console.log('Primer usuario encontrado:', JSON.stringify(usuarios[0], null, 2));
+    } else {
+      // Verificar todos los usuarios para entender qué está pasando
+      try {
+        const allUsers = await Usuario.find({});
+        console.log('Total de usuarios en la base de datos:', allUsers.length);
+        allUsers.forEach(user => {
+          console.log('Usuario:', user.email, 'Verificaciones:', JSON.stringify(user.verificaciones, null, 2));
+        });
+      } catch (err) {
+        console.error('Error obteniendo todos los usuarios:', err);
+      }
+    }
+
+    // Formatear los datos para el frontend
+    const usuariosConDocumentosPendientes = usuarios.map(usuario => {
+      const documentosPendientes = (usuario.documentosPendientes || []).map(doc => ({
+        tipo: doc.k,
+        ...doc.v
+      }));
+
+      return {
+        _id: usuario._id,
+        nombre: usuario.nombre,
+        email: usuario.email,
+        telefono: usuario.telefono,
+        rol: usuario.rol,
+        createdAt: usuario.createdAt,
+        documentosPendientes
+      };
+    });
+
+    console.log('Usuarios formateados:', usuariosConDocumentosPendientes.length);
+    if (usuariosConDocumentosPendientes.length > 0) {
+      console.log('Primer usuario formateado:', JSON.stringify(usuariosConDocumentosPendientes[0], null, 2));
+    }
+
+    res.json({
+      success: true,
+      usuarios: usuariosConDocumentosPendientes,
+      total: usuariosConDocumentosPendientes.length
+    });
+  } catch (error) {
+    console.error('Error obteniendo documentos pendientes:', error);
+    res.status(500).json({ 
+      message: 'Error interno del servidor',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+};
 
 exports.approveDocument = async (req, res) => {
   try {
