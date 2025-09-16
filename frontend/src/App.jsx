@@ -61,6 +61,7 @@ import AdminUsuarios from './pages/Admin/Usuarios'
 import AdminTiendas from './pages/Admin/Tiendas'
 import AdminRepartidores from './pages/Admin/Repartidores'
 import AdminReportes from './pages/Admin/Reportes'
+
 import TiendaPerfil from './pages/Tienda/Perfil'
 import ClientePerfil from './pages/Cliente/Perfil'
 
@@ -189,6 +190,7 @@ function AppShell() {
             <Route path="/admin/tiendas" element={<ProtectedRoute allowedRoles={['administrador']}><AdminTiendas /></ProtectedRoute>} />
             <Route path="/admin/repartidores" element={<ProtectedRoute allowedRoles={['administrador']}><AdminRepartidores /></ProtectedRoute>} />
             <Route path="/admin/reportes" element={<ProtectedRoute allowedRoles={['administrador']}><AdminReportes /></ProtectedRoute>} />
+
             
             {/* Página de no autorizado */}
             <Route 
