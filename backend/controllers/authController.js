@@ -1,14 +1,12 @@
 // backend/controllers/authController.js
-const jwt = require('jsonwebtoken');
+const { secureJwtSign } = require('../middleware/securityMiddleware');
 const Usuario = require('../models/Usuario');
 const OTPService = require('../services/otpService');
 
 
-// Generar JWT
+// Generar JWT seguro
 const generateToken = (id, rol) => {
-  return jwt.sign({ id, rol }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN || '24h',
-  });
+  return secureJwtSign({ id, rol });
 };
 
 // @desc    Registrar un nuevo usuario

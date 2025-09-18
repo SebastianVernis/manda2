@@ -1,8 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
+const { helmetConfig, generalLimiter, inputSanitizer } = require('./middleware/securityMiddleware');
 const dotenv = require('dotenv');
 const path = require('path');
 
@@ -14,23 +13,16 @@ const app = express();
 // Confiar en el primer proxy
 app.set('trust proxy', 1);
 
-// Middleware de seguridad
-app.use(helmet({
-  hsts: process.env.ENABLE_HSTS === 'true' ? { maxAge: 15552000, includeSubDomains: true } : false,
-}));
+// Enhanced Security middleware
+app.use(helmetConfig);
+app.use(inputSanitizer);
 
 // CORS
 const frontendUrl = process.env.FRONTEND_URL || 'https://yega.com.mx';
 const allowedOrigins = frontendUrl === '*' ? '*' : frontendUrl.split(',').map(origin => origin.trim());
 
-// Rate limiting
-const apiLimiter = rateLimit({
-  windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS || 15 * 60 * 1000),
-  max: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS || 500), // Increased from 100 to 500
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-app.use('/api', apiLimiter);
+// Enhanced Rate limiting
+app.use('/api', generalLimiter);
 
 // Body parser
 app.use(express.json());

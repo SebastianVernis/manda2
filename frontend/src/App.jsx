@@ -224,9 +224,13 @@ function AppShell() {
 
 function App() {
   return (
-    <Router>
-      <AppShell />
-    </Router>
+    <>
+      <PWAUpdateNotification />
+      <OfflineIndicator />
+      <Router>
+        <AppShell />
+      </Router>
+    </>
   )
 }
 

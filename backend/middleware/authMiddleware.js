@@ -1,5 +1,5 @@
 // backend/middleware/authMiddleware.js
-const jwt = require('jsonwebtoken');
+const { secureJwtVerify } = require('./securityMiddleware');
 const Usuario = require('../models/Usuario');
 
 // Middleware para proteger rutas (verifica JWT)
@@ -13,7 +13,7 @@ exports.protect = async (req, res, next) => {
       console.log('[AUTH.PROTECT] Token extraído:', token);
 
       console.log('[AUTH.PROTECT] Decodificando token con JWT_SECRET...');
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const decoded = secureJwtVerify(token);
       console.log('[AUTH.PROTECT] Token decodificado exitosamente:', decoded);
 
       console.log(`[AUTH.PROTECT] Buscando usuario en BD con ID: ${decoded.id}`);
