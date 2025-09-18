@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { Card, Button, Form, Stack } from 'react-bootstrap'
+import { Card, Button, Form, Alert } from 'react-bootstrap'
 import { motion } from "framer-motion"
-import { FaEnvelope, FaLock, FaEye, FaEyeSlash, FaGoogle, FaFacebook } from 'react-icons/fa'
+import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useAuth } from '../../context/AuthContext'
-import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { useNavigate, Link } from 'react-router-dom'
 
 const ModernLogin = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +29,6 @@ const ModernLogin = () => {
     e.preventDefault()
     
     if (!formData.email || !formData.password) {
-      toast.error('Por favor completa todos los campos')
       return
     }
 
@@ -65,7 +63,7 @@ const ModernLogin = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center p-4">
+    <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900 d-flex align-items-center justify-content-center p-4">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(192,192,192,0.1),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(255,255,255,0.05),transparent_50%)]" />
@@ -98,61 +96,54 @@ const ModernLogin = () => {
           </div>
 
           {/* Login Form */}
-          <Card className="yega-glass">
-            <CardBody className="p-6">
-              <form onSubmit={handleSubmit} className="space-y-6">
+          <Card className="glass-card">
+            <Card.Body className="p-4">
+              <Form onSubmit={handleSubmit}>
                 {/* Email Input */}
-                <Input
-                  type="email"
-                  label="Correo electrónico"
-                  placeholder="tu@email.com"
-                  value={formData.email}
-                  onValueChange={(value) => handleInputChange('email', value)}
-                  startContent={<FaEnvelope className="text-gray-400 my-auto" />}
-                  variant="bordered"
-                  className="text-white"
-                  classNames={{
-                    input: "text-white",
-                    inputWrapper: "flex items-center border-gray-600 data-[hover=true]:border-gray-400 group-data-[focus=true]:border-white",
-                    label: "text-gray-300"
-                  }}
-                />
+                <Form.Group className="mb-3">
+                  <Form.Label className="text-gray-300">
+                    <FaEnvelope className="me-2" />Correo electrónico
+                  </Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="tu@email.com"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    className="form-control-yega"
+                    required
+                  />
+                </Form.Group>
 
                 {/* Password Input */}
-                <Input
-                  type={isVisible ? "text" : "password"}
-                  label="Contraseña"
-                  placeholder="••••••••"
-                  value={formData.password}
-                  onValueChange={(value) => handleInputChange('password', value)}
-                  startContent={<FaLock className="text-gray-400 my-auto" />}
-                  endContent={
-                    <button
-                      className="focus:outline-none my-auto"
-                      type="button"
+                <Form.Group className="mb-3">
+                  <Form.Label className="text-gray-300">
+                    <FaLock className="me-2" />Contraseña
+                  </Form.Label>
+                  <div className="position-relative">
+                    <Form.Control
+                      type={isVisible ? "text" : "password"}
+                      placeholder="••••••••"
+                      value={formData.password}
+                      onChange={(e) => handleInputChange('password', e.target.value)}
+                      className="form-control-yega"
+                      required
+                    />
+                    <Button
+                      variant="link"
+                      className="position-absolute end-0 top-50 translate-middle-y text-gray-400"
+                      style={{ border: 'none', background: 'none', zIndex: 5 }}
                       onClick={toggleVisibility}
                     >
-                      {isVisible ? (
-                        <FaEyeSlash className="text-gray-400 hover:text-gray-200" />
-                      ) : (
-                        <FaEye className="text-gray-400 hover:text-gray-200" />
-                      )}
-                    </button>
-                  }
-                  variant="bordered"
-                  className="text-white"
-                  classNames={{
-                    input: "text-white",
-                    inputWrapper: "flex items-center border-gray-600 data-[hover=true]:border-gray-400 group-data-[focus=true]:border-white",
-                    label: "text-gray-300"
-                  }}
-                />
+                      {isVisible ? <FaEyeSlash /> : <FaEye />}
+                    </Button>
+                  </div>
+                </Form.Group>
 
                 {/* Forgot Password */}
-                <div className="flex justify-end">
+                <div className="d-flex justify-content-end mb-3">
                   <Link 
-                    href="/forgot-password" 
-                    className="text-gray-300 hover:text-white text-sm"
+                    to="/forgot-password" 
+                    className="text-gray-300 text-decoration-none small"
                   >
                     ¿Olvidaste tu contraseña?
                   </Link>
@@ -161,52 +152,23 @@ const ModernLogin = () => {
                 {/* Submit Button */}
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-gray-200 to-white text-black font-semibold py-3 text-lg"
+                  className="w-100 btn-yega-primary mb-3"
                   size="lg"
-                  isLoading={isLoading}
                   disabled={isLoading}
                 >
                   {isLoading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
                 </Button>
-
-                {/* Divider */}
-                <div className="relative">
-                  <Divider className="bg-gray-600" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="bg-gray-900 px-4 text-gray-400 text-sm">o continúa con</span>
-                  </div>
-                </div>
-
-                {/* Social Login */}
-                <div className="grid grid-cols-2 gap-3">
-                  <Button
-                    variant="bordered"
-                    className="border-gray-600 text-gray-300 hover:border-gray-400 hover:text-white"
-                    startContent={<FaGoogle />}
-                    disabled
-                  >
-                    Google
-                  </Button>
-                  <Button
-                    variant="bordered"
-                    className="border-gray-600 text-gray-300 hover:border-gray-400 hover:text-white"
-                    startContent={<FaFacebook />}
-                    disabled
-                  >
-                    Facebook
-                  </Button>
-                </div>
-              </form>
-            </CardBody>
+              </Form>
+            </Card.Body>
           </Card>
 
           {/* Register Link */}
-          <div className="text-center mt-6">
+          <div className="text-center mt-4">
             <p className="text-gray-400">
               ¿No tienes una cuenta?{' '}
               <Link 
-                href="/register" 
-                className="text-gray-300 hover:text-white font-semibold"
+                to="/register" 
+                className="text-gray-300 text-decoration-none fw-bold"
               >
                 Regístrate gratis
               </Link>

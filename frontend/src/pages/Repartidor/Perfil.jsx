@@ -44,8 +44,9 @@ const RepartidorPerfil = () => {
   }
 
   return (
-    <Container className="py-4">
-      <h2 className="text-yega-gold text-center mb-4">Perfil de Repartidor</h2>
+    <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <Container className="py-4">
+        <h2 className="text-yega-gold text-center mb-4">Perfil de Repartidor</h2>
       <Row>
         <Col lg={6}>
           <Card className="card-yega mb-4">
@@ -159,7 +160,8 @@ const RepartidorPerfil = () => {
           </Card>
         </Col>
       </Row>
-    </Container>
+      </Container>
+    </div>
   )
 }
 

@@ -55,8 +55,9 @@ const VerifyOTP = () => {
   }
 
   return (
-    <Container className="py-5">
-      <Row className="justify-content-center">
+    <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <Container className="py-5">
+        <Row className="justify-content-center">
         <Col md={6} lg={5}>
           <Card className="card-yega">
             <Card.Header className="text-center">
@@ -131,7 +132,8 @@ const VerifyOTP = () => {
           </Card>
         </Col>
       </Row>
-    </Container>
+      </Container>
+    </div>
   );
 };
 

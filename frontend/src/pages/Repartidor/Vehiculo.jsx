@@ -25,8 +25,9 @@ const RepartidorVehiculo = () => {
   }
 
   return (
-    <Container className="py-4">
-      <h2 className="text-yega-gold">Datos del Vehículo</h2>
+    <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <Container className="py-4">
+        <h2 className="text-yega-gold">Datos del Vehículo</h2>
       <Card className="card-yega mt-3">
         <Card.Body>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -68,7 +69,8 @@ const RepartidorVehiculo = () => {
           </Form>
         </Card.Body>
       </Card>
-    </Container>
+      </Container>
+    </div>
   )
 }
 

@@ -26,7 +26,7 @@ const Home = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <HeroSection onGetStarted={handleGetStarted} />
     </div>
   )

@@ -75,8 +75,9 @@ const RepartidorDashboard = () => {
   const asignados = assignedQ.data?.pedidos || []
 
   return (
-    <Container className="py-4 text-center">
-      <h2 className="text-yega-gold mb-1">Pedidos</h2>
+    <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <Container className="py-4 text-center">
+        <h2 className="text-yega-gold mb-1">Pedidos</h2>
       <div className="small text-white-50 mb-3">
         {bg?.enabled ? 
           <Badge bg="success" className="me-2">Ubicación en segundo plano activa</Badge> : 
@@ -217,7 +218,8 @@ const RepartidorDashboard = () => {
           )}
         </Row>
       )}
-    </Container>
+      </Container>
+    </div>
   )
 }
 

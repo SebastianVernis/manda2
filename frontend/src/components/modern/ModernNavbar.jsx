@@ -49,140 +49,137 @@ const ModernNavbar = () => {
   return (
     <div className="hidden md:block">
       <Navbar 
+        expand="lg"
         className="bg-black/90 backdrop-blur-md border-b border-gray-800/50"
-        height="80px"
-        maxWidth="full"
+        style={{ height: '80px' }}
       >
-      {/* Brand */}
-      <NavbarBrand>
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="flex items-center gap-3 cursor-pointer"
-          onClick={() => navigate('/')}
-        >
-          <img 
-            src="/images/yega-light.svg" 
-            alt="YEGA" 
-            className="h-10" 
-          />
-        </motion.div>
-      </NavbarBrand>
+        <Container fluid className="d-flex justify-content-between align-items-center">
+          {/* Brand */}
+          <Navbar.Brand>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-3 cursor-pointer"
+              onClick={() => navigate('/')}
+            >
+              <img 
+                src="/images/yega-light.svg" 
+                alt="YEGA" 
+                className="h-10" 
+                style={{ height: '40px' }}
+              />
+            </motion.div>
+          </Navbar.Brand>
 
-      {/* Right Content */}
-      <NavbarContent justify="end">
-        {isAuthenticated && (
-          <>
-            {/* Cart Icon (only for clients) */}
-            {user?.rol === 'cliente' && (
-              <NavbarItem>
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                  <Badge 
-                    content={totalItems} 
-                    color="default" 
-                    isInvisible={totalItems === 0}
-                    className="text-black font-bold bg-white"
-                  >
+          {/* Right Content */}
+          <Nav className="ms-auto d-flex align-items-center">
+            {isAuthenticated && (
+              <>
+                {/* Cart Icon (only for clients) */}
+                {user?.rol === 'cliente' && (
+                  <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                     <Button
-                      isIconOnly
-                      variant="light"
-                      className="text-gray-300 hover:text-white"
+                      variant="link"
+                      className="text-gray-300 hover:text-white position-relative"
                       onClick={() => navigate('/cliente/payment-method')}
                     >
                       <FaShoppingCart className="text-xl" />
+                      {totalItems > 0 && (
+                        <Badge 
+                          bg="light" 
+                          text="dark"
+                          className="position-absolute top-0 start-100 translate-middle rounded-pill"
+                        >
+                          {totalItems}
+                        </Badge>
+                      )}
                     </Button>
-                  </Badge>
-                </motion.div>
-              </NavbarItem>
+                  </motion.div>
+                )}
+
+                {/* User Menu */}
+                <Dropdown align="end">
+                  <Dropdown.Toggle 
+                    variant="link" 
+                    id="user-dropdown"
+                    className="text-decoration-none p-0 border-0"
+                  >
+                    <motion.div whileHover={{ scale: 1.05 }}>
+                      <div className="d-flex align-items-center gap-2">
+                        <div 
+                          className="rounded-circle bg-gray-600 d-flex align-items-center justify-content-center"
+                          style={{ width: '32px', height: '32px' }}
+                        >
+                          <FaUser className="text-gray-400" />
+                        </div>
+                      </div>
+                    </motion.div>
+                  </Dropdown.Toggle>
+                  
+                  <Dropdown.Menu 
+                    className="bg-gray-900/95 backdrop-blur-md border-gray-700"
+                    style={{ minWidth: '200px' }}
+                  >
+                    <Dropdown.ItemText>
+                      <div className="flex flex-col">
+                        <span className="text-white font-semibold">{user?.nombre}</span>
+                        <span className={`text-sm ${getRoleColor(user?.rol)}`}>
+                          {getRoleName(user?.rol)}
+                        </span>
+                      </div>
+                    </Dropdown.ItemText>
+                    
+                    <Dropdown.Divider />
+                    
+                    <Dropdown.Item 
+                      className="text-gray-300 hover:text-white"
+                      onClick={() => {
+                        const dashboardRoutes = {
+                          cliente: '/cliente/dashboard',
+                          tienda: '/tienda/dashboard',
+                          repartidor: '/repartidor/dashboard',
+                          administrador: '/admin/dashboard'
+                        }
+                        navigate(dashboardRoutes[user?.rol] || '/dashboard')
+                      }}
+                    >
+                      <FaCog className="me-2" />
+                      Dashboard
+                    </Dropdown.Item>
+                    
+                    <Dropdown.Item 
+                      className="text-red-400 hover:text-red-300"
+                      onClick={handleLogout}
+                    >
+                      <FaSignOutAlt className="me-2" />
+                      Cerrar Sesión
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </>
             )}
 
-            {/* User Menu */}
-            <NavbarItem>
-              <Dropdown placement="bottom-end">
-                <DropdownTrigger>
-                  <motion.div whileHover={{ scale: 1.05 }}>
-                    <Avatar
-                      isBordered
-                      color="default"
-                      size="sm"
-                      src={user?.avatar}
-                      fallback={
-                        <FaUser className="text-gray-400" />
-                      }
-                      className="cursor-pointer border-gray-600"
-                    />
-                  </motion.div>
-                </DropdownTrigger>
-                
-                <DropdownMenu 
-                  aria-label="Profile Actions" 
-                  variant="flat"
-                  className="bg-gray-900/95 backdrop-blur-md border border-gray-700"
+            {/* Login/Register buttons for guests */}
+            {!isAuthenticated && (
+              <>
+                <Button 
+                  variant="link" 
+                  className="text-gray-300 hover:text-white text-decoration-none"
+                  onClick={() => navigate('/login')}
                 >
-                  <DropdownItem key="profile" className="h-14 gap-2" textValue="Profile">
-                    <div className="flex flex-col">
-                      <span className="text-white font-semibold">{user?.nombre}</span>
-                      <span className={`text-sm ${getRoleColor(user?.rol)}`}>
-                        {getRoleName(user?.rol)}
-                      </span>
-                    </div>
-                  </DropdownItem>
-                  
-                  <DropdownItem 
-                    key="dashboard" 
-                    className="text-gray-300 hover:text-white"
-                    startContent={<FaCog className="text-lg" />}
-                    onClick={() => {
-                      const dashboardRoutes = {
-                        cliente: '/cliente/dashboard',
-                        tienda: '/tienda/dashboard',
-                        repartidor: '/repartidor/dashboard',
-                        administrador: '/admin/dashboard'
-                      }
-                      navigate(dashboardRoutes[user?.rol] || '/dashboard')
-                    }}
-                  >
-                    Dashboard
-                  </DropdownItem>
-                  
-                  <DropdownItem 
-                    key="logout" 
-                    className="text-red-400 hover:text-red-300"
-                    color="danger"
-                    startContent={<FaSignOutAlt className="text-lg" />}
-                    onClick={handleLogout}
-                  >
-                    Cerrar Sesión
-                  </DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </NavbarItem>
-          </>
-        )}
-
-        {/* Login/Register buttons for guests */}
-        {!isAuthenticated && (
-          <>
-            <NavbarItem>
-              <Button 
-                variant="light" 
-                className="text-gray-300 hover:text-white"
-                onClick={() => navigate('/login')}
-              >
-                Iniciar Sesión
-              </Button>
-            </NavbarItem>
-            <NavbarItem>
-              <Button 
-                className="bg-gradient-to-r from-gray-200 to-white text-black font-semibold"
-                onClick={() => navigate('/register')}
-              >
-                Registrarse
-              </Button>
-            </NavbarItem>
-          </>
-        )}
-      </NavbarContent>
-    </Navbar>
+                  Iniciar Sesión
+                </Button>
+                <Button 
+                  className="bg-gradient-to-r from-gray-200 to-white text-black font-semibold ms-2"
+                  onClick={() => navigate('/register')}
+                >
+                  Registrarse
+                </Button>
+              </>
+            )}
+          </Nav>
+        </Container>
+      </Navbar>
+    </div>
   )
 }
 

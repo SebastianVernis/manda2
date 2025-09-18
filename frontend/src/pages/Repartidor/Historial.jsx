@@ -19,8 +19,9 @@ const RepartidorHistorial = () => {
   ) || []
 
   return (
-    <Container className="py-4">
-      <h2 className="text-yega-gold text-center mb-4">Historial de Entregas</h2>
+    <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <Container className="py-4">
+        <h2 className="text-yega-gold text-center mb-4">Historial de Entregas</h2>
       
       {isLoading && <div className="text-center py-5"><Spinner animation="border" /></div>}
       
@@ -70,7 +71,8 @@ const RepartidorHistorial = () => {
           )}
         </>
       )}
-    </Container>
+      </Container>
+    </div>
   )
 }
 

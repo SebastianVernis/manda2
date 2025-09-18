@@ -65,8 +65,9 @@ const RepartidorUbicacion = () => {
   }
 
   return (
-    <Container className="py-4">
-      <h2 className="text-yega-gold">Ubicación Manual</h2>
+    <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <Container className="py-4">
+        <h2 className="text-yega-gold">Ubicación Manual</h2>
       {error && <Alert variant="danger" onClose={() => setError(null)} dismissible>{error}</Alert>}
       
       <Alert variant="info" className="mb-3">
@@ -153,7 +154,8 @@ const RepartidorUbicacion = () => {
           {coords ? 'Marcador azul: tu ubicación manual' : bg?.currentPosition ? 'Marcador verde: ubicación automática' : 'No hay ubicación disponible'}
         </div>
       </div>
-    </Container>
+      </Container>
+    </div>
   )
 }
 
