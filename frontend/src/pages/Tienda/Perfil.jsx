@@ -47,7 +47,8 @@ const TiendaPerfil = () => {
   }
 
   return (
-    <Container className="py-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <Container className="py-4">
       <h2 className="text-yega-gold text-center mb-4">Perfil de Tienda</h2>
       <Row>
         <Col lg={6}>
@@ -154,7 +155,8 @@ const TiendaPerfil = () => {
           </Card>
         </Col>
       </Row>
-    </Container>
+      </Container>
+    </div>
   )
 }
 

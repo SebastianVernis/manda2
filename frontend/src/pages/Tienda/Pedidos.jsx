@@ -33,7 +33,8 @@ const TiendaPedidos = () => {
   }
 
   return (
-    <div className="p-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <div className="p-4">
       <div className="text-center mb-3">
         <h2 className="text-warning mb-2">Pedidos</h2>
         <Button variant="primary" onClick={() => refetch()}>Refrescar</Button>
@@ -69,6 +70,7 @@ const TiendaPedidos = () => {
           )}
         </div>
       )}
+      </div>
     </div>
   )
 }

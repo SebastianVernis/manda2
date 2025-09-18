@@ -102,7 +102,8 @@ const TiendaProductos = () => {
   }
 
   return (
-    <Container className="py-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <Container className="py-4">
       <div className="text-center mb-3">
         <h2 className="text-yega-gold mb-2">Productos</h2>
         <div className="d-flex justify-content-center gap-2">
@@ -303,7 +304,8 @@ const TiendaProductos = () => {
         </Modal.Footer>
       </Modal>
       
-    </Container>
+      </Container>
+    </div>
   )
 }
 

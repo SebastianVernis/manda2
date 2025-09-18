@@ -44,7 +44,8 @@ const TiendaDireccion = () => {
   }
 
   return (
-    <Container className="py-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <Container className="py-4">
       <h2 className="text-yega-gold">Configurar Dirección</h2>
       <Card className="card-yega mt-3">
         <Card.Body>
@@ -69,7 +70,8 @@ const TiendaDireccion = () => {
           </div>
         </Card.Body>
       </Card>
-    </Container>
+      </Container>
+    </div>
   )
 }
 

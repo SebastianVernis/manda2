@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Button } from 'react-bootstrap'
-import { Card } from 'react-bootstrap'
-import { Badge } from 'react-bootstrap'
+import { Button, Card, Badge, Form } from 'react-bootstrap'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FaShoppingCart, FaTrash, FaPlus, FaMinus, FaTag, FaTruck } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
-import MobileHeader from '../../components/ui/MobileHeader'
+import ModernNavbar from '../../components/modern/ModernNavbar'
 
 const MyCart = () => {
   const navigate = useNavigate()
@@ -43,91 +43,145 @@ const MyCart = () => {
 
   if (items.length === 0) {
     return (
-      <div className="min-vh-100 bg-dark">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+        <ModernNavbar />
         <div className="container py-4">
-          <div className="d-flex align-items-center justify-content-between mb-4">
-            <Button variant="outline-secondary" onClick={() => navigate(-1)} className="glass-btn">
-              ← Volver
-            </Button>
-            <h1 className="fs-4 text-white m-0">Mi Carrito</h1>
-            <div style={{ width: '80px' }}></div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-6"
+          >
+            <h1 className="text-4xl font-bold text-white mb-2 flex items-center justify-center gap-3">
+              <FaShoppingCart className="text-green-400" />
+              Mi Carrito
+            </h1>
+            <p className="text-gray-400 text-lg">Revisa tus productos antes de continuar</p>
+          </motion.div>
 
-          <div className="text-center py-5">
-            <div className="mx-auto mb-4 rounded-circle glass-card d-flex align-items-center justify-content-center" style={{ width: '120px', height: '120px' }}>
-              <span className="fs-1">🛒</span>
-            </div>
-            <h2 className="fs-3 text-white mb-2">
-              Tu carrito está vacío
-            </h2>
-            <p className="text-white-50 mb-4">
-              Agrega algunos productos deliciosos para empezar
-            </p>
-            <Button 
-              className="glass-btn px-4 py-2"
-              onClick={() => navigate('/cliente/tiendas')}
-            >
-              Explorar tiendas
-            </Button>
-          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-8"
+          >
+            <Card className="yega-glass">
+              <Card.Body className="py-5">
+                <FaShoppingCart size={80} className="text-white-50 mb-4" />
+                <h2 className="text-white mb-3">Tu carrito está vacío</h2>
+                <p className="text-white-50 mb-4">
+                  Agrega algunos productos deliciosos para empezar
+                </p>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  className="btn btn-primary px-4 py-2"
+                  onClick={() => navigate('/cliente/tiendas')}
+                >
+                  Explorar Tiendas
+                </motion.button>
+              </Card.Body>
+            </Card>
+          </motion.div>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-vh-100 bg-dark">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <ModernNavbar />
+      
       <div className="container py-4">
-        <div className="d-flex align-items-center justify-content-between mb-4">
-          <Button variant="outline-secondary" onClick={() => navigate(-1)} className="glass-btn">
-            ← Volver
-          </Button>
-          <h1 className="fs-4 text-white m-0">Mi Carrito</h1>
-          <Button variant="outline-danger" onClick={clearCart} size="sm" className="glass-btn">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="d-flex align-items-center justify-content-between mb-6"
+        >
+          <h1 className="text-4xl font-bold text-white flex items-center gap-3">
+            <FaShoppingCart className="text-green-400" />
+            Mi Carrito ({items.length})
+          </h1>
+          <Button 
+            variant="outline-danger" 
+            onClick={clearCart} 
+            size="sm" 
+            className="hover:bg-red-600"
+          >
+            <FaTrash className="me-2" />
             Limpiar
           </Button>
-        </div>
+        </motion.div>
 
-        <div className="mb-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="mb-6"
+        >
           {/* Items */}
           <div className="mb-4">
-            {items.map((item) => (
-              <Card key={item.product._id} className="glass-card mb-3">
-                <Card.Body className="p-3">
-                  <div className="d-flex gap-3">
-                    <div className="glass-card d-flex align-items-center justify-content-center" style={{ width: '60px', height: '60px', borderRadius: '14px' }}>
-                      <span className="fs-3">🍽️</span>
-                    </div>
-                    <div className="flex-grow-1">
-                      <h5 className="mb-1">{item.product.nombre}</h5>
-                      <p className="small text-white-50 mb-2">{item.product.descripcion}</p>
-                      <div className="d-flex justify-content-between align-items-center">
-                        <span className="text-warning fw-bold">
-                          ${(item.product.precio * item.quantity).toFixed(2)}
-                        </span>
-                        <div className="d-flex align-items-center gap-2">
-                          <Button
-                            size="sm"
-                            className="glass-btn"
-                            onClick={() => handleQuantityChange(item.product._id, item.quantity - 1)}
-                          >
-                            -
-                          </Button>
-                          <span className="mx-2">{item.quantity}</span>
-                          <Button
-                            size="sm"
-                            className="glass-btn"
-                            onClick={() => handleQuantityChange(item.product._id, item.quantity + 1)}
-                          >
-                            +
-                          </Button>
+            <AnimatePresence>
+              {items.map((item, index) => (
+                <motion.div
+                  key={item.product._id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="yega-glass mb-3 hover-card-effect">
+                    <Card.Body className="p-4">
+                      <div className="d-flex gap-3">
+                        <div className="bg-primary bg-opacity-20 rounded-3 d-flex align-items-center justify-content-center text-primary" style={{ width: '70px', height: '70px' }}>
+                          <span className="fs-2">🍽️</span>
+                        </div>
+                        <div className="flex-grow-1">
+                          <h5 className="text-white mb-2">{item.product.nombre}</h5>
+                          <p className="small text-white-50 mb-3">{item.product.descripcion}</p>
+                          
+                          <div className="d-flex justify-content-between align-items-center">
+                            <div>
+                              <div className="text-white-50 small">Precio unitario: ${item.product.precio}</div>
+                              <div className="text-success fw-bold fs-5">
+                                ${(item.product.precio * item.quantity).toFixed(2)}
+                              </div>
+                            </div>
+                            
+                            <div className="d-flex align-items-center gap-2">
+                              <Button
+                                size="sm"
+                                variant="outline-light"
+                                className="rounded-circle d-flex align-items-center justify-content-center"
+                                style={{width: '32px', height: '32px'}}
+                                onClick={() => handleQuantityChange(item.product._id, item.quantity - 1)}
+                              >
+                                <FaMinus size={10} />
+                              </Button>
+                              <span className="mx-3 text-white fw-bold fs-5">{item.quantity}</span>
+                              <Button
+                                size="sm"
+                                variant="outline-light"
+                                className="rounded-circle d-flex align-items-center justify-content-center"
+                                style={{width: '32px', height: '32px'}}
+                                onClick={() => handleQuantityChange(item.product._id, item.quantity + 1)}
+                              >
+                                <FaPlus size={10} />
+                              </Button>
+                              <Button
+                                size="sm"
+                                variant="outline-danger"
+                                className="ms-2"
+                                onClick={() => removeItem(item.product._id)}
+                              >
+                                <FaTrash size={12} />
+                              </Button>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </Card.Body>
-              </Card>
-            ))}
+                    </Card.Body>
+                  </Card>
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
 
           {/* Promo Code */}
@@ -193,7 +247,7 @@ const MyCart = () => {
           >
             Proceder al pago
           </Button>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

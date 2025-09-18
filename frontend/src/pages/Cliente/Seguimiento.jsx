@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
+import { motion } from 'framer-motion'
 import { apiClient } from '../../services/apiClient'
 import { getEstadoTexto, getEstadoColor, getEstadoIcono } from '../../utils/orderStates'
 import 'leaflet/dist/leaflet.css'
@@ -8,22 +9,15 @@ import '../../styles/map-styles.css'
 import { MapContainer, TileLayer, CircleMarker, Marker, Polyline, Tooltip, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import { 
-  Card, 
-  CardBody, 
-  CardHeader, 
-  Chip, 
-  Table, 
-  TableHeader, 
-  TableColumn, 
-  TableBody, 
-  TableRow, 
-  TableCell,
+  Card,
   Spinner,
-  Divider,
-  Avatar,
-  Progress
-} from '@nextui-org/react'
+  Table,
+  Badge,
+  Image,
+  ProgressBar
+} from 'react-bootstrap'
 import { MapPin, Store, Flag, Truck, Clock, Package, CheckCircle2, ShoppingBag, ChefHat } from 'lucide-react'
+import ModernNavbar from '../../components/modern/ModernNavbar'
 
 const FitToMarkers = ({ points }) => {
   const map = useMap()
@@ -61,7 +55,15 @@ const OrderTimeline = ({ estado }) => {
 
   return (
     <div className="my-4">
-      <Progress value={getProgresoEstado()} className="mb-3" size="lg" color={getEstadoColor(estado)} />
+      <div className="progress mb-3">
+        <div className={`progress-bar bg-${getEstadoColor(estado)}`} 
+          role="progressbar" 
+          style={{width: `${getProgresoEstado()}%`}} 
+          aria-valuenow={getProgresoEstado()} 
+          aria-valuemin="0" 
+          aria-valuemax="100">
+        </div>
+      </div>
       <div className="flex justify-between">
         <div className={`text-center ${getEstadoStepStatus('confirmado') !== 'pending' ? 'text-primary-500' : 'text-gray-400'}`}>
           <div className="flex justify-center">
@@ -221,119 +223,125 @@ const ClienteSeguimiento = () => {
   }
 
   return (
-    <div className="container mx-auto py-4 px-4">
-      <h2 className="text-yega-gold text-2xl font-semibold mb-4 flex items-center gap-2">
-        <Truck className="h-6 w-6" />
-        Seguimiento de Pedido
-      </h2>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <ModernNavbar />
+      
+      <div className="container mx-auto py-4 px-4">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-6"
+        >
+          <h1 className="text-4xl font-bold text-white mb-2 flex items-center justify-center gap-3">
+            <Truck className="h-8 w-8 text-blue-400" />
+            Seguimiento de Pedido
+          </h1>
+          <p className="text-gray-400 text-lg">Sigue el estado de tu pedido en tiempo real</p>
+        </motion.div>
       {!id && (
         <Card className="mt-3 border-warning">
-          <CardBody>
+          <Card.Body>
             <p className="text-warning">No se proporcionó ID de pedido</p>
-          </CardBody>
+          </Card.Body>
         </Card>
       )}
       {isLoading && <div className="text-center py-5"><Spinner size="lg" /></div>}
       {isError && (
         <Card className="border-danger">
-          <CardBody>
+          <Card.Body>
             <p className="text-danger">No se pudo obtener el pedido</p>
-          </CardBody>
+          </Card.Body>
         </Card>
       )}
       {pedido && (
         <div className="mt-3">
           <Card className="mb-4">
-            <CardHeader className="flex items-center justify-between bg-background">
-              <div className="flex gap-3 items-center">
+            <Card.Header className="d-flex align-items-center justify-content-between bg-dark">
+              <div className="d-flex gap-3 align-items-center">
                 <div><strong>Pedido:</strong> {pedido.numero_pedido}</div>
                 <div>
-                  <Chip 
-                    color={getEstadoColor(pedido.estado)} 
-                    variant="flat"
-                    startContent={<span>{getEstadoIcono(pedido.estado)}</span>}
-                    className="text-sm font-medium"
-                  >
-                    {getEstadoTexto(pedido.estado)}
-                  </Chip>
+                  <Badge bg={getEstadoColor(pedido.estado)}>
+                    {getEstadoIcono(pedido.estado)} {getEstadoTexto(pedido.estado)}
+                  </Badge>
                 </div>
                 <div><strong>Total:</strong> ${pedido.total?.toFixed?.(2) ?? pedido.total}</div>
               </div>
-              <div className="text-sm text-muted-foreground flex gap-2 items-center">
+              <div className="text-secondary small d-flex gap-2 align-items-center">
                 <Clock size={16} />
                 ETA aprox: {pedido.tiempo_estimado ?? 30} min
               </div>
-            </CardHeader>
-            <CardBody>
+            </Card.Header>
+            <Card.Body>
               <OrderTimeline estado={pedido.estado} />
-            </CardBody>
+            </Card.Body>
           </Card>
           <hr />
           <div className="flex justify-between items-center mb-3">
             <h6 className="text-lg font-semibold">Productos</h6>
-            <Chip color="primary" variant="dot" size="sm">{pedido.productos?.length || 0} productos</Chip>
+            <Badge bg="primary">{pedido.productos?.length || 0} productos</Badge>
           </div>
           
           <Card className="mb-4">
-            <Table aria-label="Productos en pedido" removeWrapper>
-              <TableHeader>
-                <TableColumn>Producto</TableColumn>
-                <TableColumn>Cant.</TableColumn>
-                <TableColumn>Precio</TableColumn>
-                <TableColumn>Subtotal</TableColumn>
-              </TableHeader>
-              <TableBody>
-                {pedido.productos?.map((it, idx) => (
-                  <TableRow key={idx}>
-                    <TableCell>{it.producto?.nombre ?? 'Producto'}</TableCell>
-                    <TableCell>{it.cantidad}</TableCell>
-                    <TableCell>${it.precio_unitario?.toFixed?.(2) ?? it.precio_unitario}</TableCell>
-                    <TableCell>${it.subtotal?.toFixed?.(2) ?? it.subtotal}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+            <Card.Body>
+              <Table striped hover>
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Cant.</th>
+                    <th>Precio</th>
+                    <th>Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {pedido.productos?.map((it, idx) => (
+                    <tr key={idx}>
+                      <td>{it.producto?.nombre ?? 'Producto'}</td>
+                      <td>{it.cantidad}</td>
+                      <td>${it.precio_unitario?.toFixed?.(2) ?? it.precio_unitario}</td>
+                      <td>${it.subtotal?.toFixed?.(2) ?? it.subtotal}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </Card.Body>
           </Card>
           <hr />
           <div className="flex justify-between items-center mb-3">
-            <h6 className="text-lg font-semibold">Repartidor</h6>
+            <h6 className="h5">Repartidor</h6>
             {pedido.estado !== 'entregado' && pedido.estado !== 'cancelado' && (
-              <Chip color="primary" variant="flat" size="sm">En tiempo real</Chip>
+              <Badge bg="primary">En tiempo real</Badge>
             )}
           </div>
           
           {pedido.repartidorId ? (
             <Card className="mb-4">
-              <CardBody className="flex items-center gap-4">
-                <Avatar 
-                  name={pedido.repartidorId?.nombre ?? 'Repartidor'} 
-                  color="warning" 
-                  fallback={<Truck size={18} />}
-                  className="h-12 w-12"
-                />
+              <Card.Body className="d-flex align-items-center gap-4">
+                <div className="bg-warning rounded-circle p-3">
+                  <Truck size={24} className="text-white" />
+                </div>
                 <div>
-                  <div className="font-medium">{pedido.repartidorId?.nombre ?? '—'}</div>
+                  <div className="fw-medium">{pedido.repartidorId?.nombre ?? '—'}</div>
                   {pedido.repartidorId?.ubicacion?.latitud ? (
-                    <div className="text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1">
+                    <div className="small text-secondary">
+                      <div className="d-flex align-items-center gap-1">
                         <MapPin size={14} className={pedido.estado === 'en_camino' ? 'animate-bounce' : ''} />
                         <span>Ubicación actualizada hace {Math.floor(Math.random() * 5) + 1} min</span>
                       </div>
                     </div>
                   ) : (
-                    <div className="text-sm text-muted-foreground">Ubicación no disponible</div>
+                    <div className="small text-secondary">Ubicación no disponible</div>
                   )}
                 </div>
-              </CardBody>
+              </Card.Body>
             </Card>
           ) : (
-            <Card className="mb-4 border-dashed border-muted">
-              <CardBody>
-                <div className="text-center text-muted-foreground py-2">
-                  <Clock className="mx-auto mb-2 h-8 w-8 text-muted-foreground/50" />
+            <Card className="mb-4 border-secondary border-opacity-25">
+              <Card.Body>
+                <div className="text-center text-secondary py-2">
+                  <Clock className="mx-auto mb-2" size={32} />
                   <p>Esperando asignación de repartidor...</p>
                 </div>
-              </CardBody>
+              </Card.Body>
             </Card>
           )}
 
@@ -343,7 +351,7 @@ const ClienteSeguimiento = () => {
             
             {allPoints.length > 0 ? (
               <Card className="overflow-hidden">
-                <CardBody className="p-0">
+                <Card.Body className="p-0">
                   <div className="relative h-80">
                     <MapContainer style={{ height: '100%', width: '100%' }} center={allPoints[0] || { lat: 0, lng: 0 }} zoom={13} scrollWheelZoom={false}>
                       <TileLayer
@@ -412,22 +420,23 @@ const ClienteSeguimiento = () => {
                       </div>
                     </div>
                   </div>
-                </CardBody>
+                </Card.Body>
               </Card>
             ) : (
               <Card className="border-dashed border-muted">
-                <CardBody>
+                <Card.Body>
                   <div className="text-center text-muted-foreground py-6">
                     <MapPin className="mx-auto mb-2 h-10 w-10 text-muted-foreground/30" />
                     <p>Ubicación no disponible</p>
                     <p className="text-sm">Aparecerá cuando el repartidor esté en camino</p>
                   </div>
-                </CardBody>
+                </Card.Body>
               </Card>
             )}
           </div>
         </div>
       )}
+      </div>
     </div>
   )
 }

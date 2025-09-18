@@ -331,7 +331,7 @@ const ModernCheckout = () => {
                     </Button>
                   </div>
                 </form>
-              </CardBody>
+              </Card.Body>
             </Card>
           </motion.div>
 
@@ -344,7 +344,7 @@ const ModernCheckout = () => {
               <CardHeader className="border-b border-gray-700">
                 <h3 className="text-xl font-semibold text-white">Resumen del Pedido</h3>
               </CardHeader>
-              <CardBody className="p-6">
+              <Card.Body className="p-6">
                 {items.length === 0 ? (
                   <div className="text-center text-gray-400 py-8">
                     <FaShoppingCart className="text-4xl mx-auto mb-4 opacity-50" />
@@ -382,7 +382,7 @@ const ModernCheckout = () => {
                     </div>
                   </div>
                 )}
-              </CardBody>
+              </Card.Body>
             </Card>
           </motion.div>
         </div>

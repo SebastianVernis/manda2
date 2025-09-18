@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { Container, Card, Form, Button, Row, Col } from 'react-bootstrap'
+import { Container, Card, Form, Button, Row, Col, Alert } from 'react-bootstrap'
+import { motion } from 'framer-motion'
+import { FaUser, FaPhone, FaEnvelope, FaBell, FaCog, FaSave } from 'react-icons/fa'
 import { useAuth } from '../../context/AuthContext'
-import { FaUser, FaPhone, FaEnvelope } from 'react-icons/fa'
+import ModernNavbar from '../../components/modern/ModernNavbar'
 
 const ClientePerfil = () => {
   const { user, updateProfile } = useAuth()
@@ -41,21 +43,39 @@ const ClientePerfil = () => {
   }
 
   return (
-    <Container className="py-4">
-      <h2 className="text-yega-gold text-center mb-4">Mi Perfil</h2>
-      <Row className="justify-content-center">
-        <Col md={8} lg={7}>
-          <Card className="card-yega">
-            <Card.Body>
-              <div className="text-center mb-4">
-                <div className="user-avatar-container mb-2">
-                  <div className="user-avatar">
-                    <FaUser size={48} />
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <ModernNavbar />
+      
+      <Container className="py-4">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-6"
+        >
+          <h1 className="text-4xl font-bold text-white mb-2 flex items-center justify-center gap-3">
+            <FaUser className="text-blue-400" />
+            Mi Perfil
+          </h1>
+          <p className="text-gray-400 text-lg">Gestiona tu información personal</p>
+        </motion.div>
+        <Row className="justify-content-center">
+          <Col md={8} lg={7}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <Card className="yega-glass">
+                <Card.Body className="p-4">
+                  <div className="text-center mb-5">
+                    <div className="bg-primary bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '100px', height: '100px'}}>
+                      <FaUser size={48} className="text-primary" />
+                    </div>
+                    <h4 className="text-white mb-2">{user?.email}</h4>
+                    <div className="text-white-50 small">
+                      Cliente desde {new Date(user?.createdAt).toLocaleDateString()}
+                    </div>
                   </div>
-                </div>
-                <h5 className="text-yega-gold">{user?.email}</h5>
-                <div className="text-muted small">Cliente desde {new Date(user?.createdAt).toLocaleDateString()}</div>
-              </div>
               
               <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3">
@@ -152,11 +172,13 @@ const ClientePerfil = () => {
                   </Button>
                 </div>
               </Form>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+                </Card.Body>
+              </Card>
+            </motion.div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   )
 }
 

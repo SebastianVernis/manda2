@@ -1,0 +1,16 @@
+Tarea,Modelo,Justificacion,Costo_Estimado,Tiempo_Estimado,Prioridad
+Repartidor/Pedidos.jsx,Claude 3.5 Sonnet,Arquitectura compleja + WebSocket + Geolocalización,$150-250,2-3 días,Alta
+Cliente/Dashboard.jsx,Claude 3.5 Sonnet,Dashboard avanzado + métricas + integración pagos,$100-150,1-2 días,Alta
+Gradientes Cliente (8 pantallas),Claude 3.5 Sonnet,Análisis visual completo + responsive + a11y,$30-50,0.5 días,Media
+Gradientes Tienda (7 pantallas),Claude 3.5 Sonnet,Consistencia visual + optimización UX,$25-40,0.5 días,Media
+Gradientes Repartidor (7 pantallas),Claude 3.5 Sonnet,Patrones visuales + mobile-first,$25-40,0.5 días,Media
+Gradientes Generales (4 pantallas),Claude 3.5 Sonnet,Home + Auth screens + branding,$15-25,0.25 días,Media
+Testing Funcional,GPT-4 Turbo,Test suite + E2E + performance testing,$40-70,1 día,Alta
+Code Review & Architecture,Claude 3.5 Sonnet,Análisis arquitectural + security + performance,$60-100,1 día,Alta
+Setup CI/CD,Claude 3.5 Sonnet,GitHub Actions + deployment pipeline,$20-30,0.5 días,Baja
+Documentación,Claude 3.5 Sonnet,ADRs + component docs + API docs,$30-50,0.5 días,Baja
+Performance Optimization,Claude 3.5 Sonnet,Bundle optimization + lazy loading + memoization,$40-60,1 día,Media
+Accessibility Audit,Claude 3.5 Sonnet,WCAG 2.1 + screen readers + keyboard navigation,$25-40,0.5 días,Media
+PWA Features,Claude 3.5 Sonnet,Service workers + offline + push notifications,$50-80,1 día,Baja
+Security Audit,Claude 3.5 Sonnet,OWASP + authentication + data validation,$30-50,0.5 días,Alta
+Mobile Responsive Review,Claude 3.5 Sonnet,Cross-device testing + touch optimization,$20-35,0.5 días,Media
