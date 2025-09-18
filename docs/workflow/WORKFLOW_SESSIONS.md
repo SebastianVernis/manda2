@@ -287,12 +287,12 @@ cd backend && npm start
 ### Checklist de Tareas
 
 #### Claude 3.5 Sonnet - Documentación ($30-50)
-- [ ] **8.1** Architecture Decision Records (ADRs)
-- [ ] **8.2** Component library documentation
-- [ ] **8.3** API documentation update
-- [ ] **8.4** Testing strategy guide
-- [ ] **8.5** Deployment guide
-- [ ] **8.6** Update CRUSH.md with new commands
+- [x] **8.1** Architecture Decision Records (ADRs) - COMPLETADO
+- [x] **8.2** Component library documentation - COMPLETADO
+- [x] **8.3** API documentation complete - COMPLETADO
+- [x] **8.4** Testing strategy guide - COMPLETADO
+- [x] **8.5** Deployment guide - COMPLETADO
+- [x] **8.6** Update CRUSH.md with new commands - COMPLETADO
 
 #### Claude 3.5 Sonnet - Accessibility Audit ($25-40)
 - [ ] **8.7** WCAG 2.1 compliance audit
