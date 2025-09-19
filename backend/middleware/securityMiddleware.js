@@ -25,14 +25,14 @@ const strictLimiter = rateLimit({
 const helmetConfig = helmet({
   contentSecurityPolicy: {
     directives: {
-      defaultSrc: ["'self'"],
-      styleSrc: ["'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net'],
-      scriptSrc: ["'self'"],
-      imgSrc: ["'self'", 'data:', 'https:'],
-      connectSrc: ["'self'", 'https://api.mapbox.com'],
-      fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+      defaultSrc: ["'self'", 'http://localhost:3000'],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net', 'http://localhost:3000'],
+      scriptSrc: ["'self'", 'http://localhost:3000'],
+      imgSrc: ["'self'", 'data:', 'https:', 'http://localhost:3000'],
+      connectSrc: ["'self'", 'https://api.mapbox.com', 'http://localhost:3000', 'http://localhost:5000'],
+      fontSrc: ["'self'", 'https://fonts.gstatic.com', 'http://localhost:3000'],
       objectSrc: ["'none'"],
-      mediaSrc: ["'self'"],
+      mediaSrc: ["'self'", 'http://localhost:3000'],
       frameSrc: ["'none'"]
     }
   },

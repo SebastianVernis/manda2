@@ -44,17 +44,17 @@ const TiendaPedidos = () => {
       {!isLoading && !isError && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 no-scrollbar place-items-center">
           {pedidos.map(o => (
-            <Card key={o._id} bg="dark" border="secondary" className="shadow-lg">
+            <Card key={o._id} className="card-yega yega-glass shadow-lg">
               <Card.Body className="p-4">
                 <div className="flex items-start justify-between">
-                  <div className="font-semibold">{o.numero_pedido}</div>
+                  <div className="fw-semibold text-white">{o.numero_pedido}</div>
                   <Badge bg={getEstadoColor(o.estado)}>
                     {getEstadoIcono(o.estado)} {getEstadoTexto(o.estado)}
                   </Badge>
                 </div>
-                <div className="text-sm text-white/70">{new Date(o.createdAt).toLocaleString()}</div>
-                <div className="text-sm">Cliente: {o.clienteId?.nombre ?? '—'}</div>
-                <div className="font-medium">${o.total?.toFixed?.(2) ?? o.total}</div>
+                <div className="text-sm text-white-50">{new Date(o.createdAt).toLocaleString()}</div>
+                <div className="text-sm text-white">Cliente: {o.clienteId?.nombre ?? '—'}</div>
+                <div className="fw-medium text-white">${o.total?.toFixed?.(2) ?? o.total}</div>
                 <div className="pt-2 text-right">
                   {nextEstado(o.estado) && (
                     <Button size="sm" variant="primary" disabled={updateMutation.isPending} onClick={() => updateMutation.mutate({ id: o._id, estado: nextEstado(o.estado) })}>

@@ -31,66 +31,15 @@ export default defineConfig({
     target: 'es2020',
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // React ecosystem
-          if (id.includes('node_modules/react') || 
-              id.includes('node_modules/react-dom') || 
-              id.includes('node_modules/react-router')) {
-            return 'vendor-react'
-          }
-          
-          // UI libraries
-          if (id.includes('node_modules/bootstrap') || 
-              id.includes('node_modules/react-bootstrap') || 
-              id.includes('node_modules/@radix-ui')) {
-            return 'vendor-ui'
-          }
-          
-          // Animation
-          if (id.includes('node_modules/framer-motion')) {
-            return 'vendor-framer'
-          }
-          
-          // Maps
-          if (id.includes('node_modules/leaflet') || 
-              id.includes('node_modules/react-leaflet')) {
-            return 'vendor-leaflet'
-          }
-          
-          // Charts
-          if (id.includes('node_modules/chart.js') || 
-              id.includes('node_modules/react-chartjs')) {
-            return 'vendor-charts'
-          }
-          
-          // Utilities
-          if (id.includes('node_modules/axios') || 
-              id.includes('node_modules/date-fns') || 
-              id.includes('node_modules/lodash') ||
-              id.includes('node_modules/@tanstack')) {
-            return 'vendor-utils'
-          }
-          
-          // Admin/Dashboard pages (lazy load)
-          if (id.includes('pages/Admin') || 
-              id.includes('pages/Tienda/Dashboard') ||
-              id.includes('pages/Cliente/Dashboard')) {
-            return 'pages-dashboard'
-          }
-          
-          // Repartidor pages (lazy load)  
-          if (id.includes('pages/Repartidor')) {
-            return 'pages-repartidor'
-          }
-          
-          // Other vendor libraries
-          if (id.includes('node_modules')) {
-            return 'vendor'
-          }
+        manualChunks: {
+          'react': ['react', 'react-dom'],
+          'react-router': ['react-router-dom'],
+          'ui': ['react-bootstrap', '@radix-ui/react-avatar', '@radix-ui/react-dialog'],
+          'vendor': ['axios', 'lodash', '@tanstack/react-query']
         }
       }
     },
-    chunkSizeWarningLimit: 500,
+    chunkSizeWarningLimit: 1000,
   },
   css: {
     postcss: {

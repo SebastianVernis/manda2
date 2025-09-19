@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Card, Form, Button, Spinner } from 'react-bootstrap'
+import { Card, Button, Spinner } from 'react-bootstrap'
 import { motion, AnimatePresence } from "framer-motion"
 import { FaLocationArrow, FaMapMarkerAlt, FaCheck, FaSearch, FaTimes } from 'react-icons/fa'
 import { reverseGeocode } from '../../lib/geocoding'
@@ -188,7 +188,7 @@ const ModernAddressConfirmation = ({ onConfirm, className = '' }) => {
   return (
     <div className={className}>
       <Card className="yega-glass">
-        <CardBody className="p-6">
+        <Card.Body className="p-6">
           <div className="flex items-center gap-3 mb-6">
             <FaMapMarkerAlt className="text-gray-400 text-xl" />
             <h3 className="text-xl font-semibold text-white">Confirma tu dirección de entrega</h3>
@@ -370,7 +370,7 @@ const ModernAddressConfirmation = ({ onConfirm, className = '' }) => {
               Confirmar dirección
             </Button>
           </div>
-        </CardBody>
+        </Card.Body>
       </Card>
     </div>
   )

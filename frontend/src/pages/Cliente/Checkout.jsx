@@ -5,15 +5,16 @@ import { useCart } from '../../context/CartContext'
 import api from '../../services/apiClient'
 
 const Checkout = () => {
-  const { items, subtotal, clear, storeId: _storeId } = useCart()
   const navigate = useNavigate()
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { items, clearCart } = useCart()
   const [error, setError] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [coords, setCoords] = useState({ latitud: undefined, longitud: undefined })
   const [form, setForm] = useState({
     calle: '', numero: '', ciudad: '', codigo_postal: '', referencias: '',
     metodo_pago: 'efectivo', notas: ''
   })
+  const subtotal = items.reduce((acc, item) => acc + (item.product.precio * item.quantity), 0)
 
   useEffect(() => {
     if (!navigator.geolocation) return
@@ -41,7 +42,7 @@ const Checkout = () => {
       const res = await api.post('/orders', { productos, direccion_envio, metodo_pago, notas })
       const pedido = res.data?.pedido
 
-      clear()
+      clearCart()
       if (pedido?._id) {
         navigate(`/cliente/seguimiento?id=${pedido._id}`, { replace: true })
       } else {
@@ -56,10 +57,11 @@ const Checkout = () => {
   }
 
   return (
-    <Container className="py-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900" style={{ paddingTop: '3rem' }}>
+      <Container className="py-4">
       <Row>
         <Col lg={7} className="mb-3">
-          <Card className="card-yega">
+          <Card className="card-yega yega-glass">
             <Card.Header>
               <h4 className="mb-0">Dirección de envío</h4>
             </Card.Header>
@@ -111,7 +113,7 @@ const Checkout = () => {
           </Card>
         </Col>
         <Col lg={5}>
-          <Card className="card-yega">
+          <Card className="card-yega yega-glass">
             <Card.Header>
               <h4 className="mb-0">Tu pedido</h4>
             </Card.Header>
@@ -139,6 +141,7 @@ const Checkout = () => {
         </Col>
       </Row>
     </Container>
+    </div>
   )
 }
 

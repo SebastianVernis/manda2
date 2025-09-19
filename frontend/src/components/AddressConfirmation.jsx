@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { Button, Alert, Form, Spinner, ListGroup } from 'react-bootstrap'
 import { FaLocationArrow, FaMapMarkerAlt, FaCheck, FaSearch, FaTimesCircle } from 'react-icons/fa'
 import { reverseGeocode, searchAddresses, geocodeAddress } from '../lib/geocoding'

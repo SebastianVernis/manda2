@@ -86,33 +86,33 @@ const AdminUsuarios = () => {
       )}
 
       {!isLoading && !isError && (
-        <Table striped hover responsive className="align-middle">
+        <Table className="table-dark table-striped align-middle" responsive>
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Email</th>
-              <th>Teléfono</th>
-              <th>Rol</th>
-              <th>Estado</th>
-              <th>Activo</th>
-              <th>Alta</th>
-              <th>Acciones</th>
+              <th className="text-white">Nombre</th>
+              <th className="text-white">Email</th>
+              <th className="text-white">Teléfono</th>
+              <th className="text-white">Rol</th>
+              <th className="text-white">Estado</th>
+              <th className="text-white">Activo</th>
+              <th className="text-white">Alta</th>
+              <th className="text-white">Acciones</th>
             </tr>
           </thead>
           <tbody>
             {usuarios.map((u) => (
               <tr key={u._id}>
-                <td>{u.nombre}</td>
-                <td>{u.email}</td>
-                <td>{u.telefono}</td>
+                <td className="text-white">{u.nombre}</td>
+                <td className="text-white">{u.email}</td>
+                <td className="text-white">{u.telefono}</td>
                 <td><Badge bg="secondary">{u.rol}</Badge></td>
                 <td>
                   <Badge bg={u.estado_validacion === 'aprobado' ? 'success' : u.estado_validacion === 'rechazado' ? 'danger' : 'warning'}>
                     {u.estado_validacion}
                   </Badge>
                 </td>
-                <td>{u.activo ? 'Sí' : 'No'}</td>
-                <td>{new Date(u.createdAt).toLocaleString()}</td>
+                <td className="text-white">{u.activo ? 'Sí' : 'No'}</td>
+                <td className="text-white">{new Date(u.createdAt).toLocaleString()}</td>
                 <td className="text-nowrap">
                   <div className="d-flex gap-2">
                     <Button
@@ -141,7 +141,7 @@ const AdminUsuarios = () => {
             ))}
             {usuarios.length === 0 && (
               <tr>
-                <td colSpan={7} className="text-center text-muted py-4">Sin resultados</td>
+                <td colSpan={7} className="text-center text-white-50 py-4">Sin resultados</td>
               </tr>
             )}
           </tbody>

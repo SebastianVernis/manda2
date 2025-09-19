@@ -38,7 +38,7 @@ const DocumentUploader = ({ tipo, label, current }) => {
           {info?.status && statusBadge(info.status)}
         </div>
         {info?.file && (
-          <a href={info.file} target="_blank" rel="noopener noreferrer" className="small">Ver archivo</a>
+          <a href={`${import.meta.env.VITE_API_URL.replace('/api', '')}${info.file}`} target="_blank" rel="noopener noreferrer" className="small">Ver archivo</a>
         )}
       </div>
       {info?.notes && (

@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { useQuery, useMutation } from '@tanstack/react-query'
 import { Container, Spinner, Alert, Button, Badge, Nav, Row, Col, Card } from 'react-bootstrap'
 import { apiClient } from '../../services/apiClient'
-import { getEstadoTexto, getEstadoColor, getEstadoIcono, getProximoEstado } from '../../utils/orderStates'
+import { getEstadoTexto, getEstadoColor, getEstadoIcono } from '../../utils/orderStates'
 import { useBackgroundLocation } from '../../context/BackgroundLocation'
 
 const RepartidorPedidos = () => {
   const [tab, setTab] = useState('asignados')
-  const { enabled: locationEnabled, hasActiveDelivery } = useBackgroundLocation()
+  const locationEnabled = navigator.geolocation
   const { data, isLoading, isError, refetch } = useQuery({
     queryKey: ['orders-delivery'],
     queryFn: async () => {

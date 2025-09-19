@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { useCart } from '../../context/CartContext'
-import { FaEllipsisV, FaShoppingCart, FaUser, FaSignOutAlt, FaCog } from 'react-icons/fa'
+import { FaEllipsisV, FaShoppingCart, FaUser, FaSignOutAlt, FaCog, FaCogs } from 'react-icons/fa'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const getRoute = (rol, kind) => {
+const getRoute = (kind, rol) => {
   if (kind === 'perfil') {
     if (rol === 'cliente') return '/cliente/perfil'
     if (rol === 'tienda') return '/tienda/perfil'
@@ -151,7 +151,7 @@ const FloatingMenuButton = () => {
                     setIsMenuOpen(false)
                   }}
                 >
-                  <FaCog className="text-lg" />
+                  <FaCogs className="text-lg" />
                   Dashboard
                 </button>
 

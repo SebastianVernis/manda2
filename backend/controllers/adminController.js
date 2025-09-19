@@ -110,70 +110,65 @@ const VALID_DOC_TYPES = ['id_doc','comprobante_domicilio','licencia','tarjeta_ci
 // @access  Private (admin)
 exports.getPendingDocuments = async (req, res) => {
   try {
-    console.log('Iniciando búsqueda de documentos pendientes...');
-    console.log('Usuario autenticado:', req.user);
-    
-    // Verificar el modelo de Usuario
-    console.log('Modelo Usuario:', Usuario);
-    console.log('Nombre del modelo:', Usuario.modelName);
-    
-    const usuarios = await Usuario.aggregate([
-      {
-        $match: {
-          verificaciones: { $exists: true, $ne: {} }
-        }
-      },
-      {
-        $addFields: {
-          documentosPendientes: {
-            $filter: {
-              input: {
-                $objectToArray: "$verificaciones"
-              },
-              as: "doc",
-              cond: {
-                $eq: ["$$doc.v.status", "pendiente"]
-              }
-            }
-          }
-        }
-      },
-      {
-        $match: {
-          "documentosPendientes.0": { $exists: true } // Solo usuarios con documentos pendientes
-        }
-      },
-      {
-        $project: {
-          password: 0 // Excluir contraseña
-        }
-      }
-    ]);
-
-    console.log('Usuarios encontrados en la agregación:', usuarios.length);
-    console.log('Usuarios completos:', JSON.stringify(usuarios, null, 2));
-    
-    if (usuarios.length > 0) {
-      console.log('Primer usuario encontrado:', JSON.stringify(usuarios[0], null, 2));
-    } else {
-      // Verificar todos los usuarios para entender qué está pasando
-      try {
-        const allUsers = await Usuario.find({});
-        console.log('Total de usuarios en la base de datos:', allUsers.length);
-        allUsers.forEach(user => {
-          console.log('Usuario:', user.email, 'Verificaciones:', JSON.stringify(user.verificaciones, null, 2));
-        });
-      } catch (err) {
-        console.error('Error obteniendo todos los usuarios:', err);
-      }
+    // Verificar que el usuario sea admin
+    if (req.user.rol !== 'administrador') {
+      return res.status(403).json({ 
+        success: false, 
+        error: 'Acceso denegado. Solo administradores pueden acceder a esta función.' 
+      });
     }
+
+    // Buscar usuarios con documentos pendientes
+    // Usamos $or para verificar cada tipo de documento
+    const usuarios = await Usuario.find({
+      $or: [
+        { 'verificaciones.id_doc.status': 'pendiente' },
+        { 'verificaciones.comprobante_domicilio.status': 'pendiente' },
+        { 'verificaciones.licencia.status': 'pendiente' },
+        { 'verificaciones.tarjeta_circulacion.status': 'pendiente' },
+        { 'verificaciones.poliza_seguro.status': 'pendiente' }
+      ]
+    }).select('-password');
 
     // Formatear los datos para el frontend
     const usuariosConDocumentosPendientes = usuarios.map(usuario => {
-      const documentosPendientes = (usuario.documentosPendientes || []).map(doc => ({
-        tipo: doc.k,
-        ...doc.v
-      }));
+      // Extraer solo los documentos que están pendientes
+      const documentosPendientes = [];
+      
+      if (usuario.verificaciones.id_doc?.status === 'pendiente') {
+        documentosPendientes.push({
+          tipo: 'id_doc',
+          ...usuario.verificaciones.id_doc
+        });
+      }
+      
+      if (usuario.verificaciones.comprobante_domicilio?.status === 'pendiente') {
+        documentosPendientes.push({
+          tipo: 'comprobante_domicilio',
+          ...usuario.verificaciones.comprobante_domicilio
+        });
+      }
+      
+      if (usuario.verificaciones.licencia?.status === 'pendiente') {
+        documentosPendientes.push({
+          tipo: 'licencia',
+          ...usuario.verificaciones.licencia
+        });
+      }
+      
+      if (usuario.verificaciones.tarjeta_circulacion?.status === 'pendiente') {
+        documentosPendientes.push({
+          tipo: 'tarjeta_circulacion',
+          ...usuario.verificaciones.tarjeta_circulacion
+        });
+      }
+      
+      if (usuario.verificaciones.poliza_seguro?.status === 'pendiente') {
+        documentosPendientes.push({
+          tipo: 'poliza_seguro',
+          ...usuario.verificaciones.poliza_seguro
+        });
+      }
 
       return {
         _id: usuario._id,
@@ -181,26 +176,22 @@ exports.getPendingDocuments = async (req, res) => {
         email: usuario.email,
         telefono: usuario.telefono,
         rol: usuario.rol,
-        createdAt: usuario.createdAt,
+        fechaRegistro: usuario.createdAt,
         documentosPendientes
       };
     });
 
-    console.log('Usuarios formateados:', usuariosConDocumentosPendientes.length);
-    if (usuariosConDocumentosPendientes.length > 0) {
-      console.log('Primer usuario formateado:', JSON.stringify(usuariosConDocumentosPendientes[0], null, 2));
-    }
-
     res.json({
       success: true,
-      usuarios: usuariosConDocumentosPendientes,
-      total: usuariosConDocumentosPendientes.length
+      data: usuariosConDocumentosPendientes,
+      count: usuariosConDocumentosPendientes.length
     });
   } catch (error) {
     console.error('Error obteniendo documentos pendientes:', error);
     res.status(500).json({ 
-      message: 'Error interno del servidor',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      success: false,
+      error: 'Error interno del servidor',
+      message: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 };

@@ -9,7 +9,7 @@
   --color-primary: #0B0B0B;      /* Negro profundo */
   --color-secondary: #FFFFFF;    /* Blanco */
   --color-accent-silver: #C0C0C0; /* Plata (nuevo acento principal) */
-  --color-accent-gold: #C0C0C0;   /* Oro eliminado: alias a plata para compatibilidad */
+  --color-accent-gold: #C0C0C0;   /* Plata para buena visibilidad en fondo oscuro */
   --bg-gradient: linear-gradient(180deg, #2b2b2b 0%, #0f0f0f 45%, #0b0b0b 100%);
   
   /* Variaciones de grises */
@@ -129,28 +129,66 @@ a:hover {
 
 /* Cards personalizadas */
 .card-yega {
-  background-color: rgba(22, 22, 22, 0.9);
-  border: 1px solid var(--color-gray-700);
+  background: rgba(22, 22, 22, 0.9);
+  border: 1px solid rgba(192, 192, 192, 0.2);
   border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0,0,0,.22);
-  transition: all 0.2s ease;
+  box-shadow: 0 8px 30px rgba(0,0,0,.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  color: var(--color-secondary);
 }
 
 .card-yega:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0,0,0,.28);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.5);
   border-color: var(--color-accent-silver);
 }
 
 .card-yega .card-header {
-  background-color: rgba(28, 28, 28, 0.8);
-  border-bottom: 1px solid var(--color-gray-700);
+  background: rgba(28, 28, 28, 0.8);
+  border-bottom: 1px solid rgba(192, 192, 192, 0.2);
   color: var(--color-accent-silver);
   font-weight: 600;
 }
 
 .card-yega .card-body {
   color: var(--color-secondary);
+}
+
+.card-yega .card-title {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.card-yega .card-text {
+  color: var(--color-gray-400);
+}
+
+/* Tarjetas con efecto glass */
+.yega-glass {
+  background: rgba(22, 22, 22, 0.9) !important;
+  border: 1px solid rgba(192, 192, 192, 0.2) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,.3) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.yega-glass .card-header {
+  background: rgba(28, 28, 28, 0.8) !important;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.2) !important;
+  color: var(--color-secondary) !important;
+}
+
+.yega-glass .card-body {
+  color: var(--color-secondary) !important;
+}
+
+.yega-glass .text-white {
+  color: var(--color-secondary) !important;
+}
+
+.yega-glass .text-white-50 {
+  color: var(--color-gray-400) !important;
 }
 
 /* Formularios */
@@ -227,7 +265,7 @@ a:hover {
 
 
 /* Utilidades */
-.text-yega-gold { color: var(--color-accent-silver) !important; }
+.text-yega-gold { color: var(--color-accent-gold) !important; }
 
 .text-yega-silver {
   color: var(--color-accent-silver) !important;

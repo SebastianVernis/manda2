@@ -38,6 +38,6 @@
 }
 
 .yega-glass {
-  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl;
+  @apply bg-gray-900/90 backdrop-blur-md border border-gray-700/50 rounded-xl shadow-xl;
 }
 

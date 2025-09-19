@@ -46,7 +46,7 @@ const ProductCard = ({ product, onAddToCart, className = '' }) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <Card className="h-full bg-dark text-light border-secondary hover:border-warning">
+      <Card className="h-full card-yega yega-glass">
         <Card.Body className="p-0">
           {/* Image Section */}
           <div className="relative overflow-hidden rounded-t-lg">
@@ -75,25 +75,15 @@ const ProductCard = ({ product, onAddToCart, className = '' }) => {
 
             {/* Stock Badge */}
             {product.stock <= 5 && product.stock > 0 && (
-              <Chip
-                color="warning"
-                variant="flat"
-                size="sm"
-                className="absolute top-2 left-2"
-              >
+              <Badge bg="warning" className="position-absolute top-0 start-0 m-2">
                 ¡Últimos {product.stock}!
-              </Chip>
+              </Badge>
             )}
 
             {product.stock === 0 && (
-              <Chip
-                color="danger"
-                variant="flat"
-                size="sm"
-                className="absolute top-2 left-2"
-              >
+              <Badge bg="danger" className="position-absolute top-0 start-0 m-2">
                 Agotado
-              </Chip>
+              </Badge>
             )}
 
             {/* Rating Badge */}
@@ -132,9 +122,9 @@ const ProductCard = ({ product, onAddToCart, className = '' }) => {
               </div>
               
               {product.categoria && (
-                <Chip variant="flat" size="sm" className="bg-gray-700/50 text-gray-300">
+                <Badge bg="secondary" className="bg-gray-700 text-gray-300">
                   {product.categoria}
-                </Chip>
+                </Badge>
               )}
             </div>
 

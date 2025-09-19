@@ -10,6 +10,13 @@ const ALLOWED_BY_ROLE = {
 
 exports.uploadDocument = async (req, res) => {
   try {
+    console.log('📄 Document upload request:', {
+      userId: req.user?.id,
+      userRol: req.user?.rol,
+      tipo: req.params.tipo,
+      hasFile: !!req.file
+    });
+    
     const userId = req.user.id
     const userRol = req.user.rol
     const tipo = req.params.tipo

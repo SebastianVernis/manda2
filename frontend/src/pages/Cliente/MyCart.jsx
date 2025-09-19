@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Button, Card, Badge, Form } from 'react-bootstrap'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaShoppingCart, FaTrash, FaPlus, FaMinus, FaTag, FaTruck } from 'react-icons/fa'
+import { FaShoppingCart, FaTrash, FaPlus, FaMinus } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
-import ModernNavbar from '../../components/modern/ModernNavbar'
+
 
 const MyCart = () => {
   const navigate = useNavigate()
@@ -44,8 +44,7 @@ const MyCart = () => {
   if (items.length === 0) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <ModernNavbar />
-        <div className="container py-4">
+        <div className="container py-4" style={{paddingTop: '3rem'}}>
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,9 +86,7 @@ const MyCart = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      <ModernNavbar />
-      
-      <div className="container py-4">
+      <div className="container py-4" style={{paddingTop: '3rem'}}>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

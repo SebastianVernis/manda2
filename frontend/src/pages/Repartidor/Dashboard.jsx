@@ -11,7 +11,6 @@ import { apiClient } from '../../services/apiClient'
 import { getEstadoTexto, getEstadoColor, getEstadoIcono } from '../../utils/orderStates'
 
 const RepartidorDashboard = () => {
-  const { user: _user } = useAuth()
   const bg = useBackgroundLocation()
   const [selectedOrderId, setSelectedOrderId] = useState(null)
   const queryClient = useQueryClient()
@@ -118,14 +117,14 @@ const RepartidorDashboard = () => {
         <Row className="g-3 justify-content-center">
           {disponibles.map((o) => (
             <Col md={6} lg={4} key={o._id}>
-              <Card className="card-yega h-100 text-start">
+              <Card className="card-yega yega-glass h-100 text-start">
                 <Card.Body>
                   <div className="d-flex justify-content-between align-items-start">
                     <div>
-                      <div className="fw-bold">{o.tiendaId?.nombre ?? '—'}</div>
-                      <div className="text-muted small">Pedido {o.numero_pedido}</div>
+                      <div className="fw-bold text-white">{o.tiendaId?.nombre ?? '—'}</div>
+                      <div className="text-white-50 small">Pedido {o.numero_pedido}</div>
                     </div>
-                    <div className="text-end fw-bold">${o.total?.toFixed?.(2) ?? o.total}</div>
+                    <div className="text-end fw-bold text-white">${o.total?.toFixed?.(2) ?? o.total}</div>
                   </div>
                   <div className="mt-3 d-flex gap-2 justify-content-end">
                     <Button size="sm" className="btn-yega-primary" disabled={claimMutation.isPending} onClick={() => claimMutation.mutate(o._id)}>Tomar pedido</Button>
@@ -152,16 +151,16 @@ const RepartidorDashboard = () => {
         <Row className="g-3 justify-content-center">
           {asignados.map((o) => (
             <Col md={6} lg={4} key={o._id}>
-              <Card className="card-yega h-100 text-start">
+              <Card className="card-yega yega-glass h-100 text-start">
                 <Card.Body>
                   <div className="d-flex justify-content-between align-items-start">
                     <div>
-                      <div className="fw-bold">{o.clienteId?.nombre ?? '—'}</div>
-                      <div className="text-muted small">{o.tiendaId?.nombre ?? '—'} • Pedido {o.numero_pedido}</div>
+                      <div className="fw-bold text-white">{o.clienteId?.nombre ?? '—'}</div>
+                      <div className="text-white-50 small">{o.tiendaId?.nombre ?? '—'} • Pedido {o.numero_pedido}</div>
                     </div>
                     <Badge bg={getEstadoColor(o.estado)} className="estado-badge">{getEstadoIcono(o.estado)} {getEstadoTexto(o.estado)}</Badge>
                   </div>
-                  <div className="mt-2 fw-bold">${o.total?.toFixed?.(2) ?? o.total}</div>
+                  <div className="mt-2 fw-bold text-white">${o.total?.toFixed?.(2) ?? o.total}</div>
                   <div className="mt-2">
                     <ProgressBar 
                       variant={getEstadoColor(o.estado)}

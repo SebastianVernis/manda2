@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaShoppingBag, FaMotorcycle, FaStore, FaUser, FaShoppingCart, FaChartBar, FaHistory, FaClipboardList } from 'react-icons/fa';
+import { FaHome, FaMotorcycle, FaStore, FaUser, FaShoppingCart, FaChartBar, FaHistory, FaClipboardList } from 'react-icons/fa';
 import { useAuth } from '../context/AuthContext';
 
 const BottomNavbar = () => {

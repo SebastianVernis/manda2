@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, Button, Form, Modal, Spinner, Badge } from 'react-bootstrap'
+import { Card, Button, Modal, Spinner, Badge, Form } from 'react-bootstrap'
 import { motion, AnimatePresence } from "framer-motion"
-import { FaSearch, FaMapMarkerAlt, FaClock, FaStar, FaFilter, FaShoppingCart } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaClock, FaStar, FaShoppingCart } from 'react-icons/fa'
 import { useQuery } from '@tanstack/react-query'
 import { useCart } from '../../context/CartContext'
 import { useLocationCheck } from '../../hooks/useLocationCheck'
@@ -82,7 +82,14 @@ const ModernStores = () => {
         return []
       }
     },
-    enabled: !!selectedStore
+    enabled: !!selectedStore,
+    staleTime: Infinity, // Nunca se vuelve stale
+    refetchInterval: false,
+    refetchIntervalInBackground: false,
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+    refetchOnReconnect: false,
+    retry: false
   })
 
   // Filtrar productos
@@ -121,7 +128,6 @@ const ModernStores = () => {
     setIsStoreModalOpen(true)
     setSearchQuery('')
     setFilterCategory('all')
-    refreshCart() // Refresh cart when opening store
   }
 
   const closeStoreModal = () => {
@@ -136,7 +142,7 @@ const ModernStores = () => {
   }, [addressText])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900" style={{ paddingTop: '3rem' }}>
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <motion.div

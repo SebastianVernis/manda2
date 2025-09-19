@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Container, Card, Form, Button, Row, Col, Alert } from 'react-bootstrap'
+import { Container, Card, Button, Row, Col, Form } from 'react-bootstrap'
 import { motion } from 'framer-motion'
-import { FaUser, FaPhone, FaEnvelope, FaBell, FaCog, FaSave } from 'react-icons/fa'
+import { FaUser, FaPhone, FaEnvelope } from 'react-icons/fa'
 import { useAuth } from '../../context/AuthContext'
-import ModernNavbar from '../../components/modern/ModernNavbar'
+
 
 const ClientePerfil = () => {
   const { user, updateProfile } = useAuth()
@@ -44,9 +44,7 @@ const ClientePerfil = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      <ModernNavbar />
-      
-      <Container className="py-4">
+      <Container className="py-4" style={{paddingTop: '3rem'}}>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -68,8 +66,12 @@ const ClientePerfil = () => {
               <Card className="yega-glass">
                 <Card.Body className="p-4">
                   <div className="text-center mb-5">
-                    <div className="bg-primary bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '100px', height: '100px'}}>
-                      <FaUser size={48} className="text-primary" />
+                    <div className="bg-primary bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center mb-3 overflow-hidden" style={{width: '100px', height: '100px'}}>
+                      <img 
+                        src="/images/profile-cliente.png" 
+                        alt="Perfil Cliente"
+                        style={{width: '80px', height: '80px', objectFit: 'cover', borderRadius: '50%'}}
+                      />
                     </div>
                     <h4 className="text-white mb-2">{user?.email}</h4>
                     <div className="text-white-50 small">

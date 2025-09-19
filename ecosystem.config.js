@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'yega-backend',
       script: 'server.js',
-      cwd: '/home/ec2-user/yega-app/backend',
+      cwd: '/home/sebastianvernis/nuevo-desplegue/yega-app/backend',
       instances: 1,
       exec_mode: 'fork',
       env: {
@@ -19,7 +19,7 @@ module.exports = {
     {
       name: 'yega-frontend',
       script: 'server.js',
-      cwd: '/home/ec2-user/yega-app/frontend',
+      cwd: '/home/sebastianvernis/nuevo-desplegue/yega-app/frontend',
       instances: 1,
       exec_mode: 'fork',
       env: {

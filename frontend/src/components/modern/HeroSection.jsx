@@ -93,7 +93,7 @@ const HeroSection = ({ onGetStarted }) => {
                 transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
               >
                 <Card className="yega-glass hover:bg-white/10 transition-all duration-300 group h-full">
-                  <CardBody className="text-center p-8">
+                  <Card.Body className="text-center p-8">
                     <div className="flex justify-center mb-4 text-gray-300 group-hover:scale-110 transition-transform duration-300">
                       {feature.icon}
                     </div>
@@ -103,7 +103,7 @@ const HeroSection = ({ onGetStarted }) => {
                     <p className="text-gray-400">
                       {feature.description}
                     </p>
-                  </CardBody>
+                  </Card.Body>
                 </Card>
               </motion.div>
             ))}

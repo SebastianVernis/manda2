@@ -73,13 +73,13 @@ const ModernDashboard = () => {
   const getStatusChip = (status) => {
     switch (status) {
       case 'entregado':
-        return <Chip color="success" variant="flat" size="sm">Entregado</Chip>
+        return <Badge bg="success">Entregado</Badge>
       case 'en_camino':
-        return <Chip color="warning" variant="flat" size="sm">En camino</Chip>
+        return <Badge bg="warning">En camino</Badge>
       case 'completed':
-        return <Chip color="primary" variant="flat" size="sm">Completado</Chip>
+        return <Badge bg="primary">Completado</Badge>
       default:
-        return <Chip variant="flat" size="sm">{status}</Chip>
+        return <Badge bg="secondary">{status}</Badge>
     }
   }
 
@@ -131,14 +131,9 @@ const ModernDashboard = () => {
               >
                 <Card.Body className="p-4 text-center position-relative">
                   {card.comingSoon && (
-                    <Chip 
-                      color="warning" 
-                      variant="flat" 
-                      size="sm"
-                      className="absolute top-2 right-2"
-                    >
+                    <Badge bg="warning" className="position-absolute top-0 end-0 m-2">
                       Próximamente
-                    </Chip>
+                    </Badge>
                   )}
                   
                   <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${card.color} rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300`}>

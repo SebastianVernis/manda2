@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { Card, Form, Button, Spinner } from 'react-bootstrap'
 import { motion, AnimatePresence } from "framer-motion"
-import { FaShoppingCart, FaMapMarkerAlt, FaCreditCard, FaCheck, FaSearch, FaTimes } from 'react-icons/fa'
+import { FaShoppingCart, FaMapMarkerAlt, FaCheck, FaSearch, FaTimes } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
 import api from '../../services/apiClient'
@@ -32,7 +32,6 @@ const searchAddresses = async (query) => {
 const ModernCheckout = () => {
   const { items, subtotal, clear } = useCart()
   const navigate = useNavigate()
-  const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
   const [coords, setCoords] = useState({ latitud: undefined, longitud: undefined })
   const [selectedAddress, setSelectedAddress] = useState(null)

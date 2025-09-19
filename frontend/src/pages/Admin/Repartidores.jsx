@@ -128,22 +128,22 @@ const AdminRepartidores = () => {
       {repartidoresQ.isError && <Alert variant="danger">No se pudieron cargar los repartidores.</Alert>}
 
       {viewMode === 'documents' && !repartidoresQ.isLoading && !repartidoresQ.isError && (
-        <Table striped hover responsive>
+        <Table className="table-dark table-striped" responsive>
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Email</th>
-              <th>Estado</th>
-              <th>Documentos</th>
-              <th>Acciones</th>
+              <th className="text-white">Nombre</th>
+              <th className="text-white">Email</th>
+              <th className="text-white">Estado</th>
+              <th className="text-white">Documentos</th>
+              <th className="text-white">Acciones</th>
             </tr>
           </thead>
           <tbody>
             {repartidoresQ.data?.map((r) => (
               <React.Fragment key={r._id}>
                 <tr>
-                  <td>{r.nombre}</td>
-                  <td>{r.email}</td>
+                  <td className="text-white">{r.nombre}</td>
+                  <td className="text-white">{r.email}</td>
                   <td>
                     <Badge bg={r.estado_validacion === 'aprobado' ? 'success' : r.estado_validacion === 'pendiente' ? 'warning' : 'danger'}>
                       {r.estado_validacion}
@@ -180,7 +180,7 @@ const AdminRepartidores = () => {
                 <tr>
                   <td colSpan={5} className="p-0">
                     <Collapse in={expandedDelivery === r._id}>
-                      <div className="bg-dark p-3 border-start border-warning border-3">
+                      <div className="card-yega yega-glass p-3 border-start border-warning border-3">
                         <h6 className="text-warning mb-3">Documentos de Verificación</h6>
                         
                         {['id_doc', 'licencia', 'tarjeta_circulacion', 'poliza_seguro'].map(docType => {
@@ -188,19 +188,19 @@ const AdminRepartidores = () => {
                           const status = getDocumentStatus(doc)
                           
                           return (
-                            <div key={docType} className="mb-3 p-2 bg-gray-800 rounded">
+                            <div key={docType} className="mb-3 p-2 bg-dark bg-opacity-50 rounded">
                               <div className="d-flex justify-content-between align-items-center">
                                 <div>
-                                  <strong>{getDocTypeLabel(docType)}</strong>
+                                  <strong className="text-white">{getDocTypeLabel(docType)}</strong>
                                   <br />
                                   <Badge bg={status.badge} className="me-2">{status.text}</Badge>
                                   {doc && (
                                     <>
-                                      <small className="text-muted">
+                                      <small className="text-white-50">
                                         Subido: {new Date(doc.uploadedAt).toLocaleString()}
                                       </small>
                                       {doc.notes && (
-                                        <div className="text-muted small mt-1">
+                                        <div className="text-white-50 small mt-1">
                                           <strong>Notas:</strong> {doc.notes}
                                         </div>
                                       )}
@@ -213,7 +213,7 @@ const AdminRepartidores = () => {
                                     <Button
                                       size="sm"
                                       variant="outline-light"
-                                      href={doc.file.startsWith('/uploads') ? `https://3-85-74-100.nip.io${doc.file}` : doc.file}
+                                      href={doc.file.startsWith('/uploads') ? `${import.meta.env.VITE_API_URL.replace('/api', '')}${doc.file}` : doc.file}
                                       target="_blank"
                                       rel="noopener noreferrer"
                                     >
@@ -272,7 +272,7 @@ const AdminRepartidores = () => {
           {pedidosQ.isLoading && <div className="text-center py-3"><Spinner animation="border" /></div>}
           {pedidosQ.isError && <Alert variant="danger">No se pudieron cargar los pedidos.</Alert>}
           {!pedidosQ.isLoading && !pedidosQ.isError && (
-            <Table striped hover responsive>
+            <Table className="table-dark table-striped" responsive>
               <thead>
                 <tr>
                   <th>Nº Pedido</th>

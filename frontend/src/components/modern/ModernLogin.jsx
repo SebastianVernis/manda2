@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, Button, Form, Alert } from 'react-bootstrap'
+import { Card, Button, Form } from 'react-bootstrap'
 import { motion } from "framer-motion"
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useAuth } from '../../context/AuthContext'

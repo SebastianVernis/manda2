@@ -6,7 +6,7 @@ import { FaHistory, FaShoppingCart } from 'react-icons/fa'
 import api from '../../services/apiClient'
 import { useNavigate } from 'react-router-dom'
 import { getEstadoTexto, getEstadoColor, getEstadoIcono } from '../../utils/orderStates'
-import ModernNavbar from '../../components/modern/ModernNavbar'
+
 
 const ClientePedidos = () => {
   const navigate = useNavigate()
@@ -22,9 +22,7 @@ const ClientePedidos = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      <ModernNavbar />
-      
-      <Container className="py-4">
+      <Container className="py-4" style={{paddingTop: '3rem'}}>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -51,6 +51,17 @@ const RepartidorPerfil = () => {
         <Col lg={6}>
           <Card className="card-yega mb-4">
             <Card.Body>
+              <div className="text-center mb-4">
+                <div className="bg-primary bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center mb-3 overflow-hidden" style={{width: '100px', height: '100px'}}>
+                  <img 
+                    src="/images/profile-repartidor.png" 
+                    alt="Perfil Repartidor"
+                    style={{width: '80px', height: '80px', objectFit: 'cover', borderRadius: '50%'}}
+                  />
+                </div>
+                <h5 className="text-white mb-1">{user?.nombre}</h5>
+                <small className="text-white-50">{user?.email}</small>
+              </div>
               <h4 className="text-yega-gold mb-3">Información personal</h4>
               <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3">

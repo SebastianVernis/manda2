@@ -1,72 +1,219 @@
-# Tareas Delegadas a Qwen - Implementación del Panel de Administración y Revisión de Documentos
+# Órdenes para Qwen - YEGA Platform Management
 
-## Objetivo Principal
+## 🎯 Objetivo Principal
 
-Implementar la funcionalidad completa para que el Administrador pueda revisar y gestionar los documentos pendientes de aprobación de usuarios (Tiendas y Repartidores), así como asegurar la consistencia visual del gradiente de fondo en el frontend.
+Implementar funcionalidad completa de administración de documentos y mantener la plataforma YEGA en estado production-ready.
 
-## Tareas Delegadas
+## 📋 Comandos de Desarrollo
 
-### 1. Backend: Implementación de la API de Revisión de Documentos
+```bash
+# Iniciar servicios de desarrollo
+cd backend && npm run dev     # Backend en puerto 5000
+cd frontend && npm run dev    # Frontend en puerto 3000
 
-**Archivo:** `backend/controllers/adminController.js`
+# Testing y calidad
+npm run lint                  # ESLint check
+npm test                      # Run tests
+npm run build                 # Build producción
 
-**Tarea:** Implementar la función `getPendingDocuments`.
+# Deployment
+pm2 start ecosystem.config.js
+pm2 status
+pm2 logs
+```
 
-**Detalles:**
--   **Consulta:** Acceder al modelo `Usuario` para buscar usuarios que tengan documentos en estado `pendiente`.
--   **Retorno:** La función debe devolver los datos relevantes del usuario y de sus documentos pendientes.
--   **Ruta Existente:** La ruta para esta funcionalidad ya está definida en `backend/routes/adminRoutes.js` como `/api/admin/documents/pending`.
+## 🔧 Tareas Delegadas
 
-### 2. Frontend: Desarrollo de la UI del Panel de Administración para Revisión de Documentos
+### 1. 🔐 Backend: API de Revisión de Documentos
 
-**2.1. Creación del Componente `DocumentReview.jsx`**
+**Archivo:** `backend/controllers/adminController.js`  
+**Comando:** Implementar función `getPendingDocuments`
+
+**Especificaciones:**
+- **Query MongoDB:** `Usuario.find({ 'documentos.estado': 'pendiente' })`
+- **Proyección:** Incluir campos: `nombre`, `email`, `rol`, `documentos`, `fechaRegistro`
+- **Response Format:** `{ success: true, data: [...usuarios], count: N }`
+- **Error Handling:** Try-catch con response `{ success: false, error: message }`
+- **Ruta:** `/api/admin/documents/pending` (ya existe)
+
+**Validaciones:**
+- Verificar que el usuario sea admin (`req.user.rol === 'administrador'`)
+- Sanitizar datos de salida
+- Agregar paginación si >50 resultados
+
+### 2. 🎨 Frontend: UI Panel Administración
+
+**2.1. Componente Principal**
 
 **Archivo:** `frontend/src/pages/Admin/DocumentReview.jsx`
 
-**Tarea:** Crear un nuevo componente de página para la revisión de documentos.
+**Estructura React:**
+```jsx
+import React, { useState, useEffect } from 'react';
+import { toast } from 'react-hot-toast';
+import apiClient from '../../services/apiClient';
 
-**Detalles:**
--   **Fetch de Datos:** Realizar una llamada a la API `/api/admin/documents/pending` para obtener la lista de usuarios con documentos pendientes.
--   **Visualización:**
-    -   Mostrar una lista clara de usuarios con sus documentos pendientes.
-    -   Para cada documento, mostrar sus detalles: tipo de documento, un enlace para ver el archivo, estado actual y cualquier nota asociada.
--   **Acciones del Administrador:**
-    -   Incluir botones "Approve" y "Reject" para cada documento.
-    -   Añadir un área de texto (`textarea`) para que el administrador pueda añadir notas al aprobar o rechazar un documento.
--   **Interacción con la API:** Al hacer clic en "Approve" o "Reject", llamar a los endpoints de la API correspondientes (`approveDocument` y `rejectDocument`) en el backend.
+const DocumentReview = () => {
+  // Estados: documents, loading, error
+  // useEffect para fetch inicial
+  // Funciones: handleApprove, handleReject
+  // UI: Cards con documentos + acciones
+};
+```
 
-**2.2. Añadir Ruta en `App.jsx`**
+**Especificaciones UI:**
+- **Layout:** `min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900`
+- **Cards:** Bootstrap cards para cada usuario con documentos
+- **Buttons:** `btn-success` (Aprobar) / `btn-danger` (Rechazar)
+- **Modal:** Para confirmación de acciones con textarea para notas
+- **Estados:** Loading spinner, empty state, error handling
+- **Toast:** Notifications para success/error
+
+**API Integration:**
+- GET `/api/admin/documents/pending`
+- PUT `/api/admin/documents/approve/:userId/:docId`
+- PUT `/api/admin/documents/reject/:userId/:docId`
+
+**2.2. Configuración de Rutas**
 
 **Archivo:** `frontend/src/App.jsx`
+```jsx
+// Agregar import
+import DocumentReview from './pages/Admin/DocumentReview';
 
-**Tarea:** Configurar la ruta para el nuevo componente.
+// Agregar ruta protegida
+<Route path="/admin/documents" element={
+  <ProtectedRoute requiredRole="administrador">
+    <DocumentReview />
+  </ProtectedRoute>
+} />
+```
 
-**Detalles:**
--   **Ruta:** `/admin/documents`
--   **Componente:** `DocumentReview.jsx`
+**2.3. Dashboard Integration**
 
-**2.3. Añadir Enlace en `AdminDashboard.jsx`**
+**Archivo:** `frontend/src/pages/Admin/Dashboard.jsx`
+```jsx
+// Agregar card en dashboard
+<div className="card text-white bg-primary">
+  <div className="card-body">
+    <h5>📋 Documentos Pendientes</h5>
+    <p>Revisar y aprobar documentos</p>
+    <Link to="/admin/documents" className="btn btn-light">
+      Gestionar Documentos
+    </Link>
+  </div>
+</div>
+```
 
-**Archivo:** `frontend/src/pages/Admin/AdminDashboard.jsx` (asumiendo que existe un dashboard principal para el admin)
+### 3. 🎨 Consistencia Visual
 
-**Tarea:** Crear una nueva tarjeta o enlace en el dashboard principal del administrador que dirija a la ruta `/admin/documents`.
+**Comando:** Aplicar gradiente uniforme en todas las páginas
 
-### 3. Tareas Generales / Estilos: Consistencia del Fondo de Gradiente
+**CSS Classes a usar:**
+```css
+.yega-gradient {
+  min-height: 100vh;
+  background: linear-gradient(135deg, 
+    rgb(17, 24, 39) 0%, 
+    rgb(0, 0, 0) 50%, 
+    rgb(17, 24, 39) 100%);
+}
+```
 
-**Tarea:** Asegurar que el estilo de fondo de gradiente `min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900` se aplique correctamente a *todas* las páginas del frontend, incluyendo las nuevas y las existentes.
+**Páginas a actualizar:**
+- `/pages/Admin/*.jsx` - Todas las páginas de admin
+- `/pages/Cliente/*.jsx` - Dashboard y componentes principales  
+- `/pages/Tienda/*.jsx` - Dashboard y componentes principales
+- `/pages/Repartidor/*.jsx` - Dashboard y componentes principales
 
-**Detalles:**
--   Revisar los componentes de página existentes y el nuevo `DocumentReview.jsx`.
--   Asegurar que el gradiente se aplique de manera uniforme para mantener la consistencia visual.
+**Pattern a seguir:**
+```jsx
+<div className="yega-gradient">
+  <div className="container py-4">
+    {/* Contenido */}
+  </div>
+</div>
+```
 
-## Contexto y Consideraciones Adicionales
+## 🔍 Context & Standards
 
-### Contexto Existente:
--   La lógica de subida de documentos en el backend (`backend/controllers/documentController.js`) ya está implementada.
--   El envío de correos de aprobación/rechazo (`backend/controllers/adminController.js`) ya está implementado.
--   El componente `DocumentUploader.jsx` en el frontend ya es funcional para la subida de documentos.
+### ✅ Already Implemented:
+- Document upload logic (`documentController.js`)
+- Email notifications (`adminController.js`) 
+- DocumentUploader component (functional)
+- User authentication & role-based access
+- MongoDB models and schemas
 
-### Recomendaciones Importantes (de `CHECKLIST.md`):
--   **Pruebas Unitarias y de Integración:** Aunque no es una tarea directa en esta delegación, se recomienda encarecidamente considerar la implementación de pruebas para las nuevas funcionalidades, tanto en el backend (Jest/Mocha) como en el frontend (Vitest/React Testing Library), para garantizar la calidad y estabilidad.
--   **Manejo de Errores:** Estandarizar el manejo de errores en el backend para proporcionar respuestas consistentes y claras al frontend. Asegurarse de que la UI maneje adecuadamente los estados de carga, éxito y error de las llamadas a la API.
--   **Documentación de la API:** Considerar la generación de documentación interactiva para los nuevos endpoints de la API.
+### 📐 Code Standards:
+```javascript
+// Error Response Format
+{ success: false, error: "Detailed message", code: "ERROR_CODE" }
+
+// Success Response Format  
+{ success: true, data: {...}, message: "Action completed" }
+
+// Component Structure
+const Component = () => {
+  // Estados
+  // useEffect
+  // Handlers
+  // Render
+};
+```
+
+### 🧪 Testing Requirements:
+```bash
+# Backend testing
+npm test                    # Run all tests
+npm run test:coverage      # Coverage report
+
+# Frontend testing
+npx vitest run             # Unit tests
+npm run test:e2e          # End-to-end tests
+```
+
+## 📝 Implementation Details
+
+### Backend Implementation
+- **File:** `backend/controllers/adminController.js`
+- **Function:** `getPendingDocuments`
+- **Description:** Implemented function to fetch users with pending documents
+- **Validation:** Added admin role verification (`req.user.rol === 'administrador'`)
+- **Query:** Used MongoDB query with `$or` operator to find users with any pending documents
+- **Response Format:** `{ success: true, data: [...usuarios], count: N }`
+- **Error Handling:** Added try-catch with consistent error responses
+
+### Route Implementation
+- **File:** `backend/routes/adminRoutes.js`
+- **Endpoint:** GET `/api/admin/documents/pending`
+- **Description:** Added route for fetching pending documents
+
+### Frontend Implementation
+- **File:** `frontend/src/pages/Admin/DocumentReview.jsx`
+- **Description:** Created component for document review with approve/reject functionality
+- **Features:** 
+  - Document fetching from API
+  - Bootstrap cards for user documents
+  - Modal confirmation for actions
+  - Notes field for admin comments
+  - Loading states and error handling
+  - Consistent gradient styling
+
+### Routing Implementation
+- **File:** `frontend/src/App.jsx`
+- **Route:** `/admin/documents`
+- **Description:** Added protected route for document review panel
+
+### Dashboard Integration
+- **File:** `frontend/src/pages/Admin/Dashboard.jsx`
+- **Description:** Added card with link to document review panel
+
+## 📈 Results
+- Successfully implemented document review functionality for administrators
+- Created intuitive UI for managing user documents
+- Maintained consistent styling across all admin pages
+- Verified gradient styling is already applied consistently across all pages
+
+**Priority:** HIGH - Production deployment ready
+**Timeline:** Complete within current session
+**Quality:** Enterprise-level implementation required

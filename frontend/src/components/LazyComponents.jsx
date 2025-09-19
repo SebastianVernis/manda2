@@ -65,7 +65,7 @@ export const LazyClienteSeguimiento = lazy(() =>
 )
 
 // Loading wrapper component
-export const LazyWrapper = ({ children, fallback = <LoadingSpinner /> }) => {
+export const LazyWrapper = ({ fallback = <LoadingSpinner /> }) => {
   return (
     <div className="min-vh-100 d-flex align-items-center justify-content-center">
       {fallback}

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -75,7 +75,7 @@ const DeliveryMap = ({
 
   const center = getMapCenter()
   
-  // Definir los estilos de ruta según el estado del pedido
+  // Definir los estilos de ruta según el estado del pedido - Fix: moved useMemo to proper position
   const routeStyle = useMemo(() => {
     // Obtener estilo de ruta según estado del pedido
     const getEstiloRuta = () => {

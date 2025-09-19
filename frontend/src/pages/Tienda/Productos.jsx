@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useQuery, useMutation } from '@tanstack/react-query'
 import { apiClient } from '../../services/apiClient'
-import { Container, Alert, Button, Spinner, Row, Col, Form, InputGroup, Card, Badge, Modal } from 'react-bootstrap'
-import { FaEdit, FaTrash, FaCheckCircle, FaTimesCircle } from 'react-icons/fa'
+import { Container, Button, Spinner, Row, Col, InputGroup, Card, Badge, Modal, Form, Alert } from 'react-bootstrap'
+import { FaEdit, FaTrash } from 'react-icons/fa'
 
 const TiendaProductos = () => {
   const [showCreate, setShowCreate] = useState(false)
@@ -117,7 +117,7 @@ const TiendaProductos = () => {
       </div>
 
       {(showCreate || editingProduct) && (
-        <div className="glass-card mb-4 p-3">
+        <div className="card-yega yega-glass mb-4 p-3">
           <Form
             onSubmit={(e) => {
               e.preventDefault()
@@ -215,33 +215,33 @@ const TiendaProductos = () => {
       )}
 
       {isError && (
-        <Alert variant="danger" className="glass-card" style={{background: "rgba(220,53,69,0.15)"}}>
+        <Alert variant="danger" className="card-yega yega-glass"><div className="text-white">
           No se pudieron cargar los productos. Verifica tu conexión y sesión.
-        </Alert>
+          </div></Alert>
       )}
 
       {!isLoading && !isError && (
         <>
           {productos.length === 0 ? (
-            <Alert variant="warning" className="glass-card" style={{background: "rgba(255,193,7,0.15)"}}>
+            <Alert variant="warning" className="card-yega yega-glass"><div className="text-white">
               No hay productos aún. Si estás en desarrollo, puedes crear el producto demo ejecutando
-              <code className="ms-1">cd backend && npm run seed</code>.
-            </Alert>
+              <code className="ms-1 text-warning">cd backend && npm run seed</code>.
+              </div></Alert>
           ) : (
             <Row className="g-3">
               {productos.map((p) => (
                 <Col md={6} lg={4} key={p._id}>
-                  <Card className="glass-card h-100">
+                  <Card className="card-yega yega-glass h-100">
                     <Card.Body>
                       <div className="d-flex justify-content-between align-items-start">
-                        <div className="fw-bold">{p.nombre}</div>
+                        <div className="fw-bold text-white">{p.nombre}</div>
                         <Badge bg={p.disponible ? 'success' : 'secondary'} className="glass-badge">{p.disponible ? 'Disponible' : 'No disponible'}</Badge>
                       </div>
                       <div className="text-white-50 small mt-1">{p.categoria}</div>
-                      <div className="mt-2 text-white-70" style={{ minHeight: 40 }}>{p.descripcion}</div>
+                      <div className="mt-2 text-white-50" style={{ minHeight: 40 }}>{p.descripcion}</div>
                       <div className="mt-3 d-flex justify-content-between align-items-center">
-                        <div className="fw-bold">${p.precio?.toFixed?.(2) ?? p.precio}</div>
-                        <div className="small">Stock: {p.stock}</div>
+                        <div className="fw-bold text-white">${p.precio?.toFixed?.(2) ?? p.precio}</div>
+                        <div className="small text-white-50">Stock: {p.stock}</div>
                       </div>
                       <div className="mt-2 d-flex justify-content-end gap-2">
                         <Button
@@ -272,24 +272,24 @@ const TiendaProductos = () => {
       )}
       
       {/* Modal de confirmación para eliminar */}
-      <Modal show={!!deletingProduct} onHide={() => setDeletingProduct(null)} centered dialogClassName="modal-dialog-custom" contentClassName="glass-modal-content" backdropClassName="modal-backdrop-custom" className="glass-modal">
-        <Modal.Header closeButton style={{borderRadius: '20px 20px 0 0'}}>
-          <Modal.Title>Confirmar eliminación</Modal.Title>
+      <Modal show={!!deletingProduct} onHide={() => setDeletingProduct(null)} centered className="dark-modal">
+        <Modal.Header closeButton>
+          <Modal.Title className="text-white">Confirmar eliminación</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {deletingProduct && (
             <div>
-              <p>¿Estás seguro que deseas eliminar el siguiente producto?</p>
-              <div className="glass-card p-3 mb-3">
-                <div className="fw-bold">{deletingProduct.nombre}</div>
+              <p className="text-white">¿Estás seguro que deseas eliminar el siguiente producto?</p>
+              <div className="card-yega yega-glass p-3 mb-3">
+                <div className="fw-bold text-white">{deletingProduct.nombre}</div>
                 <div className="text-white-50 small">{deletingProduct.descripcion}</div>
-                <div className="mt-1">Precio: ${deletingProduct.precio?.toFixed(2)}</div>
+                <div className="mt-1 text-white">Precio: ${deletingProduct.precio?.toFixed(2)}</div>
               </div>
               <p className="text-danger">Esta acción no se puede deshacer.</p>
             </div>
           )}
         </Modal.Body>
-        <Modal.Footer style={{borderRadius: '0 0 20px 20px'}}>
+        <Modal.Footer>
           <Button className="glass-btn" onClick={() => setDeletingProduct(null)}>
             Cancelar
           </Button>

@@ -129,20 +129,25 @@ const RepartidorUbicacion = () => {
 
       {/* Mapa en vivo del repartidor */}
       <div className="mt-3" style={{ height: 360 }}>
-        <MapContainer style={{ height: '100%', width: '100%' }} center={coords || bg?.currentPosition && { lat: bg.currentPosition.latitud, lng: bg.currentPosition.longitud } || { lat: -34.6037, lng: -58.3816 }} zoom={12} scrollWheelZoom={false}>
+        <MapContainer 
+          style={{ height: '100%', width: '100%' }} 
+          center={coords ? [coords.lat, coords.lng] : bg?.currentPosition ? [bg.currentPosition.latitud, bg.currentPosition.longitud] : [-34.6037, -58.3816]} 
+          zoom={12} 
+          scrollWheelZoom={false}
+        >
           <TileLayer
             attribution='&copy; OpenStreetMap contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <FitToCoord coord={coords || bg?.currentPosition && { lat: bg.currentPosition.latitud, lng: bg.currentPosition.longitud }} />
+          <FitToCoord coord={coords ? coords : bg?.currentPosition ? { lat: bg.currentPosition.latitud, lng: bg.currentPosition.longitud } : null} />
           {coords && (
-            <CircleMarker center={coords} radius={10} pathOptions={{ color: '#0d6efd' }}>
+            <CircleMarker center={[coords.lat, coords.lng]} radius={10} pathOptions={{ color: '#0d6efd' }}>
               <Tooltip permanent>Tu ubicación manual</Tooltip>
             </CircleMarker>
           )}
           {!coords && bg?.currentPosition && (
             <CircleMarker 
-              center={{ lat: bg.currentPosition.latitud, lng: bg.currentPosition.longitud }} 
+              center={[bg.currentPosition.latitud, bg.currentPosition.longitud]} 
               radius={10} 
               pathOptions={{ color: '#28a745' }}
             >

@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from './context/AuthContext'
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+
 import BottomNavbar from './components/BottomNavbar'
 import LoadingSpinner from './components/LoadingSpinner'
-import ReturnHomeButton from './components/ui/ReturnHomeButton'
-import FloatingMenuButton from './components/ui/FloatingMenuButton'
+import PWAUpdateNotification, { OfflineIndicator } from './components/PWAUpdateNotification'
+
 import './styles/bottom-navbar.css'
 
 // Function to clear any demo products from localStorage
@@ -61,6 +61,7 @@ import AdminUsuarios from './pages/Admin/Usuarios'
 import AdminTiendas from './pages/Admin/Tiendas'
 import AdminRepartidores from './pages/Admin/Repartidores'
 import AdminReportes from './pages/Admin/Reportes'
+
 
 import TiendaPerfil from './pages/Tienda/Perfil'
 import ClientePerfil from './pages/Cliente/Perfil'
@@ -190,6 +191,7 @@ function AppShell() {
             <Route path="/admin/tiendas" element={<ProtectedRoute allowedRoles={['administrador']}><AdminTiendas /></ProtectedRoute>} />
             <Route path="/admin/repartidores" element={<ProtectedRoute allowedRoles={['administrador']}><AdminRepartidores /></ProtectedRoute>} />
             <Route path="/admin/reportes" element={<ProtectedRoute allowedRoles={['administrador']}><AdminReportes /></ProtectedRoute>} />
+
 
             
             {/* Página de no autorizado */}

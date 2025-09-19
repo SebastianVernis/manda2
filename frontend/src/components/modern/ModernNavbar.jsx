@@ -9,7 +9,7 @@ import {
   Badge
 } from 'react-bootstrap'
 import { motion } from "framer-motion"
-import { FaShoppingCart, FaUser, FaSignOutAlt, FaCog } from 'react-icons/fa'
+import { FaShoppingCart, FaUser, FaSignOutAlt, FaCogs } from 'react-icons/fa'
 import { useAuth } from '../../context/AuthContext'
 import { useCart } from '../../context/CartContext'
 import { useNavigate } from 'react-router-dom'
@@ -142,7 +142,7 @@ const ModernNavbar = () => {
                         navigate(dashboardRoutes[user?.rol] || '/dashboard')
                       }}
                     >
-                      <FaCog className="me-2" />
+                      <FaCogs className="me-2" />
                       Dashboard
                     </Dropdown.Item>
                     

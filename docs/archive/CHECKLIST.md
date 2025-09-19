@@ -23,6 +23,14 @@ Este documento resume las tareas pendientes, las funcionalidades incompletas y l
 -   **`documentRoutes.js`**: No está claro si la funcionalidad de carga de documentos para repartidores (e.g., licencia de conducir) está completamente implementada y validada.
 -   **`storeController.simple.js`**: La existencia de este archivo sugiere que el `storeController.js` principal puede tener una lógica compleja que se intentó simplificar, o que hay una versión incompleta. Sería bueno unificar y completar la lógica.
 
+##  ✅ Tareas Completadas
+
+### Backend
+-   **API de Revisión de Documentos**: Implementada la funcionalidad completa para que los administradores puedan revisar documentos pendientes de usuarios (tiendas y repartidores). Se creó el endpoint GET `/api/admin/documents/pending` en `adminController.js` y se registró en `adminRoutes.js`.
+
+### Frontend
+-   **Panel de Administración para Revisión de Documentos**: Desarrollado el componente `DocumentReview.jsx` que permite a los administradores ver, aprobar y rechazar documentos pendientes. Se añadieron las rutas necesarias en `App.jsx` y se integró un enlace en el dashboard de administradores.
+
 ##  Recomendaciones Generales
 
 -   **Pruebas Unitarias y de Integración**: El proyecto carece de un framework de pruebas tanto en el frontend como en el backend. Se recomienda encarecidamente implementar pruebas (e.g., con Vitest/React Testing Library en el frontend y Jest/Mocha en el backend) para garantizar la calidad y estabilidad del código.

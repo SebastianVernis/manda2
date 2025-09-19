@@ -156,10 +156,10 @@ const PaymentMethod = () => {
         </div>
       </MobileHeader>
 
-      <div className="px-6 py-4 space-y-6">
+      <div className="px-4 py-4 space-y-6" style={{ margin: '0 1rem' }}>
         {/* Address Confirmation */}
         {!addressConfirmed && (
-          <Card className="bg-white/5 border-white/10">
+          <Card className="card-yega yega-glass">
             <Card.Body className="p-6">
               <AddressConfirmation onConfirm={handleAddressConfirm} />
             </Card.Body>
@@ -167,15 +167,15 @@ const PaymentMethod = () => {
         )}
 
         {addressConfirmed && (
-          <Card className="bg-green-500/10 border-green-500/30">
+          <Card className="card-yega yega-glass border-success">
             <Card.Body className="p-4">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-green-400">✓</span>
                 <span className="font-medium text-green-300">Dirección confirmada</span>
               </div>
-              <div className="text-sm text-white/70">{confirmedAddress?.calle}</div>
+              <div className="text-sm text-white-50">{confirmedAddress?.calle}</div>
               {confirmedAddress?.latitud && (
-                <div className="text-xs text-white/50 mt-1">
+                <div className="text-xs text-white-50 mt-1">
                   📍 Ubicación GPS disponible
                 </div>
               )}
@@ -199,10 +199,10 @@ const PaymentMethod = () => {
             </h2>
           <Form.Group onChange={(e) => setSelectedMethod(e.target.value)} className="space-y-3">
             {paymentMethods.map((method) => (
-              <Card key={method.id} className={`cursor-pointer transition-colors ${
+              <Card key={method.id} className={`cursor-pointer transition-colors card-yega yega-glass mb-3 ${
                 selectedMethod === method.id 
-                  ? 'bg-yega-gold/10 border-yega-gold/50' 
-                  : 'bg-white/5 border-white/10'
+                  ? 'border-warning' 
+                  : ''
               }`}>
                 <Card.Body className="p-4">
                   <div className="flex items-center space-x-3">
@@ -213,7 +213,7 @@ const PaymentMethod = () => {
                         <Form.Label htmlFor={method.id} className="font-medium text-white cursor-pointer">
                           {method.name}
                         </Form.Label>
-                        <p className="text-sm text-white/70">{method.description}</p>
+                        <p className="text-sm text-white-50">{method.description}</p>
                       </div>
                     </div>
                   </div>
@@ -224,7 +224,7 @@ const PaymentMethod = () => {
 
           {/* Card Details */}
           {selectedMethod === 'card' && (
-          <Card className="bg-white/5 border-white/10">
+          <Card className="card-yega yega-glass">
             <Card.Body className="p-6 space-y-4">
               <h3 className="text-lg font-semibold text-yega-silver mb-4">
                 Detalles de la tarjeta
@@ -288,14 +288,14 @@ const PaymentMethod = () => {
 
           {/* Cash Payment Info */}
           {selectedMethod === 'cash' && (
-          <Card className="bg-white/5 border-white/10">
+          <Card className="card-yega yega-glass">
             <Card.Body className="p-6">
               <div className="text-center">
                 <span className="text-4xl mb-4 block">💵</span>
                 <h3 className="text-lg font-semibold text-yega-silver mb-2">
                   Pago en efectivo
                 </h3>
-                <p className="text-white/70">
+                <p className="text-white-50">
                   Prepara el dinero exacto. El repartidor podría no tener cambio disponible.
                 </p>
               </div>
@@ -305,20 +305,20 @@ const PaymentMethod = () => {
 
           {/* Transfer Payment Info */}
           {selectedMethod === 'transfer' && (
-          <Card className="bg-white/5 border-white/10">
+          <Card className="card-yega yega-glass">
             <Card.Body className="p-6">
               <div className="text-center">
                 <span className="text-4xl mb-4 block">🏦</span>
                 <h3 className="text-lg font-semibold text-yega-silver mb-2">
                   Transferencia bancaria
                 </h3>
-                <p className="text-white/70 mb-4">
+                <p className="text-white-50 mb-4">
                   Podrás pagar por SPEI, Oxxo, o transferencia desde tu banco.
                 </p>
                 <div className="bg-white/5 rounded-lg p-3 text-left text-sm">
-                  <p className="text-white/90">CLABE: 646180157000000004</p>
-                  <p className="text-white/90">Beneficiario: YEGA DELIVERY S.A. DE C.V.</p>
-                  <p className="text-white/90">RFC: YEG240101ABC</p>
+                  <p className="text-white">CLABE: 646180157000000004</p>
+                  <p className="text-white">Beneficiario: YEGA DELIVERY S.A. DE C.V.</p>
+                  <p className="text-white">RFC: YEG240101ABC</p>
                 </div>
               </div>
             </Card.Body>

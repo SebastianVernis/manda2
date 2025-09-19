@@ -6,7 +6,7 @@ import { apiClient } from '../../services/apiClient'
 import { getEstadoTexto, getEstadoColor, getEstadoIcono } from '../../utils/orderStates'
 import 'leaflet/dist/leaflet.css'
 import '../../styles/map-styles.css'
-import { MapContainer, TileLayer, CircleMarker, Marker, Polyline, Tooltip, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Polyline, Tooltip, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import { 
   Card,
@@ -16,8 +16,8 @@ import {
   Image,
   ProgressBar
 } from 'react-bootstrap'
-import { MapPin, Store, Flag, Truck, Clock, Package, CheckCircle2, ShoppingBag, ChefHat } from 'lucide-react'
-import ModernNavbar from '../../components/modern/ModernNavbar'
+import { MapPin, Store, Flag, Truck, Clock, CheckCircle2, ShoppingBag, ChefHat } from 'lucide-react'
+
 
 const FitToMarkers = ({ points }) => {
   const map = useMap()
@@ -64,40 +64,40 @@ const OrderTimeline = ({ estado }) => {
           aria-valuemax="100">
         </div>
       </div>
-      <div className="flex justify-between">
-        <div className={`text-center ${getEstadoStepStatus('confirmado') !== 'pending' ? 'text-primary-500' : 'text-gray-400'}`}>
-          <div className="flex justify-center">
-            <CheckCircle2 size={20} className={getEstadoStepStatus('confirmado') !== 'pending' ? 'text-primary-500' : 'text-gray-400'} />
+      <div className="d-flex justify-content-between align-items-center flex-wrap">
+        <div className={`text-center flex-fill ${getEstadoStepStatus('confirmado') !== 'pending' ? 'text-primary' : 'text-white-50'}`}>
+          <div className="d-flex justify-content-center mb-1">
+            <CheckCircle2 size={16} className={getEstadoStepStatus('confirmado') !== 'pending' ? 'text-primary' : 'text-white-50'} />
           </div>
-          <span className="text-xs">Confirmado</span>
+          <small>Confirmado</small>
         </div>
         
-        <div className={`text-center ${getEstadoStepStatus('preparando') !== 'pending' ? 'text-primary-500' : 'text-gray-400'}`}>
-          <div className="flex justify-center">
-            <ChefHat size={20} className={getEstadoStepStatus('preparando') !== 'pending' ? 'text-warning-500' : 'text-gray-400'} />
+        <div className={`text-center flex-fill ${getEstadoStepStatus('preparando') !== 'pending' ? 'text-warning' : 'text-white-50'}`}>
+          <div className="d-flex justify-content-center mb-1">
+            <ChefHat size={16} className={getEstadoStepStatus('preparando') !== 'pending' ? 'text-warning' : 'text-white-50'} />
           </div>
-          <span className="text-xs">Preparando</span>
+          <small>Preparando</small>
         </div>
         
-        <div className={`text-center ${getEstadoStepStatus('recolectado') !== 'pending' ? 'text-primary-500' : 'text-gray-400'}`}>
-          <div className="flex justify-center">
-            <ShoppingBag size={20} className={getEstadoStepStatus('recolectado') !== 'pending' ? 'text-violet-500' : 'text-gray-400'} />
+        <div className={`text-center flex-fill ${getEstadoStepStatus('recolectado') !== 'pending' ? 'text-info' : 'text-white-50'}`}>
+          <div className="d-flex justify-content-center mb-1">
+            <ShoppingBag size={16} className={getEstadoStepStatus('recolectado') !== 'pending' ? 'text-info' : 'text-white-50'} />
           </div>
-          <span className="text-xs">Recogido</span>
+          <small>Recogido</small>
         </div>
         
-        <div className={`text-center ${getEstadoStepStatus('en_camino') !== 'pending' ? 'text-primary-500' : 'text-gray-400'}`}>
-          <div className="flex justify-center">
-            <Truck size={20} className={getEstadoStepStatus('en_camino') !== 'pending' ? 'text-warning-500' : 'text-gray-400'} />
+        <div className={`text-center flex-fill ${getEstadoStepStatus('en_camino') !== 'pending' ? 'text-warning' : 'text-white-50'}`}>
+          <div className="d-flex justify-content-center mb-1">
+            <Truck size={16} className={getEstadoStepStatus('en_camino') !== 'pending' ? 'text-warning' : 'text-white-50'} />
           </div>
-          <span className="text-xs">En camino</span>
+          <small>En camino</small>
         </div>
         
-        <div className={`text-center ${getEstadoStepStatus('entregado') !== 'pending' ? 'text-primary-500' : 'text-gray-400'}`}>
-          <div className="flex justify-center">
-            <CheckCircle2 size={20} className={getEstadoStepStatus('entregado') !== 'pending' ? 'text-success-500' : 'text-gray-400'} />
+        <div className={`text-center flex-fill ${getEstadoStepStatus('entregado') !== 'pending' ? 'text-success' : 'text-white-50'}`}>
+          <div className="d-flex justify-content-center mb-1">
+            <CheckCircle2 size={16} className={getEstadoStepStatus('entregado') !== 'pending' ? 'text-success' : 'text-white-50'} />
           </div>
-          <span className="text-xs">Entregado</span>
+          <small>Entregado</small>
         </div>
       </div>
     </div>
@@ -114,7 +114,9 @@ const ClienteSeguimiento = () => {
       const res = await apiClient.orders.getById(id)
       return res.data
     },
-    refetchInterval: 5000,
+    refetchInterval: 30000,
+    refetchIntervalInBackground: false,
+    staleTime: 10000,
   })
 
   const pedido = data?.pedido
@@ -149,7 +151,7 @@ const ClienteSeguimiento = () => {
     `,
     iconSize: [36, 36],
     iconAnchor: [18, 18],
-  }), [])
+  }))
   
   const metaIcon = useMemo(() => L.divIcon({
     className: 'yega-flag-icon',
@@ -163,7 +165,7 @@ const ClienteSeguimiento = () => {
     `,
     iconSize: [36, 36],
     iconAnchor: [18, 18],
-  }), [])
+  }))
   
   const riderIcon = useMemo(() => L.divIcon({
     className: 'yega-rider-icon',
@@ -183,7 +185,7 @@ const ClienteSeguimiento = () => {
     iconAnchor: [18, 18],
   }), [pedido?.estado])
   
-  const orderIcon = useMemo(() => L.divIcon({
+  const orderIcon = L.divIcon({
     className: 'yega-order-icon',
     html: `
       <div style="background:#6f42c1;color:white;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3)">
@@ -196,7 +198,7 @@ const ClienteSeguimiento = () => {
     `,
     iconSize: [36, 36],
     iconAnchor: [18, 18],
-  }), [])
+  })
 
   const estadoStyles = (est) => {
     // Colores y estilos de ruta según estado
@@ -223,23 +225,21 @@ const ClienteSeguimiento = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      <ModernNavbar />
-      
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900" style={{ paddingTop: '3rem' }}>
       <div className="container mx-auto py-4 px-4">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-6"
         >
-          <h1 className="text-4xl font-bold text-white mb-2 flex items-center justify-center gap-3">
-            <Truck className="h-8 w-8 text-blue-400" />
+          <h1 className="display-4 fw-bold text-white mb-2 d-flex align-items-center justify-content-center gap-3">
+            <Truck className="text-primary" size={32} />
             Seguimiento de Pedido
           </h1>
-          <p className="text-gray-400 text-lg">Sigue el estado de tu pedido en tiempo real</p>
+          <p className="text-white-50">Sigue el estado de tu pedido en tiempo real</p>
         </motion.div>
       {!id && (
-        <Card className="mt-3 border-warning">
+        <Card className="mt-3 card-yega yega-glass border-warning">
           <Card.Body>
             <p className="text-warning">No se proporcionó ID de pedido</p>
           </Card.Body>
@@ -247,28 +247,28 @@ const ClienteSeguimiento = () => {
       )}
       {isLoading && <div className="text-center py-5"><Spinner size="lg" /></div>}
       {isError && (
-        <Card className="border-danger">
+        <Card className="border-danger card-yega yega-glass">
           <Card.Body>
-            <p className="text-danger">No se pudo obtener el pedido</p>
+            <p className="text-white">No se pudo obtener el pedido</p>
           </Card.Body>
         </Card>
       )}
       {pedido && (
         <div className="mt-3">
-          <Card className="mb-4">
-            <Card.Header className="d-flex align-items-center justify-content-between bg-dark">
-              <div className="d-flex gap-3 align-items-center">
-                <div><strong>Pedido:</strong> {pedido.numero_pedido}</div>
+          <Card className="mb-4 card-yega yega-glass">
+            <Card.Header className="d-flex align-items-center justify-content-between flex-wrap">
+              <div className="d-flex gap-2 align-items-center flex-wrap">
+                <div className="text-white"><strong>Pedido:</strong> {pedido.numero_pedido}</div>
                 <div>
                   <Badge bg={getEstadoColor(pedido.estado)}>
                     {getEstadoIcono(pedido.estado)} {getEstadoTexto(pedido.estado)}
                   </Badge>
                 </div>
-                <div><strong>Total:</strong> ${pedido.total?.toFixed?.(2) ?? pedido.total}</div>
+                <div className="text-white"><strong>Total:</strong> ${pedido.total?.toFixed?.(2) ?? pedido.total}</div>
               </div>
-              <div className="text-secondary small d-flex gap-2 align-items-center">
-                <Clock size={16} />
-                ETA aprox: {pedido.tiempo_estimado ?? 30} min
+              <div className="text-white-50 small d-flex gap-1 align-items-center">
+                <Clock size={14} />
+                <span>ETA: {pedido.tiempo_estimado ?? 30}min</span>
               </div>
             </Card.Header>
             <Card.Body>
@@ -276,29 +276,29 @@ const ClienteSeguimiento = () => {
             </Card.Body>
           </Card>
           <hr />
-          <div className="flex justify-between items-center mb-3">
-            <h6 className="text-lg font-semibold">Productos</h6>
+          <div className="d-flex justify-content-between align-items-center mb-3">
+            <h6 className="text-white">Productos</h6>
             <Badge bg="primary">{pedido.productos?.length || 0} productos</Badge>
           </div>
           
-          <Card className="mb-4">
+          <Card className="mb-4 card-yega yega-glass">
             <Card.Body>
-              <Table striped hover>
+              <Table className="table-dark table-striped">
                 <thead>
                   <tr>
-                    <th>Producto</th>
-                    <th>Cant.</th>
-                    <th>Precio</th>
-                    <th>Subtotal</th>
+                    <th className="text-white">Producto</th>
+                    <th className="text-white">Cant.</th>
+                    <th className="text-white">Precio</th>
+                    <th className="text-white">Subtotal</th>
                   </tr>
                 </thead>
                 <tbody>
                   {pedido.productos?.map((it, idx) => (
                     <tr key={idx}>
-                      <td>{it.producto?.nombre ?? 'Producto'}</td>
-                      <td>{it.cantidad}</td>
-                      <td>${it.precio_unitario?.toFixed?.(2) ?? it.precio_unitario}</td>
-                      <td>${it.subtotal?.toFixed?.(2) ?? it.subtotal}</td>
+                      <td className="text-white">{it.producto?.nombre ?? 'Producto'}</td>
+                      <td className="text-white">{it.cantidad}</td>
+                      <td className="text-white">${it.precio_unitario?.toFixed?.(2) ?? it.precio_unitario}</td>
+                      <td className="text-white">${it.subtotal?.toFixed?.(2) ?? it.subtotal}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -306,40 +306,40 @@ const ClienteSeguimiento = () => {
             </Card.Body>
           </Card>
           <hr />
-          <div className="flex justify-between items-center mb-3">
-            <h6 className="h5">Repartidor</h6>
+          <div className="d-flex justify-content-between align-items-center mb-3">
+            <h6 className="text-white">Repartidor</h6>
             {pedido.estado !== 'entregado' && pedido.estado !== 'cancelado' && (
               <Badge bg="primary">En tiempo real</Badge>
             )}
           </div>
           
           {pedido.repartidorId ? (
-            <Card className="mb-4">
+            <Card className="mb-4 card-yega yega-glass">
               <Card.Body className="d-flex align-items-center gap-4">
                 <div className="bg-warning rounded-circle p-3">
                   <Truck size={24} className="text-white" />
                 </div>
                 <div>
-                  <div className="fw-medium">{pedido.repartidorId?.nombre ?? '—'}</div>
+                  <div className="fw-medium text-white">{pedido.repartidorId?.nombre ?? '—'}</div>
                   {pedido.repartidorId?.ubicacion?.latitud ? (
-                    <div className="small text-secondary">
+                    <div className="small text-white-50">
                       <div className="d-flex align-items-center gap-1">
                         <MapPin size={14} className={pedido.estado === 'en_camino' ? 'animate-bounce' : ''} />
                         <span>Ubicación actualizada hace {Math.floor(Math.random() * 5) + 1} min</span>
                       </div>
                     </div>
                   ) : (
-                    <div className="small text-secondary">Ubicación no disponible</div>
+                    <div className="small text-white-50">Ubicación no disponible</div>
                   )}
                 </div>
               </Card.Body>
             </Card>
           ) : (
-            <Card className="mb-4 border-secondary border-opacity-25">
+            <Card className="mb-4 card-yega yega-glass border-secondary border-opacity-25">
               <Card.Body>
-                <div className="text-center text-secondary py-2">
+                <div className="text-center text-white-50 py-2">
                   <Clock className="mx-auto mb-2" size={32} />
-                  <p>Esperando asignación de repartidor...</p>
+                  <p className="text-white-50">Esperando asignación de repartidor...</p>
                 </div>
               </Card.Body>
             </Card>
@@ -347,12 +347,12 @@ const ClienteSeguimiento = () => {
 
           {/* Mapa de seguimiento */}
           <div className="mb-4">
-            <h6 className="text-lg font-semibold mb-3">Ubicación en tiempo real</h6>
+            <h6 className="text-white mb-3">Ubicación en tiempo real</h6>
             
             {allPoints.length > 0 ? (
-              <Card className="overflow-hidden">
+              <Card className="overflow-hidden card-yega yega-glass">
                 <Card.Body className="p-0">
-                  <div className="relative h-80">
+                  <div className="relative" style={{ height: '300px' }}>
                     <MapContainer style={{ height: '100%', width: '100%' }} center={allPoints[0] || { lat: 0, lng: 0 }} zoom={13} scrollWheelZoom={false}>
                       <TileLayer
                         attribution='&copy; OpenStreetMap contributors'
@@ -387,48 +387,33 @@ const ClienteSeguimiento = () => {
                         />
                       ) : null)}
                     </MapContainer>
-                    {/* Leyenda mejorada */}
-                    <div style={{ position: 'absolute', right: 10, bottom: 10 }} className="bg-black/80 text-white rounded-lg px-4 py-3 text-xs shadow-lg">
-                      <div className="text-sm font-semibold mb-2">Leyenda del mapa</div>
-                      
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
-                          <Store size={10} color="white" />
-                        </div>
-                        <span>Tienda: {pedido?.tiendaId?.nombre || '—'}</span>
+                    {/* Leyenda compacta */}
+                    <div style={{ position: 'absolute', right: 5, bottom: 5, maxWidth: '200px' }} className="bg-black bg-opacity-80 text-white rounded p-2 text-xs">
+                      <div className="d-flex align-items-center gap-1 mb-1">
+                        <div className="bg-primary rounded-circle" style={{ width: '8px', height: '8px' }}></div>
+                        <small>Tienda</small>
                       </div>
-                      
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                          <Flag size={10} color="white" />
-                        </div>
-                        <span>Tu ubicación</span>
+                      <div className="d-flex align-items-center gap-1 mb-1">
+                        <div className="bg-success rounded-circle" style={{ width: '8px', height: '8px' }}></div>
+                        <small>Tu ubicación</small>
                       </div>
-                      
                       {repPos && (
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-4 h-4 bg-amber-500 rounded-full flex items-center justify-center">
-                            <Truck size={10} color="white" />
-                          </div>
-                          <span>Repartidor</span>
+                        <div className="d-flex align-items-center gap-1 mb-1">
+                          <div className="bg-warning rounded-circle" style={{ width: '8px', height: '8px' }}></div>
+                          <small>Repartidor</small>
                         </div>
                       )}
-                      
-                      <div className="flex items-center gap-2 mt-1 text-gray-300 border-t border-gray-600 pt-2">
-                        <Clock size={12} />
-                        <span>Actualizado hace {Math.floor(Math.random() * 2) + 1} min</span>
-                      </div>
                     </div>
                   </div>
                 </Card.Body>
               </Card>
             ) : (
-              <Card className="border-dashed border-muted">
+              <Card className="border-dashed border-muted card-yega yega-glass">
                 <Card.Body>
-                  <div className="text-center text-muted-foreground py-6">
-                    <MapPin className="mx-auto mb-2 h-10 w-10 text-muted-foreground/30" />
-                    <p>Ubicación no disponible</p>
-                    <p className="text-sm">Aparecerá cuando el repartidor esté en camino</p>
+                  <div className="text-center text-white-50 py-6">
+                    <MapPin className="mx-auto mb-2 h-10 w-10 text-white-50" />
+                    <p className="text-white-50">Ubicación no disponible</p>
+                    <p className="text-sm text-white-50">Aparecerá cuando el repartidor esté en camino</p>
                   </div>
                 </Card.Body>
               </Card>

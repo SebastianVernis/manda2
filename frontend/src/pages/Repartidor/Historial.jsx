@@ -41,12 +41,12 @@ const RepartidorHistorial = () => {
             <Row className="g-3">
               {pedidosCompletados.map((o) => (
                 <Col md={6} lg={4} key={o._id}>
-                  <Card className="glass-card h-100">
+                  <Card className="card-yega yega-glass h-100">
                     <Card.Body>
                       <div className="d-flex justify-content-between align-items-start">
                         <div>
-                          <div className="fw-bold">{o.clienteId?.nombre ?? '—'}</div>
-                          <div className="text-muted small">{o.tiendaId?.nombre ?? '—'} • Pedido {o.numero_pedido}</div>
+                          <div className="fw-bold text-white">{o.clienteId?.nombre ?? '—'}</div>
+                          <div className="text-white-50 small">{o.tiendaId?.nombre ?? '—'} • Pedido {o.numero_pedido}</div>
                           <div className="small text-white-50 mt-1">
                             {new Date(o.updatedAt).toLocaleDateString()} • {new Date(o.updatedAt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
                           </div>
@@ -56,7 +56,7 @@ const RepartidorHistorial = () => {
                         </Badge>
                       </div>
                       <div className="mt-3 d-flex justify-content-between align-items-center">
-                        <div className="fw-bold">${o.total?.toFixed?.(2) ?? o.total}</div>
+                        <div className="fw-bold text-white">${o.total?.toFixed?.(2) ?? o.total}</div>
                         <div className="text-end small text-white-50">
                           {o.direccion_envio?.direccion && (
                             <div>{o.direccion_envio.direccion}</div>

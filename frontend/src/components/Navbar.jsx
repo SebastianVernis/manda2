@@ -2,7 +2,7 @@ import React from 'react'
 import { Navbar, Nav, Container, NavDropdown, Badge } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { useAuth } from '../context/AuthContext'
-import { FaUser, FaShoppingCart, FaTruck, FaCog, FaSignOutAlt } from 'react-icons/fa'
+import { FaUser, FaShoppingCart, FaTruck, FaCog, FaSignOutAlt, FaCogs } from 'react-icons/fa'
 
 const CustomNavbar = () => {
   const { user, logout, isAuthenticated } = useAuth()
@@ -16,7 +16,7 @@ const CustomNavbar = () => {
       case 'cliente':
         return <FaShoppingCart className="me-1" />
       case 'tienda':
-        return <FaCog className="me-1" />
+        return <FaCogs className="me-1" />
       case 'repartidor':
         return <FaTruck className="me-1" />
       case 'administrador':
@@ -104,7 +104,7 @@ const CustomNavbar = () => {
                 
                 <LinkContainer to="/profile">
                   <NavDropdown.Item>
-                    <FaCog className="me-2" />
+                    <FaCogs className="me-2" />
                     Mi Perfil
                   </NavDropdown.Item>
                 </LinkContainer>

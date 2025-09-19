@@ -42,10 +42,10 @@ exports.updateLocation = async (req, res) => {
     // Para repartidores, verificar si tiene pedidos activos antes de actualizar
     if (userRol === 'repartidor') {
       const Pedido = require('../models/Pedido');
-      const pedidosActivos = await Pedido.find({
+      const pedidosActivos = await Pedido.countDocuments({
         repartidorId: userId,
         estado: { $nin: ['entregado', 'cancelado'] }
-      }).count();
+      });
 
       console.log(`Repartidor ${userId} tiene ${pedidosActivos} pedidos activos`);
       

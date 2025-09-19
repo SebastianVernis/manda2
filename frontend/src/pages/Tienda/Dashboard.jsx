@@ -38,17 +38,15 @@ const TiendaDashboard = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <Card className="yega-glass h-100 hover-card-effect">
-                  <Card.Body className="text-center p-4">
-                    <div className="bg-orange-500 bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
-                      <FaBox size={32} className="text-orange-400" />
-                    </div>
-                    <Card.Title className="text-white mb-3">Gestionar Productos</Card.Title>
-                    <Card.Text className="text-white-50 mb-4">
+                <Card className="card-yega h-100">
+                  <Card.Body className="text-center">
+                    <FaBox size={48} className="text-yega-gold mb-3" />
+                    <Card.Title>Gestionar Productos</Card.Title>
+                    <Card.Text>
                       Agrega, edita o elimina productos de tu catálogo.
                     </Card.Text>
                     <LinkContainer to="/tienda/productos">
-                      <Button variant="outline-primary" className="w-100">
+                      <Button variant="outline-light" className="btn-yega-primary">
                         Ver Productos
                       </Button>
                     </LinkContainer>
@@ -62,17 +60,15 @@ const TiendaDashboard = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.2, delay: 0.1 }}
               >
-                <Card className="yega-glass h-100 hover-card-effect">
-                  <Card.Body className="text-center p-4">
-                    <div className="bg-blue-500 bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
-                      <FaList size={32} className="text-blue-400" />
-                    </div>
-                    <Card.Title className="text-white mb-3">Pedidos Recibidos</Card.Title>
-                    <Card.Text className="text-white-50 mb-4">
+                <Card className="card-yega h-100">
+                  <Card.Body className="text-center">
+                    <FaList size={48} className="text-yega-gold mb-3" />
+                    <Card.Title>Pedidos Recibidos</Card.Title>
+                    <Card.Text>
                       Revisa y gestiona los pedidos de tus clientes.
                     </Card.Text>
                     <LinkContainer to="/tienda/pedidos">
-                      <Button variant="outline-primary" className="w-100">
+                      <Button variant="outline-light" className="btn-yega-primary">
                         Ver Pedidos
                       </Button>
                     </LinkContainer>
@@ -86,17 +82,15 @@ const TiendaDashboard = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.2, delay: 0.2 }}
               >
-                <Card className="yega-glass h-100 hover-card-effect">
-                  <Card.Body className="text-center p-4">
-                    <div className="bg-green-500 bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
-                      <FaShoppingCart size={32} className="text-green-400" />
-                    </div>
-                    <Card.Title className="text-white mb-3">Control de Inventario</Card.Title>
-                    <Card.Text className="text-white-50 mb-4">
+                <Card className="card-yega h-100">
+                  <Card.Body className="text-center">
+                    <FaShoppingCart size={48} className="text-yega-gold mb-3" />
+                    <Card.Title>Control de Inventario</Card.Title>
+                    <Card.Text>
                       Controla el stock de tus productos disponibles.
                     </Card.Text>
                     <LinkContainer to="/tienda/inventario">
-                      <Button variant="outline-primary" className="w-100">
+                      <Button variant="outline-light" className="btn-yega-primary">
                         Ver Inventario
                       </Button>
                     </LinkContainer>
@@ -110,17 +104,15 @@ const TiendaDashboard = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.2, delay: 0.3 }}
               >
-                <Card className="yega-glass h-100 hover-card-effect">
-                  <Card.Body className="text-center p-4">
-                    <div className="bg-purple-500 bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
-                      <FaChartLine size={32} className="text-purple-400" />
-                    </div>
-                    <Card.Title className="text-white mb-3">Estadísticas</Card.Title>
-                    <Card.Text className="text-white-50 mb-4">
+                <Card className="card-yega h-100">
+                  <Card.Body className="text-center">
+                    <FaChartLine size={48} className="text-yega-gold mb-3" />
+                    <Card.Title>Estadísticas</Card.Title>
+                    <Card.Text>
                       Analiza tus ventas y rendimiento.
                     </Card.Text>
                     <LinkContainer to="/tienda/estadisticas">
-                      <Button variant="outline-primary" className="w-100">
+                      <Button variant="outline-light" className="btn-yega-primary">
                         Ver Reportes
                       </Button>
                     </LinkContainer>
