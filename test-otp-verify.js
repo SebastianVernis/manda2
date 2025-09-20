@@ -14,7 +14,7 @@ function testOTPVerify(email, otp) {
     headers: {
       'Content-Type': 'application/json',
       'Content-Length': Buffer.byteLength(postData),
-      'Origin': 'http://3.85.74.100'
+      'Origin': 'https://yega.3.85.74.100.nip.io'
     }
   };
 

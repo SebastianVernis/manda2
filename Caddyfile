@@ -1,9 +1,64 @@
 {
     email admin@yega.com.mx
-    auto_https off
 }
 
-# Development configuration for EC2
+# HTTPS configuration with nip.io and Let's Encrypt
+yega.3.85.74.100.nip.io {
+    encode zstd gzip
+    root * /home/ec2-user/yega-app/frontend/dist
+    file_server
+    
+    # Security headers
+    header {
+        # CORS headers
+        Access-Control-Allow-Origin "https://yega.3.85.74.100.nip.io"
+        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+        Access-Control-Allow-Credentials true
+        
+        # Security headers
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options nosniff
+        X-Frame-Options DENY
+        X-XSS-Protection "1; mode=block"
+        Referrer-Policy strict-origin-when-cross-origin
+        
+        # CORP headers for static assets
+        Cross-Origin-Resource-Policy cross-origin
+    }
+    
+    # Handle API requests
+    handle /api/* {
+        reverse_proxy localhost:5000 {
+            header_up Host {upstream_hostport}
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+        }
+    }
+    
+    # Handle uploads
+    handle /uploads/* {
+        reverse_proxy localhost:5000 {
+            header_up Host {upstream_hostport}
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+        }
+    }
+
+    # SPA fallback for React Router
+    handle {
+        try_files {path} /index.html
+    }
+}
+
+# HTTP to HTTPS redirect
+http://yega.3.85.74.100.nip.io {
+    redir https://yega.3.85.74.100.nip.io{uri} permanent
+}
+
+# Development fallback (keep for local testing)
 :80 {
     encode zstd gzip
     root * /home/ec2-user/yega-app/frontend/dist
