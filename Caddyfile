@@ -1,34 +1,82 @@
 {
     email admin@yega.com.mx
+    auto_https off
 }
 
-# Usar dominio nip.io para desarrollo
-3-85-74-100.nip.io {
+# Development configuration for EC2
+:80 {
     encode zstd gzip
     root * /home/ec2-user/yega-app/frontend/dist
     file_server
     
-    # Add CORP header for static assets
-    header /assets/* Cross-Origin-Resource-Policy cross-origin
-    header /images/* Cross-Origin-Resource-Policy cross-origin
-    header /favicon.ico Cross-Origin-Resource-Policy cross-origin
-    header /apple-touch-icon.png Cross-Origin-Resource-Policy cross-origin
-    header /favicon-16x16.png Cross-Origin-Resource-Policy cross-origin
-    header /favicon-32x32.png Cross-Origin-Resource-Policy cross-origin
-
-    # Proxy API requests to the backend con headers CORS correctos
+    # Security headers
+    header {
+        # CORS headers
+        Access-Control-Allow-Origin "http://3.85.74.100"
+        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+        
+        # Security headers
+        X-Content-Type-Options nosniff
+        X-Frame-Options DENY
+        X-XSS-Protection "1; mode=block"
+        Referrer-Policy strict-origin-when-cross-origin
+        
+        # CORP headers for static assets
+        Cross-Origin-Resource-Policy cross-origin
+    }
+    
+    # Handle API requests
     handle /api/* {
         reverse_proxy localhost:5000 {
-            header_down Access-Control-Allow-Origin "https://3-85-74-100.nip.io"
-            header_down Access-Control-Allow-Credentials "true"
-            header_down Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
-            header_down Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
-            header_down Access-Control-Expose-Headers "Content-Length, X-Total-Count"
+            header_up Host {upstream_hostport}
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+        }
+    }
+    
+    # Handle uploads
+    handle /uploads/* {
+        reverse_proxy localhost:5000 {
+            header_up Host {upstream_hostport}
+            header_up X-Real-IP {remote_host}
         }
     }
 
-    # Fallback for SPA routing
+    # SPA fallback for React Router
     handle {
         try_files {path} /index.html
     }
 }
+
+# Production HTTPS configuration (uncomment when domain is ready)
+# yega.com.mx, www.yega.com.mx {
+#     @www host www.yega.com.mx
+#     redir @www https://yega.com.mx{uri} permanent
+# 
+#     encode zstd gzip
+#     root * /home/ec2-user/yega-app/frontend/dist
+#     file_server
+#     
+#     # Security and CORS headers
+#     header {
+#         Access-Control-Allow-Origin https://yega.com.mx
+#         Access-Control-Allow-Credentials true
+#         Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+#         Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+#         
+#         Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+#         X-Content-Type-Options nosniff
+#         X-Frame-Options DENY
+#         X-XSS-Protection "1; mode=block"
+#     }
+# 
+#     handle_path /api/* {
+#         reverse_proxy localhost:5000
+#     }
+# 
+#     handle {
+#         try_files {path} /index.html
+#     }
+# }

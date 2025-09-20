@@ -12,7 +12,7 @@ const initializeTransporter = () => {
     transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST || 'smtp.gmail.com',
       port: process.env.EMAIL_PORT || 587,
-      secure: false, // true para 465, false para otros puertos
+      secure: (parseInt(process.env.EMAIL_PORT) || 587) === 465, // true para 465, false para otros puertos
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS, // Usar contraseña de aplicación para Gmail

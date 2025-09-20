@@ -92,6 +92,19 @@ app.get('/api/placeholder/:width/:height', (req, res) => {
   res.send(svg);
 });
 
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  const dbStatus = mongoose.connection.readyState === 1 ? 'connected' : 'disconnected';
+  res.json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    version: '1.0.0',
+    database: dbStatus,
+    uptime: process.uptime(),
+    memory: process.memoryUsage()
+  });
+});
+
 // Ruta de prueba
 app.get('/', (req, res) => {
   res.json({
@@ -112,7 +125,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Middleware de manejo de errores
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({
     message: 'Error interno del servidor',

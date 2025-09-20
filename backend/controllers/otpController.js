@@ -11,7 +11,7 @@ exports.enviarOTP = async (req, res) => {
       telefono, 
       email, 
       tipo = 'verificacion', 
-      metodo = 'sms' 
+      metodo = 'email' 
     } = req.body;
 
     // Validaciones básicas
@@ -102,7 +102,7 @@ exports.reenviarOTP = async (req, res) => {
       telefono, 
       email, 
       tipo = 'verificacion', 
-      metodo = 'sms' 
+      metodo = 'email' 
     } = req.body;
 
     // Validaciones básicas
@@ -116,8 +116,8 @@ exports.reenviarOTP = async (req, res) => {
     const ip = req.ip || req.connection.remoteAddress;
     const userAgent = req.get('User-Agent');
 
-    // Reenviar OTP
-    const resultado = await OTPService.reenviar({
+    // Generar y enviar OTP (reutilizando la misma función)
+    const resultado = await OTPService.generarYEnviar({
       telefono,
       email,
       tipo,
