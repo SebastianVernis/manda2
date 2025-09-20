@@ -1,0 +1,26 @@
+{
+  "name": "yega-app",
+  "version": "1.0.0",
+  "description": "YEGA - Complete delivery platform",
+  "private": true,
+  "scripts": {
+    "install-deps": "cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "build:prod": "cd frontend && NODE_ENV=production npm run build",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "deploy": "npm run install-deps && npm run build:prod && pm2 restart ecosystem.config.js",
+    "logs": "pm2 logs",
+    "status": "pm2 status",
+    "stop": "pm2 stop ecosystem.config.js",
+    "restart": "pm2 restart ecosystem.config.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "mongodb": "^6.20.0"
+  }
+}

@@ -1,0 +1,2 @@
+rootProject.name = 'yega-app'
+include ':app'

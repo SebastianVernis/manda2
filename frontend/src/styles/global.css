@@ -480,6 +480,16 @@ body::-webkit-scrollbar,
   50% { transform: translateY(-5px); }
 }
 
+/* Animación flotante para elementos */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
 /* Correcciones para evitar texto encimado */
 .form-group, .form-floating, .mb-3, .space-y-4 > *, .space-y-6 > * {
   margin-bottom: 1rem !important;

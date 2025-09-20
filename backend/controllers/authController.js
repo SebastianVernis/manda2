@@ -60,7 +60,9 @@ exports.registerUser = async (req, res) => {
     await usuario.save();
 
     // Generar y enviar OTP
-    console.log('Llamando a OTPService.generarYEnviar con email:', usuario.email);
+    console.log('🔥 AUTHCONTROLLER: Llamando a OTPService.generarYEnviar');
+    console.log('🔥 AUTHCONTROLLER: email =', usuario.email);
+    console.log('🔥 AUTHCONTROLLER: metodo = email');
     await OTPService.generarYEnviar({
       email: usuario.email,
       tipo: 'registro',

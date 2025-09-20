@@ -37,7 +37,7 @@ const ProductoPedidoSchema = new mongoose.Schema({
 const PedidoSchema = new mongoose.Schema({
   numero_pedido: {
     type: String,
-    unique: true,
+    index: true,
     required: true
   },
   clienteId: { 
@@ -99,7 +99,6 @@ const PedidoSchema = new mongoose.Schema({
 PedidoSchema.index({ clienteId: 1, createdAt: -1 });
 PedidoSchema.index({ tiendaId: 1, estado: 1 });
 PedidoSchema.index({ repartidorId: 1, estado: 1 });
-PedidoSchema.index({ numero_pedido: 1 });
 
 // Generar número de pedido antes de validar (para cumplir 'required')
 PedidoSchema.pre('validate', async function(next) {

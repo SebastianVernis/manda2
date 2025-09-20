@@ -21,6 +21,7 @@ const clearDemoProducts = () => {
 
 // Páginas públicas
 import Home from './pages/Home'
+import HomeTest from './pages/HomeTest'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import VerifyOTP from './pages/VerifyOTP'

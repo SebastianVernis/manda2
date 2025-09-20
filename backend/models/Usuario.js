@@ -20,14 +20,12 @@ const UsuarioSchema = new mongoose.Schema({
   telefono: { 
     type: String, 
     required: [true, 'El teléfono es requerido'],
-    unique: true,
-    // Temporarily remove regex match to debug
-    // match: [/^\+?[1-9]\d{1,14}$/, 'Formato de teléfono inválido']
+    index: true
   },
   email: { 
     type: String, 
     required: [true, 'El email es requerido'],
-    unique: true,
+    index: true,
     lowercase: true,
     match: [/^\S+@\S+\.\S+$/, 'Formato de email inválido']
   },
@@ -102,8 +100,6 @@ UsuarioSchema.add({
 })
 
 // Índices para optimizar consultas
-UsuarioSchema.index({ email: 1 });
-UsuarioSchema.index({ telefono: 1 });
 UsuarioSchema.index({ rol: 1, estado_validacion: 1 });
 
 // Hash de la contraseña antes de guardar

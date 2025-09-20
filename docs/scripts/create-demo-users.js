@@ -1,4 +1,9 @@
+const { MongoClient } = require('mongodb');
 const bcrypt = require('bcryptjs');
+
+// MongoDB connection
+const uri = "mongodb://localhost:27017";
+const client = new MongoClient(uri);
 
 // Function to hash a password
 async function hashPassword(password) {
@@ -47,18 +52,48 @@ const demoUsers = [
 
 // Hash passwords and create users
 async function createDemoUsers() {
-  for (const user of demoUsers) {
-    const hashedPassword = await hashPassword(demoPassword);
-    console.log(`db.usuarios.insertOne({`);
-    console.log(`  "nombre": "${user.nombre}",`);
-    console.log(`  "telefono": "${user.telefono}",`);
-    console.log(`  "email": "${user.email}",`);
-    console.log(`  "password": "${hashedPassword}",`);
-    console.log(`  "rol": "${user.rol}",`);
-    console.log(`  "estado_validacion": "${user.estado_validacion}",`);
-    console.log(`  "activo": ${user.activo}`);
-    console.log(`})`);
-    console.log('');
+  try {
+    await client.connect();
+    console.log("Connected to MongoDB");
+    
+    const database = client.db('yega');
+    const users = database.collection('usuarios');
+    
+    // Clear existing demo users
+    const emails = demoUsers.map(user => user.email);
+    await users.deleteMany({ email: { $in: emails } });
+    console.log("Cleared existing demo users");
+    
+    // Create new demo users
+    for (const user of demoUsers) {
+      const hashedPassword = await hashPassword(demoPassword);
+      const userWithPassword = {
+        ...user,
+        password: hashedPassword,
+        fechaRegistro: new Date(),
+        configuracion: {
+          notificaciones: true,
+          privacidad: "publico"
+        }
+      };
+      
+      const result = await users.insertOne(userWithPassword);
+      console.log(`Created user: ${user.nombre} (${user.email}) with ID: ${result.insertedId}`);
+    }
+    
+    console.log("✅ Demo users created successfully!");
+    console.log("\n🔑 Demo credentials:");
+    console.log("   Admin Email: admin@yega.com");
+    console.log("   Cliente Email: cliente@yega.com");
+    console.log("   Tienda Email: tienda@yega.com");
+    console.log("   Repartidor Email: repartidor@yega.com");
+    console.log("   Password for all: Demo123!");
+    
+  } catch (error) {
+    console.error("Error creating demo users:", error);
+  } finally {
+    await client.close();
+    console.log("Disconnected from MongoDB");
   }
 }
 

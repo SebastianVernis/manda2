@@ -33,6 +33,36 @@ class OTPService {
         throw new Error('Límite de envíos por hora alcanzado. Intenta más tarde.');
       }
 
+      // Verificar si hay un OTP reciente (menos de 1 minuto) para evitar duplicados
+      const unMinutoAtras = new Date(Date.now() - 60 * 1000);
+      const otpReciente = await OTP.findOne({
+        email,
+        tipo,
+        verificado: false,
+        createdAt: { $gte: unMinutoAtras }
+      });
+
+      if (otpReciente) {
+        console.log(`⚠️  OTP reciente encontrado para ${email}, reutilizando código existente`);
+        // Reenviar el código existente en lugar de generar uno nuevo
+        try {
+          const resultadoEmail = await sendOTPEmail(email, otpReciente.codigo, tipo);
+          return {
+            success: true,
+            mensaje: 'Código OTP reenviado exitosamente',
+            id: otpReciente._id,
+            expira_en: otpReciente.expira_en,
+            tiempo_restante: otpReciente.tiempo_restante,
+            metodos_enviados: resultadoEmail.success ? ['email'] : [],
+            resultados: { email: resultadoEmail },
+            ...(process.env.NODE_ENV !== 'production' && { dev_code: otpReciente.codigo })
+          };
+        } catch (error) {
+          console.error('Error reenviando email:', error);
+          // Si falla el reenvío, continuar con generar nuevo código
+        }
+      }
+
       // Invalidar códigos anteriores del mismo tipo
       await OTP.updateMany(
         { email, tipo, verificado: false }, // Cambiado a email

@@ -90,3 +90,17 @@
   padding: 5px 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+.yega-glass {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s ease !important;
+}
+
+.yega-glass:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
