@@ -29,17 +29,33 @@ yega.3.85.74.100.nip.io {
     
     # Handle API requests
     handle /api/* {
+<<<<<<< HEAD
         reverse_proxy localhost:5001 {
             header_up Host {upstream_hostport}
             header_up X-Real-IP {remote_host}
+=======
+        reverse_proxy localhost:5000 {
+            header_up Host {upstream_hostport}
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+>>>>>>> refs/remotes/origin/sesion4-visual-consistency-clean
         }
     }
     
     # Handle uploads
     handle /uploads/* {
+<<<<<<< HEAD
         reverse_proxy localhost:5001 {
             header_up Host {upstream_hostport}
             header_up X-Real-IP {remote_host}
+=======
+        reverse_proxy localhost:5000 {
+            header_up Host {upstream_hostport}
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+>>>>>>> refs/remotes/origin/sesion4-visual-consistency-clean
         }
     }
 
@@ -79,15 +95,27 @@ http://yega.3.85.74.100.nip.io {
     
     # Handle API requests
     handle /api/* {
+<<<<<<< HEAD
         reverse_proxy localhost:5001 {
             header_up Host {upstream_hostport}
             header_up X-Real-IP {remote_host}
+=======
+        reverse_proxy localhost:5000 {
+            header_up Host {upstream_hostport}
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+>>>>>>> refs/remotes/origin/sesion4-visual-consistency-clean
         }
     }
     
     # Handle uploads
     handle /uploads/* {
+<<<<<<< HEAD
         reverse_proxy localhost:5001 {
+=======
+        reverse_proxy localhost:5000 {
+>>>>>>> refs/remotes/origin/sesion4-visual-consistency-clean
             header_up Host {upstream_hostport}
             header_up X-Real-IP {remote_host}
         }

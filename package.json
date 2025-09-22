@@ -18,9 +18,14 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.0"
+<<<<<<< HEAD
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "mongodb": "^6.20.0"
   }
 }
+=======
+  }
+}
+>>>>>>> refs/remotes/origin/sesion4-visual-consistency-clean
