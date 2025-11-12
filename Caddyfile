@@ -29,33 +29,21 @@ manda2.3.85.74.100.nip.io {
     
     # Handle API requests
     handle /api/* {
-<<<<<<< HEAD
-        reverse_proxy localhost:5001 {
-            header_up Host {upstream_hostport}
-            header_up X-Real-IP {remote_host}
-=======
         reverse_proxy localhost:5000 {
             header_up Host {upstream_hostport}
             header_up X-Real-IP {remote_host}
             header_up X-Forwarded-For {remote_host}
             header_up X-Forwarded-Proto {scheme}
->>>>>>> refs/remotes/origin/sesion4-visual-consistency-clean
         }
     }
     
     # Handle uploads
     handle /uploads/* {
-<<<<<<< HEAD
-        reverse_proxy localhost:5001 {
-            header_up Host {upstream_hostport}
-            header_up X-Real-IP {remote_host}
-=======
         reverse_proxy localhost:5000 {
             header_up Host {upstream_hostport}
             header_up X-Real-IP {remote_host}
             header_up X-Forwarded-For {remote_host}
             header_up X-Forwarded-Proto {scheme}
->>>>>>> refs/remotes/origin/sesion4-visual-consistency-clean
         }
     }
 
@@ -95,27 +83,17 @@ http://manda2.3.85.74.100.nip.io {
     
     # Handle API requests
     handle /api/* {
-<<<<<<< HEAD
-        reverse_proxy localhost:5001 {
-            header_up Host {upstream_hostport}
-            header_up X-Real-IP {remote_host}
-=======
         reverse_proxy localhost:5000 {
             header_up Host {upstream_hostport}
             header_up X-Real-IP {remote_host}
             header_up X-Forwarded-For {remote_host}
             header_up X-Forwarded-Proto {scheme}
->>>>>>> refs/remotes/origin/sesion4-visual-consistency-clean
         }
     }
     
     # Handle uploads
     handle /uploads/* {
-<<<<<<< HEAD
-        reverse_proxy localhost:5001 {
-=======
         reverse_proxy localhost:5000 {
->>>>>>> refs/remotes/origin/sesion4-visual-consistency-clean
             header_up Host {upstream_hostport}
             header_up X-Real-IP {remote_host}
         }
@@ -126,34 +104,3 @@ http://manda2.3.85.74.100.nip.io {
         try_files {path} /index.html
     }
 }
-
-# Production HTTPS configuration (uncomment when domain is ready)
-# manda2.com.mx, www.manda2.com.mx {
-#     @www host www.manda2.com.mx
-#     redir @www https://manda2.com.mx{uri} permanent
-# 
-#     encode zstd gzip
-#     root * /home/ec2-user/manda2-app/frontend/dist
-#     file_server
-#     
-#     # Security and CORS headers
-#     header {
-#         Access-Control-Allow-Origin https://manda2.com.mx
-#         Access-Control-Allow-Credentials true
-#         Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
-#         Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
-#         
-#         Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-#         X-Content-Type-Options nosniff
-#         X-Frame-Options DENY
-#         X-XSS-Protection "1; mode=block"
-#     }
-# 
-#     handle_path /api/* {
-#         reverse_proxy localhost:5000
-#     }
-# 
-#     handle {
-#         try_files {path} /index.html
-#     }
-# }
