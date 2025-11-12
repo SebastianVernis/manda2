@@ -1,0 +1,196 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Epilogue%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-[#fcf9f8] justify-between group/design-root overflow-x-hidden"
+      style='font-family: Epilogue, "Noto Sans", sans-serif;'
+    >
+      <div>
+        <div class="px-4 py-3">
+          <label class="flex flex-col min-w-40 h-12 w-full">
+            <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+              <div
+                class="text-[#a16845] flex border-none bg-[#f4ebe6] items-center justify-center pl-4 rounded-l-xl border-r-0"
+                data-icon="MagnifyingGlass"
+                data-size="24px"
+                data-weight="regular"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                </svg>
+              </div>
+              <input
+                placeholder="Buscar tiendas"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#1d120c] focus:outline-0 focus:ring-0 border-none bg-[#f4ebe6] focus:border-none h-full placeholder:text-[#a16845] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                value=""
+              />
+            </div>
+          </label>
+        </div>
+        <div class="pb-3">
+          <div class="flex border-b border-[#ead8cd] px-4 gap-8">
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-[#f95f00] text-[#1d120c] pb-[13px] pt-4" href="#">
+              <p class="text-[#1d120c] text-sm font-bold leading-normal tracking-[0.015em]">Todos</p>
+            </a>
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#a16845] pb-[13px] pt-4" href="#">
+              <p class="text-[#a16845] text-sm font-bold leading-normal tracking-[0.015em]">Restaurante</p>
+            </a>
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#a16845] pb-[13px] pt-4" href="#">
+              <p class="text-[#a16845] text-sm font-bold leading-normal tracking-[0.015em]">Supermercado</p>
+            </a>
+          </div>
+        </div>
+        <div class="flex gap-3 p-3 overflow-x-hidden">
+          <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f4ebe6] pl-4 pr-2">
+            <p class="text-[#1d120c] text-sm font-medium leading-normal">Ofertas</p>
+            <div class="text-[#1d120c]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+              </svg>
+            </div>
+          </button>
+          <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f4ebe6] pl-4 pr-2">
+            <p class="text-[#1d120c] text-sm font-medium leading-normal">Calificaciones</p>
+            <div class="text-[#1d120c]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+              </svg>
+            </div>
+          </button>
+          <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f4ebe6] pl-4 pr-2">
+            <p class="text-[#1d120c] text-sm font-medium leading-normal">Menos de 30 min</p>
+            <div class="text-[#1d120c]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+              </svg>
+            </div>
+          </button>
+          <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f4ebe6] pl-4 pr-2">
+            <p class="text-[#1d120c] text-sm font-medium leading-normal">Vegetariano</p>
+            <div class="text-[#1d120c]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div class="p-4">
+          <div class="flex items-stretch justify-between gap-4 rounded-xl">
+            <div class="flex flex-col gap-1 flex-[2_2_0px]">
+              <p class="text-[#1d120c] text-base font-bold leading-tight">La Esquina Deli</p>
+              <p class="text-[#a16845] text-sm font-normal leading-normal">4.6 ⭐️ · Sándwiches, Ensaladas</p>
+            </div>
+            <div
+              class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcccMMRZYBWPQFgmRKQ_z5kvcT4GtxdDriNg6taMmpYSjqyjxaH7sr8j1YaTbydS2NObt0yj--drOkBaTynN9p91LuC17xY0zi42mpRPj_tzq4SwtinF5YvJglkeGgrwD9kD01-lMk1NjpgIZJiNUGQGN-KE_RNmmdm1ZsSL1NRNrsCc6H6g5QG0DGGS2ZmXEHKoYFkii8PELGHXD_QXncYy4JM3LBYnqbPCjNyGmj5k6UZXyYi13Wx3pdG5CPfD_qNwSWHBjpEb_i");'
+            ></div>
+          </div>
+        </div>
+        <div class="p-4">
+          <div class="flex items-stretch justify-between gap-4 rounded-xl">
+            <div class="flex flex-col gap-1 flex-[2_2_0px]">
+              <p class="text-[#1d120c] text-base font-bold leading-tight">Ruta de las Especias</p>
+              <p class="text-[#a16845] text-sm font-normal leading-normal">4.8 ⭐️ · Cocina India</p>
+            </div>
+            <div
+              class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHahVUCTc3fnRGQQFyOcdcblOADACQcAEBpFfMJ-BYkWptCqJ2Mx2BVkNDoIR7kxItQgv_oqzIdXYkSAqUulyT-gZh9-HnHx6XTcAeO0MmhtJlfzHSDlRkvTVl500ZvX5kVKMSVm2spnu8Fbs0fwSjS1vWyAeHh3slj1QPbC4OALuZGaJY2nhqxx6WaYcYD8FQEVswnGuA7XiUQWEd8lPcaTLxlS5hqHesK_DekfnbVXAUGvz_dblUitrwapzmtBOuZRKRSW8k74od");'
+            ></div>
+          </div>
+        </div>
+        <div class="p-4">
+          <div class="flex items-stretch justify-between gap-4 rounded-xl">
+            <div class="flex flex-col gap-1 flex-[2_2_0px]">
+              <p class="text-[#1d120c] text-base font-bold leading-tight">Mercado Hoja Verde</p>
+              <p class="text-[#a16845] text-sm font-normal leading-normal">4.5 ⭐️ · Productos Frescos, Comestibles</p>
+            </div>
+            <div
+              class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1iDTeoqcsAP36Bf3oGkepwMcwedo_LDZc2othlFSXz3d0lUXIl8gWy_bRzGm-8fOwqrUHCh55ZMdQISH1gqq8iOC0GYWLR6AF7HWUXI-lOmr4QolccmyMbTiNq2LJYcuJHePn_hnuziZweMlfC1_Ssr1jH0eSEGjvg6h3Ik25NjJAfjSgDaRHXap8Gb6lpwAstZxV3Wn8ON6otkC9JA0uXA6n-qn2PIo-vO1L4mD2C8tLwZGvTLisMUIxvzctiVXLetcO5rU0sh5w");'
+            ></div>
+          </div>
+        </div>
+        <div class="p-4">
+          <div class="flex items-stretch justify-between gap-4 rounded-xl">
+            <div class="flex flex-col gap-1 flex-[2_2_0px]">
+              <p class="text-[#1d120c] text-base font-bold leading-tight">Palacio de la Pizza</p>
+              <p class="text-[#a16845] text-sm font-normal leading-normal">4.7 ⭐️ · Pizza, Italiano</p>
+            </div>
+            <div
+              class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyE4Mj36cWxlv8tjdOD5gEhg6BXCUT2c8pUuusKoAX5ljvz__1iqPhMPfuZoavV1s5NNwCyXQHBuy8Y7j-GiSFjmn3-JazRgqwlR4-uNNrK-crKH4uquNzinMY_9zokDqKrP3FTgkdpFLLYrLcdJqDl6PSlraZAYtU7uKEaq6Q_U9VJrWpk8yR6D1J45hr_oWM-2iP6TTwY15HtExT8_hq5VCOLjzqCzF_7ByCzyQPsDahnl6JuS5S8DJMlELpDhlUxLSEwRV154vH");'
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="flex gap-2 border-t border-[#f4ebe6] bg-[#fcf9f8] px-4 pb-3 pt-2">
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#a16845]" href="#">
+            <div class="text-[#a16845] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#a16845] text-xs font-medium leading-normal tracking-[0.015em]">Inicio</p>
+          </a>
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#1d120c]" href="#">
+            <div class="text-[#1d120c] flex h-8 items-center justify-center" data-icon="Storefront" data-size="24px" data-weight="fill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M232,96a7.89,7.89,0,0,0-.3-2.2L217.35,43.6A16.07,16.07,0,0,0,202,32H54A16.07,16.07,0,0,0,38.65,43.6L24.31,93.8A7.89,7.89,0,0,0,24,96h0v16a40,40,0,0,0,16,32v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V144a40,40,0,0,0,16-32V96ZM88,112a24,24,0,0,1-35.12,21.26,7.88,7.88,0,0,0-1.82-1.06A24,24,0,0,1,40,112v-8H88Zm64,0a24,24,0,0,1-48,0v-8h48Zm64,0a24,24,0,0,1-11.07,20.2,8.08,8.08,0,0,0-1.8,1.05A24,24,0,0,1,168,112v-8h48Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#1d120c] text-xs font-medium leading-normal tracking-[0.015em]">Tiendas</p>
+          </a>
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#a16845]" href="#">
+            <div class="text-[#a16845] flex h-8 items-center justify-center" data-icon="ShoppingCart" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#a16845] text-xs font-medium leading-normal tracking-[0.015em]">Carrito</p>
+          </a>
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#a16845]" href="#">
+            <div class="text-[#a16845] flex h-8 items-center justify-center" data-icon="Receipt" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#a16845] text-xs font-medium leading-normal tracking-[0.015em]">Pedidos</p>
+          </a>
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#a16845]" href="#">
+            <div class="text-[#a16845] flex h-8 items-center justify-center" data-icon="UserCircle" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#a16845] text-xs font-medium leading-normal tracking-[0.015em]">Perfil</p>
+          </a>
+        </div>
+        <div class="h-5 bg-[#fcf9f8]"></div>
+      </div>
+    </div>
+  </body>
+</html>

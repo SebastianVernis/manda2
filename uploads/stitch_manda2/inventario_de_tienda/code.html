@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Epilogue%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-[#fcf9f8] justify-between group/design-root overflow-x-hidden"
+      style='font-family: Epilogue, "Noto Sans", sans-serif;'
+    >
+      <div>
+        <div class="flex items-center bg-[#fcf9f8] p-4 pb-2 justify-between">
+          <div class="text-[#1d120c] flex size-12 shrink-0 items-center" data-icon="ArrowLeft" data-size="24px" data-weight="regular">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+            </svg>
+          </div>
+          <h2 class="text-[#1d120c] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Inventario</h2>
+        </div>
+        <div class="px-4 py-3">
+          <label class="flex flex-col min-w-40 h-12 w-full">
+            <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+              <div
+                class="text-[#a16845] flex border-none bg-[#f4ebe6] items-center justify-center pl-4 rounded-l-xl border-r-0"
+                data-icon="MagnifyingGlass"
+                data-size="24px"
+                data-weight="regular"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                </svg>
+              </div>
+              <input
+                placeholder="Buscar productos"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#1d120c] focus:outline-0 focus:ring-0 border-none bg-[#f4ebe6] focus:border-none h-full placeholder:text-[#a16845] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                value=""
+              />
+            </div>
+          </label>
+        </div>
+        <div class="pb-3">
+          <div class="flex border-b border-[#ead8cd] px-4 gap-8">
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-[#f95f00] text-[#1d120c] pb-[13px] pt-4" href="#">
+              <p class="text-[#1d120c] text-sm font-bold leading-normal tracking-[0.015em]">Todos</p>
+            </a>
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#a16845] pb-[13px] pt-4" href="#">
+              <p class="text-[#a16845] text-sm font-bold leading-normal tracking-[0.015em]">Categorías</p>
+            </a>
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#a16845] pb-[13px] pt-4" href="#">
+              <p class="text-[#a16845] text-sm font-bold leading-normal tracking-[0.015em]">Agotados</p>
+            </a>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 bg-[#fcf9f8] px-4 min-h-[72px] py-2">
+          <div
+            class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhYGs0s18wtPuU6wnTKFlx4iJVlePLuy5sbOn6T-TeNKgwY2OrNEXZk6EQ-HGZzIwCsUQBiIdJ_SlME9mAMtCEpqHXQrVdRDmfFxCLHqUa28HUKJtRRpB2LHHsYMiy64fTVOi-5xztYroUQMOqqwHxD5xxmqqR0XLvOpzPx0EwFJBOxf4PizkcBtmLGlIPlKXpcqQqWXjPhoXlV31U3GRwm2lnaxFavh8mwxm5U8fb3b3zv2pXd8euAf8NFH1g9nj13NpxEselROxI");'
+          ></div>
+          <div class="flex flex-col justify-center">
+            <p class="text-[#1d120c] text-base font-medium leading-normal line-clamp-1">Producto A</p>
+            <p class="text-[#a16845] text-sm font-normal leading-normal line-clamp-2">10 en stock</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 bg-[#fcf9f8] px-4 min-h-[72px] py-2">
+          <div
+            class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVM5q8URubIoMKP8lKn0JrFT2OSwcTC-eE60Gcd42tzz_selpAQni0f7uAmS_K3xNeg3eKU5hLUk0pQYsD6ii6-xIqLQp16V_P2McQZqoGpOsKANSZoIdy0WspCv6GcxBANEvurQ7nYqMjz5d3GicgCilpb7wIed0oViQ9JtI0RudqzD80e36xP9t-TvnCVDzSbAA5adSR_Wo_A3Tourt0PxDZdxGYV_4VpXZ6v-1ify9C0r-xGarpp8uZ7YAKvc2yDTapYRva4kOS");'
+          ></div>
+          <div class="flex flex-col justify-center">
+            <p class="text-[#1d120c] text-base font-medium leading-normal line-clamp-1">Producto B</p>
+            <p class="text-[#a16845] text-sm font-normal leading-normal line-clamp-2">5 en stock</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 bg-[#fcf9f8] px-4 min-h-[72px] py-2">
+          <div
+            class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB77xbSmabgAjMEzgKrraBqCABZAjA9rvKSWD4e5Tc9oAYGtsgkU8tjlrRw7brx-H_AtAElq8S8AHUwwmMAjkGYuWOhgJKdAKb97VpUwU4Ww841uPb-cCyX_UVJt6vwTvW4RCX_GsUoacve4La9lXFGaPI7sc7oMmMFtTGjFwSR7nbU2qm4VDVAkWmieLug2xm1ElPOrYbTCs998yMcQubMjWDlswKvUouvTdaXfd-kub29PEuy3Ej6-plG1lixSq0tz1GoVmMkgxZq");'
+          ></div>
+          <div class="flex flex-col justify-center">
+            <p class="text-[#1d120c] text-base font-medium leading-normal line-clamp-1">Producto C</p>
+            <p class="text-[#a16845] text-sm font-normal leading-normal line-clamp-2">20 en stock</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="flex justify-end overflow-hidden px-5 pb-5">
+          <button
+            class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-[#f95f00] text-[#fcf9f8] text-base font-bold leading-normal tracking-[0.015em] min-w-0 gap-4 pl-4 pr-6"
+          >
+            <div class="text-[#fcf9f8]" data-icon="Plus" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+              </svg>
+            </div>
+            <span class="truncate">Agregar producto</span>
+          </button>
+        </div>
+        <div class="h-5 bg-[#fcf9f8]"></div>
+      </div>
+    </div>
+  </body>
+</html>
