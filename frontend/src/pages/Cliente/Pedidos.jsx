@@ -43,7 +43,7 @@ const ClientePedidos = () => {
         )}
         
         {isError && (
-          <Alert variant="danger" className="yega-glass border-0 text-white">
+          <Alert variant="danger" className="manda2-glass border-0 text-white">
             No se pudieron cargar tus pedidos.
           </Alert>
         )}
@@ -64,7 +64,7 @@ const ClientePedidos = () => {
                     whileHover={{ y: -5 }}
                   >
                     <Card 
-                      className="yega-glass h-100 hover-card-effect cursor-pointer" 
+                      className="manda2-glass h-100 hover-card-effect cursor-pointer" 
                       onClick={() => navigate(`/cliente/seguimiento?id=${o._id}`)}
                     >
                       <Card.Body className="p-4">
@@ -133,7 +133,7 @@ const ClientePedidos = () => {
                     animate={{ opacity: 1 }}
                     className="text-center py-8"
                   >
-                    <Card className="yega-glass">
+                    <Card className="manda2-glass">
                       <Card.Body className="py-5">
                         <FaShoppingCart size={64} className="text-white-50 mb-4" />
                         <h4 className="text-white mb-3">No tienes pedidos aún</h4>

@@ -76,7 +76,7 @@ const RepartidorDashboard = () => {
   return (
     <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Container className="py-4 text-center">
-        <h2 className="text-yega-gold mb-1">Pedidos</h2>
+        <h2 className="text-manda2-gold mb-1">Pedidos</h2>
       <div className="small text-white-50 mb-3">
         {bg?.enabled ? 
           <Badge bg="success" className="me-2">Ubicación en segundo plano activa</Badge> : 
@@ -109,7 +109,7 @@ const RepartidorDashboard = () => {
 
       {/* Disponibles primero */}
       <div className="mb-2 text-white-50 text-start">
-        <h4 className="text-yega-gold">Disponibles para tomar</h4>
+        <h4 className="text-manda2-gold">Disponibles para tomar</h4>
       </div>
       {availableQ.isLoading ? (
         <div className="text-center py-3"><Spinner animation="border" /></div>
@@ -117,7 +117,7 @@ const RepartidorDashboard = () => {
         <Row className="g-3 justify-content-center">
           {disponibles.map((o) => (
             <Col md={6} lg={4} key={o._id}>
-              <Card className="card-yega yega-glass h-100 text-start">
+              <Card className="card-manda2 manda2-glass h-100 text-start">
                 <Card.Body>
                   <div className="d-flex justify-content-between align-items-start">
                     <div>
@@ -127,9 +127,9 @@ const RepartidorDashboard = () => {
                     <div className="text-end fw-bold text-white">${o.total?.toFixed?.(2) ?? o.total}</div>
                   </div>
                   <div className="mt-3 d-flex gap-2 justify-content-end">
-                    <Button size="sm" className="btn-yega-primary" disabled={claimMutation.isPending} onClick={() => claimMutation.mutate(o._id)}>Tomar pedido</Button>
+                    <Button size="sm" className="btn-manda2-primary" disabled={claimMutation.isPending} onClick={() => claimMutation.mutate(o._id)}>Tomar pedido</Button>
                     {o.tiendaId?.ubicacion && o.estado !== 'entregado' && (
-                      <Button as="a" target="_blank" rel="noopener" size="sm" className="btn-yega-outline" href={`https://www.google.com/maps/dir/?api=1&destination=${o.tiendaId.ubicacion.latitud},${o.tiendaId.ubicacion.longitud}`}>Ir a Tienda</Button>
+                      <Button as="a" target="_blank" rel="noopener" size="sm" className="btn-manda2-outline" href={`https://www.google.com/maps/dir/?api=1&destination=${o.tiendaId.ubicacion.latitud},${o.tiendaId.ubicacion.longitud}`}>Ir a Tienda</Button>
                     )}
                   </div>
                 </Card.Body>
@@ -143,7 +143,7 @@ const RepartidorDashboard = () => {
       )}
 
       <div className="mt-4 mb-2 text-white-50 text-start">
-        <h4 className="text-yega-gold">Mis pedidos asignados</h4>
+        <h4 className="text-manda2-gold">Mis pedidos asignados</h4>
       </div>
       {assignedQ.isLoading ? (
         <div className="text-center py-3"><Spinner animation="border" /></div>
@@ -151,7 +151,7 @@ const RepartidorDashboard = () => {
         <Row className="g-3 justify-content-center">
           {asignados.map((o) => (
             <Col md={6} lg={4} key={o._id}>
-              <Card className="card-yega yega-glass h-100 text-start">
+              <Card className="card-manda2 manda2-glass h-100 text-start">
                 <Card.Body>
                   <div className="d-flex justify-content-between align-items-start">
                     <div>
@@ -184,10 +184,10 @@ const RepartidorDashboard = () => {
                       </Button>
                     )}
                     {o.tiendaId?.ubicacion && o.estado !== 'entregado' && (
-                      <Button as="a" target="_blank" rel="noopener" size="sm" className="btn-yega-outline" href={`https://www.google.com/maps/dir/?api=1&destination=${o.tiendaId.ubicacion.latitud},${o.tiendaId.ubicacion.longitud}`}>Ir a Tienda</Button>
+                      <Button as="a" target="_blank" rel="noopener" size="sm" className="btn-manda2-outline" href={`https://www.google.com/maps/dir/?api=1&destination=${o.tiendaId.ubicacion.latitud},${o.tiendaId.ubicacion.longitud}`}>Ir a Tienda</Button>
                     )}
                     {o.direccion_envio?.latitud && o.direccion_envio?.longitud && o.estado !== 'entregado' && (
-                      <Button as="a" target="_blank" rel="noopener" size="sm" className="btn-yega-outline" href={`https://www.google.com/maps/dir/?api=1&destination=${o.direccion_envio.latitud},${o.direccion_envio.longitud}`}>Ir a Cliente</Button>
+                      <Button as="a" target="_blank" rel="noopener" size="sm" className="btn-manda2-outline" href={`https://www.google.com/maps/dir/?api=1&destination=${o.direccion_envio.latitud},${o.direccion_envio.longitud}`}>Ir a Cliente</Button>
                     )}
                     {(o.tiendaId?.ubicacion || (o.direccion_envio?.latitud && o.direccion_envio?.longitud)) && o.estado !== 'entregado' && (
                       <Button 

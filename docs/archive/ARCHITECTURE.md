@@ -1,4 +1,4 @@
-# YEGA - Architecture Documentation
+# Manda2 - Architecture Documentation
 **Version:** 1.0.0  
 **Last Updated:** 2025-09-18  
 **Status:** Production Ready
@@ -7,7 +7,7 @@
 
 ## 🏗️ System Architecture Overview
 
-**YEGA** is a full-stack delivery platform built with a modern microservices-oriented architecture, featuring a React frontend, Node.js backend, and MongoDB database, designed to handle real-time operations for customers, stores, delivery drivers, and administrators.
+**Manda2** is a full-stack delivery platform built with a modern microservices-oriented architecture, featuring a React frontend, Node.js backend, and MongoDB database, designed to handle real-time operations for customers, stores, delivery drivers, and administrators.
 
 ### High-Level Architecture
 
@@ -280,9 +280,9 @@ Internet → Caddy (9080) → Frontend (Static Files)
 ### Service Configuration
 ```yaml
 Services:
-  - caddy-yega: Reverse proxy (port 9080)
-  - yega-backend: Node.js API (port 5000)
-  - yega-frontend: Static files served by Caddy
+  - caddy-manda2: Reverse proxy (port 9080)
+  - manda2-backend: Node.js API (port 5000)
+  - manda2-frontend: Static files served by Caddy
   - mongodb: Database service (port 27017)
 ```
 
@@ -290,7 +290,7 @@ Services:
 ```bash
 # Backend Environment
 JWT_SECRET=<64-character-secure-key>
-MONGODB_URI=mongodb://localhost:27017/yega
+MONGODB_URI=mongodb://localhost:27017/manda2
 FRONTEND_URL=https://production-domain.com
 ```
 

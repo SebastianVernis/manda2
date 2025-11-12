@@ -140,7 +140,7 @@ const ClienteSeguimiento = () => {
 
   // Iconos SVG mejorados para el mapa (mejorando emoji por SVG)
   const storeIcon = useMemo(() => L.divIcon({
-    className: 'yega-store-icon',
+    className: 'manda2-store-icon',
     html: `
       <div style="background:#0d6efd;color:white;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3)">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -154,7 +154,7 @@ const ClienteSeguimiento = () => {
   }))
   
   const metaIcon = useMemo(() => L.divIcon({
-    className: 'yega-flag-icon',
+    className: 'manda2-flag-icon',
     html: `
       <div style="background:#28a745;color:white;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3)">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -168,7 +168,7 @@ const ClienteSeguimiento = () => {
   }))
   
   const riderIcon = useMemo(() => L.divIcon({
-    className: 'yega-rider-icon',
+    className: 'manda2-rider-icon',
     html: `
       <div class="${pedido?.estado === 'en_camino' ? 'repartidor-icon-pulse' : ''}" style="background:#ffc107;color:white;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3)">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -186,7 +186,7 @@ const ClienteSeguimiento = () => {
   }), [pedido?.estado])
   
   const orderIcon = L.divIcon({
-    className: 'yega-order-icon',
+    className: 'manda2-order-icon',
     html: `
       <div style="background:#6f42c1;color:white;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3)">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -239,7 +239,7 @@ const ClienteSeguimiento = () => {
           <p className="text-white-50">Sigue el estado de tu pedido en tiempo real</p>
         </motion.div>
       {!id && (
-        <Card className="mt-3 card-yega yega-glass border-warning">
+        <Card className="mt-3 card-manda2 manda2-glass border-warning">
           <Card.Body>
             <p className="text-warning">No se proporcionó ID de pedido</p>
           </Card.Body>
@@ -247,7 +247,7 @@ const ClienteSeguimiento = () => {
       )}
       {isLoading && <div className="text-center py-5"><Spinner size="lg" /></div>}
       {isError && (
-        <Card className="border-danger card-yega yega-glass">
+        <Card className="border-danger card-manda2 manda2-glass">
           <Card.Body>
             <p className="text-white">No se pudo obtener el pedido</p>
           </Card.Body>
@@ -255,7 +255,7 @@ const ClienteSeguimiento = () => {
       )}
       {pedido && (
         <div className="mt-3">
-          <Card className="mb-4 card-yega yega-glass">
+          <Card className="mb-4 card-manda2 manda2-glass">
             <Card.Header className="d-flex align-items-center justify-content-between flex-wrap">
               <div className="d-flex gap-2 align-items-center flex-wrap">
                 <div className="text-white"><strong>Pedido:</strong> {pedido.numero_pedido}</div>
@@ -281,7 +281,7 @@ const ClienteSeguimiento = () => {
             <Badge bg="primary">{pedido.productos?.length || 0} productos</Badge>
           </div>
           
-          <Card className="mb-4 card-yega yega-glass">
+          <Card className="mb-4 card-manda2 manda2-glass">
             <Card.Body>
               <Table className="table-dark table-striped">
                 <thead>
@@ -314,7 +314,7 @@ const ClienteSeguimiento = () => {
           </div>
           
           {pedido.repartidorId ? (
-            <Card className="mb-4 card-yega yega-glass">
+            <Card className="mb-4 card-manda2 manda2-glass">
               <Card.Body className="d-flex align-items-center gap-4">
                 <div className="bg-warning rounded-circle p-3">
                   <Truck size={24} className="text-white" />
@@ -335,7 +335,7 @@ const ClienteSeguimiento = () => {
               </Card.Body>
             </Card>
           ) : (
-            <Card className="mb-4 card-yega yega-glass border-secondary border-opacity-25">
+            <Card className="mb-4 card-manda2 manda2-glass border-secondary border-opacity-25">
               <Card.Body>
                 <div className="text-center text-white-50 py-2">
                   <Clock className="mx-auto mb-2" size={32} />
@@ -350,7 +350,7 @@ const ClienteSeguimiento = () => {
             <h6 className="text-white mb-3">Ubicación en tiempo real</h6>
             
             {allPoints.length > 0 ? (
-              <Card className="overflow-hidden card-yega yega-glass">
+              <Card className="overflow-hidden card-manda2 manda2-glass">
                 <Card.Body className="p-0">
                   <div className="relative" style={{ height: '300px' }}>
                     <MapContainer style={{ height: '100%', width: '100%' }} center={allPoints[0] || { lat: 0, lng: 0 }} zoom={13} scrollWheelZoom={false}>
@@ -408,7 +408,7 @@ const ClienteSeguimiento = () => {
                 </Card.Body>
               </Card>
             ) : (
-              <Card className="border-dashed border-muted card-yega yega-glass">
+              <Card className="border-dashed border-muted card-manda2 manda2-glass">
                 <Card.Body>
                   <div className="text-center text-white-50 py-6">
                     <MapPin className="mx-auto mb-2 h-10 w-10 text-white-50" />

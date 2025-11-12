@@ -105,19 +105,19 @@ const TiendaProductos = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Container className="py-4">
       <div className="text-center mb-3">
-        <h2 className="text-yega-gold mb-2">Productos</h2>
+        <h2 className="text-manda2-gold mb-2">Productos</h2>
         <div className="d-flex justify-content-center gap-2">
           <Button variant="outline-light" className="glass-btn" onClick={() => setShowCreate((s) => !s)}>
             {showCreate ? 'Cancelar' : 'Nuevo Producto'}
           </Button>
-          <Button variant="outline-light" className="btn-yega-primary" onClick={() => refetch()}>
+          <Button variant="outline-light" className="btn-manda2-primary" onClick={() => refetch()}>
             Refrescar
           </Button>
         </div>
       </div>
 
       {(showCreate || editingProduct) && (
-        <div className="card-yega yega-glass mb-4 p-3">
+        <div className="card-manda2 manda2-glass mb-4 p-3">
           <Form
             onSubmit={(e) => {
               e.preventDefault()
@@ -131,26 +131,26 @@ const TiendaProductos = () => {
             <h4 className="text-center mb-3 text-white">{editingProduct ? 'Editar Producto' : 'Nuevo Producto'}</h4>
             <Row className="g-2 align-items-end justify-content-center text-center">
               <Col md={3}>
-                <Form.Label className="form-label-yega">Nombre</Form.Label>
+                <Form.Label className="form-label-manda2">Nombre</Form.Label>
                 <Form.Control required value={form.nombre} onChange={(e) => setForm({ ...form, nombre: e.target.value })} className="glass-input" />
               </Col>
               <Col md={3}>
-                <Form.Label className="form-label-yega">Descripción</Form.Label>
+                <Form.Label className="form-label-manda2">Descripción</Form.Label>
                 <Form.Control required value={form.descripcion} onChange={(e) => setForm({ ...form, descripcion: e.target.value })} className="glass-input" />
               </Col>
               <Col md={2}>
-                <Form.Label className="form-label-yega">Precio</Form.Label>
+                <Form.Label className="form-label-manda2">Precio</Form.Label>
                 <InputGroup>
                   <InputGroup.Text className="glass-input">$</InputGroup.Text>
                   <Form.Control required type="number" step="0.01" min="0" value={form.precio} onChange={(e) => setForm({ ...form, precio: e.target.value })} className="glass-input" />
                 </InputGroup>
               </Col>
               <Col md={1}>
-                <Form.Label className="form-label-yega">Stock</Form.Label>
+                <Form.Label className="form-label-manda2">Stock</Form.Label>
                 <Form.Control required type="number" min="0" value={form.stock} onChange={(e) => setForm({ ...form, stock: e.target.value })} className="glass-input" />
               </Col>
               <Col md={1}>
-                <Form.Label className="form-label-yega">Cat.</Form.Label>
+                <Form.Label className="form-label-manda2">Cat.</Form.Label>
                 <Form.Select value={form.categoria} onChange={(e) => setForm({ ...form, categoria: e.target.value })} className="glass-input">
                   <option value="comida">comida</option>
                   <option value="bebida">bebida</option>
@@ -160,7 +160,7 @@ const TiendaProductos = () => {
                 </Form.Select>
               </Col>
               <Col md={2}>
-                <Form.Label className="form-label-yega">Disponible</Form.Label>
+                <Form.Label className="form-label-manda2">Disponible</Form.Label>
                 <div className="d-flex gap-2 justify-content-center">
                   <Form.Check
                     type="radio"
@@ -186,7 +186,7 @@ const TiendaProductos = () => {
             <div className="mt-3 d-flex gap-2 justify-content-center">
               {editingProduct ? (
                 <>
-                  <Button type="submit" className="btn-yega-primary" disabled={updateMutation.isPending} style={{borderRadius: '12px'}}>
+                  <Button type="submit" className="btn-manda2-primary" disabled={updateMutation.isPending} style={{borderRadius: '12px'}}>
                     {updateMutation.isPending ? 'Guardando...' : 'Guardar Cambios'}
                   </Button>
                   <Button variant="outline-light" className="glass-btn" onClick={handleCancelEdit}>
@@ -195,7 +195,7 @@ const TiendaProductos = () => {
                 </>
               ) : (
                 <>
-                  <Button type="submit" className="btn-yega-primary" disabled={createMutation.isPending} style={{borderRadius: '12px'}}>
+                  <Button type="submit" className="btn-manda2-primary" disabled={createMutation.isPending} style={{borderRadius: '12px'}}>
                     {createMutation.isPending ? 'Creando...' : 'Crear'}
                   </Button>
                   <Button variant="outline-light" className="glass-btn" onClick={() => setShowCreate(false)}>
@@ -215,7 +215,7 @@ const TiendaProductos = () => {
       )}
 
       {isError && (
-        <Alert variant="danger" className="card-yega yega-glass"><div className="text-white">
+        <Alert variant="danger" className="card-manda2 manda2-glass"><div className="text-white">
           No se pudieron cargar los productos. Verifica tu conexión y sesión.
           </div></Alert>
       )}
@@ -223,7 +223,7 @@ const TiendaProductos = () => {
       {!isLoading && !isError && (
         <>
           {productos.length === 0 ? (
-            <Alert variant="warning" className="card-yega yega-glass"><div className="text-white">
+            <Alert variant="warning" className="card-manda2 manda2-glass"><div className="text-white">
               No hay productos aún. Si estás en desarrollo, puedes crear el producto demo ejecutando
               <code className="ms-1 text-warning">cd backend && npm run seed</code>.
               </div></Alert>
@@ -231,7 +231,7 @@ const TiendaProductos = () => {
             <Row className="g-3">
               {productos.map((p) => (
                 <Col md={6} lg={4} key={p._id}>
-                  <Card className="card-yega yega-glass h-100">
+                  <Card className="card-manda2 manda2-glass h-100">
                     <Card.Body>
                       <div className="d-flex justify-content-between align-items-start">
                         <div className="fw-bold text-white">{p.nombre}</div>
@@ -280,7 +280,7 @@ const TiendaProductos = () => {
           {deletingProduct && (
             <div>
               <p className="text-white">¿Estás seguro que deseas eliminar el siguiente producto?</p>
-              <div className="card-yega yega-glass p-3 mb-3">
+              <div className="card-manda2 manda2-glass p-3 mb-3">
                 <div className="fw-bold text-white">{deletingProduct.nombre}</div>
                 <div className="text-white-50 small">{deletingProduct.descripcion}</div>
                 <div className="mt-1 text-white">Precio: ${deletingProduct.precio?.toFixed(2)}</div>

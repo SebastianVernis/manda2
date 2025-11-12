@@ -1,6 +1,6 @@
-# Protocolo de Fallback para la Aplicación YEGA
+# Protocolo de Fallback para la Aplicación Manda2
 
-Este documento describe los pasos a seguir en caso de que la aplicación YEGA experimente un fallo o no cargue correctamente. Incluye procedimientos de diagnóstico, reinicio rápido, restauración desde un backup y un reseteo completo como último recurso.
+Este documento describe los pasos a seguir en caso de que la aplicación Manda2 experimente un fallo o no cargue correctamente. Incluye procedimientos de diagnóstico, reinicio rápido, restauración desde un backup y un reseteo completo como último recurso.
 
 ## 1. Diagnóstico Inicial
 
@@ -8,15 +8,15 @@ Cuando la aplicación no funcione, sigue estos pasos para obtener información i
 
 1.  **Verificar el estado de PM2:**
     ```bash
-    pm2 show yega
+    pm2 show manda2
     ```
     Asegúrate de que el `status` sea `online`. Si es `errored` o `stopped`, la aplicación no está corriendo.
 
 2.  **Revisar los logs de la aplicación:**
     ```bash
-    pm2 logs yega --lines 50
+    pm2 logs manda2 --lines 50
     ```
-    Busca mensajes de error (`Error:`, `SyntaxError:`, `MODULE_NOT_FOUND`, etc.) en la sección `yega-error.log`. Esto es crucial para entender la causa del fallo.
+    Busca mensajes de error (`Error:`, `SyntaxError:`, `MODULE_NOT_FOUND`, etc.) en la sección `manda2-error.log`. Esto es crucial para entender la causa del fallo.
 
 3.  **Verificar el estado de Caddy (si usas HTTPS):**
     ```bash
@@ -35,14 +35,14 @@ Cuando la aplicación no funcione, sigue estos pasos para obtener información i
 Si la aplicación está en estado `errored` o `stopped` y los logs no muestran un error obvio y persistente, intenta un reinicio rápido:
 
 ```bash
-pm2 reload yega
+pm2 reload manda2
 ```
 
-Después de unos segundos, verifica el estado y los logs nuevamente (`pm2 show yega`, `pm2 logs yega --lines 50`). Si el problema persiste, pasa a la siguiente sección.
+Después de unos segundos, verifica el estado y los logs nuevamente (`pm2 show manda2`, `pm2 logs manda2 --lines 50`). Si el problema persiste, pasa a la siguiente sección.
 
 ## 3. Restauración desde Backup (Recomendado para Fallos Persistentes)
 
-Si el reinicio rápido no funciona o los logs indican un problema recurrente (como `MODULE_NOT_FOUND` o errores de sintaxis que reaparecen), puedes restaurar la aplicación a un estado de funcionamiento conocido utilizando el backup `yega_working_state_backup.tar.gz`.
+Si el reinicio rápido no funciona o los logs indican un problema recurrente (como `MODULE_NOT_FOUND` o errores de sintaxis que reaparecen), puedes restaurar la aplicación a un estado de funcionamiento conocido utilizando el backup `manda2_working_state_backup.tar.gz`.
 
 1.  **Detener la aplicación y Caddy:**
     ```bash
@@ -52,31 +52,31 @@ Si el reinicio rápido no funciona o los logs indican un problema recurrente (co
 
 2.  **Eliminar los directorios actuales de la aplicación (¡PRECAUCIÓN: Esto eliminará los archivos actuales!):**
     ```bash
-    sudo rm -rf /var/www/yega/backend
-    sudo rm -rf /var/www/yega/frontend
+    sudo rm -rf /var/www/manda2/backend
+    sudo rm -rf /var/www/manda2/frontend
     ```
 
 3.  **Restaurar los archivos desde el backup:**
     ```bash
-    sudo mkdir -p /var/www/yega
-    sudo tar -xzf /home/ec2-user/yega_working_state_backup.tar.gz -C /var/www/yega/
+    sudo mkdir -p /var/www/manda2
+    sudo tar -xzf /home/ec2-user/manda2_working_state_backup.tar.gz -C /var/www/manda2/
     # Mover los contenidos restaurados a sus ubicaciones finales
-    sudo mv /var/www/yega/backend /var/www/yega/
-    sudo mv /var/www/yega/frontend /var/www/yega/
-    sudo mv /var/www/yega/ecosystem.config.js /home/ec2-user/
-    sudo mv /var/www/yega/Caddyfile /home/ec2-user/
+    sudo mv /var/www/manda2/backend /var/www/manda2/
+    sudo mv /var/www/manda2/frontend /var/www/manda2/
+    sudo mv /var/www/manda2/ecosystem.config.js /home/ec2-user/
+    sudo mv /var/www/manda2/Caddyfile /home/ec2-user/
     ```
     **Nota**: Es posible que necesites ajustar las rutas si tu backup se extrae en un subdirectorio diferente.
 
 4.  **Reinstalar dependencias del backend (por si acaso):**
     ```bash
-    cd /var/www/yega/backend
+    cd /var/www/manda2/backend
     sudo npm install
     ```
 
 5.  **Reconstruir el frontend (por si acaso):**
     ```bash
-    cd /var/www/yega/frontend
+    cd /var/www/manda2/frontend
     sudo npm install
     sudo npm run build
     ```
@@ -90,7 +90,7 @@ Si el reinicio rápido no funciona o los logs indican un problema recurrente (co
     ```
 
 7.  **Verificar la aplicación:**
-    Repite los pasos de la Sección 1 (Diagnóstico Inicial) y luego accede a la aplicación en tu navegador (`https://yega.YOUR_PUBLIC_IP.nip.io`).
+    Repite los pasos de la Sección 1 (Diagnóstico Inicial) y luego accede a la aplicación en tu navegador (`https://manda2.YOUR_PUBLIC_IP.nip.io`).
 
 ## 4. Reseteo Completo (Último Recurso)
 
@@ -99,6 +99,6 @@ Si la restauración desde el backup no resuelve el problema, o si prefieres empe
 Este proceso implica eliminar todas las configuraciones y archivos de la aplicación y volver a desplegarla desde cero.
 
 ---
-**Ubicación del Backup:** `/home/ec2-user/yega_working_state_backup.tar.gz`
+**Ubicación del Backup:** `/home/ec2-user/manda2_working_state_backup.tar.gz`
 **IP Pública Actual:** `$(curl -s ifconfig.me)`
 ---

@@ -1,11 +1,11 @@
-/* Estilos globales para YEGA */
+/* Estilos globales para Manda2 */
 @import './bottom-navbar.css';
 @import './glassmorphism.css';
 @import './modal-fix.css';
 @import './modern-modal-fix.css';
 
 :root {
-  /* Paleta de colores YEGA */
+  /* Paleta de colores Manda2 */
   --color-primary: #0B0B0B;      /* Negro profundo */
   --color-secondary: #FFFFFF;    /* Blanco */
   --color-accent-silver: #C0C0C0; /* Plata (nuevo acento principal) */
@@ -87,7 +87,7 @@ a:hover {
 }
 
 /* Botones personalizados */
-.btn-yega-primary {
+.btn-manda2-primary {
   background-color: var(--color-accent-silver);
   border-color: var(--color-accent-silver);
   color: #0b0b0b;
@@ -95,14 +95,14 @@ a:hover {
   transition: all 0.2s ease;
 }
 
-.btn-yega-primary:hover {
+.btn-manda2-primary:hover {
   background-color: #d7d7d7;
   border-color: #d7d7d7;
   color: #0b0b0b;
   transform: translateY(-1px);
 }
 
-.btn-yega-secondary {
+.btn-manda2-secondary {
   background-color: transparent;
   border: 2px solid var(--color-accent-silver);
   color: var(--color-accent-silver);
@@ -110,25 +110,25 @@ a:hover {
   transition: all 0.2s ease;
 }
 
-.btn-yega-secondary:hover {
+.btn-manda2-secondary:hover {
   background-color: var(--color-accent-silver);
   color: var(--color-primary);
 }
 
-.btn-yega-outline {
+.btn-manda2-outline {
   background-color: transparent;
   border: 1px solid var(--color-secondary);
   color: var(--color-secondary);
   transition: all 0.2s ease;
 }
 
-.btn-yega-outline:hover {
+.btn-manda2-outline:hover {
   background-color: var(--color-secondary);
   color: var(--color-primary);
 }
 
 /* Cards personalizadas */
-.card-yega {
+.card-manda2 {
   background: rgba(22, 22, 22, 0.9);
   border: 1px solid rgba(192, 192, 192, 0.2);
   border-radius: 16px;
@@ -138,34 +138,34 @@ a:hover {
   color: var(--color-secondary);
 }
 
-.card-yega:hover {
+.card-manda2:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(0,0,0,.5);
   border-color: var(--color-accent-silver);
 }
 
-.card-yega .card-header {
+.card-manda2 .card-header {
   background: rgba(28, 28, 28, 0.8);
   border-bottom: 1px solid rgba(192, 192, 192, 0.2);
   color: var(--color-accent-silver);
   font-weight: 600;
 }
 
-.card-yega .card-body {
+.card-manda2 .card-body {
   color: var(--color-secondary);
 }
 
-.card-yega .card-title {
+.card-manda2 .card-title {
   color: var(--color-secondary);
   font-weight: 600;
 }
 
-.card-yega .card-text {
+.card-manda2 .card-text {
   color: var(--color-gray-400);
 }
 
 /* Tarjetas con efecto glass */
-.yega-glass {
+.manda2-glass {
   background: rgba(22, 22, 22, 0.9) !important;
   border: 1px solid rgba(192, 192, 192, 0.2) !important;
   border-radius: 16px !important;
@@ -173,26 +173,26 @@ a:hover {
   backdrop-filter: blur(10px) !important;
 }
 
-.yega-glass .card-header {
+.manda2-glass .card-header {
   background: rgba(28, 28, 28, 0.8) !important;
   border-bottom: 1px solid rgba(192, 192, 192, 0.2) !important;
   color: var(--color-secondary) !important;
 }
 
-.yega-glass .card-body {
+.manda2-glass .card-body {
   color: var(--color-secondary) !important;
 }
 
-.yega-glass .text-white {
+.manda2-glass .text-white {
   color: var(--color-secondary) !important;
 }
 
-.yega-glass .text-white-50 {
+.manda2-glass .text-white-50 {
   color: var(--color-gray-400) !important;
 }
 
 /* Formularios */
-.form-control-yega {
+.form-control-manda2 {
   background-color: var(--color-gray-800) !important;
   border: 1px solid var(--color-gray-600) !important;
   color: var(--color-secondary) !important;
@@ -202,7 +202,7 @@ a:hover {
   z-index: 1;
 }
 
-.form-control-yega:focus {
+.form-control-manda2:focus {
   background-color: var(--color-gray-700) !important;
   border-color: var(--color-accent-silver) !important;
   box-shadow: 0 0 0 0.2rem rgba(192, 192, 192, 0.25) !important;
@@ -210,11 +210,11 @@ a:hover {
   outline: none !important;
 }
 
-.form-control-yega::placeholder {
+.form-control-manda2::placeholder {
   color: var(--color-gray-400) !important;
 }
 
-.form-label-yega {
+.form-label-manda2 {
   color: var(--color-accent-silver) !important;
   font-weight: 500;
   margin-bottom: var(--spacing-sm);
@@ -224,34 +224,34 @@ a:hover {
 }
 
 /* Navegación */
-.navbar-yega {
+.navbar-manda2 {
   background: var(--bg-gradient) !important;
   border-bottom: 2px solid var(--color-accent-silver);
   box-shadow: var(--shadow-md);
 }
 
-.navbar-yega .navbar-brand {
+.navbar-manda2 .navbar-brand {
   color: var(--color-accent-silver) !important;
   font-weight: 700;
   font-size: var(--font-size-xl);
 }
 
-.navbar-yega .nav-link {
+.navbar-manda2 .nav-link {
   color: var(--color-secondary) !important;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
-.navbar-yega .nav-link:hover {
+.navbar-manda2 .nav-link:hover {
   color: var(--color-accent-silver) !important;
 }
 
-.navbar-yega .nav-link.active {
+.navbar-manda2 .nav-link.active {
   color: var(--color-accent-silver) !important;
 }
 
 /* Footer */
-.footer-yega {
+.footer-manda2 {
   background: var(--bg-gradient);
   border-top: 2px solid var(--color-accent-silver);
   color: var(--color-gray-300);
@@ -259,15 +259,15 @@ a:hover {
 }
 
 /* Ocultar visualmente el footer en la app manteniendo el elemento */
-.footer-yega {
+.footer-manda2 {
   display: none !important;
 }
 
 
 /* Utilidades */
-.text-yega-gold { color: var(--color-accent-gold) !important; }
+.text-manda2-gold { color: var(--color-accent-gold) !important; }
 
-.text-yega-silver {
+.text-manda2-silver {
   color: var(--color-accent-silver) !important;
 }
 
@@ -291,11 +291,11 @@ body::-webkit-scrollbar,
   display: none;
 }
 
-.bg-yega-dark {
+.bg-manda2-dark {
   background-color: var(--color-gray-900) !important;
 }
 
-.bg-yega-darker {
+.bg-manda2-darker {
   background-color: var(--color-gray-800) !important;
 }
 
@@ -337,7 +337,7 @@ body::-webkit-scrollbar,
     padding-right: var(--spacing-md);
   }
   
-  .card-yega {
+  .card-manda2 {
     margin-bottom: var(--spacing-md);
   }
 }
@@ -372,42 +372,42 @@ body::-webkit-scrollbar,
 }
 
 /* Badges personalizados */
-.badge-yega-gold {
+.badge-manda2-gold {
   background-color: var(--color-accent-gold);
   color: var(--color-primary);
 }
 
-.badge-yega-silver {
+.badge-manda2-silver {
   background-color: var(--color-accent-silver);
   color: var(--color-primary);
 }
 
 /* Alertas personalizadas */
-.alert-yega {
+.alert-manda2 {
   border-radius: var(--border-radius-md);
   border: none;
   font-weight: 500;
 }
 
-.alert-yega-success {
+.alert-manda2-success {
   background-color: rgba(40, 167, 69, 0.1);
   color: var(--color-success);
   border-left: 4px solid var(--color-success);
 }
 
-.alert-yega-warning {
+.alert-manda2-warning {
   background-color: rgba(255, 193, 7, 0.1);
   color: var(--color-warning);
   border-left: 4px solid var(--color-warning);
 }
 
-.alert-yega-danger {
+.alert-manda2-danger {
   background-color: rgba(220, 53, 69, 0.1);
   color: var(--color-danger);
   border-left: 4px solid var(--color-danger);
 }
 
-.alert-yega-info {
+.alert-manda2-info {
   background-color: rgba(23, 162, 184, 0.1);
   color: var(--color-info);
   border-left: 4px solid var(--color-info);

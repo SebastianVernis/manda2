@@ -8,7 +8,7 @@ const OnboardingScreen = () => {
 
   const onboardingSteps = [
     {
-      title: "Bienvenido a YEGA",
+      title: "Bienvenido a Manda2",
       subtitle: "Tu aplicación de delivery favorita",
       description: "Descubre miles de restaurantes y tiendas cerca de ti. Comida deliciosa a solo un toque de distancia.",
       image: "/42.png"
@@ -48,7 +48,7 @@ const OnboardingScreen = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yega-dark via-yega-dark to-black flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-manda2-dark via-manda2-dark to-black flex flex-col">
       {/* Header */}
       <div className="flex justify-end p-4">
         <Button variant="outline-light" onClick={handleSkip}>
@@ -74,10 +74,10 @@ const OnboardingScreen = () => {
           {/* Text Content */}
           <Card bg="dark" border="secondary" className="shadow-lg">
             <Card.Body className="p-4">
-              <h1 className="text-2xl font-bold text-yega-gold mb-2">
+              <h1 className="text-2xl font-bold text-manda2-gold mb-2">
                 {currentStepData.title}
               </h1>
-              <h2 className="text-lg text-yega-silver mb-4">
+              <h2 className="text-lg text-manda2-silver mb-4">
                 {currentStepData.subtitle}
               </h2>
               <p className="text-white/70 leading-relaxed">
@@ -96,7 +96,7 @@ const OnboardingScreen = () => {
             <div
               key={index}
               className={`w-2 h-2 rounded-full transition-colors ${
-                index === currentStep ? 'bg-yega-gold' : 'bg-white/30'
+                index === currentStep ? 'bg-manda2-gold' : 'bg-white/30'
               }`}
             />
           ))}

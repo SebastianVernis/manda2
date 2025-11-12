@@ -1,7 +1,7 @@
 // Clear database collections script
-// Run with: mongosh yega < clear-demo-data.js
+// Run with: mongosh manda2 < clear-demo-data.js
 
-use yega;
+use manda2;
 
 print("🗑️ Clearing demo data from database...");
 

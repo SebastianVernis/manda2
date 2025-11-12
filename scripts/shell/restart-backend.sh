@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # Simple backend restart script for situations where PM2 is running under root
-echo "🔄 Restarting YEGA backend..."
+echo "🔄 Restarting Manda2 backend..."
 
 # Kill existing node process
-pkill -f "node /home/ec2-user/yega-app/backend/server.js" 2>/dev/null || echo "No existing backend process found"
+pkill -f "node /home/ec2-user/manda2-app/backend/server.js" 2>/dev/null || echo "No existing backend process found"
 
 # Wait a moment
 sleep 2
 
 # Start backend in background
-cd /home/ec2-user/yega-app/backend
+cd /home/ec2-user/manda2-app/backend
 nohup node server.js > logs/manual-out.log 2> logs/manual-err.log &
 
 echo "✅ Backend restarted manually"

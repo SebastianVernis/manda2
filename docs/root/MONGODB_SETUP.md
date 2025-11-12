@@ -1,4 +1,4 @@
-# MongoDB Setup Guide for YEGA
+# MongoDB Setup Guide for Manda2
 
 ## 🚀 Quick Installation
 
@@ -21,21 +21,21 @@ mongosh
 exit
 ```
 
-### Step 3: Setup YEGA Database
+### Step 3: Setup Manda2 Database
 ```bash
 # Setup database with sample data
-mongosh < scripts/setup-yega-db.js
+mongosh < scripts/setup-manda2-db.js
 
 # Or connect and run manually
 mongosh
-use yega
-# Then copy-paste the contents of scripts/setup-yega-db.js
+use manda2
+# Then copy-paste the contents of scripts/setup-manda2-db.js
 ```
 
 ### Step 4: Test Connection from App
 ```bash
-# Test MongoDB connection with YEGA app
-cd /home/ec2-user/yega-app
+# Test MongoDB connection with Manda2 app
+cd /home/ec2-user/manda2-app
 node scripts/test/test-mongodb.js
 ```
 
@@ -73,10 +73,10 @@ mongosh --eval "db.adminCommand('hello')"
 - **Log File**: /var/log/mongodb/mongod.log
 - **Config File**: /etc/mongod.conf
 
-### YEGA App Configuration
+### Manda2 App Configuration
 The backend `.env` file is already configured with:
 ```env
-MONGODB_URI=mongodb://localhost:27017/yega
+MONGODB_URI=mongodb://localhost:27017/manda2
 ```
 
 ## 🔧 Database Structure
@@ -98,7 +98,7 @@ MONGODB_URI=mongodb://localhost:27017/yega
 
 ## 👤 Default Admin Account
 After running the setup script:
-- **Email**: admin@yega.com
+- **Email**: admin@manda2.com
 - **Password**: admin123
 - **Role**: administrador
 
@@ -127,8 +127,8 @@ sudo systemctl enable mongod
 # Connect to MongoDB shell
 mongosh
 
-# Connect to YEGA database
-mongosh yega
+# Connect to Manda2 database
+mongosh manda2
 
 # Show databases
 show dbs
@@ -145,16 +145,16 @@ db.pedidos.countDocuments()
 ### Backup and Restore
 ```bash
 # Create backup
-mongodump --db yega --out /backup/mongodb/
+mongodump --db manda2 --out /backup/mongodb/
 
 # Restore backup
-mongorestore --db yega /backup/mongodb/yega/
+mongorestore --db manda2 /backup/mongodb/manda2/
 
 # Export collection to JSON
-mongoexport --db yega --collection usuarios --out usuarios.json
+mongoexport --db manda2 --collection usuarios --out usuarios.json
 
 # Import from JSON
-mongoimport --db yega --collection usuarios --file usuarios.json
+mongoimport --db manda2 --collection usuarios --file usuarios.json
 ```
 
 ## 📊 Monitoring
@@ -203,13 +203,13 @@ db.createUser({
   roles: [{role: "userAdminAnyDatabase", db: "admin"}]
 });'
 
-# 2. Create YEGA app user
+# 2. Create Manda2 app user
 mongosh --eval '
-use yega;
+use manda2;
 db.createUser({
-  user: "yegaapp",
-  pwd: "yegapassword123",
-  roles: [{role: "readWrite", db: "yega"}]
+  user: "manda2app",
+  pwd: "manda2password123",
+  roles: [{role: "readWrite", db: "manda2"}]
 });'
 
 # 3. Enable authentication in config
@@ -218,8 +218,8 @@ sudo sed -i 's/authorization: disabled/authorization: enabled/' /etc/mongod.conf
 # 4. Restart MongoDB
 sudo systemctl restart mongod
 
-# 5. Update YEGA app connection string
-# MONGODB_URI=mongodb://yegaapp:yegapassword123@localhost:27017/yega
+# 5. Update Manda2 app connection string
+# MONGODB_URI=mongodb://manda2app:manda2password123@localhost:27017/manda2
 ```
 
 ## 🚨 Troubleshooting
@@ -260,7 +260,7 @@ mongosh --eval "db.serverStatus().connections"
 mongosh --eval "db.setProfilingLevel(1, {slowms: 100})"
 
 # Check indexes
-mongosh yega --eval "db.usuarios.getIndexes()"
+mongosh manda2 --eval "db.usuarios.getIndexes()"
 ```
 
 ### Log Files
@@ -274,17 +274,17 @@ After installation, verify:
 - [ ] MongoDB service is running: `sudo systemctl status mongod`
 - [ ] Port 27017 is listening: `sudo netstat -tlnp | grep 27017`
 - [ ] Can connect with shell: `mongosh`
-- [ ] YEGA database exists: `mongosh --eval "show dbs"`
-- [ ] Collections are created: `mongosh yega --eval "show collections"`
-- [ ] Admin user exists: `mongosh yega --eval "db.usuarios.findOne({rol: 'administrador'})"`
+- [ ] Manda2 database exists: `mongosh --eval "show dbs"`
+- [ ] Collections are created: `mongosh manda2 --eval "show collections"`
+- [ ] Admin user exists: `mongosh manda2 --eval "db.usuarios.findOne({rol: 'administrador'})"`
 - [ ] App can connect: `node scripts/test/test-mongodb.js`
 
 ## 🎉 Next Steps
 
 After MongoDB is installed and configured:
-1. Run the YEGA application: `./scripts/shell/deploy.sh --caddy`
+1. Run the Manda2 application: `./scripts/shell/deploy.sh --caddy`
 2. Test the admin login at: http://172.31.39.53
 3. Create test users for different roles
 4. Test the complete application workflow
 
-MongoDB is now ready for the YEGA delivery platform! 🚀
+MongoDB is now ready for the Manda2 delivery platform! 🚀

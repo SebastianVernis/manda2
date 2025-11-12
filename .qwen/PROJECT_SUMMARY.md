@@ -1,11 +1,11 @@
 # Project Summary
 
 ## Overall Goal
-Implementar funcionalidad completa de administración de documentos y mantener la plataforma YEGA en estado production-ready, incluyendo corrección de problemas con el envío de OTP por email.
+Implementar funcionalidad completa de administración de documentos y mantener la plataforma Manda2 en estado production-ready, incluyendo corrección de problemas con el envío de OTP por email.
 
 ## Key Knowledge
 - **Tecnología de email**: Uso de Nodemailer con configuración SMTP para IONOS (smtp.ionos.mx:465)
-- **Credenciales de email**: REDACTADO_VER_ENV con contraseña configurada
+- **Credenciales de email**: contacto@manda2.com.mx con contraseña configurada
 - **Arquitectura OTP**: Servicio de OTP implementado en backend/services/otpService.js con funciones para generar, enviar y verificar códigos
 - **Comandos de despliegue**: Uso de PM2 para gestión de procesos con `pm2 start ecosystem.config.js`
 - **Estructura de logs**: Los logs de error del backend se encuentran en `backend/logs/err-0.log`

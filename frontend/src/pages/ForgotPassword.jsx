@@ -34,7 +34,7 @@ const ForgotPassword = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yega-dark via-yega-dark to-black">
+    <div className="min-h-screen bg-gradient-to-br from-manda2-dark via-manda2-dark to-black">
       <MobileHeader>
         <div className="flex items-center justify-between w-full">
           <Button variant="outline-light" onClick={() => navigate('/login')} className="text-white/70">
@@ -49,10 +49,10 @@ const ForgotPassword = () => {
         <div className="max-w-md mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="w-24 h-24 mx-auto mb-4 bg-yega-gold/20 rounded-full flex items-center justify-center">
+            <div className="w-24 h-24 mx-auto mb-4 bg-manda2-gold/20 rounded-full flex items-center justify-center">
               <span className="text-2xl">🔒</span>
             </div>
-            <h2 className="text-2xl font-bold text-yega-gold mb-2">
+            <h2 className="text-2xl font-bold text-manda2-gold mb-2">
               ¿Olvidaste tu contraseña?
             </h2>
             <p className="text-white/70">

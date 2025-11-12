@@ -1,8 +1,8 @@
-// Enhanced service-worker.js for YEGA PWA
-const CACHE_NAME = 'yega-app-v2.0';
-const STATIC_CACHE = 'yega-static-v2.0';
-const DYNAMIC_CACHE = 'yega-dynamic-v2.0';
-const API_CACHE = 'yega-api-v2.0';
+// Enhanced service-worker.js for Manda2 PWA
+const CACHE_NAME = 'manda2-app-v2.0';
+const STATIC_CACHE = 'manda2-static-v2.0';
+const DYNAMIC_CACHE = 'manda2-dynamic-v2.0';
+const API_CACHE = 'manda2-api-v2.0';
 
 // Static assets to cache immediately
 const STATIC_ASSETS = [
@@ -172,7 +172,7 @@ self.addEventListener('push', (event) => {
   console.log('[SW] Push notification received');
   
   const options = {
-    body: 'Tienes nuevas actualizaciones en YEGA',
+    body: 'Tienes nuevas actualizaciones en Manda2',
     icon: '/android-chrome-192x192.png',
     badge: '/android-chrome-192x192.png',
     vibrate: [200, 100, 200],
@@ -201,7 +201,7 @@ self.addEventListener('push', (event) => {
   }
   
   event.waitUntil(
-    self.registration.showNotification('YEGA', options)
+    self.registration.showNotification('Manda2', options)
   );
 });
 

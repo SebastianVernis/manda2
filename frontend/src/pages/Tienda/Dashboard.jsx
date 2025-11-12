@@ -38,15 +38,15 @@ const TiendaDashboard = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <Card className="card-yega h-100">
+                <Card className="card-manda2 h-100">
                   <Card.Body className="text-center">
-                    <FaBox size={48} className="text-yega-gold mb-3" />
+                    <FaBox size={48} className="text-manda2-gold mb-3" />
                     <Card.Title>Gestionar Productos</Card.Title>
                     <Card.Text>
                       Agrega, edita o elimina productos de tu catálogo.
                     </Card.Text>
                     <LinkContainer to="/tienda/productos">
-                      <Button variant="outline-light" className="btn-yega-primary">
+                      <Button variant="outline-light" className="btn-manda2-primary">
                         Ver Productos
                       </Button>
                     </LinkContainer>
@@ -60,15 +60,15 @@ const TiendaDashboard = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.2, delay: 0.1 }}
               >
-                <Card className="card-yega h-100">
+                <Card className="card-manda2 h-100">
                   <Card.Body className="text-center">
-                    <FaList size={48} className="text-yega-gold mb-3" />
+                    <FaList size={48} className="text-manda2-gold mb-3" />
                     <Card.Title>Pedidos Recibidos</Card.Title>
                     <Card.Text>
                       Revisa y gestiona los pedidos de tus clientes.
                     </Card.Text>
                     <LinkContainer to="/tienda/pedidos">
-                      <Button variant="outline-light" className="btn-yega-primary">
+                      <Button variant="outline-light" className="btn-manda2-primary">
                         Ver Pedidos
                       </Button>
                     </LinkContainer>
@@ -82,15 +82,15 @@ const TiendaDashboard = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.2, delay: 0.2 }}
               >
-                <Card className="card-yega h-100">
+                <Card className="card-manda2 h-100">
                   <Card.Body className="text-center">
-                    <FaShoppingCart size={48} className="text-yega-gold mb-3" />
+                    <FaShoppingCart size={48} className="text-manda2-gold mb-3" />
                     <Card.Title>Control de Inventario</Card.Title>
                     <Card.Text>
                       Controla el stock de tus productos disponibles.
                     </Card.Text>
                     <LinkContainer to="/tienda/inventario">
-                      <Button variant="outline-light" className="btn-yega-primary">
+                      <Button variant="outline-light" className="btn-manda2-primary">
                         Ver Inventario
                       </Button>
                     </LinkContainer>
@@ -104,15 +104,15 @@ const TiendaDashboard = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.2, delay: 0.3 }}
               >
-                <Card className="card-yega h-100">
+                <Card className="card-manda2 h-100">
                   <Card.Body className="text-center">
-                    <FaChartLine size={48} className="text-yega-gold mb-3" />
+                    <FaChartLine size={48} className="text-manda2-gold mb-3" />
                     <Card.Title>Estadísticas</Card.Title>
                     <Card.Text>
                       Analiza tus ventas y rendimiento.
                     </Card.Text>
                     <LinkContainer to="/tienda/estadisticas">
-                      <Button variant="outline-light" className="btn-yega-primary">
+                      <Button variant="outline-light" className="btn-manda2-primary">
                         Ver Reportes
                       </Button>
                     </LinkContainer>
@@ -129,7 +129,7 @@ const TiendaDashboard = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <Card className="yega-glass">
+                <Card className="manda2-glass">
                   <Card.Header className="border-0 bg-transparent">
                     <h5 className="mb-0 text-white">Información de la Tienda</h5>
                   </Card.Header>

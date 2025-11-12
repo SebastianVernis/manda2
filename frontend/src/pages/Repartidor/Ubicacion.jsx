@@ -67,7 +67,7 @@ const RepartidorUbicacion = () => {
   return (
     <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Container className="py-4">
-        <h2 className="text-yega-gold">Ubicación Manual</h2>
+        <h2 className="text-manda2-gold">Ubicación Manual</h2>
       {error && <Alert variant="danger" onClose={() => setError(null)} dismissible>{error}</Alert>}
       
       <Alert variant="info" className="mb-3">
@@ -106,18 +106,18 @@ const RepartidorUbicacion = () => {
       </Alert>
       <Row className="g-3 align-items-end">
         <Col md={4}>
-          <Form.Label className="form-label-yega">Dirección (opcional)</Form.Label>
+          <Form.Label className="form-label-manda2">Dirección (opcional)</Form.Label>
           <Form.Control value={direccion} onChange={(e) => setDireccion(e.target.value)} placeholder="Calle y número" />
         </Col>
         <Col md={3}>
-          <Form.Label className="form-label-yega">Intervalo auto (seg)</Form.Label>
+          <Form.Label className="form-label-manda2">Intervalo auto (seg)</Form.Label>
           <Form.Control type="number" min={5} value={intervalo} onChange={(e) => setIntervalo(parseInt(e.target.value || '5', 10))} />
         </Col>
         <Col md="auto" className="d-flex gap-2">
-          <Button className="btn-yega-primary" onClick={enviarUbicacion} disabled={!coords || status === 'sending'}>
+          <Button className="btn-manda2-primary" onClick={enviarUbicacion} disabled={!coords || status === 'sending'}>
             {status === 'sending' ? 'Enviando...' : 'Enviar ubicación ahora'}
           </Button>
-          <Button as="a" target="_blank" rel="noopener" className="btn-yega-primary" href={coords ? `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}` : '#'}>
+          <Button as="a" target="_blank" rel="noopener" className="btn-manda2-primary" href={coords ? `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}` : '#'}>
             Abrir en Maps
           </Button>
         </Col>

@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const path = require('path');
 
 // MongoDB connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/yega';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/manda2';
 
 // Import User model
 const Usuario = require('./models/Usuario');
@@ -15,8 +15,8 @@ const demoUsers = [
   {
     nombre: 'Administrador Principal',
     telefono: '+52-555-0001',
-    email: 'admin@yega.com.mx',
-    password: 'YegaAdmin2024!',
+    email: 'admin@manda2.com.mx',
+    password: 'Manda2Admin2024!',
     rol: 'administrador',
     estado_validacion: 'aprobado',
     activo: true,
@@ -287,7 +287,7 @@ async function resetAndInjectUsers() {
 
     console.log(`\n${colors.green}🎉 Proceso completado exitosamente!${colors.reset}`);
     console.log(`\n${colors.blue}🔐 CREDENCIALES DE ACCESO:${colors.reset}`);
-    console.log(`${colors.yellow}Administrador:${colors.reset} admin@yega.com.mx / YegaAdmin2024!`);
+    console.log(`${colors.yellow}Administrador:${colors.reset} admin@manda2.com.mx / Manda2Admin2024!`);
     console.log(`${colors.yellow}Clientes:${colors.reset} Cliente123! (para todos los clientes)`);
     console.log(`${colors.yellow}Tiendas:${colors.reset} Tienda123! (para todas las tiendas)`);
     console.log(`${colors.yellow}Repartidores:${colors.reset} Repartidor123! (para todos los repartidores)`);

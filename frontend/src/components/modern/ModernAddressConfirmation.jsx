@@ -187,7 +187,7 @@ const ModernAddressConfirmation = ({ onConfirm, className = '' }) => {
 
   return (
     <div className={className}>
-      <Card className="yega-glass">
+      <Card className="manda2-glass">
         <Card.Body className="p-6">
           <div className="flex items-center gap-3 mb-6">
             <FaMapMarkerAlt className="text-gray-400 text-xl" />

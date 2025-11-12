@@ -30,7 +30,7 @@ const Home = () => {
             <div className="mb-4">
               <img 
                 src="/assets/img/inicio.png" 
-                alt="YEGA Logo"
+                alt="Manda2 Logo"
                 className="img-fluid"
                 style={{ maxHeight: '250px' }}
               />
@@ -43,13 +43,13 @@ const Home = () => {
 
             {/* Descripción */}
             <p className="lead mb-5" style={{ color: '#adb5bd' }}>
-              YEGA conecta clientes, tiendas y repartidores para entregarte lo que necesites, directo a tu puerta, rápido y seguro.
+              Manda2 conecta clientes, tiendas y repartidores para entregarte lo que necesites, directo a tu puerta, rápido y seguro.
             </p>
 
             {/* Botón */}
             <Button 
               size="lg" 
-              className="btn-yega-primary px-5 py-3"
+              className="btn-manda2-primary px-5 py-3"
               onClick={handleGetStarted}
             >
               Comenzar Ahora

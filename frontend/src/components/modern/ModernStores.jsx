@@ -33,7 +33,7 @@ const ModernStores = () => {
         try {
           const addr = await reverseGeocode(newCoords.lat, newCoords.lng)
           setAddressText(addr)
-          localStorage.setItem('yega_addr', addr)
+          localStorage.setItem('manda2_addr', addr)
         } catch (error) {
           console.error('Error getting address:', error)
           setAddressText(`${newCoords.lat.toFixed(4)}, ${newCoords.lng.toFixed(4)}`)
@@ -195,7 +195,7 @@ const ModernStores = () => {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card 
-                  className="h-full yega-glass hover:bg-white/10 transition-all duration-300 group"
+                  className="h-full manda2-glass hover:bg-white/10 transition-all duration-300 group"
                 >
                   <Card.Body className="p-4">
                     <div className="flex items-start justify-between mb-4">

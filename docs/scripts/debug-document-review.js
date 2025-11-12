@@ -34,7 +34,7 @@ const User = mongoose.model('Usuario', userSchema);
 
 // Admin credentials
 const adminCredentials = {
-  email: 'admin@yega.com',
+  email: 'admin@manda2.com',
   password: 'Demo123!'
 };
 

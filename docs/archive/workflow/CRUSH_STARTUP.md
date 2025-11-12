@@ -84,7 +84,7 @@ SI hay builds fallidos pero no hay fallback activo:
 
 ### Para Reportar al Usuario
 ```markdown
-# Estado del Proyecto YEGA - [TIMESTAMP]
+# Estado del Proyecto Manda2 - [TIMESTAMP]
 
 ## 🔍 Verificación de Sistema
 - Fallback Status: [ACTIVO/INACTIVO]
@@ -111,7 +111,7 @@ SI hay builds fallidos pero no hay fallback activo:
 #!/bin/bash
 # auto_diagnosis.sh
 
-echo "🔍 YEGA System Diagnosis - $(date)"
+echo "🔍 Manda2 System Diagnosis - $(date)"
 echo "=================================="
 
 # Check fallback status

@@ -59,14 +59,14 @@ const VerifyOTP = () => {
       <Container className="py-5">
         <Row className="justify-content-center">
         <Col md={6} lg={5}>
-          <Card className="card-yega">
+          <Card className="card-manda2">
             <Card.Header className="text-center">
               <h3 className="mb-0">Verificar Cuenta</h3>
             </Card.Header>
             
             <Card.Body className="p-4">
               {error && (
-                <Alert variant="danger" className="alert-yega-danger">
+                <Alert variant="danger" className="alert-manda2-danger">
                   {error}
                 </Alert>
               )}
@@ -77,11 +77,11 @@ const VerifyOTP = () => {
                 </p>
                 {telefono && (
                   <div className="mb-2">
-                    <strong className="text-yega-gold">📱 {telefono}</strong>
+                    <strong className="text-manda2-gold">📱 {telefono}</strong>
                   </div>
                 )}
                 <div>
-                  <strong className="text-yega-silver">📧 {email}</strong>
+                  <strong className="text-manda2-silver">📧 {email}</strong>
                 </div>
               </div>
 
@@ -111,9 +111,9 @@ const VerifyOTP = () => {
           </Card>
 
           {/* Información adicional */}
-          <Card className="card-yega mt-4">
+          <Card className="card-manda2 mt-4">
             <Card.Body className="text-center">
-              <h6 className="text-yega-gold mb-3">Consejos de Verificación</h6>
+              <h6 className="text-manda2-gold mb-3">Consejos de Verificación</h6>
               <div className="text-sm text-muted">
                 <div className="mb-2">
                   ✓ El código expira en 10 minutos

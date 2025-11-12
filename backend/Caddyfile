@@ -1,9 +1,9 @@
-yega.com.mx, www.yega.com.mx {
-    @www host www.yega.com.mx
-    redir @www https://yega.com.mx{uri} permanent
+manda2.com.mx, www.manda2.com.mx {
+    @www host www.manda2.com.mx
+    redir @www https://manda2.com.mx{uri} permanent
 
     encode zstd gzip
-    root * /var/www/yega/frontend/dist
+    root * /var/www/manda2/frontend/dist
     file_server
     
     # Add CORP header for static assets
@@ -17,7 +17,7 @@ yega.com.mx, www.yega.com.mx {
     # Proxy API requests to the backend
     handle /api/* {
         reverse_proxy localhost:5000 {
-            header_down Access-Control-Allow-Origin "https://yega.com.mx"
+            header_down Access-Control-Allow-Origin "https://manda2.com.mx"
             header_down Access-Control-Allow-Credentials "true"
             header_down Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
             header_down Access-Control-Allow-Headers "Content-Type, Authorization"

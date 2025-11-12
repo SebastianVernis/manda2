@@ -1,4 +1,4 @@
-# Status Update - YEGA Project (2025-09-18)
+# Status Update - Manda2 Project (2025-09-18)
 
 ## 📊 Estado Actual del Proyecto
 

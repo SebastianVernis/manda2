@@ -9,7 +9,7 @@ const demoUsers = [
   {
     nombre: 'Tienda Demo',
     telefono: '+3333333333',
-    email: 'tienda@yega.com',
+    email: 'tienda@manda2.com',
     rol: 'tienda'
   }
 ];
@@ -19,7 +19,7 @@ async function createTestDocument() {
     // Login as store user
     console.log('Logging in as store user...');
     const loginResponse = await axios.post('http://localhost:5000/api/auth/login', {
-      email: 'tienda@yega.com',
+      email: 'tienda@manda2.com',
       password: 'Demo123!'
     });
     const token = loginResponse.data.token;

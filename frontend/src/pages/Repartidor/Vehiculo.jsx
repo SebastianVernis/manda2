@@ -27,15 +27,15 @@ const RepartidorVehiculo = () => {
   return (
     <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Container className="py-4">
-        <h2 className="text-yega-gold">Datos del Vehículo</h2>
-      <Card className="card-yega mt-3">
+        <h2 className="text-manda2-gold">Datos del Vehículo</h2>
+      <Card className="card-manda2 mt-3">
         <Card.Body>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={onGuardar}>
             <Row className="g-3">
               <Col md={3}>
-                <Form.Label className="form-label-yega">Tipo</Form.Label>
-                <Form.Select value={vehiculo.tipo} onChange={(e)=> setVehiculo({...vehiculo, tipo: e.target.value})} className="form-control-yega">
+                <Form.Label className="form-label-manda2">Tipo</Form.Label>
+                <Form.Select value={vehiculo.tipo} onChange={(e)=> setVehiculo({...vehiculo, tipo: e.target.value})} className="form-control-manda2">
                   <option value="">Seleccionar</option>
                   <option value="moto">Moto</option>
                   <option value="auto">Auto</option>
@@ -43,28 +43,28 @@ const RepartidorVehiculo = () => {
                 </Form.Select>
               </Col>
               <Col md={3}>
-                <Form.Label className="form-label-yega">Marca</Form.Label>
-                <Form.Control value={vehiculo.marca||''} onChange={(e)=> setVehiculo({...vehiculo, marca: e.target.value})} className="form-control-yega" />
+                <Form.Label className="form-label-manda2">Marca</Form.Label>
+                <Form.Control value={vehiculo.marca||''} onChange={(e)=> setVehiculo({...vehiculo, marca: e.target.value})} className="form-control-manda2" />
               </Col>
               <Col md={3}>
-                <Form.Label className="form-label-yega">Modelo</Form.Label>
-                <Form.Control value={vehiculo.modelo||''} onChange={(e)=> setVehiculo({...vehiculo, modelo: e.target.value})} className="form-control-yega" />
+                <Form.Label className="form-label-manda2">Modelo</Form.Label>
+                <Form.Control value={vehiculo.modelo||''} onChange={(e)=> setVehiculo({...vehiculo, modelo: e.target.value})} className="form-control-manda2" />
               </Col>
               <Col md={3}>
-                <Form.Label className="form-label-yega">Año</Form.Label>
-                <Form.Control value={vehiculo.anio||''} onChange={(e)=> setVehiculo({...vehiculo, anio: e.target.value})} className="form-control-yega" />
+                <Form.Label className="form-label-manda2">Año</Form.Label>
+                <Form.Control value={vehiculo.anio||''} onChange={(e)=> setVehiculo({...vehiculo, anio: e.target.value})} className="form-control-manda2" />
               </Col>
               <Col md={3}>
-                <Form.Label className="form-label-yega">Placa</Form.Label>
-                <Form.Control value={vehiculo.placa||''} onChange={(e)=> setVehiculo({...vehiculo, placa: e.target.value})} className="form-control-yega" />
+                <Form.Label className="form-label-manda2">Placa</Form.Label>
+                <Form.Control value={vehiculo.placa||''} onChange={(e)=> setVehiculo({...vehiculo, placa: e.target.value})} className="form-control-manda2" />
               </Col>
               <Col md={3}>
-                <Form.Label className="form-label-yega">Color</Form.Label>
-                <Form.Control value={vehiculo.color||''} onChange={(e)=> setVehiculo({...vehiculo, color: e.target.value})} className="form-control-yega" />
+                <Form.Label className="form-label-manda2">Color</Form.Label>
+                <Form.Control value={vehiculo.color||''} onChange={(e)=> setVehiculo({...vehiculo, color: e.target.value})} className="form-control-manda2" />
               </Col>
             </Row>
             <div className="mt-3">
-              <Button type="submit" className="btn-yega-primary" disabled={saving}>{saving?'Guardando...':'Guardar y continuar'}</Button>
+              <Button type="submit" className="btn-manda2-primary" disabled={saving}>{saving?'Guardando...':'Guardar y continuar'}</Button>
             </div>
           </Form>
         </Card.Body>

@@ -53,10 +53,10 @@ const DocumentUploader = ({ tipo, label, current }) => {
           style={{ display: 'none' }}
         />
         <div className="d-flex gap-2">
-          <Button size="sm" variant="outline-light" className="btn-yega-secondary" onClick={() => fileInputRef.current?.click()}>
+          <Button size="sm" variant="outline-light" className="btn-manda2-secondary" onClick={() => fileInputRef.current?.click()}>
             Elegir archivo
           </Button>
-          <Button size="sm" className="btn-yega-primary" disabled={!file || loading} onClick={onUpload}>
+          <Button size="sm" className="btn-manda2-primary" disabled={!file || loading} onClick={onUpload}>
             {loading ? 'Subiendo...' : 'Subir'}
           </Button>
         </div>

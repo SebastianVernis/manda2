@@ -1,4 +1,4 @@
-package com.yega.app;
+package com.manda2.app;
 
 import android.app.Activity;
 import android.os.Bundle;

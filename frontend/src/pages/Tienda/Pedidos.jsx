@@ -44,7 +44,7 @@ const TiendaPedidos = () => {
       {!isLoading && !isError && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 no-scrollbar place-items-center">
           {pedidos.map(o => (
-            <Card key={o._id} className="card-yega yega-glass shadow-lg">
+            <Card key={o._id} className="card-manda2 manda2-glass shadow-lg">
               <Card.Body className="p-4">
                 <div className="flex items-start justify-between">
                   <div className="fw-semibold text-white">{o.numero_pedido}</div>

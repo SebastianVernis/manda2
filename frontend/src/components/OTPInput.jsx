@@ -194,7 +194,7 @@ const OTPInput = ({
   return (
     <OTPContainer>
       <div className="text-center mb-3">
-        <h5 className="text-yega-gold">Verificación de Código</h5>
+        <h5 className="text-manda2-gold">Verificación de Código</h5>
         <p className="text-muted">
           Ingresa el código de {length} dígitos enviado a tu {metodo === 'email' ? 'email' : 'teléfono'}
         </p>

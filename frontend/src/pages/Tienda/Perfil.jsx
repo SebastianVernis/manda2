@@ -49,10 +49,10 @@ const TiendaPerfil = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Container className="py-4">
-      <h2 className="text-yega-gold text-center mb-4">Perfil de Tienda</h2>
+      <h2 className="text-manda2-gold text-center mb-4">Perfil de Tienda</h2>
       <Row>
         <Col lg={6}>
-          <Card className="card-yega mb-4">
+          <Card className="card-manda2 mb-4">
             <Card.Body>
               <div className="text-center mb-4">
                 <div className="bg-primary bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center mb-3 overflow-hidden" style={{width: '100px', height: '100px'}}>
@@ -65,53 +65,53 @@ const TiendaPerfil = () => {
                 <h5 className="text-white mb-1">{user?.nombre}</h5>
                 <small className="text-white-50">{user?.email}</small>
               </div>
-              <h4 className="text-yega-gold mb-3">Información de la tienda</h4>
+              <h4 className="text-manda2-gold mb-3">Información de la tienda</h4>
               <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">Nombre de la tienda</Form.Label>
+                  <Form.Label className="form-label-manda2">Nombre de la tienda</Form.Label>
                   <Form.Control 
                     name="nombre"
                     value={form.nombre} 
                     onChange={handleChange} 
-                    className="form-control-yega" 
+                    className="form-control-manda2" 
                   />
                 </Form.Group>
                 
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">Teléfono</Form.Label>
+                  <Form.Label className="form-label-manda2">Teléfono</Form.Label>
                   <Form.Control 
                     name="telefono"
                     value={form.telefono} 
                     onChange={handleChange} 
-                    className="form-control-yega" 
+                    className="form-control-manda2" 
                   />
                 </Form.Group>
                 
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">Descripción</Form.Label>
+                  <Form.Label className="form-label-manda2">Descripción</Form.Label>
                   <Form.Control 
                     as="textarea"
                     name="descripcion"
                     value={form.descripcion} 
                     onChange={handleChange} 
-                    className="form-control-yega"
+                    className="form-control-manda2"
                     placeholder="Describe tu negocio en pocas palabras" 
                   />
                 </Form.Group>
                 
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">Horario</Form.Label>
+                  <Form.Label className="form-label-manda2">Horario</Form.Label>
                   <Form.Control 
                     name="horario"
                     value={form.horario} 
                     onChange={handleChange} 
-                    className="form-control-yega"
+                    className="form-control-manda2"
                     placeholder="Ej: Lun-Vie 9:00-18:00, Sáb 10:00-14:00" 
                   />
                 </Form.Group>
                 
                 <Form.Group className="mb-4">
-                  <Form.Label className="form-label-yega">Ubicación</Form.Label>
+                  <Form.Label className="form-label-manda2">Ubicación</Form.Label>
                   <div className="d-flex align-items-center">
                     <div className="me-3">
                       {user?.ubicacion ? (
@@ -145,7 +145,7 @@ const TiendaPerfil = () => {
                 
                 <Button 
                   type="submit" 
-                  className="btn-yega-primary" 
+                  className="btn-manda2-primary" 
                   disabled={saving}
                 >
                   {saving ? 'Guardando...' : 'Guardar cambios'}
@@ -156,9 +156,9 @@ const TiendaPerfil = () => {
         </Col>
         
         <Col lg={6}>
-          <Card className="card-yega">
+          <Card className="card-manda2">
             <Card.Body className="text-center">
-              <h4 className="text-yega-gold mb-3">Documentos de verificación</h4>
+              <h4 className="text-manda2-gold mb-3">Documentos de verificación</h4>
               <div className="mb-3">Sube la documentación para validar tu cuenta.</div>
               <DocumentUploader tipo="id_doc" label="Identificación oficial" current={v.id_doc} />
               <DocumentUploader tipo="comprobante_domicilio" label="Comprobante de domicilio" current={v.comprobante_domicilio} />

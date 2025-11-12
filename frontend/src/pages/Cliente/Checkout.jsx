@@ -61,7 +61,7 @@ const Checkout = () => {
       <Container className="py-4">
       <Row>
         <Col lg={7} className="mb-3">
-          <Card className="card-yega yega-glass">
+          <Card className="card-manda2 manda2-glass">
             <Card.Header>
               <h4 className="mb-0">Dirección de envío</h4>
             </Card.Header>
@@ -70,40 +70,40 @@ const Checkout = () => {
               <Form onSubmit={handleSubmit}>
                 <Row>
                   <Col md={8} className="mb-3">
-                    <Form.Label className="form-label-yega">Calle</Form.Label>
-                    <Form.Control name="calle" value={form.calle} onChange={onChange} className="form-control-yega" />
+                    <Form.Label className="form-label-manda2">Calle</Form.Label>
+                    <Form.Control name="calle" value={form.calle} onChange={onChange} className="form-control-manda2" />
                   </Col>
                   <Col md={4} className="mb-3">
-                    <Form.Label className="form-label-yega">Número</Form.Label>
-                    <Form.Control name="numero" value={form.numero} onChange={onChange} className="form-control-yega" />
+                    <Form.Label className="form-label-manda2">Número</Form.Label>
+                    <Form.Control name="numero" value={form.numero} onChange={onChange} className="form-control-manda2" />
                   </Col>
                   <Col md={6} className="mb-3">
-                    <Form.Label className="form-label-yega">Ciudad</Form.Label>
-                    <Form.Control name="ciudad" value={form.ciudad} onChange={onChange} className="form-control-yega" />
+                    <Form.Label className="form-label-manda2">Ciudad</Form.Label>
+                    <Form.Control name="ciudad" value={form.ciudad} onChange={onChange} className="form-control-manda2" />
                   </Col>
                   <Col md={6} className="mb-3">
-                    <Form.Label className="form-label-yega">Código Postal</Form.Label>
-                    <Form.Control name="codigo_postal" value={form.codigo_postal} onChange={onChange} className="form-control-yega" />
+                    <Form.Label className="form-label-manda2">Código Postal</Form.Label>
+                    <Form.Control name="codigo_postal" value={form.codigo_postal} onChange={onChange} className="form-control-manda2" />
                   </Col>
                   <Col md={12} className="mb-3">
-                    <Form.Label className="form-label-yega">Referencias</Form.Label>
-                    <Form.Control as="textarea" rows={3} name="referencias" value={form.referencias} onChange={onChange} className="form-control-yega" />
+                    <Form.Label className="form-label-manda2">Referencias</Form.Label>
+                    <Form.Control as="textarea" rows={3} name="referencias" value={form.referencias} onChange={onChange} className="form-control-manda2" />
                   </Col>
                   <Col md={6} className="mb-3">
-                    <Form.Label className="form-label-yega">Método de pago</Form.Label>
-                    <Form.Select name="metodo_pago" value={form.metodo_pago} onChange={onChange} className="form-control-yega">
+                    <Form.Label className="form-label-manda2">Método de pago</Form.Label>
+                    <Form.Select name="metodo_pago" value={form.metodo_pago} onChange={onChange} className="form-control-manda2">
                       <option value="efectivo">Efectivo</option>
                       <option value="tarjeta">Tarjeta</option>
                       <option value="transferencia">Transferencia</option>
                     </Form.Select>
                   </Col>
                   <Col md={6} className="mb-3">
-                    <Form.Label className="form-label-yega">Notas</Form.Label>
-                    <Form.Control name="notas" value={form.notas} onChange={onChange} className="form-control-yega" />
+                    <Form.Label className="form-label-manda2">Notas</Form.Label>
+                    <Form.Control name="notas" value={form.notas} onChange={onChange} className="form-control-manda2" />
                   </Col>
                 </Row>
                 <div className="d-flex justify-content-end">
-                  <Button type="submit" className="btn-yega-primary" disabled={isSubmitting || items.length === 0}>
+                  <Button type="submit" className="btn-manda2-primary" disabled={isSubmitting || items.length === 0}>
                     {isSubmitting ? <Spinner size="sm" animation="border" className="me-2" /> : null}
                     Confirmar pedido
                   </Button>
@@ -113,7 +113,7 @@ const Checkout = () => {
           </Card>
         </Col>
         <Col lg={5}>
-          <Card className="card-yega yega-glass">
+          <Card className="card-manda2 manda2-glass">
             <Card.Header>
               <h4 className="mb-0">Tu pedido</h4>
             </Card.Header>

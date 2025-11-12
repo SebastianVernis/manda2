@@ -11,7 +11,7 @@ const HomeTest = () => {
             <div className="mb-4">
               <img 
                 src="/assets/img/inicio.png" 
-                alt="YEGA Logo"
+                alt="Manda2 Logo"
                 className="img-fluid"
                 style={{ maxHeight: '120px' }}
               />
@@ -24,7 +24,7 @@ const HomeTest = () => {
 
             {/* Descripción */}
             <p className="lead mb-5" style={{ color: '#adb5bd' }}>
-              YEGA conecta clientes, tiendas y repartidores para entregarte lo que necesites.
+              Manda2 conecta clientes, tiendas y repartidores para entregarte lo que necesites.
             </p>
 
             {/* Botón */}

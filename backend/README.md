@@ -1,9 +1,9 @@
-# YEGA Backend
+# Manda2 Backend
 
 ![Node.js Version](https://img.shields.io/badge/node-v20.19.4-339933?logo=node.js&logoColor=white)
 ![Licencia](https://img.shields.io/badge/licencia-no%20especificada-lightgrey)
 
-Bienvenido al backend de **YEGA**, una API construida con Node.js, Express y MongoDB para soportar las funcionalidades principales de la aplicación.
+Bienvenido al backend de **Manda2**, una API construida con Node.js, Express y MongoDB para soportar las funcionalidades principales de la aplicación.
 
 ## Arquitectura
 
@@ -26,7 +26,7 @@ graph TD
 1. Clona el repositorio:
    ```bash
    git clone <URL-del-repo>
-   cd yega-app/backend
+   cd manda2-app/backend
    ```
 2. Instala las dependencias:
    ```bash

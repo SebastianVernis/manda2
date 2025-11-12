@@ -102,10 +102,10 @@ const AdminRepartidores = () => {
       <Container className="py-4">
         <Row className="align-items-end g-2 mb-3">
           <Col>
-            <h2 className="text-yega-gold mb-0">Repartidores</h2>
+            <h2 className="text-manda2-gold mb-0">Repartidores</h2>
           </Col>
           <Col md={3}>
-            <Form.Label className="form-label-yega">Vista</Form.Label>
+            <Form.Label className="form-label-manda2">Vista</Form.Label>
             <Form.Select value={viewMode} onChange={(e) => setViewMode(e.target.value)}>
               <option value="documents">Ver Documentos</option>
               <option value="orders">Ver Pedidos</option>
@@ -113,7 +113,7 @@ const AdminRepartidores = () => {
           </Col>
           {viewMode === 'orders' && (
             <Col md={4}>
-              <Form.Label className="form-label-yega">Selecciona un repartidor</Form.Label>
+              <Form.Label className="form-label-manda2">Selecciona un repartidor</Form.Label>
               <Form.Select value={selected} onChange={(e) => setSelected(e.target.value)}>
                 <option value="">—</option>
                 {repartidoresQ.data?.map(r => (
@@ -180,7 +180,7 @@ const AdminRepartidores = () => {
                 <tr>
                   <td colSpan={5} className="p-0">
                     <Collapse in={expandedDelivery === r._id}>
-                      <div className="card-yega yega-glass p-3 border-start border-warning border-3">
+                      <div className="card-manda2 manda2-glass p-3 border-start border-warning border-3">
                         <h6 className="text-warning mb-3">Documentos de Verificación</h6>
                         
                         {['id_doc', 'licencia', 'tarjeta_circulacion', 'poliza_seguro'].map(docType => {
@@ -268,7 +268,7 @@ const AdminRepartidores = () => {
 
       {viewMode === 'orders' && selected && (
         <>
-          <h5 className="text-yega-silver">Pedidos del repartidor</h5>
+          <h5 className="text-manda2-silver">Pedidos del repartidor</h5>
           {pedidosQ.isLoading && <div className="text-center py-3"><Spinner animation="border" /></div>}
           {pedidosQ.isError && <Alert variant="danger">No se pudieron cargar los pedidos.</Alert>}
           {!pedidosQ.isLoading && !pedidosQ.isError && (

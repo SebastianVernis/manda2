@@ -5,7 +5,7 @@ import { Card, Badge } from 'react-bootstrap'
 export const OptimizedCard = memo(({ 
   title, 
   content, 
-  variant = 'yega', 
+  variant = 'manda2', 
   onClick,
   className = '',
   children,

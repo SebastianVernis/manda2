@@ -34,7 +34,7 @@ const User = mongoose.model('Usuario', userSchema);
 async function createTestDocument() {
   try {
     // Find the store user
-    const storeUser = await User.findOne({ email: 'tienda@yega.com' });
+    const storeUser = await User.findOne({ email: 'tienda@manda2.com' });
     if (!storeUser) {
       console.log('Store user not found');
       return;

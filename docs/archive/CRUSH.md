@@ -1,4 +1,4 @@
-# CRUSH.md - YEGA Project Development Guide
+# CRUSH.md - Manda2 Project Development Guide
 
 ## 🚨 MANDATORY FIRST ACTION
 **ATTENTION:** All agents must execute startup protocol from `docs/workflow/CRUSH_STARTUP.md` before any other action.
@@ -50,7 +50,7 @@ Dev Server: http://localhost:3000 (when PM2 frontend stopped)
 
 ### Port Configuration & Conflicts Resolution
 ```yaml
-YEGA Project Ports:
+Manda2 Project Ports:
   - Caddy HTTP Proxy: 9080 (serves frontend + API proxy)
   - Backend API: 5000 (Node.js/Express)
   - Frontend Dev: 3000 (Vite dev server when needed)
@@ -62,9 +62,9 @@ Other Projects (NO CONFLICTS):
   - MySQL: 3306 (system database)
 
 Conflict Resolution History:
-  - Originally: YEGA on port 80/443 (HTTPS)
+  - Originally: Manda2 on port 80/443 (HTTPS)
   - Conflict: Other project took port 80
-  - Solution: Moved YEGA to port 9080 (HTTP only)
+  - Solution: Moved Manda2 to port 9080 (HTTP only)
   - Result: Both projects coexist without interference
 ```
 
@@ -123,15 +123,15 @@ node server.js                 # Direct server start
 ```bash
 # Production Services
 pm2 start ecosystem.config.js  # Start all services
-pm2 restart yega-backend       # Restart backend only
-pm2 restart yega-frontend      # Restart frontend only
+pm2 restart manda2-backend       # Restart backend only
+pm2 restart manda2-frontend      # Restart frontend only
 pm2 logs                       # View all logs
 pm2 status                     # Check service status
 
 # System Health
 curl -f http://3-85-74-100.nip.io:9080/api/health  # Backend API health via Caddy proxy
 ./docs/scripts/reload-caddy.sh                      # Reload HTTPS proxy
-pm2 reload caddy-yega                               # Reload Caddy (PM2 managed)
+pm2 reload caddy-manda2                               # Reload Caddy (PM2 managed)
 ```
 
 ### Workflow Commands

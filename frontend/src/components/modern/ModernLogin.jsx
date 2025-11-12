@@ -83,8 +83,8 @@ const ModernLogin = () => {
               className="inline-flex items-center justify-center mb-4"
             >
               <img 
-                src="/images/yega-light.svg" 
-                alt="YEGA" 
+                src="/images/manda2-light.svg" 
+                alt="Manda2" 
                 height="80" 
                 width="auto"
               />
@@ -92,7 +92,7 @@ const ModernLogin = () => {
             <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2">
               Bienvenido de vuelta
             </h1>
-            <p className="text-gray-400">Inicia sesión en tu cuenta YEGA</p>
+            <p className="text-gray-400">Inicia sesión en tu cuenta Manda2</p>
           </div>
 
           {/* Login Form */}
@@ -109,7 +109,7 @@ const ModernLogin = () => {
                     placeholder="tu@email.com"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    className="form-control-yega"
+                    className="form-control-manda2"
                     required
                   />
                 </Form.Group>
@@ -125,7 +125,7 @@ const ModernLogin = () => {
                       placeholder="••••••••"
                       value={formData.password}
                       onChange={(e) => handleInputChange('password', e.target.value)}
-                      className="form-control-yega"
+                      className="form-control-manda2"
                       required
                     />
                     <Button
@@ -152,7 +152,7 @@ const ModernLogin = () => {
                 {/* Submit Button */}
                 <Button
                   type="submit"
-                  className="w-100 btn-yega-primary mb-3"
+                  className="w-100 btn-manda2-primary mb-3"
                   size="lg"
                   disabled={isLoading}
                 >

@@ -1,4 +1,4 @@
-# YEGA Testing Strategy & Guide
+# Manda2 Testing Strategy & Guide
 **Version:** 1.0.0  
 **Last Updated:** 2025-09-18  
 **Test Framework:** Vitest + React Testing Library  
@@ -8,7 +8,7 @@
 
 ## 🧪 Testing Overview
 
-YEGA employs a comprehensive testing strategy covering:
+Manda2 employs a comprehensive testing strategy covering:
 - **Unit Tests**: Component and function testing
 - **Integration Tests**: API and service integration
 - **E2E Tests**: User journey validation
@@ -79,10 +79,10 @@ npm run test:coverage
 
 ### Test Output Example
 ```bash
-> yega-frontend@1.0.0 test
+> manda2-frontend@1.0.0 test
 > vitest run
 
- RUN  v0.32.4 /home/ec2-user/yega-app/frontend
+ RUN  v0.32.4 /home/ec2-user/manda2-app/frontend
 
  ✓ src/components/__tests__/OptimizedComponents.test.jsx  (13 tests) 165ms
  ✓ src/components/__tests__/ModernNavbar.test.jsx  (3 tests) 84ms
@@ -109,7 +109,7 @@ npm run test:coverage
 describe('ModernNavbar', () => {
   it('renders navbar with logo', () => {
     render(<ModernNavbar />);
-    expect(screen.getByText('YEGA')).toBeInTheDocument();
+    expect(screen.getByText('Manda2')).toBeInTheDocument();
   });
   
   it('handles user authentication state', () => {

@@ -1,4 +1,4 @@
-# Workflow Premium por Sesiones - YEGA
+# Workflow Premium por Sesiones - Manda2
 
 ## Instrucciones para Agentes
 

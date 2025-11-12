@@ -1,4 +1,4 @@
-# YEGA Platform Development Guide
+# Manda2 Platform Development Guide
 
 ## Build/Test Commands
 ```bash
@@ -28,7 +28,7 @@ pm2 status                      # Check status
 **Imports:** React first, external libs, internal hooks/context, components
 **State:** Custom hooks for reusable logic, Context for global state
 **Error Handling:** Try-catch with `{ success, error, data }` objects + toast notifications
-**Styling:** Bootstrap + Tailwind hybrid, custom `yega-` prefixed classes
+**Styling:** Bootstrap + Tailwind hybrid, custom `manda2-` prefixed classes
 **API:** Centralized apiClient, async/await pattern throughout
 **Testing:** Vitest + Testing Library, test files in `__tests__/` folders
 

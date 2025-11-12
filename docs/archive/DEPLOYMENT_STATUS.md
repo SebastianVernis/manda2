@@ -1,4 +1,4 @@
-# 🚀 ESTADO DEL DESPLIEGUE - YEGA Platform
+# 🚀 ESTADO DEL DESPLIEGUE - Manda2 Platform
 
 ## ✅ DESPLIEGUE CON CADDY + LET'S ENCRYPT COMPLETADO
 
@@ -12,7 +12,7 @@
 
 | Servicio | Estado | Puerto | PID | Memoria |
 |----------|--------|--------|-----|---------|
-| **yega-backend** | ✅ ONLINE | 5000 | 260440 | 74.2mb |
+| **manda2-backend** | ✅ ONLINE | 5000 | 260440 | 74.2mb |
 | **Caddy Web Server** | ✅ ONLINE | 80/443 | 251043 | 74.8mb |
 
 ### URLs de Acceso:
@@ -83,12 +83,12 @@ cond: { $eq: ["$$doc.v.status", "pendiente"] } // ✅ CORREGIDO
 
 ### Para Administrador:
 1. Acceder a: https://fine-moose-fall.loca.lt
-2. Login con: `admin@yega.com`
+2. Login con: `admin@manda2.com`
 3. Navegar a: Admin Dashboard > Revisión de Documentos
 4. **Resultado esperado:** Ver 2 usuarios con documentos pendientes
 
 ### Para Tienda:
-1. Login con: `tienda@yega.com` 
+1. Login con: `tienda@manda2.com` 
 2. Navegar a: Perfil > Documentos de verificación
 3. **Resultado esperado:** Ver documento subido con status "pendiente"
 

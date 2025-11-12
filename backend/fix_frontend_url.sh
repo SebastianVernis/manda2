@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-FRONTEND_DIST_DIR="/var/www/yega/frontend/dist"
+FRONTEND_DIST_DIR="/var/www/manda2/frontend/dist"
 PUBLIC_IP="18.223.113.254"
 OLD_URL="http://localhost:5000"
 NEW_URL="http://${PUBLIC_IP}:5000"

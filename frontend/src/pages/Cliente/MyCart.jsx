@@ -62,7 +62,7 @@ const MyCart = () => {
             animate={{ opacity: 1 }}
             className="text-center py-8"
           >
-            <Card className="yega-glass">
+            <Card className="manda2-glass">
               <Card.Body className="py-5">
                 <FaShoppingCart size={80} className="text-white-50 mb-4" />
                 <h2 className="text-white mb-3">Tu carrito está vacío</h2>
@@ -124,7 +124,7 @@ const MyCart = () => {
                   exit={{ opacity: 0, x: 20 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Card className="yega-glass mb-3 hover-card-effect">
+                  <Card className="manda2-glass mb-3 hover-card-effect">
                     <Card.Body className="p-4">
                       <div className="d-flex gap-3">
                         <div className="bg-primary bg-opacity-20 rounded-3 d-flex align-items-center justify-content-center text-primary" style={{ width: '70px', height: '70px' }}>
@@ -238,7 +238,7 @@ const MyCart = () => {
           {/* Checkout Button */}
           <Button 
             variant="warning"
-            className="btn-yega-primary w-100 py-2"
+            className="btn-manda2-primary w-100 py-2"
             style={{borderRadius: '12px'}}
             onClick={() => navigate('/cliente/payment-method')}
           >

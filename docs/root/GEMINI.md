@@ -1,8 +1,8 @@
-# YEGA - Delivery Platform Deployment Guide
+# Manda2 - Delivery Platform Deployment Guide
 
 ## 🚀 Project Overview
 
-**YEGA** is a complete delivery platform with 4 user roles (Cliente, Tienda, Repartidor, Admin) serving the Latin American market. The project is **production-ready** with enterprise-level security, PWA features, and comprehensive functionality.
+**Manda2** is a complete delivery platform with 4 user roles (Cliente, Tienda, Repartidor, Admin) serving the Latin American market. The project is **production-ready** with enterprise-level security, PWA features, and comprehensive functionality.
 
 **Status:** ✅ COMPLETED & READY FOR DEPLOYMENT  
 **Architecture:** React + Node.js + MongoDB + Caddy Proxy
@@ -21,8 +21,8 @@
 ### One-Command Setup
 ```bash
 # Clone and deploy
-git clone <repository-url> yega-app
-cd yega-app
+git clone <repository-url> manda2-app
+cd manda2-app
 npm run deploy  # Automated deployment
 ```
 
@@ -52,7 +52,7 @@ pm2 start ecosystem.config.js
 # Backend (.env)
 NODE_ENV=production
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/yega
+MONGODB_URI=mongodb://localhost:27017/manda2
 JWT_SECRET=<generate-64-character-secret>
 EMAIL_USER=<your-smtp-email>
 EMAIL_PASS=<your-smtp-password>
@@ -65,7 +65,7 @@ VITE_ENVIRONMENT=production
 ### Proxy Configuration (Caddy)
 ```caddy
 yourdomain.com {
-    root * /var/www/yega-app/frontend/dist
+    root * /var/www/manda2-app/frontend/dist
     
     route /api/* {
         uri strip_prefix /api
@@ -164,7 +164,7 @@ yourdomain.com {
 ### UI/UX Improvements (Latest Update)
 - **Dark Theme Consistency:** All components use unified glassmorphism design
 - **Typography Optimization:** Perfect font contrast and readability
-- **Card Styling:** Consistent `card-yega yega-glass` styling across platform
+- **Card Styling:** Consistent `card-manda2 manda2-glass` styling across platform
 - **Responsive Tables:** Dark theme tables with proper text colors
 - **Mobile Optimization:** Proper spacing and touch-friendly interfaces
 
@@ -241,7 +241,7 @@ mongosh --eval "db.stats()"     # Database status
 
 ## 🎉 Deployment Success
 
-**YEGA Platform Status:** ✅ **PRODUCTION READY**
+**Manda2 Platform Status:** ✅ **PRODUCTION READY**
 
 The system is fully functional, secure, and optimized for production use. All screens have consistent design, comprehensive testing coverage, and enterprise-level security implementation.
 
@@ -259,7 +259,7 @@ Ready for real-world deployment and user onboarding! 🚀
 - ✅ **Backend Stability:** Resolved location tracking and authentication issues
 - ✅ **Responsive Design:** Mobile-first approach with proper spacing and touch targets
 - ✅ **Table Styling:** Dark theme tables with consistent Bootstrap styling
-- ✅ **Card Consistency:** All cards use `card-yega yega-glass` for unified appearance
+- ✅ **Card Consistency:** All cards use `card-manda2 manda2-glass` for unified appearance
 
 ### Technical Fixes
 - 🔧 Fixed React Query infinite loops in product loading

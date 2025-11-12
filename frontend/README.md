@@ -1,9 +1,9 @@
-# YEGA Frontend
+# Manda2 Frontend
 
 ![React](https://img.shields.io/badge/react-v18.2.0-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/vite-v4.4.5-646CFF?logo=vite&logoColor=white)
 
-Bienvenido al frontend de **YEGA**, una aplicación web construida con React y Vite para proporcionar una interfaz de usuario moderna y reactiva.
+Bienvenido al frontend de **Manda2**, una aplicación web construida con React y Vite para proporcionar una interfaz de usuario moderna y reactiva.
 
 ## Arquitectura de Componentes
 
@@ -28,7 +28,7 @@ graph TD
 1.  **Clonar el repositorio**:
     ```bash
     git clone <URL-del-repo>
-    cd yega-app/frontend
+    cd manda2-app/frontend
     ```
 2.  **Instalar dependencias**:
     ```bash

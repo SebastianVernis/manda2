@@ -2,11 +2,11 @@
 set -e
 
 # Directorios y rutas
-BACKEND_DIR="/var/www/yega/backend"
+BACKEND_DIR="/var/www/manda2/backend"
 SERVER_PATH="$BACKEND_DIR/server.js"
 SERVER_BAK_PATH="$SERVER_PATH.bak"
 
-echo "--- Iniciando reparación de la aplicación YEGA ---"
+echo "--- Iniciando reparación de la aplicación Manda2 ---"
 
 # 1. Restaurar server.js desde la copia de seguridad
 if [ -f "$SERVER_BAK_PATH" ]; then
@@ -34,8 +34,8 @@ sudo sed -i "/app.use(express.json());/a app.use(cors({ origin: '*', credentials
 echo "Archivo server.js corregido."
 
 # 3. Reiniciar la aplicación con pm2
-echo "Reiniciando la aplicación 'yega' con pm2..."
-pm2 restart yega
+echo "Reiniciando la aplicación 'manda2' con pm2..."
+pm2 restart manda2
 
 echo "Esperando 5 segundos para que la aplicación se estabilice..."
 sleep 5

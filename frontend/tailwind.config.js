@@ -7,19 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        'yega-dark': '#1a1a1a',
-        'yega-silver': '#c0c0c0',
-        'yega-gray': '#404040',
-        'yega-light-gray': '#666666',
-        'yega-accent': '#ffffff',
+        'manda2-dark': '#1a1a1a',
+        'manda2-silver': '#c0c0c0',
+        'manda2-gray': '#404040',
+        'manda2-light-gray': '#666666',
+        'manda2-accent': '#ffffff',
       },
       backgroundImage: {
-        'gradient-yega': 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #000000 100%)',
+        'gradient-manda2': 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #000000 100%)',
         'gradient-silver': 'linear-gradient(135deg, #c0c0c0 0%, #e5e5e5 100%)',
         'gradient-dark': 'linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%)',
       },
       fontFamily: {
-        'yega': ['Inter', 'system-ui', 'sans-serif'],
+        'manda2': ['Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

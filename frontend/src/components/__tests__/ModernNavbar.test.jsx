@@ -30,7 +30,7 @@ describe('ModernNavbar', () => {
   it('renders navbar with logo', () => {
     renderWithRouter(<ModernNavbar />)
     
-    const logo = screen.getByAltText('YEGA')
+    const logo = screen.getByAltText('Manda2')
     expect(logo).toBeInTheDocument()
   })
 

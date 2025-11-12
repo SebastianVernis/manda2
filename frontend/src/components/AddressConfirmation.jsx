@@ -252,7 +252,7 @@ const AddressConfirmation = ({ onConfirm, className = '' }) => {
                     setTimeout(() => setShowSuggestions(false), 200)
                   }}
                   placeholder="Ej: Av. Insurgentes Sur 123, Col. Roma"
-                  className="form-control-yega"
+                  className="form-control-manda2"
                 />
                 {searchLoading ? (
                   <span className="input-group-text">

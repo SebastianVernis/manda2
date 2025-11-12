@@ -1,4 +1,4 @@
-# YEGA App Docker Compose Configuration
+# Manda2 App Docker Compose Configuration
 # For containerized deployment (optional)
 
 version: '3.8'
@@ -7,31 +7,31 @@ services:
   # MongoDB Database
   mongodb:
     image: mongo:5.0
-    container_name: yega-mongo
+    container_name: manda2-mongo
     restart: unless-stopped
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: rootpassword
-      MONGO_INITDB_DATABASE: yega
+      MONGO_INITDB_DATABASE: manda2
     ports:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
       - ./backend/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
     networks:
-      - yega-network
+      - manda2-network
 
   # Backend API
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: yega-backend
+    container_name: manda2-backend
     restart: unless-stopped
     environment:
       - NODE_ENV=production
       - PORT=5000
-      - MONGODB_URI=mongodb://root:rootpassword@mongodb:27017/yega?authSource=admin
+      - MONGODB_URI=mongodb://root:rootpassword@mongodb:27017/manda2?authSource=admin
       - JWT_SECRET=${JWT_SECRET}
       - EMAIL_USER=${EMAIL_USER}
       - EMAIL_PASS=${EMAIL_PASS}
@@ -43,12 +43,12 @@ services:
     depends_on:
       - mongodb
     networks:
-      - yega-network
+      - manda2-network
 
   # Nginx Reverse Proxy
   nginx:
     image: nginx:alpine
-    container_name: yega-nginx
+    container_name: manda2-nginx
     restart: unless-stopped
     ports:
       - "80:80"
@@ -60,12 +60,12 @@ services:
     depends_on:
       - backend
     networks:
-      - yega-network
+      - manda2-network
 
 volumes:
   mongodb_data:
     driver: local
 
 networks:
-  yega-network:
+  manda2-network:
     driver: bridge

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { sendEmail } = require('./utils/sendEmail.js');
 
-const logFilePath = path.join(__dirname, '.pm2', 'logs', 'yega-api-error.log');
+const logFilePath = path.join(__dirname, '.pm2', 'logs', 'manda2-api-error.log');
 const lastPosFilePath = path.join(__dirname, 'log_checker_last_pos.txt');
 
 const checkLogs = async () => {
@@ -28,8 +28,8 @@ const checkLogs = async () => {
           if (recipient) {
             await sendEmail(
               recipient,
-              'Alerta de Error en YEGA API',
-              `Se han detectado nuevos errores en el log de la API de YEGA:\n\n${newData}`
+              'Alerta de Error en Manda2 API',
+              `Se han detectado nuevos errores en el log de la API de Manda2:\n\n${newData}`
             );
           }
         }

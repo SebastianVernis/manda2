@@ -1,4 +1,4 @@
-# Session Tracker - YEGA Workflow
+# Session Tracker - Manda2 Workflow
 
 ## Estado Actual del Proyecto
 

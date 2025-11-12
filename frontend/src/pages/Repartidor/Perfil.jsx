@@ -46,10 +46,10 @@ const RepartidorPerfil = () => {
   return (
     <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Container className="py-4">
-        <h2 className="text-yega-gold text-center mb-4">Perfil de Repartidor</h2>
+        <h2 className="text-manda2-gold text-center mb-4">Perfil de Repartidor</h2>
       <Row>
         <Col lg={6}>
-          <Card className="card-yega mb-4">
+          <Card className="card-manda2 mb-4">
             <Card.Body>
               <div className="text-center mb-4">
                 <div className="bg-primary bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center mb-3 overflow-hidden" style={{width: '100px', height: '100px'}}>
@@ -62,37 +62,37 @@ const RepartidorPerfil = () => {
                 <h5 className="text-white mb-1">{user?.nombre}</h5>
                 <small className="text-white-50">{user?.email}</small>
               </div>
-              <h4 className="text-yega-gold mb-3">Información personal</h4>
+              <h4 className="text-manda2-gold mb-3">Información personal</h4>
               <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">Nombre completo</Form.Label>
+                  <Form.Label className="form-label-manda2">Nombre completo</Form.Label>
                   <Form.Control 
                     name="nombre"
                     value={form.nombre} 
                     onChange={handleChange} 
-                    className="form-control-yega" 
+                    className="form-control-manda2" 
                   />
                 </Form.Group>
                 
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">Teléfono</Form.Label>
+                  <Form.Label className="form-label-manda2">Teléfono</Form.Label>
                   <Form.Control 
                     name="telefono"
                     value={form.telefono} 
                     onChange={handleChange} 
-                    className="form-control-yega" 
+                    className="form-control-manda2" 
                   />
                 </Form.Group>
                 
-                <h5 className="text-yega-gold mt-4 mb-3">Información del vehículo</h5>
+                <h5 className="text-manda2-gold mt-4 mb-3">Información del vehículo</h5>
                 
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">Tipo de vehículo</Form.Label>
+                  <Form.Label className="form-label-manda2">Tipo de vehículo</Form.Label>
                   <Form.Select
                     name="tipo"
                     value={form.vehiculo.tipo}
                     onChange={handleVehiculoChange}
-                    className="form-control-yega"
+                    className="form-control-manda2"
                   >
                     <option value="moto">Motocicleta</option>
                     <option value="bicicleta">Bicicleta</option>
@@ -101,45 +101,45 @@ const RepartidorPerfil = () => {
                 </Form.Group>
                 
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">Marca</Form.Label>
+                  <Form.Label className="form-label-manda2">Marca</Form.Label>
                   <Form.Control 
                     name="marca"
                     value={form.vehiculo.marca} 
                     onChange={handleVehiculoChange} 
-                    className="form-control-yega" 
+                    className="form-control-manda2" 
                   />
                 </Form.Group>
                 
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">Modelo</Form.Label>
+                  <Form.Label className="form-label-manda2">Modelo</Form.Label>
                   <Form.Control 
                     name="modelo"
                     value={form.vehiculo.modelo} 
                     onChange={handleVehiculoChange} 
-                    className="form-control-yega" 
+                    className="form-control-manda2" 
                   />
                 </Form.Group>
                 
                 <Row>
                   <Col md={6}>
                     <Form.Group className="mb-3">
-                      <Form.Label className="form-label-yega">Color</Form.Label>
+                      <Form.Label className="form-label-manda2">Color</Form.Label>
                       <Form.Control 
                         name="color"
                         value={form.vehiculo.color} 
                         onChange={handleVehiculoChange} 
-                        className="form-control-yega" 
+                        className="form-control-manda2" 
                       />
                     </Form.Group>
                   </Col>
                   <Col md={6}>
                     <Form.Group className="mb-3">
-                      <Form.Label className="form-label-yega">Placa</Form.Label>
+                      <Form.Label className="form-label-manda2">Placa</Form.Label>
                       <Form.Control 
                         name="placa"
                         value={form.vehiculo.placa} 
                         onChange={handleVehiculoChange} 
-                        className="form-control-yega"
+                        className="form-control-manda2"
                         placeholder="XXX-000" 
                       />
                     </Form.Group>
@@ -148,7 +148,7 @@ const RepartidorPerfil = () => {
                 
                 <Button 
                   type="submit" 
-                  className="btn-yega-primary mt-2" 
+                  className="btn-manda2-primary mt-2" 
                   disabled={saving}
                 >
                   {saving ? 'Guardando...' : 'Guardar cambios'}
@@ -159,9 +159,9 @@ const RepartidorPerfil = () => {
         </Col>
         
         <Col lg={6}>
-          <Card className="card-yega">
+          <Card className="card-manda2">
             <Card.Body className="text-center">
-              <h4 className="text-yega-gold mb-3">Documentos de verificación</h4>
+              <h4 className="text-manda2-gold mb-3">Documentos de verificación</h4>
               <div className="mb-3">Sube la documentación requerida para validar tu cuenta.</div>
               <DocumentUploader tipo="id_doc" label="Identificación oficial" current={v.id_doc} />
               <DocumentUploader tipo="licencia" label="Licencia de conducir" current={v.licencia} />

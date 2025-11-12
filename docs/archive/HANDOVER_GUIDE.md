@@ -1,4 +1,4 @@
-# YEGA Project Handover Guide
+# Manda2 Project Handover Guide
 **Date:** 2025-09-18  
 **Project Completion:** 100% (8/8 sessions)  
 **Handover Status:** Complete  
@@ -8,7 +8,7 @@
 
 ## 🎯 Project Summary
 
-**YEGA** is a comprehensive delivery platform connecting customers, stores, and delivery drivers through a web application with admin panel. The project has been completed to production-ready status with enterprise-level security, PWA capabilities, and complete documentation.
+**Manda2** is a comprehensive delivery platform connecting customers, stores, and delivery drivers through a web application with admin panel. The project has been completed to production-ready status with enterprise-level security, PWA capabilities, and complete documentation.
 
 ### Key Achievement Metrics
 - **8/8 Sessions Completed** (100%)

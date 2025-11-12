@@ -105,10 +105,10 @@ else
     exit 1
 fi
 
-# Create YEGA database and user
-echo "🔧 Setting up YEGA database..."
+# Create Manda2 database and user
+echo "🔧 Setting up Manda2 database..."
 mongosh --eval '
-use yega;
+use manda2;
 db.createCollection("usuarios");
 db.createCollection("productos");
 db.createCollection("pedidos");
@@ -129,7 +129,7 @@ db.pedidos.createIndex({ repartidor: 1 });
 db.pedidos.createIndex({ estado: 1 });
 db.pedidos.createIndex({ fecha: -1 });
 
-print("✅ YEGA database and collections created successfully!");
+print("✅ Manda2 database and collections created successfully!");
 '
 
 echo ""
@@ -148,5 +148,5 @@ echo "   Stop: sudo systemctl stop mongod"
 echo "   Restart: sudo systemctl restart mongod"
 echo "   Connect: mongosh"
 echo ""
-echo "🔗 Connection URI for YEGA app:"
-echo "   MONGODB_URI=mongodb://localhost:27017/yega"
+echo "🔗 Connection URI for Manda2 app:"
+echo "   MONGODB_URI=mongodb://localhost:27017/manda2"

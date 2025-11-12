@@ -13,22 +13,22 @@ const AdminDashboard = () => {
       <Container className="py-4">
         <Row className="mb-4">
           <Col>
-            <h2 className="text-yega-gold">¡Bienvenido, {user?.nombre}!</h2>
+            <h2 className="text-manda2-gold">¡Bienvenido, {user?.nombre}!</h2>
             <p className="text-muted">Administrador - Panel de Control</p>
           </Col>
         </Row>
 
         <Row>
           <Col md={6} lg={3} className="mb-4">
-            <Card className="card-yega h-100">
+            <Card className="card-manda2 h-100">
               <Card.Body className="text-center">
-                <FaUsers size={48} className="text-yega-gold mb-3" />
+                <FaUsers size={48} className="text-manda2-gold mb-3" />
                 <Card.Title>Gestionar Usuarios</Card.Title>
                 <Card.Text>
                   Administra clientes, tiendas y repartidores registrados.
                 </Card.Text>
                 <LinkContainer to="/admin/usuarios">
-                  <Button variant="outline-light" className="btn-yega-primary">
+                  <Button variant="outline-light" className="btn-manda2-primary">
                     Ver Usuarios
                   </Button>
                 </LinkContainer>
@@ -37,15 +37,15 @@ const AdminDashboard = () => {
           </Col>
 
           <Col md={6} lg={3} className="mb-4">
-            <Card className="card-yega h-100">
+            <Card className="card-manda2 h-100">
               <Card.Body className="text-center">
-                <FaStore size={48} className="text-yega-gold mb-3" />
+                <FaStore size={48} className="text-manda2-gold mb-3" />
                 <Card.Title>Gestionar Tiendas</Card.Title>
                 <Card.Text>
                   Gestiona tiendas y verifica sus documentos de validación.
                 </Card.Text>
                 <LinkContainer to="/admin/tiendas">
-                  <Button variant="outline-light" className="btn-yega-primary">
+                  <Button variant="outline-light" className="btn-manda2-primary">
                     Ver Tiendas
                   </Button>
                 </LinkContainer>
@@ -54,15 +54,15 @@ const AdminDashboard = () => {
           </Col>
 
           <Col md={6} lg={3} className="mb-4">
-            <Card className="card-yega h-100">
+            <Card className="card-manda2 h-100">
               <Card.Body className="text-center">
-                <FaMotorcycle size={48} className="text-yega-gold mb-3" />
+                <FaMotorcycle size={48} className="text-manda2-gold mb-3" />
                 <Card.Title>Gestionar Repartidores</Card.Title>
                 <Card.Text>
                   Gestiona repartidores y verifica sus documentos de validación.
                 </Card.Text>
                 <LinkContainer to="/admin/repartidores">
-                  <Button variant="outline-light" className="btn-yega-primary">
+                  <Button variant="outline-light" className="btn-manda2-primary">
                     Ver Repartidores
                   </Button>
                 </LinkContainer>
@@ -71,15 +71,15 @@ const AdminDashboard = () => {
           </Col>
 
           <Col md={6} lg={3} className="mb-4">
-            <Card className="card-yega h-100">
+            <Card className="card-manda2 h-100">
               <Card.Body className="text-center">
-                <FaChartLine size={48} className="text-yega-gold mb-3" />
+                <FaChartLine size={48} className="text-manda2-gold mb-3" />
                 <Card.Title>Estadísticas Generales</Card.Title>
                 <Card.Text>
                   Monitorea el rendimiento general de la plataforma.
                 </Card.Text>
                 <LinkContainer to="/admin/reportes">
-                  <Button variant="outline-light" className="btn-yega-primary">
+                  <Button variant="outline-light" className="btn-manda2-primary">
                     Ver Reportes
                   </Button>
                 </LinkContainer>
@@ -94,7 +94,7 @@ const AdminDashboard = () => {
 
         <Row>
           <Col>
-            <Card className="card-yega">
+            <Card className="card-manda2">
               <Card.Header>
                 <h5 className="mb-0">Información del Administrador</h5>
               </Card.Header>

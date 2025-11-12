@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# YEGA App Build Script
+# Manda2 App Build Script
 # Usage: ./build.sh [development|production]
 
 set -e  # Exit on any error
 
 # Configuration
 NODE_ENV=${1:-production}
-ROOT_DIR="/home/ec2-user/yega-app"
+ROOT_DIR="/home/ec2-user/manda2-app"
 BACKEND_DIR="$ROOT_DIR/backend"
 FRONTEND_DIR="$ROOT_DIR/frontend"
 LOG_DIR="$ROOT_DIR/logs"
 
-echo "🚀 Starting YEGA App build process..."
+echo "🚀 Starting Manda2 App build process..."
 echo "Environment: $NODE_ENV"
 echo "Root directory: $ROOT_DIR"
 

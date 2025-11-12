@@ -44,7 +44,7 @@ const AdminUsuarios = () => {
       <Container className="py-4">
       <Row className="align-items-end g-2 mb-3">
         <Col md={4}>
-          <Form.Label className="form-label-yega">Buscar</Form.Label>
+          <Form.Label className="form-label-manda2">Buscar</Form.Label>
           <Form.Control
             placeholder="Nombre, email o teléfono"
             value={buscar}
@@ -52,7 +52,7 @@ const AdminUsuarios = () => {
           />
         </Col>
         <Col md={3}>
-          <Form.Label className="form-label-yega">Rol</Form.Label>
+          <Form.Label className="form-label-manda2">Rol</Form.Label>
           <Form.Select value={rol} onChange={(e) => setRol(e.target.value)}>
             <option value="">Todos</option>
             <option value="cliente">Cliente</option>
@@ -62,7 +62,7 @@ const AdminUsuarios = () => {
           </Form.Select>
         </Col>
         <Col md={3}>
-          <Form.Label className="form-label-yega">Estado</Form.Label>
+          <Form.Label className="form-label-manda2">Estado</Form.Label>
           <Form.Select value={estado} onChange={(e) => setEstado(e.target.value)}>
             <option value="">Todos</option>
             <option value="pendiente">Pendiente</option>
@@ -71,7 +71,7 @@ const AdminUsuarios = () => {
           </Form.Select>
         </Col>
         <Col md={2} className="d-grid">
-          <Button className="btn-yega-primary" onClick={() => refetch()}>Filtrar</Button>
+          <Button className="btn-manda2-primary" onClick={() => refetch()}>Filtrar</Button>
         </Col>
       </Row>
 
@@ -117,7 +117,7 @@ const AdminUsuarios = () => {
                   <div className="d-flex gap-2">
                     <Button
                       size="sm"
-                      className="btn-yega-primary"
+                      className="btn-manda2-primary"
                       disabled={u.estado_validacion === 'aprobado' || approveMutation.isPending}
                       onClick={() => approveMutation.mutate(u._id)}
                     >
@@ -126,7 +126,7 @@ const AdminUsuarios = () => {
                     <Button
                       size="sm"
                       variant="outline-light"
-                      className="btn-yega-secondary"
+                      className="btn-manda2-secondary"
                       disabled={u.estado_validacion === 'rechazado' || rejectMutation.isPending}
                       onClick={() => {
                         const motivo = prompt('Motivo de rechazo (opcional):') || undefined

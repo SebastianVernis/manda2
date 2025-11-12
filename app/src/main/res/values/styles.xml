@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.YEGA" parent="android:Theme.DeviceDefault">
+    <style name="Theme.Manda2" parent="android:Theme.DeviceDefault">
         <!-- Customize your theme here. -->
     </style>
 </resources>

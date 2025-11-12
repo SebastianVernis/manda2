@@ -339,7 +339,7 @@ const ModernCheckout = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <Card className="yega-glass sticky top-8">
+            <Card className="manda2-glass sticky top-8">
               <CardHeader className="border-b border-gray-700">
                 <h3 className="text-xl font-semibold text-white">Resumen del Pedido</h3>
               </CardHeader>

@@ -1,7 +1,7 @@
 {
-  "name": "yega-frontend",
+  "name": "manda2-frontend",
   "version": "1.0.0",
-  "description": "Frontend para YEGA - Plataforma de e-commerce con múltiples roles",
+  "description": "Frontend para Manda2 - Plataforma de e-commerce con múltiples roles",
   "private": true,
   "type": "module",
   "dependencies": {
