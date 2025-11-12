@@ -1,7 +1,7 @@
 {
-  "name": "yega-app",
+  "name": "manda2-app",
   "version": "1.0.0",
-  "description": "YEGA - Complete delivery platform",
+  "description": "Manda2 - Complete delivery platform",
   "private": true,
   "scripts": {
     "install-deps": "cd backend && npm install && cd ../frontend && npm install",

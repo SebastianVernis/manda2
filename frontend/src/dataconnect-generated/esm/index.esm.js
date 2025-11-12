@@ -2,7 +2,7 @@ import { queryRef, executeQuery, mutationRef, executeMutation, validateArgs } fr
 
 export const connectorConfig = {
   connector: 'example',
-  service: 'yega',
+  service: 'manda2',
   location: 'us-central1'
 };
 

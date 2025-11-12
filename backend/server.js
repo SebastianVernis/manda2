@@ -18,7 +18,7 @@ app.use(helmetConfig);
 app.use(inputSanitizer);
 
 // CORS
-const frontendUrl = process.env.FRONTEND_URL || 'https://yega.com.mx';
+const frontendUrl = process.env.FRONTEND_URL || 'https://manda2.com.mx';
 const allowedOrigins = frontendUrl === '*' ? '*' : frontendUrl.split(',').map(origin => origin.trim());
 
 // Enhanced Rate limiting
@@ -108,7 +108,7 @@ app.get('/api/health', (req, res) => {
 // Ruta de prueba
 app.get('/', (req, res) => {
   res.json({
-    message: 'API de YEGA funcionando!',
+    message: 'API de Manda2 funcionando!',
     version: '1.0.0',
     timestamp: new Date().toISOString()
   });

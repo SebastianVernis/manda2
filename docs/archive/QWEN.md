@@ -1,8 +1,8 @@
-# Órdenes para Qwen - YEGA Platform Management
+# Órdenes para Qwen - Manda2 Platform Management
 
 ## 🎯 Objetivo Principal
 
-Implementar funcionalidad completa de administración de documentos y mantener la plataforma YEGA en estado production-ready.
+Implementar funcionalidad completa de administración de documentos y mantener la plataforma Manda2 en estado production-ready.
 
 ## 📋 Comandos de Desarrollo
 
@@ -111,7 +111,7 @@ import DocumentReview from './pages/Admin/DocumentReview';
 
 **CSS Classes a usar:**
 ```css
-.yega-gradient {
+.manda2-gradient {
   min-height: 100vh;
   background: linear-gradient(135deg, 
     rgb(17, 24, 39) 0%, 
@@ -128,7 +128,7 @@ import DocumentReview from './pages/Admin/DocumentReview';
 
 **Pattern a seguir:**
 ```jsx
-<div className="yega-gradient">
+<div className="manda2-gradient">
   <div className="container py-4">
     {/* Contenido */}
   </div>

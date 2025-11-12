@@ -6,13 +6,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="footer-yega mt-auto">
+    <footer className="footer-manda2 mt-auto">
       <Container>
         <Row>
           <Col md={4} className="mb-4">
             <img 
-              src="/images/yega-light.svg" 
-              alt="YEGA" 
+              src="/images/manda2-light.svg" 
+              alt="Manda2" 
               height="40" 
               className="mb-3" 
             />
@@ -37,7 +37,7 @@ const Footer = () => {
           </Col>
 
           <Col md={2} className="mb-4">
-            <h6 className="text-yega-silver mb-3">Enlaces</h6>
+            <h6 className="text-manda2-silver mb-3">Enlaces</h6>
             <ul className="list-unstyled">
               <li className="mb-2">
                 <a href="/" className="text-decoration-none">Inicio</a>
@@ -55,7 +55,7 @@ const Footer = () => {
           </Col>
 
           <Col md={3} className="mb-4">
-            <h6 className="text-yega-silver mb-3">Para Negocios</h6>
+            <h6 className="text-manda2-silver mb-3">Para Negocios</h6>
             <ul className="list-unstyled">
               <li className="mb-2">
                 <a href="/register?rol=tienda" className="text-decoration-none">
@@ -81,14 +81,14 @@ const Footer = () => {
           </Col>
 
           <Col md={3} className="mb-4">
-            <h6 className="text-yega-silver mb-3">Contacto</h6>
+            <h6 className="text-manda2-silver mb-3">Contacto</h6>
             <div className="mb-2">
               <FaPhone className="me-2" />
               <span>+1 (555) 123-4567</span>
             </div>
             <div className="mb-2">
               <FaEnvelope className="me-2" />
-              <span>contacto@yega.com</span>
+              <span>contacto@manda2.com</span>
             </div>
             <div className="mb-2">
               <FaMapMarkerAlt className="me-2" />
@@ -102,7 +102,7 @@ const Footer = () => {
         <Row>
           <Col md={6}>
             <p className="mb-0">
-              &copy; {currentYear} YEGA. Todos los derechos reservados.
+              &copy; {currentYear} Manda2. Todos los derechos reservados.
             </p>
           </Col>
           <Col md={6} className="text-md-end">

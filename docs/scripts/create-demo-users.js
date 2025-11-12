@@ -19,7 +19,7 @@ const demoUsers = [
   {
     nombre: 'Admin Demo',
     telefono: '+1111111111',
-    email: 'admin@yega.com',
+    email: 'admin@manda2.com',
     rol: 'administrador',
     estado_validacion: 'aprobado',
     activo: true
@@ -27,7 +27,7 @@ const demoUsers = [
   {
     nombre: 'Cliente Demo',
     telefono: '+2222222222',
-    email: 'cliente@yega.com',
+    email: 'cliente@manda2.com',
     rol: 'cliente',
     estado_validacion: 'aprobado',
     activo: true
@@ -35,7 +35,7 @@ const demoUsers = [
   {
     nombre: 'Tienda Demo',
     telefono: '+3333333333',
-    email: 'tienda@yega.com',
+    email: 'tienda@manda2.com',
     rol: 'tienda',
     estado_validacion: 'aprobado',
     activo: true
@@ -43,7 +43,7 @@ const demoUsers = [
   {
     nombre: 'Repartidor Demo',
     telefono: '+4444444444',
-    email: 'repartidor@yega.com',
+    email: 'repartidor@manda2.com',
     rol: 'repartidor',
     estado_validacion: 'aprobado',
     activo: true
@@ -56,7 +56,7 @@ async function createDemoUsers() {
     await client.connect();
     console.log("Connected to MongoDB");
     
-    const database = client.db('yega');
+    const database = client.db('manda2');
     const users = database.collection('usuarios');
     
     // Clear existing demo users
@@ -83,10 +83,10 @@ async function createDemoUsers() {
     
     console.log("✅ Demo users created successfully!");
     console.log("\n🔑 Demo credentials:");
-    console.log("   Admin Email: admin@yega.com");
-    console.log("   Cliente Email: cliente@yega.com");
-    console.log("   Tienda Email: tienda@yega.com");
-    console.log("   Repartidor Email: repartidor@yega.com");
+    console.log("   Admin Email: admin@manda2.com");
+    console.log("   Cliente Email: cliente@manda2.com");
+    console.log("   Tienda Email: tienda@manda2.com");
+    console.log("   Repartidor Email: repartidor@manda2.com");
     console.log("   Password for all: Demo123!");
     
   } catch (error) {

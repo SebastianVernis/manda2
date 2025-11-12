@@ -1,6 +1,6 @@
 # Checklist de Pendientes y Recomendaciones
 
-Este documento resume las tareas pendientes, las funcionalidades incompletas y las recomendaciones generales para mejorar el proyecto YEGA.
+Este documento resume las tareas pendientes, las funcionalidades incompletas y las recomendaciones generales para mejorar el proyecto Manda2.
 
 ##  Funciones Pendientes
 

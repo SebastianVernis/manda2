@@ -1,7 +1,7 @@
 {
-  "name": "yega-backend",
+  "name": "manda2-backend",
   "version": "1.0.0",
-  "description": "Backend for YEGA application",
+  "description": "Backend for Manda2 application",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

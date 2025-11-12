@@ -1,4 +1,4 @@
-# Sistema de Fallback para Errores Críticos - YEGA
+# Sistema de Fallback para Errores Críticos - Manda2
 
 ## 🚨 Protocolo de Escalación de Errores
 

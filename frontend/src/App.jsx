@@ -12,7 +12,7 @@ import './styles/bottom-navbar.css'
 // Function to clear any demo products from localStorage
 const clearDemoProducts = () => {
   try {
-    localStorage.removeItem('yega_demo_products');
+    localStorage.removeItem('manda2_demo_products');
     console.log('Demo products cleared from localStorage');
   } catch (error) {
     console.error('Error clearing demo products:', error);

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# YEGA App Deployment Script
+# Manda2 App Deployment Script
 # Usage: ./deploy.sh [--nginx|--caddy] [--domain=example.com] [--ssl]
 
 set -e  # Exit on any error
@@ -9,7 +9,7 @@ set -e  # Exit on any error
 WEBSERVER=""
 DOMAIN="localhost"
 SSL=false
-ROOT_DIR="/home/ec2-user/yega-app"
+ROOT_DIR="/home/ec2-user/manda2-app"
 
 # Parse arguments
 for arg in "$@"; do
@@ -38,7 +38,7 @@ for arg in "$@"; do
     esac
 done
 
-echo "🚀 Starting YEGA App deployment..."
+echo "🚀 Starting Manda2 App deployment..."
 echo "Web server: ${WEBSERVER:-auto-detect}"
 echo "Domain: $DOMAIN"
 echo "SSL: $SSL"
@@ -89,7 +89,7 @@ case $WEBSERVER in
         
     nginx)
         echo "⚙️  Configuring Nginx..."
-        NGINX_SITE="/etc/nginx/sites-available/yega"
+        NGINX_SITE="/etc/nginx/sites-available/manda2"
         
         # Copy configuration
         if [ -w "/etc/nginx/sites-available" ] 2>/dev/null; then
@@ -101,7 +101,7 @@ case $WEBSERVER in
             fi
             
             # Enable site
-            sudo ln -sf "$NGINX_SITE" /etc/nginx/sites-enabled/yega
+            sudo ln -sf "$NGINX_SITE" /etc/nginx/sites-enabled/manda2
             
             # Test configuration
             echo "🔍 Testing Nginx configuration..."
@@ -109,8 +109,8 @@ case $WEBSERVER in
             echo "✅ Nginx configuration is valid"
         else
             echo "⚠️  Cannot write to /etc/nginx/sites-available"
-            echo "📋 Please manually copy nginx.conf to /etc/nginx/sites-available/yega"
-            echo "📋 Then run: sudo ln -s /etc/nginx/sites-available/yega /etc/nginx/sites-enabled/"
+            echo "📋 Please manually copy nginx.conf to /etc/nginx/sites-available/manda2"
+            echo "📋 Then run: sudo ln -s /etc/nginx/sites-available/manda2 /etc/nginx/sites-enabled/"
         fi
         ;;
 esac

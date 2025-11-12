@@ -21,7 +21,7 @@ const ProductCard = ({ product, onAddToCart, className = '' }) => {
     
     // Save directly to localStorage for debugging
     try {
-      const currentCart = JSON.parse(localStorage.getItem('yega_cart') || '[]');
+      const currentCart = JSON.parse(localStorage.getItem('manda2_cart') || '[]');
       console.log('Current cart:', currentCart);
     } catch (err) {
       console.error('Error reading cart from localStorage:', err);
@@ -46,7 +46,7 @@ const ProductCard = ({ product, onAddToCart, className = '' }) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <Card className="h-full card-yega yega-glass">
+      <Card className="h-full card-manda2 manda2-glass">
         <Card.Body className="p-0">
           {/* Image Section */}
           <div className="relative overflow-hidden rounded-t-lg">

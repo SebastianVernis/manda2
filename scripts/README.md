@@ -26,6 +26,6 @@ This directory contains various scripts organized by type:
 
 ## Setup Scripts
 
-- `setup-yega-db.js` - Set up the YEGA database with initial data
+- `setup-manda2-db.js` - Set up the Manda2 database with initial data
 
 These scripts are organized to make it easier to find and use the right script for each task.

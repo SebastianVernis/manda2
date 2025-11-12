@@ -6,7 +6,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.yega.app"
+        applicationId "com.manda2.app"
         minSdk 21
         targetSdk 33
         versionCode 1

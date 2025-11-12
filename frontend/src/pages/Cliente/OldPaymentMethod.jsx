@@ -145,7 +145,7 @@ const PaymentMethod = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yega-dark via-yega-dark to-black">
+    <div className="min-h-screen bg-gradient-to-br from-manda2-dark via-manda2-dark to-black">
       <MobileHeader>
         <div className="flex items-center justify-between w-full">
           <Button variant="ghost" onClick={() => navigate(-1)} className="text-white/70">
@@ -159,7 +159,7 @@ const PaymentMethod = () => {
       <div className="px-4 py-4 space-y-6" style={{ margin: '0 1rem' }}>
         {/* Address Confirmation */}
         {!addressConfirmed && (
-          <Card className="card-yega yega-glass">
+          <Card className="card-manda2 manda2-glass">
             <Card.Body className="p-6">
               <AddressConfirmation onConfirm={handleAddressConfirm} />
             </Card.Body>
@@ -167,7 +167,7 @@ const PaymentMethod = () => {
         )}
 
         {addressConfirmed && (
-          <Card className="card-yega yega-glass border-success">
+          <Card className="card-manda2 manda2-glass border-success">
             <Card.Body className="p-4">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-green-400">✓</span>
@@ -194,12 +194,12 @@ const PaymentMethod = () => {
         {/* Payment Methods */}
         {addressConfirmed && (
           <div>
-            <h2 className="text-lg font-semibold text-yega-gold mb-4">
+            <h2 className="text-lg font-semibold text-manda2-gold mb-4">
               Selecciona tu método de pago
             </h2>
           <Form.Group onChange={(e) => setSelectedMethod(e.target.value)} className="space-y-3">
             {paymentMethods.map((method) => (
-              <Card key={method.id} className={`cursor-pointer transition-colors card-yega yega-glass mb-3 ${
+              <Card key={method.id} className={`cursor-pointer transition-colors card-manda2 manda2-glass mb-3 ${
                 selectedMethod === method.id 
                   ? 'border-warning' 
                   : ''
@@ -224,14 +224,14 @@ const PaymentMethod = () => {
 
           {/* Card Details */}
           {selectedMethod === 'card' && (
-          <Card className="card-yega yega-glass">
+          <Card className="card-manda2 manda2-glass">
             <Card.Body className="p-6 space-y-4">
-              <h3 className="text-lg font-semibold text-yega-silver mb-4">
+              <h3 className="text-lg font-semibold text-manda2-silver mb-4">
                 Detalles de la tarjeta
               </h3>
               
               <div>
-                <Form.Label htmlFor="cardNumber" className="form-label-yega">
+                <Form.Label htmlFor="cardNumber" className="form-label-manda2">
                   Número de tarjeta
                 </Form.Label>
                 <Form.Control
@@ -239,13 +239,13 @@ const PaymentMethod = () => {
                   placeholder="1234 5678 9012 3456"
                   value={cardData.number}
                   onChange={(e) => handleCardFormChange('number', e.target.value)}
-                  className="form-control-yega"
+                  className="form-control-manda2"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Form.Label htmlFor="expiry" className="form-label-yega">
+                  <Form.Label htmlFor="expiry" className="form-label-manda2">
                     Vencimiento
                   </Form.Label>
                   <Form.Control
@@ -253,11 +253,11 @@ const PaymentMethod = () => {
                     placeholder="MM/AA"
                     value={cardData.expiry}
                     onChange={(e) => handleCardFormChange('expiry', e.target.value)}
-                    className="form-control-yega"
+                    className="form-control-manda2"
                   />
                 </div>
                 <div>
-                  <Form.Label htmlFor="cvv" className="form-label-yega">
+                  <Form.Label htmlFor="cvv" className="form-label-manda2">
                     CVV
                   </Form.Label>
                   <Form.Control
@@ -265,13 +265,13 @@ const PaymentMethod = () => {
                     placeholder="123"
                     value={cardData.cvv}
                     onChange={(e) => handleCardFormChange('cvv', e.target.value)}
-                    className="form-control-yega"
+                    className="form-control-manda2"
                   />
                 </div>
               </div>
 
               <div>
-                <Form.Label htmlFor="cardName" className="form-label-yega">
+                <Form.Label htmlFor="cardName" className="form-label-manda2">
                   Nombre del titular
                 </Form.Label>
                 <Form.Control
@@ -279,7 +279,7 @@ const PaymentMethod = () => {
                   placeholder="Juan Pérez López"
                   value={cardData.name}
                   onChange={(e) => handleCardFormChange('name', e.target.value)}
-                  className="form-control-yega"
+                  className="form-control-manda2"
                 />
               </div>
             </Card.Body>
@@ -288,11 +288,11 @@ const PaymentMethod = () => {
 
           {/* Cash Payment Info */}
           {selectedMethod === 'cash' && (
-          <Card className="card-yega yega-glass">
+          <Card className="card-manda2 manda2-glass">
             <Card.Body className="p-6">
               <div className="text-center">
                 <span className="text-4xl mb-4 block">💵</span>
-                <h3 className="text-lg font-semibold text-yega-silver mb-2">
+                <h3 className="text-lg font-semibold text-manda2-silver mb-2">
                   Pago en efectivo
                 </h3>
                 <p className="text-white-50">
@@ -305,11 +305,11 @@ const PaymentMethod = () => {
 
           {/* Transfer Payment Info */}
           {selectedMethod === 'transfer' && (
-          <Card className="card-yega yega-glass">
+          <Card className="card-manda2 manda2-glass">
             <Card.Body className="p-6">
               <div className="text-center">
                 <span className="text-4xl mb-4 block">🏦</span>
-                <h3 className="text-lg font-semibold text-yega-silver mb-2">
+                <h3 className="text-lg font-semibold text-manda2-silver mb-2">
                   Transferencia bancaria
                 </h3>
                 <p className="text-white-50 mb-4">
@@ -317,7 +317,7 @@ const PaymentMethod = () => {
                 </p>
                 <div className="bg-white/5 rounded-lg p-3 text-left text-sm">
                   <p className="text-white">CLABE: 646180157000000004</p>
-                  <p className="text-white">Beneficiario: YEGA DELIVERY S.A. DE C.V.</p>
+                  <p className="text-white">Beneficiario: Manda2 DELIVERY S.A. DE C.V.</p>
                   <p className="text-white">RFC: YEG240101ABC</p>
                 </div>
               </div>
@@ -330,7 +330,7 @@ const PaymentMethod = () => {
 
         {/* Continue Button */}
         <Button 
-          className="w-full btn-yega-primary py-3"
+          className="w-full btn-manda2-primary py-3"
           onClick={handleContinue}
           disabled={isLoading}
         >

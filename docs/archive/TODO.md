@@ -1,4 +1,4 @@
-# Estado del Proyecto YEGA - Actualización 2025-09-18
+# Estado del Proyecto Manda2 - Actualización 2025-09-18
 
 ## ✅ PROYECTO COMPLETADO AL 87.5% (7/8 SESIONES)
 
@@ -97,7 +97,7 @@
 
 ---
 
-**🎉 PROYECTO YEGA: PRODUCTION-READY**
+**🎉 PROYECTO Manda2: PRODUCTION-READY**
 - ✅ **Funcionalidad completa:** Clientes, Tiendas, Repartidores, Admin
 - ✅ **Security audit:** Todas las vulnerabilidades críticas resueltas
 - ✅ **PWA implementado:** Offline, push notifications, service worker

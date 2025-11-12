@@ -105,7 +105,7 @@ app.get('/api/placeholder/:width/:height', (req, res) => {
 // Ruta de prueba
 app.get('/', (req, res) => {
   res.json({
-    message: 'API de YEGA funcionando!',
+    message: 'API de Manda2 funcionando!',
     version: '1.0.0',
     timestamp: new Date().toISOString()
   });
@@ -147,11 +147,11 @@ TEMP_FILE="/home/ec2-user/server.js.correct"
 echo "$CORRECT_CONTENT" > "$TEMP_FILE"
 
 echo "--- Fixing server.js and its backup ---"
-sudo cp "$TEMP_FILE" "/var/www/yega/backend/server.js"
-sudo cp "$TEMP_FILE" "/var/www/yega/backend/server.js.bak"
+sudo cp "$TEMP_FILE" "/var/www/manda2/backend/server.js"
+sudo cp "$TEMP_FILE" "/var/www/manda2/backend/server.js.bak"
 rm "$TEMP_FILE"
 
 echo "--- Restarting the application ---"
-pm2 reload yega
+pm2 reload manda2
 
 echo "Done."

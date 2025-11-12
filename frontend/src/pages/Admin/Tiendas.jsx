@@ -89,7 +89,7 @@ const AdminTiendas = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-4">
       <Container className="py-4">
-        <h2 className="text-yega-gold mb-3">Tiendas</h2>
+        <h2 className="text-manda2-gold mb-3">Tiendas</h2>
 
         {isLoading && (
           <div className="text-center py-5"><Spinner animation="border" /></div>
@@ -151,7 +151,7 @@ const AdminTiendas = () => {
                     <tr>
                       <td colSpan={5} className="p-0">
                         <Collapse in={expandedStore === t._id}>
-                          <div className="card-yega yega-glass p-3 border-start border-warning border-3">
+                          <div className="card-manda2 manda2-glass p-3 border-start border-warning border-3">
                             <h6 className="text-warning mb-3">Documentos de Verificación</h6>
                             
                             {['id_doc', 'comprobante_domicilio'].map(docType => {

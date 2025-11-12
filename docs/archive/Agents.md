@@ -35,7 +35,7 @@ Este documento describe los roles y responsabilidades de los agentes (humanos o 
 - Proporcionar información adicional cuando sea solicitada (ej. logs, detalles de errores en el navegador).
 - Tomar decisiones sobre la dirección del proyecto.
 
-## Roles de Usuario en la Aplicación (YEGA)
+## Roles de Usuario en la Aplicación (Manda2)
 
 ### Cliente
 - **Descripción:** Usuario final que realiza pedidos.
@@ -50,5 +50,5 @@ Este documento describe los roles y responsabilidades de los agentes (humanos o 
 - **Funcionalidades:** Ver pedidos disponibles, aceptar/rechazar pedidos, actualizar estado de entrega, ver historial, **subir documentos de verificación**.
 
 ### Administrador
-- **Descripción:** Gestiona la plataforma YEGA.
+- **Descripción:** Gestiona la plataforma Manda2.
 - **Funcionalidades:** Gestionar usuarios (clientes, tiendas, repartidores), aprobar/rechazar tiendas y repartidores, **revisar y aprobar/rechazar documentos de verificación**, ver reportes y estadísticas generales.

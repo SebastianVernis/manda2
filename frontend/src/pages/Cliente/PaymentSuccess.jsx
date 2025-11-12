@@ -41,7 +41,7 @@ const PaymentSuccess = () => {
   }, [navigate])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yega-dark via-yega-dark to-black flex items-center justify-center px-6">
+    <div className="min-h-screen bg-gradient-to-br from-manda2-dark via-manda2-dark to-black flex items-center justify-center px-6">
       <div className="w-full max-w-md">
         <Card bg="dark" border="secondary" className="shadow-lg">
           <Card.Body className="p-6 text-center">
@@ -53,7 +53,7 @@ const PaymentSuccess = () => {
             </div>
 
             {/* Success Message */}
-            <h1 className="text-2xl font-bold text-yega-gold mb-2">
+            <h1 className="text-2xl font-bold text-manda2-gold mb-2">
               ¡Pago exitoso!
             </h1>
             <p className="text-white/70 mb-6">
@@ -79,10 +79,10 @@ const PaymentSuccess = () => {
             </div>
 
             {/* Order Status */}
-            <div className="bg-yega-gold/10 border border-yega-gold/30 rounded-lg p-4 mb-6">
+            <div className="bg-manda2-gold/10 border border-manda2-gold/30 rounded-lg p-4 mb-6">
               <div className="flex items-center justify-center gap-2 mb-2">
-                <div className="w-2 h-2 bg-yega-gold rounded-full animate-pulse"></div>
-                <span className="text-yega-gold font-semibold">En preparación</span>
+                <div className="w-2 h-2 bg-manda2-gold rounded-full animate-pulse"></div>
+                <span className="text-manda2-gold font-semibold">En preparación</span>
               </div>
               <p className="text-white/70 text-sm">
                 Tiempo estimado de entrega: 25-30 minutos

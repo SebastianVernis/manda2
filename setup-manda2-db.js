@@ -1,9 +1,9 @@
-// YEGA Database Setup Script
-// Run with: mongosh < setup-yega-db.js
+// Manda2 Database Setup Script
+// Run with: mongosh < setup-manda2-db.js
 
-use yega;
+use manda2;
 
-print("🚀 Setting up YEGA database...");
+print("🚀 Setting up Manda2 database...");
 
 // Drop existing collections if they exist
 db.usuarios.drop();
@@ -61,7 +61,7 @@ print("👤 Creating default admin user...");
 
 const adminUser = {
     nombre: "Administrador",
-    email: "admin@yega.com",
+    email: "admin@manda2.com",
     telefono: "+1234567890",
     password: "$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdxGzJwW3.tPxwe", // password: admin123
     rol: "administrador",
@@ -77,7 +77,7 @@ const adminUser = {
 try {
     db.usuarios.insertOne(adminUser);
     print("✅ Default admin user created successfully");
-    print("   Email: admin@yega.com");
+    print("   Email: admin@manda2.com");
     print("   Password: admin123");
 } catch (error) {
     print("⚠️ Admin user might already exist or error occurred:");
@@ -193,7 +193,7 @@ try {
 }
 
 print("");
-print("🎉 YEGA database setup completed!");
+print("🎉 Manda2 database setup completed!");
 print("");
 print("📊 Database statistics:");
 print("   Collections: " + db.runCommand("listCollections").cursor.firstBatch.length);
@@ -203,7 +203,7 @@ print("   Products: " + db.productos.countDocuments());
 print("   Categories: " + db.categorias.countDocuments());
 print("");
 print("🔑 Default credentials:");
-print("   Admin Email: admin@yega.com");
+print("   Admin Email: admin@manda2.com");
 print("   Admin Password: admin123");
 print("");
-print("✅ Ready to start the YEGA application!");
+print("✅ Ready to start the Manda2 application!");

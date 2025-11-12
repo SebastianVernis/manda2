@@ -44,7 +44,7 @@ const sendEmail = async (to, subject, text, html = null) => {
 
     // Configurar email
     const mailOptions = {
-      from: `"YEGA" <${process.env.EMAIL_USER}>`,
+      from: `"Manda2" <${process.env.EMAIL_USER}>`,
       to,
       subject,
       text,
@@ -100,16 +100,16 @@ const sendOTPEmail = async (to, otp, tipo = 'verificacion') => {
 
   const tipoTexto = tipoTextos[tipo] || 'verificación';
 
-  const subject = `YEGA - Código de ${tipoTexto}`;
+  const subject = `Manda2 - Código de ${tipoTexto}`;
   
   const text = `
-Tu código de ${tipoTexto} de YEGA es: ${otp}
+Tu código de ${tipoTexto} de Manda2 es: ${otp}
 
 Este código expira en 10 minutos.
 
 Si no solicitaste este código, puedes ignorar este mensaje.
 
-Equipo YEGA
+Equipo Manda2
 `;
 
   const html = `
@@ -118,7 +118,7 @@ Equipo YEGA
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Código de Verificación YEGA</title>
+  <title>Código de Verificación Manda2</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -170,7 +170,7 @@ Equipo YEGA
 </head>
 <body>
   <div class="header">
-    <h1>YEGA</h1>
+    <h1>Manda2</h1>
     <p>Tu plataforma de delivery</p>
   </div>
   
@@ -179,7 +179,7 @@ Equipo YEGA
     
     <p>Hola,</p>
     
-    <p>Has solicitado un código de ${tipoTexto} para tu cuenta de YEGA. Usa el siguiente código:</p>
+    <p>Has solicitado un código de ${tipoTexto} para tu cuenta de Manda2. Usa el siguiente código:</p>
     
     <div class="otp-code">${otp}</div>
     
@@ -194,12 +194,12 @@ Equipo YEGA
     
     <p>Si tienes problemas, contacta nuestro soporte.</p>
     
-    <p>Saludos,<br>Equipo YEGA</p>
+    <p>Saludos,<br>Equipo Manda2</p>
   </div>
   
   <div class="footer">
     <p>Este es un mensaje automático, por favor no respondas a este email.</p>
-    <p>&copy; 2024 YEGA. Todos los derechos reservados.</p>
+    <p>&copy; 2024 Manda2. Todos los derechos reservados.</p>
   </div>
 </body>
 </html>
@@ -216,19 +216,19 @@ Equipo YEGA
  * @returns {Promise<Object>} Resultado del envío
  */
 const sendWelcomeEmail = async (to, nombre, rol) => {
-  const subject = 'Bienvenido a YEGA';
+  const subject = 'Bienvenido a Manda2';
   
   const text = `
 Hola ${nombre},
 
-¡Bienvenido a YEGA!
+¡Bienvenido a Manda2!
 
 Tu cuenta como ${rol} ha sido creada exitosamente. Ya puedes comenzar a usar nuestra plataforma.
 
 Si tienes alguna pregunta, no dudes en contactarnos.
 
 Saludos,
-Equipo YEGA
+Equipo Manda2
 `;
 
   const html = `
@@ -236,7 +236,7 @@ Equipo YEGA
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Bienvenido a YEGA</title>
+  <title>Bienvenido a Manda2</title>
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -247,14 +247,14 @@ Equipo YEGA
 <body>
   <div class="container">
     <div class="header">
-      <h1>¡Bienvenido a YEGA!</h1>
+      <h1>¡Bienvenido a Manda2!</h1>
     </div>
     <div class="content">
       <h2>Hola ${nombre},</h2>
       <p>Tu cuenta como <strong>${rol}</strong> ha sido creada exitosamente.</p>
       <p>Ya puedes comenzar a usar nuestra plataforma de delivery.</p>
       <p>Si tienes alguna pregunta, no dudes en contactarnos.</p>
-      <p>Saludos,<br>Equipo YEGA</p>
+      <p>Saludos,<br>Equipo Manda2</p>
     </div>
   </div>
 </body>

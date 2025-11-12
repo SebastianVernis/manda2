@@ -19,7 +19,7 @@ function testProxy() {
     headers: {
       'Content-Type': 'application/json',
       'Content-Length': Buffer.byteLength(postData),
-      'Origin': 'https://yega.3.85.74.100.nip.io',
+      'Origin': 'https://manda2.3.85.74.100.nip.io',
       'Host': '3.85.74.100'
     }
   };

@@ -46,7 +46,7 @@ const RepartidorPedidos = () => {
 
   return (
     <Container className="py-4 text-center">
-      <h2 className="text-yega-gold mb-2">Pedidos</h2>
+      <h2 className="text-manda2-gold mb-2">Pedidos</h2>
       
       {pedidos.length > 0 ? (
         <Alert variant={locationEnabled ? "success" : "warning"} className="mb-2 glass-card" style={{background: "rgba(40,167,69,0.15)"}}>
@@ -62,7 +62,7 @@ const RepartidorPedidos = () => {
       
       <div className="d-flex justify-content-center gap-2 mb-2">
         <Button className="glass-btn" onClick={() => availableQ.refetch()}>Refrescar disponibles</Button>
-        <Button className="btn-yega-primary" onClick={() => refetch()}>Refrescar asignados</Button>
+        <Button className="btn-manda2-primary" onClick={() => refetch()}>Refrescar asignados</Button>
       </div>
 
       <Nav variant="tabs" activeKey={tab} onSelect={k => setTab(k || 'asignados')} className="mb-3 justify-content-center">
@@ -95,7 +95,7 @@ const RepartidorPedidos = () => {
                       </div>
                     </div>
                     <div className="mt-3 d-flex gap-2">
-                      <Button size="sm" className="btn-yega-primary" style={{borderRadius: '12px'}} disabled={claimMutation.isPending} onClick={() => claimMutation.mutate(o._id)}>Tomar pedido</Button>
+                      <Button size="sm" className="btn-manda2-primary" style={{borderRadius: '12px'}} disabled={claimMutation.isPending} onClick={() => claimMutation.mutate(o._id)}>Tomar pedido</Button>
                       {o.tiendaId?.ubicacion && (
                         <Button as="a" target="_blank" rel="noopener" size="sm" className="glass-btn" href={`https://www.google.com/maps/dir/?api=1&destination=${o.tiendaId.ubicacion.latitud},${o.tiendaId.ubicacion.longitud}`}>Ir a Tienda</Button>
                       )}
@@ -163,7 +163,7 @@ const RepartidorPedidos = () => {
                         {o.estado === 'en_camino' && (
                           <Button 
                             size="sm" 
-                            className="btn-yega-primary" 
+                            className="btn-manda2-primary" 
                             style={{borderRadius: '12px'}}
                             disabled={updateMutation.isPending} 
                             onClick={() => updateMutation.mutate({ id: o._id, estado: 'entregado' })}

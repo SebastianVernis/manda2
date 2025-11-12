@@ -1,15 +1,15 @@
 module.exports = {
   apps: [
     {
-      name: 'yega-backend',
+      name: 'manda2-backend',
       script: 'server.js',
-      cwd: '/home/ec2-user/yega-app/backend',
+      cwd: '/home/ec2-user/manda2-app/backend',
       instances: 1,
       exec_mode: 'fork',
       env: {
         NODE_ENV: 'production',
         PORT: 5000,
-        MONGODB_URI: 'mongodb://localhost:27017/yega'
+        MONGODB_URI: 'mongodb://localhost:27017/manda2'
       },
       error_file: './logs/err.log',
       out_file: './logs/out.log',
@@ -19,10 +19,10 @@ module.exports = {
       max_restarts: 10
     },
     {
-      name: 'yega-caddy',
+      name: 'manda2-caddy',
       script: 'caddy',
       args: 'run --config Caddyfile',
-      cwd: '/home/ec2-user/yega-app',
+      cwd: '/home/ec2-user/manda2-app',
       instances: 1,
       exec_mode: 'fork',
       env: {

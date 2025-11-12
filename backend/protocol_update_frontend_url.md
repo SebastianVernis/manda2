@@ -1,6 +1,6 @@
 # Protocolo para Actualizar la URL del Frontend
 
-Este protocolo describe los pasos a seguir para actualizar la URL del frontend en la aplicación YEGA.
+Este protocolo describe los pasos a seguir para actualizar la URL del frontend en la aplicación Manda2.
 
 ## Pasos
 
@@ -9,7 +9,7 @@ Este protocolo describe los pasos a seguir para actualizar la URL del frontend e
     *   Modifica la variable `FRONTEND_URL` para incluir los nuevos dominios permitidos.
 
 2.  **Actualizar el archivo de entorno del frontend:**
-    *   Edita el archivo `.env` en el directorio del frontend (`/home/ec2-user/yega-backup/frontend/.env`).
+    *   Edita el archivo `.env` en el directorio del frontend (`/home/ec2-user/manda2-backup/frontend/.env`).
     *   Modifica la variable `VITE_API_URL` para que apunte a la nueva URL de la API.
 
 3.  **Actualizar el script de reconstrucción:**
@@ -23,13 +23,13 @@ Este protocolo describe los pasos a seguir para actualizar la URL del frontend e
         ```
 
 5.  **Reiniciar el servidor de la API:**
-    *   Reinicia el servidor de la API de YEGA para que los cambios en el archivo `.env` del backend surtan efecto:
+    *   Reinicia el servidor de la API de Manda2 para que los cambios en el archivo `.env` del backend surtan efecto:
         ```bash
-        pm2 restart yega --update-env
+        pm2 restart manda2 --update-env
         ```
 
 6.  **Actualizar el control de versiones:**
     *   Añade los archivos modificados al repositorio de git, haz commit y sube los cambios al repositorio remoto para asegurar la consistencia del código.
-    *   Asegúrate de que los siguientes archivos estén actualizados en el repositorio de `yega-backup`:
+    *   Asegúrate de que los siguientes archivos estén actualizados en el repositorio de `manda2-backup`:
         *   `frontend/.env`
         *   `rebuild_frontend.sh`

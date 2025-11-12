@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Usuario = require('./models/Usuario');
 
 // MongoDB connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/yega';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/manda2';
 
 // Colors for console output
 const colors = {

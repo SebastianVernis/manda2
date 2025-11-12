@@ -1,4 +1,4 @@
-# YEGA Deployment Guide
+# Manda2 Deployment Guide
 **Version:** 1.0.0  
 **Environment:** Production Ready  
 **Last Updated:** 2025-09-18  
@@ -8,7 +8,7 @@
 
 ## 🎯 Deployment Overview
 
-YEGA is deployed using a modern production stack with:
+Manda2 is deployed using a modern production stack with:
 - **Frontend**: React build served by Caddy
 - **Backend**: Node.js API with PM2 process management
 - **Database**: MongoDB with proper indexing
@@ -61,8 +61,8 @@ sudo apt install caddy
 ### Step 1: Clone and Setup Project
 ```bash
 # Clone repository
-git clone <repository-url> yega-app
-cd yega-app
+git clone <repository-url> manda2-app
+cd manda2-app
 
 # Install backend dependencies
 cd backend
@@ -82,7 +82,7 @@ npm run build
 ```bash
 # Current production configuration
 JWT_SECRET=REDACTADO_VER_ENV
-MONGODB_URI=mongodb://localhost:27017/yega
+MONGODB_URI=mongodb://localhost:27017/manda2
 FRONTEND_URL=https://3-85-74-100.nip.io,http://localhost:3000
 ```
 
@@ -102,9 +102,9 @@ sudo systemctl enable mongod
 pm2 start ecosystem.config.js
 
 # Current PM2 configuration:
-# - yega-backend: Node.js API (port 5000)
-# - yega-frontend: Static files served by Caddy
-# - caddy-yega: Reverse proxy (port 9080)
+# - manda2-backend: Node.js API (port 5000)
+# - manda2-frontend: Static files served by Caddy
+# - caddy-manda2: Reverse proxy (port 9080)
 
 # Save PM2 configuration
 pm2 save
@@ -124,8 +124,8 @@ pm2 status
 # ┌─────┬───────────────┬─────────────┬─────────┬─────────┬──────────┐
 # │ id  │ name          │ status      │ restart │ uptime  │ cpu      │
 # ├─────┼───────────────┼─────────────┼─────────┼─────────┼──────────┤
-# │ 0   │ yega-backend  │ online      │ 0       │ 2h      │ 0.1%     │
-# │ 1   │ caddy-yega    │ online      │ 0       │ 2h      │ 0%       │
+# │ 0   │ manda2-backend  │ online      │ 0       │ 2h      │ 0.1%     │
+# │ 1   │ caddy-manda2    │ online      │ 0       │ 2h      │ 0%       │
 # └─────┴───────────────┴─────────────┴─────────┴─────────┴──────────┘
 ```
 
@@ -147,8 +147,8 @@ mongosh --eval "db.adminCommand('ismaster')"
 pm2 logs
 
 # View specific service logs
-pm2 logs yega-backend
-pm2 logs caddy-yega
+pm2 logs manda2-backend
+pm2 logs caddy-manda2
 
 # Monitor real-time
 pm2 monit
@@ -163,7 +163,7 @@ pm2 monit
 module.exports = {
   apps: [
     {
-      name: 'yega-backend',
+      name: 'manda2-backend',
       script: 'server.js',
       cwd: './backend',
       env: {
@@ -175,7 +175,7 @@ module.exports = {
       log_file: './logs/combined.log'
     },
     {
-      name: 'caddy-yega',
+      name: 'caddy-manda2',
       script: 'caddy',
       args: 'run --config Caddyfile --adapter caddyfile',
       cwd: './',
@@ -337,7 +337,7 @@ cd frontend && npm update
 npm audit
 
 # Performance review
-pm2 show yega-backend
+pm2 show manda2-backend
 ```
 
 ---
@@ -352,11 +352,11 @@ pm2 show yega-backend
 pm2 status
 
 # View logs
-pm2 logs yega-backend
+pm2 logs manda2-backend
 
 # Common solutions:
 sudo systemctl start mongod  # Start database
-pm2 restart yega-backend     # Restart backend
+pm2 restart manda2-backend     # Restart backend
 pm2 reload all              # Reload all services
 ```
 
@@ -375,13 +375,13 @@ sudo systemctl restart mongod
 #### Frontend Not Loading
 ```bash
 # Check Caddy process
-pm2 logs caddy-yega
+pm2 logs caddy-manda2
 
 # Rebuild frontend
 cd frontend && npm run build
 
 # Restart Caddy
-pm2 restart caddy-yega
+pm2 restart caddy-manda2
 ```
 
 ### Emergency Contacts

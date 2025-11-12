@@ -63,7 +63,7 @@ const ClientePerfil = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <Card className="yega-glass">
+              <Card className="manda2-glass">
                 <Card.Body className="p-4">
                   <div className="text-center mb-5">
                     <div className="bg-primary bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center mb-3 overflow-hidden" style={{width: '100px', height: '100px'}}>
@@ -81,7 +81,7 @@ const ClientePerfil = () => {
               
               <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">Nombre completo</Form.Label>
+                  <Form.Label className="form-label-manda2">Nombre completo</Form.Label>
                   <div className="input-group">
                     <span className="input-group-text bg-dark border-dark text-white">
                       <FaUser />
@@ -91,13 +91,13 @@ const ClientePerfil = () => {
                       value={form.nombre} 
                       onChange={handleChange}
                       placeholder="Tu nombre completo" 
-                      className="form-control-yega" 
+                      className="form-control-manda2" 
                     />
                   </div>
                 </Form.Group>
                 
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">Teléfono</Form.Label>
+                  <Form.Label className="form-label-manda2">Teléfono</Form.Label>
                   <div className="input-group">
                     <span className="input-group-text bg-dark border-dark text-white">
                       <FaPhone />
@@ -107,13 +107,13 @@ const ClientePerfil = () => {
                       value={form.telefono} 
                       onChange={handleChange}
                       placeholder="Tu número de teléfono" 
-                      className="form-control-yega" 
+                      className="form-control-manda2" 
                     />
                   </div>
                 </Form.Group>
                 
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">Correo electrónico</Form.Label>
+                  <Form.Label className="form-label-manda2">Correo electrónico</Form.Label>
                   <div className="input-group">
                     <span className="input-group-text bg-dark border-dark text-white">
                       <FaEnvelope />
@@ -121,7 +121,7 @@ const ClientePerfil = () => {
                     <Form.Control 
                       value={user?.email} 
                       disabled
-                      className="form-control-yega" 
+                      className="form-control-manda2" 
                     />
                   </div>
                   <Form.Text className="text-muted">
@@ -129,7 +129,7 @@ const ClientePerfil = () => {
                   </Form.Text>
                 </Form.Group>
                 
-                <h5 className="text-yega-gold mt-4 mb-3">Preferencias</h5>
+                <h5 className="text-manda2-gold mt-4 mb-3">Preferencias</h5>
                 
                 <Form.Group className="mb-2">
                   <Form.Check 
@@ -167,7 +167,7 @@ const ClientePerfil = () => {
                 <div className="d-grid mt-4">
                   <Button 
                     type="submit" 
-                    className="btn-yega-primary" 
+                    className="btn-manda2-primary" 
                     disabled={saving}
                   >
                     {saving ? 'Guardando...' : 'Guardar cambios'}

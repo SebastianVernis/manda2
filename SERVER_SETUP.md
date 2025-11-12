@@ -1,4 +1,4 @@
-# YEGA Server Setup Guide
+# Manda2 Server Setup Guide
 
 ## Quick Start
 
@@ -62,8 +62,8 @@ sudo systemctl start caddy
 ### Nginx
 ```bash
 # Copy configuration
-sudo cp nginx.conf /etc/nginx/sites-available/yega
-sudo ln -s /etc/nginx/sites-available/yega /etc/nginx/sites-enabled/
+sudo cp nginx.conf /etc/nginx/sites-available/manda2
+sudo ln -s /etc/nginx/sites-available/manda2 /etc/nginx/sites-enabled/
 
 # Start Nginx
 sudo systemctl start nginx
@@ -75,7 +75,7 @@ sudo systemctl start nginx
 ```env
 NODE_ENV=production
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/yega
+MONGODB_URI=mongodb://localhost:27017/manda2
 JWT_SECRET=your-super-secret-jwt-key-minimum-64-characters-long-string
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-email-password
@@ -84,7 +84,7 @@ EMAIL_PASS=your-email-password
 ### Frontend Environment (.env.production)
 ```env
 VITE_API_URL=http://172.31.39.53:5000/api
-VITE_APP_NAME=YEGA
+VITE_APP_NAME=Manda2
 VITE_APP_VERSION=1.0.0
 VITE_ENVIRONMENT=production
 ```
@@ -103,10 +103,10 @@ pm2 delete all       # Remove all services
 ### System Service (Optional)
 ```bash
 # Install as system service
-sudo cp yega.service /etc/systemd/system/
+sudo cp manda2.service /etc/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl enable yega
-sudo systemctl start yega
+sudo systemctl enable manda2
+sudo systemctl start manda2
 ```
 
 ## Health Checks
@@ -145,7 +145,7 @@ pm2 logs --lines 50
 
 2. **Permission denied**
    ```bash
-   sudo chown -R ec2-user:ec2-user /home/ec2-user/yega-app
+   sudo chown -R ec2-user:ec2-user /home/ec2-user/manda2-app
    chmod +x *.sh
    ```
 

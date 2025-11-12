@@ -1,10 +1,10 @@
-# Documentación del Proyecto YEGA
+# Documentación del Proyecto Manda2
 
-Este documento proporciona una descripción detallada de la arquitectura, funcionalidades y componentes del proyecto YEGA.
+Este documento proporciona una descripción detallada de la arquitectura, funcionalidades y componentes del proyecto Manda2.
 
 ## 1. Visión General
 
-YEGA es una plataforma de delivery diseñada para conectar clientes, tiendas y repartidores de manera eficiente. La solución se compone de un backend robusto que gestiona la lógica de negocio y una aplicación frontend moderna y reactiva para la interacción del usuario.
+Manda2 es una plataforma de delivery diseñada para conectar clientes, tiendas y repartidores de manera eficiente. La solución se compone de un backend robusto que gestiona la lógica de negocio y una aplicación frontend moderna y reactiva para la interacción del usuario.
 
 ## 2. Arquitectura del Backend
 
@@ -18,7 +18,7 @@ graph TD
         A[Usuario]
     end
 
-    subgraph "Servidor YEGA"
+    subgraph "Servidor Manda2"
         B{API Gateway}
         C[Servicio de Autenticación]
         D[Servicio de Pedidos]

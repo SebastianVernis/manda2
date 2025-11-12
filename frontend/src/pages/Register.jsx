@@ -80,21 +80,21 @@ const Register = () => {
       <Container className="py-5">
         <Row className="justify-content-center">
         <Col md={6} lg={5}>
-          <Card className="card-yega">
+          <Card className="card-manda2">
             <Card.Header className="text-center">
               <h3 className="mb-0">Registrarse</h3>
             </Card.Header>
             
             <Card.Body className="p-4">
               {error && (
-                <Alert variant="danger" className="alert-yega-danger">
+                <Alert variant="danger" className="alert-manda2-danger">
                   {error}
                 </Alert>
               )}
 
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">
+                  <Form.Label className="form-label-manda2">
                     <FaUser className="me-2" />
                     Nombre Completo
                   </Form.Label>
@@ -104,13 +104,13 @@ const Register = () => {
                     value={formData.nombre}
                     onChange={handleChange}
                     placeholder="Tu nombre completo"
-                    className="form-control-yega"
+                    className="form-control-manda2"
                     disabled={loading}
                   />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">
+                  <Form.Label className="form-label-manda2">
                     <FaPhone className="me-2" />
                     Teléfono
                   </Form.Label>
@@ -120,13 +120,13 @@ const Register = () => {
                     value={formData.telefono}
                     onChange={handleChange}
                     placeholder="+541112345678"
-                    className="form-control-yega"
+                    className="form-control-manda2"
                     disabled={loading}
                   />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">
+                  <Form.Label className="form-label-manda2">
                     <FaEnvelope className="me-2" />
                     Email
                   </Form.Label>
@@ -136,13 +136,13 @@ const Register = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="tu@email.com"
-                    className="form-control-yega"
+                    className="form-control-manda2"
                     disabled={loading}
                   />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label-yega">
+                  <Form.Label className="form-label-manda2">
                     <FaLock className="me-2" />
                     Contraseña
                   </Form.Label>
@@ -153,7 +153,7 @@ const Register = () => {
                       value={formData.password}
                       onChange={handleChange}
                       placeholder="Mínimo 6 caracteres"
-                      className="form-control-yega pe-5"
+                      className="form-control-manda2 pe-5"
                       disabled={loading}
                     />
                     <Button
@@ -169,12 +169,12 @@ const Register = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-4">
-                  <Form.Label className="form-label-yega">Rol</Form.Label>
+                  <Form.Label className="form-label-manda2">Rol</Form.Label>
                   <Form.Select
                     name="rol"
                     value={formData.rol}
                     onChange={handleChange}
-                    className="form-control-yega"
+                    className="form-control-manda2"
                     disabled={loading}
                   >
                     <option value="cliente">Cliente</option>
@@ -185,7 +185,7 @@ const Register = () => {
 
                 <Button
                   type="submit"
-                  className="w-100 btn-yega-primary"
+                  className="w-100 btn-manda2-primary"
                   size="lg"
                   disabled={loading}
                 >

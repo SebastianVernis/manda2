@@ -37,13 +37,13 @@ const CustomNavbar = () => {
   }
 
   return (
-    <Navbar expand="lg" className="navbar-yega" variant="dark">
+    <Navbar expand="lg" className="navbar-manda2" variant="dark">
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
             <img 
-              src="/images/yega-light.svg" 
-              alt="YEGA" 
+              src="/images/manda2-light.svg" 
+              alt="Manda2" 
               height="30" 
               className="d-inline-block align-top"
             />

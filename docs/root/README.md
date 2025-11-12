@@ -1,8 +1,8 @@
-# YEGA - Aplicación de Delivery
+# Manda2 - Aplicación de Delivery
 
-![YEGA Banner](./assets/img/5.png)
+![Manda2 Banner](./assets/img/5.png)
 
-**YEGA** es una aplicación de delivery completa que conecta a clientes, tiendas y repartidores. La plataforma consta de un backend robusto y un frontend moderno y reactivo.
+**Manda2** es una aplicación de delivery completa que conecta a clientes, tiendas y repartidores. La plataforma consta de un backend robusto y un frontend moderno y reactivo.
 
 ## Arquitectura General
 

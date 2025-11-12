@@ -105,7 +105,7 @@ PedidoSchema.pre('validate', async function(next) {
   if (this.isNew && !this.numero_pedido) {
     try {
       const count = await mongoose.model('Pedido').countDocuments();
-      this.numero_pedido = `YEGA-${String(count + 1).padStart(6, '0')}`;
+      this.numero_pedido = `MANDA2-${String(count + 1).padStart(6, '0')}`;
     } catch (e) {
       return next(e);
     }

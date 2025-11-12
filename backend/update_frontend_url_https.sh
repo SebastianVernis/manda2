@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-FRONTEND_DIST_DIR="/var/www/yega/frontend/dist"
+FRONTEND_DIST_DIR="/var/www/manda2/frontend/dist"
 OLD_URL_1="http://localhost:5000"
 OLD_URL_2="http://18.223.113.254:5000"
-NEW_URL="https://yega.18.223.113.254.nip.io"
+NEW_URL="https://manda2.18.223.113.254.nip.io"
 
 echo "--- Updating API URL in frontend files to HTTPS ---"
 

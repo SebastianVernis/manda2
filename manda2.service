@@ -1,12 +1,12 @@
 [Unit]
-Description=YEGA Delivery Platform
+Description=Manda2 Delivery Platform
 After=network.target mongod.service
 Wants=network.target
 
 [Service]
 Type=forking
 User=ec2-user
-WorkingDirectory=/home/ec2-user/yega-app
+WorkingDirectory=/home/ec2-user/manda2-app
 Environment=PATH=/usr/bin:/usr/local/bin:/home/ec2-user/.nvm/versions/node/v18.17.0/bin
 Environment=NODE_ENV=production
 ExecStart=/usr/local/bin/pm2 start ecosystem.config.js

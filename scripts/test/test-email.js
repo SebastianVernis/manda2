@@ -33,11 +33,11 @@ async function testEmail() {
     
     console.log('\n📧 Enviando email de prueba a sebastianvernis@gmail.com...');
     const info = await transporter.sendMail({
-      from: `"YEGA Test" <${process.env.EMAIL_USER}>`,
+      from: `"Manda2 Test" <${process.env.EMAIL_USER}>`,
       to: 'sebastianvernis@gmail.com',
-      subject: 'Prueba YEGA - ' + new Date().toISOString(),
-      text: 'Este es un email de prueba del sistema YEGA enviado desde el servidor.',
-      html: '<p>Este es un email de prueba del sistema <strong>YEGA</strong> enviado desde el servidor.</p><p>Si recibes este mensaje, la configuración de email funciona correctamente.</p>'
+      subject: 'Prueba Manda2 - ' + new Date().toISOString(),
+      text: 'Este es un email de prueba del sistema Manda2 enviado desde el servidor.',
+      html: '<p>Este es un email de prueba del sistema <strong>Manda2</strong> enviado desde el servidor.</p><p>Si recibes este mensaje, la configuración de email funciona correctamente.</p>'
     });
     
     console.log('✅ Email enviado exitosamente!');

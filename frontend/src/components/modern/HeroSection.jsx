@@ -30,7 +30,7 @@ const HeroSection = ({ onGetStarted }) => {
             <div className="mb-4">
               <img 
                 src="/assets/img/inicio.png" 
-                alt="YEGA Logo"
+                alt="Manda2 Logo"
                 className="img-fluid mx-auto d-block"
                 style={{ maxHeight: '120px' }}
               />
@@ -43,13 +43,13 @@ const HeroSection = ({ onGetStarted }) => {
 
             {/* Descripción */}
             <p className="lead mb-5" style={{ color: '#adb5bd' }}>
-              YEGA conecta clientes, tiendas y repartidores para entregarte lo que necesites, directo a tu puerta, rápido y seguro.
+              Manda2 conecta clientes, tiendas y repartidores para entregarte lo que necesites, directo a tu puerta, rápido y seguro.
             </p>
 
             {/* Botón */}
             <Button
               size="lg"
-              className="btn-yega-primary mb-5"
+              className="btn-manda2-primary mb-5"
               onClick={onGetStarted}
             >
               Comenzar Ahora
@@ -59,9 +59,9 @@ const HeroSection = ({ onGetStarted }) => {
             <div className="row g-4 mt-5">
               {features.map((feature, index) => (
                 <div key={index} className="col-md-4">
-                  <Card className="card-yega h-100">
+                  <Card className="card-manda2 h-100">
                     <Card.Body className="text-center">
-                      <div className="mb-3 text-yega-silver">
+                      <div className="mb-3 text-manda2-silver">
                         {feature.icon}
                       </div>
                       <h5 className="text-white mb-2">{feature.title}</h5>

@@ -1,6 +1,6 @@
-# YEGA Application Deployment Instructions
+# Manda2 Application Deployment Instructions
 
-This document outlines the steps to deploy the YEGA application, including backend, frontend, and Caddy for HTTPS.
+This document outlines the steps to deploy the Manda2 application, including backend, frontend, and Caddy for HTTPS.
 
 ## 1. Prerequisites
 
@@ -22,16 +22,16 @@ sudo npm install -g pm2
 ### 2.1 Copy Application Files
 
 Ensure your backend and frontend code are in the following directories:
-*   Backend: `/var/www/yega/backend`
-*   Frontend: `/var/www/yega/frontend`
+*   Backend: `/var/www/manda2/backend`
+*   Frontend: `/var/www/manda2/frontend`
 
-If you need to copy them, use `sudo cp -r /path/to/your/backend /var/www/yega/backend` and `sudo cp -r /path/to/your/frontend /var/www/yega/frontend`.
+If you need to copy them, use `sudo cp -r /path/to/your/backend /var/www/manda2/backend` and `sudo cp -r /path/to/your/frontend /var/www/manda2/frontend`.
 
 ### 2.2 Backend Configuration and Deployment
 
 1.  **Navigate to the backend directory:**
     ```bash
-    cd /var/www/yega/backend
+    cd /var/www/manda2/backend
     ```
 
 2.  **Install backend dependencies:**
@@ -40,7 +40,7 @@ If you need to copy them, use `sudo cp -r /path/to/your/backend /var/www/yega/ba
     sudo npm install
     ```
 
-3.  **Create or update `.env` file in `/var/www/yega/backend/.env`**:
+3.  **Create or update `.env` file in `/var/www/manda2/backend/.env`**:
     This file should contain your MongoDB URI and other backend environment variables.
     ```
     MONGODB_URI="your_mongodb_connection_string"
@@ -54,7 +54,7 @@ If you need to copy them, use `sudo cp -r /path/to/your/backend /var/www/yega/ba
     ENABLE_HSTS=true
     RATE_LIMIT_WINDOW_MS=900000 # 15 minutes
     RATE_LIMIT_MAX_REQUESTS=500
-    FRONTEND_URL="https://yega.YOUR_PUBLIC_IP.nip.io" # Or your actual domain
+    FRONTEND_URL="https://manda2.YOUR_PUBLIC_IP.nip.io" # Or your actual domain
     ```
     **Important**: Replace placeholders with your actual values.
 
@@ -63,12 +63,12 @@ If you need to copy them, use `sudo cp -r /path/to/your/backend /var/www/yega/ba
     ```javascript
     module.exports = {
       apps : [{
-        name: 'yega',
-        script: '/var/www/yega/backend/server.js',
-        cwd: '/var/www/yega/backend',
+        name: 'manda2',
+        script: '/var/www/manda2/backend/server.js',
+        cwd: '/var/www/manda2/backend',
         env_production: {
           NODE_ENV: 'production',
-          NODE_PATH: '/var/www/yega/backend/node_modules'
+          NODE_PATH: '/var/www/manda2/backend/node_modules'
         }
       }]
     };
@@ -78,12 +78,12 @@ If you need to copy them, use `sudo cp -r /path/to/your/backend /var/www/yega/ba
     cat <<EOF | tee /home/ec2-user/ecosystem.config.js
     module.exports = {
       apps : [{
-        name: 'yega',
-        script: '/var/www/yega/backend/server.js',
-        cwd: '/var/www/yega/backend',
+        name: 'manda2',
+        script: '/var/www/manda2/backend/server.js',
+        cwd: '/var/www/manda2/backend',
         env_production: {
           NODE_ENV: 'production',
-          NODE_PATH: '/var/www/yega/backend/node_modules'
+          NODE_PATH: '/var/www/manda2/backend/node_modules'
         }
       }]
     };
@@ -106,7 +106,7 @@ If you need to copy them, use `sudo cp -r /path/to/your/backend /var/www/yega/ba
 
 1.  **Navigate to the frontend directory:**
     ```bash
-    cd /var/www/yega/frontend
+    cd /var/www/manda2/frontend
     ```
 
 2.  **Install frontend dependencies:**
@@ -114,16 +114,16 @@ If you need to copy them, use `sudo cp -r /path/to/your/backend /var/www/yega/ba
     sudo npm install
     ```
 
-3.  **Create or update `.env.production` in `/var/www/yega/frontend/.env.production`**:
+3.  **Create or update `.env.production` in `/var/www/manda2/frontend/.env.production`**:
     This file tells the frontend where to find your API.
     ```
-    VITE_API_URL="https://yega.YOUR_PUBLIC_IP.nip.io/api" # Or your actual domain
+    VITE_API_URL="https://manda2.YOUR_PUBLIC_IP.nip.io/api" # Or your actual domain
     ```
     To create/update this file:
     ```bash
     PUBLIC_IP=$(curl -s ifconfig.me) # Get your public IP
-    cat <<EOF | sudo tee /var/www/yega/frontend/.env.production
-    VITE_API_URL="https://yega.
+    cat <<EOF | sudo tee /var/www/manda2/frontend/.env.production
+    VITE_API_URL="https://manda2.
     ```
     **Important**: Replace `YOUR_PUBLIC_IP` with your actual public IP address.
 
@@ -153,8 +153,8 @@ If you need to copy them, use `sudo cp -r /path/to/your/backend /var/www/yega/ba
 3.  **Create `Caddyfile` in `/home/ec2-user/Caddyfile`**:
     This configures Caddy to serve your frontend and proxy API requests to your backend.
     ```
-    yega.YOUR_PUBLIC_IP.nip.io { # Replace YOUR_PUBLIC_IP
-        root * /var/www/yega/frontend/dist
+    manda2.YOUR_PUBLIC_IP.nip.io { # Replace YOUR_PUBLIC_IP
+        root * /var/www/manda2/frontend/dist
         file_server
         
         # Proxy API requests to the backend
@@ -172,7 +172,7 @@ If you need to copy them, use `sudo cp -r /path/to/your/backend /var/www/yega/ba
     ```bash
     PUBLIC_IP=$(curl -s ifconfig.me) # Get your public IP
     cat <<EOF | tee /home/ec2-user/Caddyfile
-    yega.
+    manda2.
     ```
     **Important**: Replace `YOUR_PUBLIC_IP` with your actual public IP address.
 
@@ -185,13 +185,13 @@ If you need to copy them, use `sudo cp -r /path/to/your/backend /var/www/yega/ba
 
 1.  **Check PM2 status:**
     ```bash
-    pm2 show yega
-    pm2 logs yega --lines 50
+    pm2 show manda2
+    pm2 logs manda2 --lines 50
     ```
     Ensure `status` is `online` and there are no errors in the logs.
 
 2.  **Access the application in your browser:**
-    Clear your browser cache and navigate to: `https://yega.YOUR_PUBLIC_IP.nip.io` (replace `YOUR_PUBLIC_IP`).
+    Clear your browser cache and navigate to: `https://manda2.YOUR_PUBLIC_IP.nip.io` (replace `YOUR_PUBLIC_IP`).
     The frontend should load, and API calls should work.
 
 ## 4. Troubleshooting / Full Reset
@@ -211,7 +211,7 @@ If you encounter persistent issues, you can perform a full reset and re-deploy.
 
 3.  **Remove application directories (CAUTION: This deletes all code and data):**
     ```bash
-    sudo rm -rf /var/www/yega
+    sudo rm -rf /var/www/manda2
     ```
 
 4.  **Remove PM2 configuration files:**

@@ -2,7 +2,7 @@ const axios = require('axios');
 
 // Demo credentials
 const adminCredentials = {
-  email: 'admin@yega.com',
+  email: 'admin@manda2.com',
   password: 'Demo123!'
 };
 

@@ -8,16 +8,16 @@ El frontend de la aplicación estaba haciendo peticiones a una URL de API incorr
 
 La causa del problema era doble:
 
-1.  **URL de API incorrecta en el frontend:** El archivo de entorno del frontend (`frontend/.env`) contenía una URL de API antigua y hardcodeada que apuntaba a una dirección IP en lugar del dominio `yega.com.mx`.
+1.  **URL de API incorrecta en el frontend:** El archivo de entorno del frontend (`frontend/.env`) contenía una URL de API antigua y hardcodeada que apuntaba a una dirección IP en lugar del dominio `manda2.com.mx`.
 2.  **Script de reconstrucción obsoleto:** El script `rebuild_frontend.sh` también contenía la URL de API antigua y hardcodeada, por lo que cada vez que se reconstruía el frontend, se volvía a introducir la URL incorrecta.
 
 ## Solución
 
 La solución consistió en los siguientes pasos:
 
-1.  **Actualizar el archivo de entorno del frontend:** Se modificó el archivo `/home/ec2-user/yega-backup/frontend/.env` para que la variable `VITE_API_URL` apuntara a la URL correcta de la API: `https://yega.com.mx/api`.
+1.  **Actualizar el archivo de entorno del frontend:** Se modificó el archivo `/home/ec2-user/manda2-backup/frontend/.env` para que la variable `VITE_API_URL` apuntara a la URL correcta de la API: `https://manda2.com.mx/api`.
 
-2.  **Actualizar el script de reconstrucción:** Se modificó el script `/home/ec2-user/rebuild_frontend.sh` para que la variable `API_URL` apuntara a la URL correcta de la API: `https://yega.com.mx/api`.
+2.  **Actualizar el script de reconstrucción:** Se modificó el script `/home/ec2-user/rebuild_frontend.sh` para que la variable `API_URL` apuntara a la URL correcta de la API: `https://manda2.com.mx/api`.
 
 3.  **Reconstruir el frontend:** Se ejecutó el script `rebuild_frontend.sh` para reconstruir la aplicación de frontend con la nueva configuración.
 

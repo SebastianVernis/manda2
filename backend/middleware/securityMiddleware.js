@@ -85,8 +85,8 @@ const secureJwtSign = (payload) => {
   return jwt.sign(payload, process.env.JWT_SECRET, {
     algorithm: 'HS256',
     expiresIn: '24h',
-    issuer: 'yega-app',
-    audience: 'yega-users'
+    issuer: 'manda2-app',
+    audience: 'manda2-users'
   });
 };
 

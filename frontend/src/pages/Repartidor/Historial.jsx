@@ -21,7 +21,7 @@ const RepartidorHistorial = () => {
   return (
     <div className="min-vh-100 bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Container className="py-4">
-        <h2 className="text-yega-gold text-center mb-4">Historial de Entregas</h2>
+        <h2 className="text-manda2-gold text-center mb-4">Historial de Entregas</h2>
       
       {isLoading && <div className="text-center py-5"><Spinner animation="border" /></div>}
       
@@ -41,7 +41,7 @@ const RepartidorHistorial = () => {
             <Row className="g-3">
               {pedidosCompletados.map((o) => (
                 <Col md={6} lg={4} key={o._id}>
-                  <Card className="card-yega yega-glass h-100">
+                  <Card className="card-manda2 manda2-glass h-100">
                     <Card.Body>
                       <div className="d-flex justify-content-between align-items-start">
                         <div>

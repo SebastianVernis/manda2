@@ -15,7 +15,7 @@ const getStoreId = (p) => p?.tiendaId?._id ?? p?.tienda?._id ?? p?.tiendaId ?? p
 export const CartProvider = ({ children }) => {
   const [items, setItems] = useState(() => {
     try {
-      const raw = localStorage.getItem('yega_cart')
+      const raw = localStorage.getItem('manda2_cart')
       if (!raw) return []
       
       const parsed = JSON.parse(raw)
@@ -74,7 +74,7 @@ export const CartProvider = ({ children }) => {
   
   // Save cart to localStorage when it changes
   useEffect(() => {
-    try { localStorage.setItem('yega_cart', JSON.stringify(items)) } catch {}
+    try { localStorage.setItem('manda2_cart', JSON.stringify(items)) } catch {}
   }, [items])
 
   const storeId = useMemo(() => items.length ? getStoreId(items[0]) : null, [items])

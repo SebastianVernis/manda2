@@ -1,10 +1,10 @@
-// MongoDB Connection Test for YEGA
+// MongoDB Connection Test for Manda2
 // Run with: node test-mongodb.js
 
 const mongoose = require('mongoose');
 require('dotenv').config({ path: './backend/.env' });
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/yega';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/manda2';
 
 console.log('🔍 Testing MongoDB connection...');
 console.log('URI:', MONGODB_URI);
@@ -58,7 +58,7 @@ async function testConnection() {
         }
         
         console.log('');
-        console.log('🎉 All tests passed! MongoDB is ready for YEGA app.');
+        console.log('🎉 All tests passed! MongoDB is ready for Manda2 app.');
         
     } catch (error) {
         console.error('❌ MongoDB connection failed:');

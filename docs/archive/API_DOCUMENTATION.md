@@ -1,4 +1,4 @@
-# YEGA API Documentation
+# Manda2 API Documentation
 **Version:** 1.0.0  
 **Base URL:** `http://3-85-74-100.nip.io:9080/api`  
 **Last Updated:** 2025-09-18  
@@ -624,10 +624,10 @@ GET /api/health
 - **Sample Data**: Available via `/api/test/seed`
 
 ### Postman Collection
-Import the YEGA API collection for testing:
+Import the Manda2 API collection for testing:
 ```bash
 # Collection available at:
-/docs/postman/YEGA_API_Collection.json
+/docs/postman/Manda2_API_Collection.json
 ```
 
 ---
