@@ -39,3 +39,10 @@ Thumbs.db
 # PM2 logs
 pm2.log
 pm2-error.log
+
+# Railway
+.railway/
+
+# Uploads (si son archivos grandes)
+# uploads/
+# backend/uploads/
