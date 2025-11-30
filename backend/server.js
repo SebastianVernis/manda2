@@ -47,6 +47,11 @@ const geocodingRoutes = require('./routes/geocodingRoutes');
 // Middleware de autenticación
 const { protect, authorize } = require('./middleware/authMiddleware');
 
+// Health check
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', message: 'Manda2 API running' });
+});
+
 // Rutas públicas
 console.log('Montando rutas de autenticación en /api/auth');
 app.use('/api/auth', authRoutes);
