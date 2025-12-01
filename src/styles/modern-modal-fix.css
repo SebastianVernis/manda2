@@ -1,0 +1,64 @@
+/* Estilos para arreglar el modal de HeroUI en ModernStores */
+
+/* Cambiar la posición del modal para que se centre correctamente */
+div[role="dialog"].hero-modal {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Contenido del modal con glassmorphism */
+div[role="dialog"].hero-modal > div {
+  background: rgba(18, 18, 22, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 20px !important;
+  max-width: 90vw !important;
+  width: auto !important;
+  max-height: 90vh !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
+  margin: 0 auto !important;
+}
+
+/* Ajustar estilo del backdrop */
+.hero-modal-backdrop {
+  opacity: 0.8 !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+/* Ajustar el cuerpo del modal */
+.hero-modal-body {
+  padding: 1.5rem !important;
+  max-height: 75vh !important;
+  overflow-y: auto !important;
+}
+
+/* Sobrescribir estilos para el modal centrado */
+@media (min-width: 768px) {
+  div[role="dialog"].hero-modal > div {
+    max-width: 80vw !important;
+    width: auto !important;
+  }
+}
+
+/* Ajustes específicos para HeroUI Modal */
+[data-hero-dialog] {
+  position: fixed !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 50 !important;
+  padding: 1rem !important;
+}
+
+[data-hero-dialog-content] {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
