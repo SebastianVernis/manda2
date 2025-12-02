@@ -1,40 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Card, Button, Spinner } from 'react-bootstrap'
+import { Card, Button, Spinner, Form } from 'react-bootstrap'
 import { motion, AnimatePresence } from "framer-motion"
 import { FaLocationArrow, FaMapMarkerAlt, FaCheck, FaSearch, FaTimes } from 'react-icons/fa'
-import { reverseGeocode } from '../../lib/geocoding'
-
-// Mapbox Geocoding API
-const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1IjoieWVnYSIsImEiOiJjbTZnbXFkMzAwMDEyMmpzZDZ5YXM3Z2k1In0.example' // Reemplazar con token real
-
-const searchAddresses = async (query) => {
-  if (!query || query.length < 3) return []
-  
-  try {
-    const response = await fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?` +
-      `access_token=${MAPBOX_ACCESS_TOKEN}&` +
-      `country=mx&` +
-      `types=address,poi&` +
-      `limit=5&` +
-      `language=es`
-    )
-    
-    if (!response.ok) throw new Error('Error en la búsqueda')
-    
-    const data = await response.json()
-    return data.features.map(feature => ({
-      id: feature.id,
-      text: feature.place_name,
-      center: feature.center, // [lng, lat]
-      address: feature.properties?.address || '',
-      context: feature.context || []
-    }))
-  } catch (error) {
-    console.error('Error searching addresses:', error)
-    return []
-  }
-}
+import { reverseGeocode, searchAddresses } from '../../lib/geocoding'
 
 const ModernAddressConfirmation = ({ onConfirm, className = '' }) => {
   const [loading, setLoading] = useState(false)
@@ -107,7 +75,16 @@ const ModernAddressConfirmation = ({ onConfirm, className = '' }) => {
       setSearchLoading(true)
       try {
         const results = await searchAddresses(searchQuery)
-        setSearchResults(results)
+        // Mapear los resultados para que tengan la estructura esperada
+        const mappedResults = results.map(result => ({
+          id: result.id || `${result.text}-${Date.now()}`,
+          text: result.text || result.value,
+          center: result.center,
+          address: result.components?.street || result.text,
+          context: result.context || [],
+          components: result.components || {}
+        }))
+        setSearchResults(mappedResults)
       } catch (error) {
         console.error('Search error:', error)
         setSearchResults([])
@@ -276,29 +253,29 @@ const ModernAddressConfirmation = ({ onConfirm, className = '' }) => {
             // Modo búsqueda
             <div className="space-y-4">
               <div className="relative">
-                <Input
-                  placeholder="Busca tu dirección... (ej: Av. Insurgentes Sur 123)"
-                  value={searchQuery}
-                  onValueChange={setSearchQuery}
-                  classNames={{
-                    input: "text-white",
-                    inputWrapper: "border-gray-600 data-[hover=true]:border-gray-400 group-data-[focus=true]:border-white"
-                  }}
-                  startContent={<FaSearch className="text-gray-400" />}
-                  endContent={
-                    searchQuery && (
-                      <Button
-                        isIconOnly
-                        variant="light"
-                        size="sm"
-                        onClick={clearSearch}
-                        className="text-gray-400 hover:text-white"
-                      >
-                        <FaTimes />
-                      </Button>
-                    )
-                  }
-                />
+                <div className="input-group">
+                  <span className="input-group-text bg-dark border-gray-600">
+                    <FaSearch className="text-gray-400" />
+                  </span>
+                  <Form.Control
+                    type="text"
+                    placeholder="Busca tu dirección... (ej: Av. Insurgentes Sur 123)"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="bg-dark text-white border-gray-600 border-start-0"
+                    style={{ borderColor: '#6b7280' }}
+                  />
+                  {searchQuery && (
+                    <Button
+                      variant="outline-secondary"
+                      size="sm"
+                      onClick={clearSearch}
+                      className="border-gray-600 text-gray-400 hover:text-white"
+                    >
+                      <FaTimes />
+                    </Button>
+                  )}
+                </div>
                 
                 {/* Resultados de búsqueda */}
                 <AnimatePresence>
