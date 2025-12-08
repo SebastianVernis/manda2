@@ -18,41 +18,38 @@ exports.searchAddresses = async (req, res) => {
     if (!mapboxToken) {
       console.warn('MAPBOX_TOKEN no configurado, usando implementación de respaldo para búsqueda');
       
-      // Create some mock results based on the search query
-      const mockResults = [
-        {
-          id: 'mock-1',
-          text: `${query} #123, Colonia Centro`,
-          center: [-99.1332, 19.4326],
-          address: query,
-          context: [],
-          components: {
-            street: query,
-            neighborhood: 'Centro',
-            locality: 'Ciudad de México',
-            place: 'Ciudad de México',
-            region: 'CDMX',
-            postcode: '06000',
-            country: 'México'
-          }
-        },
-        {
-          id: 'mock-2',
-          text: `${query} #456, Colonia Roma`,
-          center: [-99.1632, 19.4126],
-          address: query,
-          context: [],
-          components: {
-            street: query,
-            neighborhood: 'Roma',
-            locality: 'Ciudad de México',
-            place: 'Ciudad de México',
-            region: 'CDMX',
-            postcode: '06700',
-            country: 'México'
-          }
-        }
+      // Create more realistic mock results based on the search query
+      const neighborhoods = [
+        { name: 'Centro', coords: [-99.1332, 19.4326], cp: '06000' },
+        { name: 'Roma Norte', coords: [-99.1632, 19.4126], cp: '06700' },
+        { name: 'Condesa', coords: [-99.1712, 19.4099], cp: '06140' },
+        { name: 'Polanco', coords: [-99.1892, 19.4338], cp: '11560' },
+        { name: 'Doctores', coords: [-99.1432, 19.4187], cp: '06720' },
+        { name: 'Del Valle', coords: [-99.1654, 19.3890], cp: '03100' }
       ];
+
+      const mockResults = neighborhoods.slice(0, 3).map((neighborhood, index) => ({
+        id: `mock-${index + 1}`,
+        text: `${query} ${index * 100 + 123}, ${neighborhood.name}, Ciudad de México`,
+        center: neighborhood.coords,
+        address: query,
+        context: [
+          { id: 'neighborhood', text: neighborhood.name },
+          { id: 'locality', text: 'Ciudad de México' },
+          { id: 'region', text: 'CDMX' },
+          { id: 'postcode', text: neighborhood.cp },
+          { id: 'country', text: 'México' }
+        ],
+        components: {
+          street: `${query} ${index * 100 + 123}`,
+          neighborhood: neighborhood.name,
+          locality: 'Ciudad de México',
+          place: 'Ciudad de México',
+          region: 'CDMX',
+          postcode: neighborhood.cp,
+          country: 'México'
+        }
+      }));
       
       return res.json({
         success: true,
@@ -109,16 +106,21 @@ exports.searchAddresses = async (req, res) => {
     const query = req.query.query;
     
     if (query && query.length >= 3) {
-      // Create some mock results based on the search query
+      // Create realistic fallback results for error cases
       const mockResults = [
         {
-          id: 'mock-error-1',
-          text: `${query} #123, Colonia Centro`,
+          id: 'fallback-1',
+          text: `${query} 123, Centro, Ciudad de México, CDMX`,
           center: [-99.1332, 19.4326],
-          address: query,
-          context: [],
+          address: `${query} 123`,
+          context: [
+            { id: 'neighborhood', text: 'Centro' },
+            { id: 'locality', text: 'Ciudad de México' },
+            { id: 'region', text: 'CDMX' },
+            { id: 'postcode', text: '06000' }
+          ],
           components: {
-            street: query,
+            street: `${query} 123`,
             neighborhood: 'Centro',
             locality: 'Ciudad de México',
             place: 'Ciudad de México',
@@ -179,18 +181,43 @@ exports.reverseGeocode = async (req, res) => {
     if (!mapboxToken) {
       console.warn('MAPBOX_TOKEN no configurado, usando implementación de respaldo');
       
-      // Return a simple response with coordinates and a generic address
+      // Create a more realistic fallback address based on coordinates
+      let approximateAddress = `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`;
+      let neighborhood = 'Colonia';
+      let postcode = '00000';
+
+      // Rough approximation for CDMX neighborhoods based on coordinates
+      if (latitude >= 19.39 && latitude <= 19.45 && longitude >= -99.20 && longitude <= -99.10) {
+        if (latitude >= 19.40 && longitude >= -99.16) {
+          neighborhood = 'Roma Norte';
+          postcode = '06700';
+          approximateAddress = `Calle ${Math.floor(Math.random() * 999) + 1}, Roma Norte, Ciudad de México`;
+        } else if (latitude >= 19.41 && longitude <= -99.14) {
+          neighborhood = 'Condesa';
+          postcode = '06140';
+          approximateAddress = `Avenida ${Math.floor(Math.random() * 999) + 1}, Condesa, Ciudad de México`;
+        } else if (latitude <= 19.42 && longitude >= -99.15) {
+          neighborhood = 'Centro Histórico';
+          postcode = '06000';
+          approximateAddress = `Calle ${Math.floor(Math.random() * 999) + 1}, Centro Histórico, CDMX`;
+        } else {
+          neighborhood = 'Ciudad de México';
+          postcode = '00000';
+          approximateAddress = `Calle ${Math.floor(Math.random() * 999) + 1}, Ciudad de México, CDMX`;
+        }
+      }
+
       return res.json({
         success: true,
-        address: `Ubicación (${latitude.toFixed(6)}, ${longitude.toFixed(6)})`,
+        address: approximateAddress,
         coordinates: { latitude, longitude },
         components: {
-          street: 'Calle',
-          neighborhood: 'Colonia',
-          locality: 'Localidad',
+          street: approximateAddress.split(',')[0] || 'Calle',
+          neighborhood: neighborhood,
+          locality: 'Ciudad de México',
           place: 'Ciudad de México',
           region: 'CDMX',
-          postcode: '00000',
+          postcode: postcode,
           country: 'México'
         },
         fallback: true // Indicate this is a fallback response
@@ -245,17 +272,29 @@ exports.reverseGeocode = async (req, res) => {
     const longitude = parseFloat(req.query.lng);
     
     if (!isNaN(latitude) && !isNaN(longitude)) {
+      // Generate a reasonable fallback address
+      let approximateAddress = `Dirección aproximada (${latitude.toFixed(4)}, ${longitude.toFixed(4)})`;
+      let neighborhood = 'Colonia';
+      let postcode = '00000';
+
+      // Simple coordinate-based neighborhood detection
+      if (latitude >= 19.39 && latitude <= 19.45 && longitude >= -99.20 && longitude <= -99.10) {
+        neighborhood = 'Ciudad de México';
+        postcode = '06000';
+        approximateAddress = `Ubicación en Ciudad de México`;
+      }
+
       return res.json({
         success: true,
-        address: `Ubicación (${latitude.toFixed(6)}, ${longitude.toFixed(6)})`,
+        address: approximateAddress,
         coordinates: { latitude, longitude },
         components: {
-          street: 'Calle',
-          neighborhood: 'Colonia',
-          locality: 'Localidad',
+          street: approximateAddress,
+          neighborhood: neighborhood,
+          locality: 'Ciudad de México',
           place: 'Ciudad de México',
           region: 'CDMX',
-          postcode: '00000',
+          postcode: postcode,
           country: 'México'
         },
         fallback: true,
