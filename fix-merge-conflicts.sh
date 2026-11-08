@@ -41,11 +41,11 @@ echo "✅ Fixed package.json"
 cat > /vercel/sandbox/backend/.env << 'EOF'
 NODE_ENV=production
 PORT=5000
-JWT_SECRET=REDACTADO_VER_ENV
+JWT_SECRET=JWT_SECRET_REDACTADO_VER_ENV
 MONGODB_URI=mongodb://localhost:27017/yega
 FRONTEND_URL=https://yega.3.85.74.100.nip.io
-EMAIL_USER=REDACTADO_VER_ENV
-EMAIL_PASS=REDACTADO_VER_ENV
+EMAIL_USER=correo@redactado.local
+EMAIL_PASS=EMAIL_PASS_REDACTADO_VER_ENV
 EMAIL_HOST=smtp.ionos.mx
 EMAIL_PORT=465
 EOF

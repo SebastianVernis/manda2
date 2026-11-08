@@ -96,8 +96,8 @@ sudo dnf install nginx -y
 - [ ] Verificar `MONGODB_URI` (actualmente: `mongodb://localhost:27017/yega`)
 - [ ] Verificar `JWT_SECRET` está configurado
 - [ ] Configurar credenciales de email:
-  - [ ] `EMAIL_USER=REDACTADO_VER_ENV`
-  - [ ] `EMAIL_PASS=REDACTADO_VER_ENV`
+  - [ ] `EMAIL_USER=correo@redactado.local`
+  - [ ] `EMAIL_PASS=EMAIL_PASS_REDACTADO_VER_ENV`
   - [ ] `EMAIL_HOST=smtp.ionos.mx`
   - [ ] `EMAIL_PORT=465`
 - [ ] Verificar `PORT=5000`

@@ -81,7 +81,7 @@ npm run build
 #### Backend Environment (.env)
 ```bash
 # Current production configuration
-JWT_SECRET=REDACTADO_VER_ENV
+JWT_SECRET=JWT_SECRET_REDACTADO_VER_ENV
 MONGODB_URI=mongodb://localhost:27017/manda2
 FRONTEND_URL=https://3-85-74-100.nip.io,http://localhost:3000
 ```
