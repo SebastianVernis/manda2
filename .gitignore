@@ -8,11 +8,11 @@ build/
 */dist/
 */build/
 
-# Environment files
+# Environment files — nunca versionar secretos
 .env
-.env.local
-.env.production
-.env.development
+.env.*
+!.env.example
+!*/.env.example
 
 # Logs
 logs/
