@@ -62,8 +62,8 @@ const ModernNavbar = () => {
               onClick={() => navigate('/')}
             >
               <img 
-                src="/images/manda2-light.svg" 
-                alt="Manda2" 
+                src="/images/yega-white.png" 
+                alt="YEGA" 
                 className="h-10" 
                 style={{ height: '40px' }}
               />

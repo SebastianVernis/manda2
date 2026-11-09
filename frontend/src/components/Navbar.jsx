@@ -42,8 +42,8 @@ const CustomNavbar = () => {
         <LinkContainer to="/">
           <Navbar.Brand>
             <img 
-              src="/images/manda2-light.svg" 
-              alt="Manda2" 
+              src="/images/yega-white.png" 
+              alt="YEGA" 
               height="30" 
               className="d-inline-block align-top"
             />

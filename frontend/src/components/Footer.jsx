@@ -11,8 +11,8 @@ const Footer = () => {
         <Row>
           <Col md={4} className="mb-4">
             <img 
-              src="/images/manda2-light.svg" 
-              alt="Manda2" 
+              src="/images/yega-white.png" 
+              alt="YEGA" 
               height="40" 
               className="mb-3" 
             />

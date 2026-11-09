@@ -83,8 +83,8 @@ const ModernLogin = () => {
               className="inline-flex items-center justify-center mb-4"
             >
               <img 
-                src="/images/manda2-light.svg" 
-                alt="Manda2" 
+                src="/images/yega-white.png" 
+                alt="YEGA" 
                 height="80" 
                 width="auto"
               />
